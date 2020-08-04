@@ -9,8 +9,18 @@ Welcome to Inkplate 6's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+   :numbered:
 
-   begin
+   /get-started
+   /features
+   /api-refrence
+   /hardware-refrence
+   /contribute
+   /resources
+   /open-source
+   /about
+   /downloads
+
 
 *************
 What is this?
