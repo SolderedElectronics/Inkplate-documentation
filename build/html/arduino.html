@@ -100,7 +100,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#inkplate-readtemperature">3.1.1.8. Inkplate::readTemperature();</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#inkplate-readbattery">3.1.1.9. Inkplate::readBattery();</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#inkplate-einkoff">3.1.1.10. Inkplate::einkOff();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-einkon">3.1.1.11. Inkplate::einkOn();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">3.1.1.11. Inkplate::einkOff();</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#drawing-functions">3.1.2. Drawing Functions</a><ul>
@@ -247,40 +247,23 @@ After you’ve done this you can proceed calling all other methods described bel
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">sdCardInit</span><span class="p">();</span>
 </pre></div>
 </div>
 <ul>
 <li><dl>
 <dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
-<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
-<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
-<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+<div class="line">No Arguments</div>
 </div>
-<p>Returns nothing.</p>
+<p>Returns 0 if card initializaion unsuccessful, else some number which casts to true.</p>
 </dd>
 </dl>
 </li>
 <li><dl>
 <dt><strong>Description</strong>:</dt><dd><div class="line-block">
-<div class="line">Most basic drawing command in the library is .drawPixel();</div>
-<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+<div class="line">Used to initialize SD card interface.</div>
+<div class="line">Must be called before using SD card functionality like SdFile::read();</div>
 </div>
-</dd>
-</dl>
-</li>
-<li><dl>
-<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-</pre></div>
-</div>
-</dd>
-</dl>
-</li>
-<li><dl>
-<dt><strong>Result</strong>:</dt><dd><div class="line-block">
-<div class="line">Here is what the code above produces like:</div>
-</div>
-<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
 </dd>
 </dl>
 </li>
@@ -291,40 +274,22 @@ After you’ve done this you can proceed calling all other methods described bel
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">SdFat</span> <span class="n">Inkplate</span><span class="o">::</span><span class="n">getSdFat</span><span class="p">()</span>
 </pre></div>
 </div>
 <ul>
 <li><dl>
 <dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
-<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
-<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
-<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+<div class="line">No Arguments</div>
 </div>
-<p>Returns nothing.</p>
+<p>Returns SdFat object.</p>
 </dd>
 </dl>
 </li>
 <li><dl>
 <dt><strong>Description</strong>:</dt><dd><div class="line-block">
-<div class="line">Most basic drawing command in the library is .drawPixel();</div>
-<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+<div class="line">See SdFat library documentation for use examples.</div>
 </div>
-</dd>
-</dl>
-</li>
-<li><dl>
-<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-</pre></div>
-</div>
-</dd>
-</dl>
-</li>
-<li><dl>
-<dt><strong>Result</strong>:</dt><dd><div class="line-block">
-<div class="line">Here is what the code above produces like:</div>
-</div>
-<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
 </dd>
 </dl>
 </li>
@@ -335,40 +300,15 @@ After you’ve done this you can proceed calling all other methods described bel
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">SPIClass</span> <span class="nf">getSPI</span><span class="p">();</span>
 </pre></div>
 </div>
 <ul>
 <li><dl>
 <dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
-<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
-<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
-<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+<div class="line">No Arguments</div>
 </div>
-<p>Returns nothing.</p>
-</dd>
-</dl>
-</li>
-<li><dl>
-<dt><strong>Description</strong>:</dt><dd><div class="line-block">
-<div class="line">Most basic drawing command in the library is .drawPixel();</div>
-<div class="line">Draws one pixel at x0, y0 in desired color.</div>
-</div>
-</dd>
-</dl>
-</li>
-<li><dl>
-<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-</pre></div>
-</div>
-</dd>
-</dl>
-</li>
-<li><dl>
-<dt><strong>Result</strong>:</dt><dd><div class="line-block">
-<div class="line">Here is what the code above produces like:</div>
-</div>
-<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+<p>Returns SPIClass object.</p>
 </dd>
 </dl>
 </li>
@@ -379,40 +319,29 @@ After you’ve done this you can proceed calling all other methods described bel
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">uint8_t</span> <span class="nf">getPanelState</span><span class="p">();</span>
 </pre></div>
 </div>
 <ul>
 <li><dl>
 <dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
-<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
-<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
-<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+<div class="line">No Arguments.</div>
 </div>
-<p>Returns nothing.</p>
+<p>Returns 1 if eink panel is on, and 0 if it’s off.</p>
 </dd>
 </dl>
 </li>
 <li><dl>
 <dt><strong>Description</strong>:</dt><dd><div class="line-block">
-<div class="line">Most basic drawing command in the library is .drawPixel();</div>
-<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+<div class="line">Used to see if the panel is on.</div>
 </div>
 </dd>
 </dl>
 </li>
 <li><dl>
-<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">display</span><span class="p">.</span><span class="n">getPanelState</span><span class="p">(),</span> <span class="n">DEC</span><span class="p">);</span>
 </pre></div>
 </div>
-</dd>
-</dl>
-</li>
-<li><dl>
-<dt><strong>Result</strong>:</dt><dd><div class="line-block">
-<div class="line">Here is what the code above produces like:</div>
-</div>
-<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
 </dd>
 </dl>
 </li>
@@ -423,40 +352,32 @@ After you’ve done this you can proceed calling all other methods described bel
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">uint8_t</span> <span class="nf">readTouchpad</span><span class="p">(</span><span class="kt">uint8_t</span><span class="p">);</span>
 </pre></div>
 </div>
 <ul>
 <li><dl>
 <dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
-<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
-<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
-<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+<div class="line">uint8_t <strong>_pad</strong> - pass in PAD1, PAD2 or PAD3</div>
 </div>
-<p>Returns nothing.</p>
+<p>Returns state of the desired pad.</p>
 </dd>
 </dl>
 </li>
 <li><dl>
 <dt><strong>Description</strong>:</dt><dd><div class="line-block">
-<div class="line">Most basic drawing command in the library is .drawPixel();</div>
-<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+<div class="line">Reads the state of each of three pads.</div>
 </div>
 </dd>
 </dl>
 </li>
 <li><dl>
-<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">display</span><span class="p">.</span><span class="n">readTouchpad</span><span class="p">(</span><span class="n">PAD1</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="c1">//Do something</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-</dd>
-</dl>
-</li>
-<li><dl>
-<dt><strong>Result</strong>:</dt><dd><div class="line-block">
-<div class="line">Here is what the code above produces like:</div>
-</div>
-<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
 </dd>
 </dl>
 </li>
@@ -467,40 +388,30 @@ After you’ve done this you can proceed calling all other methods described bel
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int8_t</span> <span class="nf">readTemperature</span><span class="p">();</span>
 </pre></div>
 </div>
 <ul>
 <li><dl>
 <dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
-<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
-<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
-<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+<div class="line">No arguments.</div>
 </div>
-<p>Returns nothing.</p>
+<p>Returns panel temperature at the last refresh.</p>
 </dd>
 </dl>
 </li>
 <li><dl>
 <dt><strong>Description</strong>:</dt><dd><div class="line-block">
-<div class="line">Most basic drawing command in the library is .drawPixel();</div>
-<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+<div class="line">Can be used to determine temperature roughly.</div>
+<div class="line">Keep in mind that the returned value was measured at the time of the last screen refresh.</div>
 </div>
 </dd>
 </dl>
 </li>
 <li><dl>
-<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">display</span><span class="p">.</span><span class="n">readTemperature</span><span class="p">(),</span> <span class="n">DEC</span><span class="p">);</span>
 </pre></div>
 </div>
-</dd>
-</dl>
-</li>
-<li><dl>
-<dt><strong>Result</strong>:</dt><dd><div class="line-block">
-<div class="line">Here is what the code above produces like:</div>
-</div>
-<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
 </dd>
 </dl>
 </li>
@@ -511,40 +422,30 @@ After you’ve done this you can proceed calling all other methods described bel
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="nf">readBattery</span><span class="p">();</span>
 </pre></div>
 </div>
 <ul>
 <li><dl>
 <dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
-<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
-<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
-<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+<div class="line">No Arguments.</div>
 </div>
-<p>Returns nothing.</p>
+<p>Returns battery voltage as a double.</p>
 </dd>
 </dl>
 </li>
 <li><dl>
 <dt><strong>Description</strong>:</dt><dd><div class="line-block">
-<div class="line">Most basic drawing command in the library is .drawPixel();</div>
-<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+<div class="line">Function used to determine battery voltage.</div>
+<div class="line">Can be used to display how much more time will the device be on.</div>
 </div>
 </dd>
 </dl>
 </li>
 <li><dl>
-<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">voltage</span> <span class="o">=</span> <span class="n">display</span><span class="p">.</span><span class="n">readBattery</span><span class="p">();</span>
 </pre></div>
 </div>
-</dd>
-</dl>
-</li>
-<li><dl>
-<dt><strong>Result</strong>:</dt><dd><div class="line-block">
-<div class="line">Here is what the code above produces like:</div>
-</div>
-<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
 </dd>
 </dl>
 </li>
@@ -555,15 +456,13 @@ After you’ve done this you can proceed calling all other methods described bel
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">einkOff</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
 </pre></div>
 </div>
 <ul>
 <li><dl>
 <dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
-<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
-<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
-<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+<div class="line">No Arguments.</div>
 </div>
 <p>Returns nothing.</p>
 </dd>
@@ -571,43 +470,32 @@ After you’ve done this you can proceed calling all other methods described bel
 </li>
 <li><dl>
 <dt><strong>Description</strong>:</dt><dd><div class="line-block">
-<div class="line">Most basic drawing command in the library is .drawPixel();</div>
-<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+<div class="line">Turns the panel off to save energy.</div>
 </div>
 </dd>
 </dl>
 </li>
 <li><dl>
-<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">einkOff</span><span class="p">();</span>
 </pre></div>
 </div>
 </dd>
 </dl>
 </li>
-<li><dl>
-<dt><strong>Result</strong>:</dt><dd><div class="line-block">
-<div class="line">Here is what the code above produces like:</div>
-</div>
-<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
-</dd>
-</dl>
-</li>
 </ul>
 </div>
-<div class="section" id="inkplate-einkon">
-<h3><span class="section-number">3.1.1.11. </span>Inkplate::einkOn();<a class="headerlink" href="#inkplate-einkon" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h3><span class="section-number">3.1.1.11. </span>Inkplate::einkOff();<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">einkOn</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
 </pre></div>
 </div>
 <ul>
 <li><dl>
 <dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
-<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
-<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
-<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+<div class="line">No Arguments.</div>
 </div>
 <p>Returns nothing.</p>
 </dd>
@@ -615,24 +503,15 @@ After you’ve done this you can proceed calling all other methods described bel
 </li>
 <li><dl>
 <dt><strong>Description</strong>:</dt><dd><div class="line-block">
-<div class="line">Most basic drawing command in the library is .drawPixel();</div>
-<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+<div class="line">Turns the panel back on.</div>
 </div>
 </dd>
 </dl>
 </li>
 <li><dl>
-<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">einkOn</span><span class="p">();</span>
 </pre></div>
 </div>
-</dd>
-</dl>
-</li>
-<li><dl>
-<dt><strong>Result</strong>:</dt><dd><div class="line-block">
-<div class="line">Here is what the code above produces like:</div>
-</div>
-<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
 </dd>
 </dl>
 </li>
@@ -669,7 +548,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </dl>
 </li>
 <li><dl>
-<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">BLACK</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd>
@@ -690,30 +569,12 @@ After you’ve done this you can proceed calling all other methods described bel
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">clearDisplay</span><span class="p">();</span>
 </pre></div>
 </div>
 <ul>
 <li><dl>
-<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
-<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
-<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
-<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
-</div>
-<p>Returns nothing.</p>
-</dd>
-</dl>
-</li>
-<li><dl>
-<dt><strong>Description</strong>:</dt><dd><div class="line-block">
-<div class="line">Most basic drawing command in the library is .drawPixel();</div>
-<div class="line">Draws one pixel at x0, y0 in desired color.</div>
-</div>
-</dd>
-</dl>
-</li>
-<li><dl>
-<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">clearDisplay</span><span class="p">();</span>
 </pre></div>
 </div>
 </dd>
@@ -734,15 +595,13 @@ After you’ve done this you can proceed calling all other methods described bel
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">display</span><span class="p">();</span>
 </pre></div>
 </div>
 <ul>
 <li><dl>
 <dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
-<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
-<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
-<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+<div class="line">No Arguments</div>
 </div>
 <p>Returns nothing.</p>
 </dd>
@@ -750,14 +609,16 @@ After you’ve done this you can proceed calling all other methods described bel
 </li>
 <li><dl>
 <dt><strong>Description</strong>:</dt><dd><div class="line-block">
-<div class="line">Most basic drawing command in the library is .drawPixel();</div>
-<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+<div class="line">Puts all data in frame buffer to screen.</div>
 </div>
 </dd>
 </dl>
 </li>
 <li><dl>
-<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">//Any drawing code</span>
+<span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">BLACK</span><span class="p">);</span>
+
+<span class="n">display</span><span class="p">.</span><span class="n">display</span><span class="p">();</span>
 </pre></div>
 </div>
 </dd>
@@ -778,15 +639,13 @@ After you’ve done this you can proceed calling all other methods described bel
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">partialUpdate</span><span class="p">();</span>
 </pre></div>
 </div>
 <ul>
 <li><dl>
 <dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
-<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
-<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
-<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+<div class="line">No Arguments</div>
 </div>
 <p>Returns nothing.</p>
 </dd>
@@ -794,14 +653,19 @@ After you’ve done this you can proceed calling all other methods described bel
 </li>
 <li><dl>
 <dt><strong>Description</strong>:</dt><dd><div class="line-block">
-<div class="line">Most basic drawing command in the library is .drawPixel();</div>
-<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+<div class="line">Updates only the changed parts of the screen.</div>
+<div class="line">After a few updates creates blurry parts of the screen.</div>
+<div class="line">Fixed by calling Inkplate::clear();</div>
 </div>
 </dd>
 </dl>
 </li>
 <li><dl>
-<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">BLACK</span><span class="p">);</span>
+
+<span class="n">display</span><span class="p">.</span><span class="n">partialUpdate</span><span class="p">();</span>
+
+<span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">BLACK</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd>
@@ -822,15 +686,17 @@ After you’ve done this you can proceed calling all other methods described bel
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawBitmap3Bit</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">_x</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">_y</span><span class="p">,</span> <span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="n">_p</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">_w</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">_h</span><span class="p">);</span>
 </pre></div>
 </div>
 <ul>
 <li><dl>
 <dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
-<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
-<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
-<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+<div class="line">int16_t <strong>_x</strong> - x coordinate of image corner, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
+<div class="line">int16_t <strong>_y</strong> - y coordinate of image corner, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
+<div class="line">const unsigned char <strong>*_p</strong> - unsigned char buffer containing bitmap data</div>
+<div class="line">int16_t <strong>_w</strong> - image width</div>
+<div class="line">int16_t <strong>_h</strong> - image height</div>
 </div>
 <p>Returns nothing.</p>
 </dd>
@@ -838,14 +704,16 @@ After you’ve done this you can proceed calling all other methods described bel
 </li>
 <li><dl>
 <dt><strong>Description</strong>:</dt><dd><div class="line-block">
-<div class="line">Most basic drawing command in the library is .drawPixel();</div>
-<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+<div class="line">Draws a bitmap image to screen.</div>
+<div class="line">Image data can be created using online tools or supplied Python script in some examples.</div>
 </div>
 </dd>
 </dl>
 </li>
 <li><dl>
-<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">//Picture is a predefined image buffer</span>
+<span class="n">display</span><span class="p">.</span><span class="n">drawBitmap3Bit</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">picture</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">);</span>
+<span class="n">display</span><span class="p">.</span><span class="n">display</span><span class="p">();</span>
 </pre></div>
 </div>
 </dd>

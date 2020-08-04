@@ -40,8 +40,6 @@ begin() method
 
 
 
-
-
 Inkplate::sdCardInit();
 #######################
 
@@ -49,30 +47,16 @@ Inkplate::sdCardInit();
 
 .. code-block:: c
 
-    void drawPixel(int16_t x0, int16_t y0, uint16_t color);
+    int sdCardInit();
 
 * **Arguments and return value**:
-    | int16_t **x0** - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3
-    | int16_t **y0** - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3 
-    | uint16_t **color** - pixel color, in 3 bit mode in range [0, 7]
+    | No Arguments
 
-    Returns nothing.
+    Returns 0 if card initializaion unsuccessful, else some number which casts to true.
 
 * **Description**:
-    | Most basic drawing command in the library is .drawPixel();
-    | Draws one pixel at x0, y0 in desired color.
-
-* **Example**:
-    .. code-block:: c
-
-        display.drawPixel(100, 50, 0);
-
-* **Result**:
-    | Here is what the code above produces like:
-
-    .. image:: images/index.jpg
-        :width: 600
-
+    | Used to initialize SD card interface.
+    | Must be called before using SD card functionality like SdFile::read();
 
 
 
@@ -83,30 +67,15 @@ Inkplate::getSdFat();
 
 .. code-block:: c
 
-    void drawPixel(int16_t x0, int16_t y0, uint16_t color);
+    SdFat Inkplate::getSdFat()
 
 * **Arguments and return value**:
-    | int16_t **x0** - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3
-    | int16_t **y0** - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3 
-    | uint16_t **color** - pixel color, in 3 bit mode in range [0, 7]
+    | No Arguments
 
-    Returns nothing.
+    Returns SdFat object.
 
 * **Description**:
-    | Most basic drawing command in the library is .drawPixel();
-    | Draws one pixel at x0, y0 in desired color.
-
-* **Example**:
-    .. code-block:: c
-
-        display.drawPixel(100, 50, 0);
-
-* **Result**:
-    | Here is what the code above produces like:
-
-    .. image:: images/index.jpg
-        :width: 600
-
+    | See SdFat library documentation for use examples.
 
 
 Inkplate::getSPI();
@@ -116,32 +85,12 @@ Inkplate::getSPI();
 
 .. code-block:: c
 
-    void drawPixel(int16_t x0, int16_t y0, uint16_t color);
+    SPIClass getSPI();
 
 * **Arguments and return value**:
-    | int16_t **x0** - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3
-    | int16_t **y0** - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3 
-    | uint16_t **color** - pixel color, in 3 bit mode in range [0, 7]
-
-    Returns nothing.
-
-* **Description**:
-    | Most basic drawing command in the library is .drawPixel();
-    | Draws one pixel at x0, y0 in desired color.
-
-* **Example**:
-    .. code-block:: c
-
-        display.drawPixel(100, 50, 0);
-
-* **Result**:
-    | Here is what the code above produces like:
-
-    .. image:: images/index.jpg
-        :width: 600
-
-
-
+    | No Arguments
+    
+    Returns SPIClass object.
 
 
 Inkplate::getPanelState();
@@ -151,32 +100,20 @@ Inkplate::getPanelState();
 
 .. code-block:: c
 
-    void drawPixel(int16_t x0, int16_t y0, uint16_t color);
+    uint8_t getPanelState();
 
 * **Arguments and return value**:
-    | int16_t **x0** - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3
-    | int16_t **y0** - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3 
-    | uint16_t **color** - pixel color, in 3 bit mode in range [0, 7]
+    | No Arguments.
 
-    Returns nothing.
+    Returns 1 if eink panel is on, and 0 if it's off.
 
 * **Description**:
-    | Most basic drawing command in the library is .drawPixel();
-    | Draws one pixel at x0, y0 in desired color.
+    | Used to see if the panel is on.
 
 * **Example**:
     .. code-block:: c
 
-        display.drawPixel(100, 50, 0);
-
-* **Result**:
-    | Here is what the code above produces like:
-
-    .. image:: images/index.jpg
-        :width: 600
-
-
-
+        Serial.print(display.getPanelState(), DEC);
 
 
 Inkplate::readTouchpad();
@@ -186,31 +123,23 @@ Inkplate::readTouchpad();
 
 .. code-block:: c
 
-    void drawPixel(int16_t x0, int16_t y0, uint16_t color);
+    uint8_t readTouchpad(uint8_t);
 
 * **Arguments and return value**:
-    | int16_t **x0** - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3
-    | int16_t **y0** - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3 
-    | uint16_t **color** - pixel color, in 3 bit mode in range [0, 7]
+    | uint8_t **_pad** - pass in PAD1, PAD2 or PAD3
 
-    Returns nothing.
+    Returns state of the desired pad.
 
 * **Description**:
-    | Most basic drawing command in the library is .drawPixel();
-    | Draws one pixel at x0, y0 in desired color.
+    | Reads the state of each of three pads.
 
 * **Example**:
     .. code-block:: c
 
-        display.drawPixel(100, 50, 0);
-
-* **Result**:
-    | Here is what the code above produces like:
-
-    .. image:: images/index.jpg
-        :width: 600
-
-
+        if (display.readTouchpad(PAD1)) 
+        {
+            //Do something
+        }
 
 
 
@@ -221,31 +150,21 @@ Inkplate::readTemperature();
 
 .. code-block:: c
 
-    void drawPixel(int16_t x0, int16_t y0, uint16_t color);
+    int8_t readTemperature();
 
 * **Arguments and return value**:
-    | int16_t **x0** - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3
-    | int16_t **y0** - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3 
-    | uint16_t **color** - pixel color, in 3 bit mode in range [0, 7]
+    | No arguments.
 
-    Returns nothing.
+    Returns panel temperature at the last refresh.
 
 * **Description**:
-    | Most basic drawing command in the library is .drawPixel();
-    | Draws one pixel at x0, y0 in desired color.
+    | Can be used to determine temperature roughly.
+    | Keep in mind that the returned value was measured at the time of the last screen refresh.
 
 * **Example**:
     .. code-block:: c
 
-        display.drawPixel(100, 50, 0);
-
-* **Result**:
-    | Here is what the code above produces like:
-
-    .. image:: images/index.jpg
-        :width: 600
-
-
+        Serial.print(display.readTemperature(), DEC);
 
 
 
@@ -256,29 +175,21 @@ Inkplate::readBattery();
 
 .. code-block:: c
 
-    void drawPixel(int16_t x0, int16_t y0, uint16_t color);
+    double readBattery();
 
 * **Arguments and return value**:
-    | int16_t **x0** - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3
-    | int16_t **y0** - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3 
-    | uint16_t **color** - pixel color, in 3 bit mode in range [0, 7]
+    | No Arguments.
 
-    Returns nothing.
+    Returns battery voltage as a double.
 
 * **Description**:
-    | Most basic drawing command in the library is .drawPixel();
-    | Draws one pixel at x0, y0 in desired color.
+    | Function used to determine battery voltage.
+    | Can be used to display how much more time will the device be on.
 
 * **Example**:
     .. code-block:: c
 
-        display.drawPixel(100, 50, 0);
-
-* **Result**:
-    | Here is what the code above produces like:
-
-    .. image:: images/index.jpg
-        :width: 600
+        double voltage = display.readBattery();
 
 
 
@@ -289,63 +200,44 @@ Inkplate::einkOff();
 
 .. code-block:: c
 
-    void drawPixel(int16_t x0, int16_t y0, uint16_t color);
+    void einkOff(void);
 
 * **Arguments and return value**:
-    | int16_t **x0** - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3
-    | int16_t **y0** - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3 
-    | uint16_t **color** - pixel color, in 3 bit mode in range [0, 7]
+    | No Arguments.
 
     Returns nothing.
 
 * **Description**:
-    | Most basic drawing command in the library is .drawPixel();
-    | Draws one pixel at x0, y0 in desired color.
+    | Turns the panel off to save energy.
 
 * **Example**:
     .. code-block:: c
 
-        display.drawPixel(100, 50, 0);
-
-* **Result**:
-    | Here is what the code above produces like:
-
-    .. image:: images/index.jpg
-        :width: 600
+        display.einkOff();
 
 
 
-Inkplate::einkOn();
-###################
+Inkplate::einkOff();
+####################
 
 * **Method prototype (as seen in Inkplate.h)**:
 
 .. code-block:: c
 
-    void drawPixel(int16_t x0, int16_t y0, uint16_t color);
+    void einkOn(void);
 
 * **Arguments and return value**:
-    | int16_t **x0** - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3
-    | int16_t **y0** - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3 
-    | uint16_t **color** - pixel color, in 3 bit mode in range [0, 7]
+    | No Arguments.
 
     Returns nothing.
 
 * **Description**:
-    | Most basic drawing command in the library is .drawPixel();
-    | Draws one pixel at x0, y0 in desired color.
+    | Turns the panel back on.
 
 * **Example**:
     .. code-block:: c
 
-        display.drawPixel(100, 50, 0);
-
-* **Result**:
-    | Here is what the code above produces like:
-
-    .. image:: images/index.jpg
-        :width: 600
-
+        display.einkOn();
 
 
 
@@ -375,7 +267,7 @@ Inkplate::drawPixel();
 * **Example**:
     .. code-block:: c
 
-        display.drawPixel(100, 50, 0);
+        display.drawPixel(100, 50, BLACK);
 
 * **Result**:
     | Here is what the code above produces like:
@@ -392,23 +284,12 @@ Inkplate::clearDisplay();
 
 .. code-block:: c
 
-    void drawPixel(int16_t x0, int16_t y0, uint16_t color);
-
-* **Arguments and return value**:
-    | int16_t **x0** - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3
-    | int16_t **y0** - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3 
-    | uint16_t **color** - pixel color, in 3 bit mode in range [0, 7]
-
-    Returns nothing.
-
-* **Description**:
-    | Most basic drawing command in the library is .drawPixel();
-    | Draws one pixel at x0, y0 in desired color.
+    void clearDisplay();
 
 * **Example**:
     .. code-block:: c
 
-        display.drawPixel(100, 50, 0);
+        display.clearDisplay();
 
 * **Result**:
     | Here is what the code above produces like:
@@ -425,23 +306,23 @@ Inkplate::display();
 
 .. code-block:: c
 
-    void drawPixel(int16_t x0, int16_t y0, uint16_t color);
+    void display();
 
 * **Arguments and return value**:
-    | int16_t **x0** - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3
-    | int16_t **y0** - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3 
-    | uint16_t **color** - pixel color, in 3 bit mode in range [0, 7]
+    | No Arguments
 
     Returns nothing.
 
 * **Description**:
-    | Most basic drawing command in the library is .drawPixel();
-    | Draws one pixel at x0, y0 in desired color.
+    | Puts all data in frame buffer to screen.
 
 * **Example**:
     .. code-block:: c
 
-        display.drawPixel(100, 50, 0);
+        //Any drawing code
+        display.drawPixel(10, 100, BLACK);
+
+        display.display();
 
 * **Result**:
     | Here is what the code above produces like:
@@ -458,23 +339,26 @@ Inkplate::partialUpdate();
 
 .. code-block:: c
 
-    void drawPixel(int16_t x0, int16_t y0, uint16_t color);
+    void partialUpdate();
 
 * **Arguments and return value**:
-    | int16_t **x0** - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3
-    | int16_t **y0** - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3 
-    | uint16_t **color** - pixel color, in 3 bit mode in range [0, 7]
+    | No Arguments
 
     Returns nothing.
 
 * **Description**:
-    | Most basic drawing command in the library is .drawPixel();
-    | Draws one pixel at x0, y0 in desired color.
+    | Updates only the changed parts of the screen.
+    | After a few updates creates blurry parts of the screen.
+    | Fixed by calling Inkplate::clear();
 
 * **Example**:
     .. code-block:: c
 
-        display.drawPixel(100, 50, 0);
+        display.drawPixel(100, 50, BLACK);
+
+        display.partialUpdate();
+
+        display.drawPixel(100, 100, BLACK);
 
 * **Result**:
     | Here is what the code above produces like:
@@ -491,23 +375,27 @@ Inkplate::drawBitmap3Bit();
 
 .. code-block:: c
 
-    void drawPixel(int16_t x0, int16_t y0, uint16_t color);
+    void drawBitmap3Bit(int16_t _x, int16_t _y, const unsigned char *_p, int16_t _w, int16_t _h);
 
 * **Arguments and return value**:
-    | int16_t **x0** - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3
-    | int16_t **y0** - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3 
-    | uint16_t **color** - pixel color, in 3 bit mode in range [0, 7]
+    | int16_t **_x** - x coordinate of image corner, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3
+    | int16_t **_y** - y coordinate of image corner, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3 
+    | const unsigned char ***_p** - unsigned char buffer containing bitmap data
+    | int16_t **_w** - image width
+    | int16_t **_h** - image height
 
     Returns nothing.
 
 * **Description**:
-    | Most basic drawing command in the library is .drawPixel();
-    | Draws one pixel at x0, y0 in desired color.
+    | Draws a bitmap image to screen.
+    | Image data can be created using online tools or supplied Python script in some examples.
 
 * **Example**:
     .. code-block:: c
 
-        display.drawPixel(100, 50, 0);
+        //Picture is a predefined image buffer
+        display.drawBitmap3Bit(0, 0, picture, 800, 600);
+        display.display();  
 
 * **Result**:
     | Here is what the code above produces like:
