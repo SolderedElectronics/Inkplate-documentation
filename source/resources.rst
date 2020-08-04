@@ -1,4 +1,4 @@
-Inkplate 6 Resources
+Inkplate Resources
 ====================
 
 Arduino

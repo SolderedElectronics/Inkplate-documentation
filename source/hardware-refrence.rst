@@ -1,4 +1,4 @@
-Inkplate 6 Hardware Refrence
+Inkplate Hardware Refrence
 ============================
 
 Components

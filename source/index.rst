@@ -1,9 +1,9 @@
-.. Inkplate 6 documentation master file, created by
+.. Inkplate documentation master file, created by
    sphinx-quickstart on Mon Aug  3 13:10:28 2020.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Inkplate 6's documentation!
+Welcome to Inkplate's documentation!
 ======================================
 
 .. toctree::
@@ -25,7 +25,7 @@ Welcome to Inkplate 6's documentation!
 *************
 What is this?
 *************
-Here you can find descriptions of all Inkplate 6 library functions.
+Here you can find descriptions of all Inkplate library functions.
 
 For these examples to work you first need to include our header file on top of your code, like this:
 

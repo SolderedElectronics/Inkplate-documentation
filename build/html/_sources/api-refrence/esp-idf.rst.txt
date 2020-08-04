@@ -1,4 +1,4 @@
-Inkplate 6 esp-idf
+Inkplate esp-idf
 ==================
 
 esp-idf

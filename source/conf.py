@@ -19,7 +19,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = u"Inkplate 6"
+project = u"Inkplate docs"
 copyright = u"2020, e-radionica.com"
 author = u"e-radionica.com"
 
@@ -130,7 +130,7 @@ latex_documents = [
     (
         master_doc,
         "Inkplate6.tex",
-        u"Inkplate 6 Documentation",
+        u"Inkplate Documentation",
         u"e-radionica.com",
         "manual",
     ),
@@ -141,7 +141,7 @@ latex_documents = [
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [(master_doc, "inkplate6", u"Inkplate 6 Documentation", [author], 1)]
+man_pages = [(master_doc, "inkplate6", u"Inkplate Documentation", [author], 1)]
 
 
 # -- Options for Texinfo output ----------------------------------------------
@@ -153,7 +153,7 @@ texinfo_documents = [
     (
         master_doc,
         "Inkplate6",
-        u"Inkplate 6 Documentation",
+        u"Inkplate Documentation",
         author,
         "Inkplate6",
         "One line description of project.",

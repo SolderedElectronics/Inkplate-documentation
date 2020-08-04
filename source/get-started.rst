@@ -1,4 +1,4 @@
-Inkplate 6 Get Started Page
+Inkplate Get Started Page
 ===========================
 
 First steps

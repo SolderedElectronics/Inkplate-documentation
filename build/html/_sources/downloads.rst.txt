@@ -1,4 +1,4 @@
-Inkplate 6 Github
+Inkplate Github
 =================
 
 Clone into libraries

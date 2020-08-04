@@ -1,4 +1,4 @@
-Inkplate 6 Arduino
+Inkplate Arduino
 ==================
 
 Arduino

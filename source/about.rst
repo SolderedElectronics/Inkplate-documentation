@@ -1,4 +1,4 @@
-Inkplate 6 is an E-radionica product
+Inkplate is an E-radionica product
 ====================================
 
 Who are we?

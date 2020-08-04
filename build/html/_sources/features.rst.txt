@@ -1,4 +1,4 @@
-Inkplate 6 Features
+Inkplate Features
 ===========================
 
 First steps

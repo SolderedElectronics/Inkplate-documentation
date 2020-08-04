@@ -1,4 +1,4 @@
-Inkplate 6 Micropython
+Inkplate Micropython
 ======================
 
 Python

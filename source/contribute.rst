@@ -1,4 +1,4 @@
-Inkplate 6 Contribute
+Inkplate Contribute
 =====================
 
 Our Git repo

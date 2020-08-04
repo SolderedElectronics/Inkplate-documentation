@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.1. Inkplate 6 Arduino &mdash; Inkplate 6  documentation</title>
+  <title>3.1. Inkplate Arduino &mdash; Inkplate docs  documentation</title>
   
 
   
@@ -37,8 +37,8 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3.2. Inkplate 6 Micropython" href="micropython.html" />
-    <link rel="prev" title="3. Inkplate 6 API Refrence" href="api-refrence.html" /> 
+    <link rel="next" title="3.2. Inkplate Micropython" href="micropython.html" />
+    <link rel="prev" title="3. Inkplate API Refrence" href="api-refrence.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -52,7 +52,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Inkplate 6
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Inkplate docs
           
 
           
@@ -85,24 +85,53 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="get-started.html">1. Inkplate 6 Get Started Page</a></li>
-<li class="toctree-l1"><a class="reference internal" href="features.html">2. Inkplate 6 Features</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="api-refrence.html">3. Inkplate 6 API Refrence</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.1. Inkplate 6 Arduino</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#arduino">3.1.1. Arduino</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-started.html">1. Inkplate Get Started Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">2. Inkplate Features</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="api-refrence.html">3. Inkplate API Refrence</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.1. Inkplate Arduino</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#system-functions">3.1.1. System Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-object-initialization">3.1.1.1. Inkplate object initialization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#begin-method">3.1.1.2. begin() method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-sdcardinit">3.1.1.3. Inkplate::sdCardInit();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-getsdfat">3.1.1.4. Inkplate::getSdFat();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-getspi">3.1.1.5. Inkplate::getSPI();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-getpanelstate">3.1.1.6. Inkplate::getPanelState();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-readtouchpad">3.1.1.7. Inkplate::readTouchpad();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-readtemperature">3.1.1.8. Inkplate::readTemperature();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-readbattery">3.1.1.9. Inkplate::readBattery();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-einkoff">3.1.1.10. Inkplate::einkOff();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-einkon">3.1.1.11. Inkplate::einkOn();</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="micropython.html">3.2. Inkplate 6 Micropython</a></li>
-<li class="toctree-l2"><a class="reference internal" href="esp-idf.html">3.3. Inkplate 6 esp-idf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drawing-functions">3.1.2. Drawing Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawpixel">3.1.2.1. Inkplate::drawPixel();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-cleardisplay">3.1.2.2. Inkplate::clearDisplay();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-display">3.1.2.3. Inkplate::display();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-partialupdate">3.1.2.4. Inkplate::partialUpdate();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawbitmap3bit">3.1.2.5. Inkplate::drawBitmap3Bit();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-setrotation">3.1.2.6. Inkplate::setRotation();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-selectdisplaymode">3.1.2.7. Inkplate::selectDisplayMode();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-getdisplaymode">3.1.2.8. Inkplate::getDisplayMode();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawbitmapfromsd">3.1.2.9. Inkplate::drawBitmapFromSD();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawbitmapfromweb">3.1.2.10. Inkplate::drawBitmapFromWeb();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawthickline">3.1.2.11. Inkplate::drawThickLine();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawgradientline">3.1.2.12. Inkplate::drawGradientLine();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-clean">3.1.2.13. Inkplate::clean();</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="micropython.html">3.2. Inkplate Micropython</a></li>
+<li class="toctree-l2"><a class="reference internal" href="esp-idf.html">3.3. Inkplate esp-idf</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-refrence.html#library-functions">3.4. Library functions</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="hardware-refrence.html">4. Inkplate 6 Hardware Refrence</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contribute.html">5. Inkplate 6 Contribute</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resources.html">6. Inkplate 6 Resources</a></li>
-<li class="toctree-l1"><a class="reference internal" href="open-source.html">7. Inkplate 6 is Open Source</a></li>
-<li class="toctree-l1"><a class="reference internal" href="about.html">8. Inkplate 6 is an E-radionica product</a></li>
-<li class="toctree-l1"><a class="reference internal" href="downloads.html">9. Inkplate 6 Github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware-refrence.html">4. Inkplate Hardware Refrence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">5. Inkplate Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">6. Inkplate Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="open-source.html">7. Inkplate is Open Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">8. Inkplate is an E-radionica product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="downloads.html">9. Inkplate Github</a></li>
 </ul>
 
             
@@ -118,7 +147,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Inkplate 6</a>
+          <a href="index.html">Inkplate docs</a>
         
       </nav>
 
@@ -149,9 +178,9 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="api-refrence.html"><span class="section-number">3. </span>Inkplate 6 API Refrence</a> &raquo;</li>
+          <li><a href="api-refrence.html"><span class="section-number">3. </span>Inkplate API Refrence</a> &raquo;</li>
         
-      <li><span class="section-number">3.1. </span>Inkplate 6 Arduino</li>
+      <li><span class="section-number">3.1. </span>Inkplate Arduino</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -170,11 +199,1020 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="inkplate-6-arduino">
-<h1><span class="section-number">3.1. </span>Inkplate 6 Arduino<a class="headerlink" href="#inkplate-6-arduino" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="arduino">
-<h2><span class="section-number">3.1.1. </span>Arduino<a class="headerlink" href="#arduino" title="Permalink to this headline">¶</a></h2>
-<p>neki tekst</p>
+  <div class="section" id="inkplate-arduino">
+<h1><span class="section-number">3.1. </span>Inkplate Arduino<a class="headerlink" href="#inkplate-arduino" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="system-functions">
+<h2><span class="section-number">3.1.1. </span>System Functions<a class="headerlink" href="#system-functions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="inkplate-object-initialization">
+<h3><span class="section-number">3.1.1.1. </span>Inkplate object initialization<a class="headerlink" href="#inkplate-object-initialization" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><div class="line-block">
+<div class="line">To use any of Inkplates functionalities in Arduino IDE you need to include Inkplate header, as mentioned on the Index and Get Started pages.</div>
+<div class="line">After you’ve done that you can create a new instance of the Inkplate object, like this:</div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">Inkplate</span> <span class="nf">display</span><span class="p">(</span><span class="n">INKPLATE_1BIT</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">Inkplate</span> <span class="nf">display</span><span class="p">(</span><span class="n">INKPLATE_3BIT</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>depending on what you need, monochrome (INKPLATE_1BIT) of grayscale(INKPLATE_3BIT) functionality.</p>
+<p>In here given examples, Inkplate object will always be named display, if not said otherwise.
+After calling this below your imports you have access to all Inkplate functionality as display object methods.</p>
+</div></blockquote>
+</div>
+<div class="section" id="begin-method">
+<h3><span class="section-number">3.1.1.2. </span>begin() method<a class="headerlink" href="#begin-method" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Before calling any display method you <strong>must</strong> call .begin() like this:</div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul>
+<li><p><strong>Description</strong>:</p>
+<blockquote>
+<div><p>If you forget to do this most method calls will result in core panick and esp32 resetting.
+For most use cases this function is called in Arduino’s setup function.
+After you’ve done this you can proceed calling all other methods described below.</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-sdcardinit">
+<h3><span class="section-number">3.1.1.3. </span>Inkplate::sdCardInit();<a class="headerlink" href="#inkplate-sdcardinit" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
+<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
+<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Most basic drawing command in the library is .drawPixel();</div>
+<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces like:</div>
+</div>
+<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-getsdfat">
+<h3><span class="section-number">3.1.1.4. </span>Inkplate::getSdFat();<a class="headerlink" href="#inkplate-getsdfat" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
+<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
+<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Most basic drawing command in the library is .drawPixel();</div>
+<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces like:</div>
+</div>
+<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-getspi">
+<h3><span class="section-number">3.1.1.5. </span>Inkplate::getSPI();<a class="headerlink" href="#inkplate-getspi" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
+<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
+<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Most basic drawing command in the library is .drawPixel();</div>
+<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces like:</div>
+</div>
+<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-getpanelstate">
+<h3><span class="section-number">3.1.1.6. </span>Inkplate::getPanelState();<a class="headerlink" href="#inkplate-getpanelstate" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
+<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
+<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Most basic drawing command in the library is .drawPixel();</div>
+<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces like:</div>
+</div>
+<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-readtouchpad">
+<h3><span class="section-number">3.1.1.7. </span>Inkplate::readTouchpad();<a class="headerlink" href="#inkplate-readtouchpad" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
+<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
+<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Most basic drawing command in the library is .drawPixel();</div>
+<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces like:</div>
+</div>
+<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-readtemperature">
+<h3><span class="section-number">3.1.1.8. </span>Inkplate::readTemperature();<a class="headerlink" href="#inkplate-readtemperature" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
+<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
+<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Most basic drawing command in the library is .drawPixel();</div>
+<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces like:</div>
+</div>
+<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-readbattery">
+<h3><span class="section-number">3.1.1.9. </span>Inkplate::readBattery();<a class="headerlink" href="#inkplate-readbattery" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
+<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
+<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Most basic drawing command in the library is .drawPixel();</div>
+<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces like:</div>
+</div>
+<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-einkoff">
+<h3><span class="section-number">3.1.1.10. </span>Inkplate::einkOff();<a class="headerlink" href="#inkplate-einkoff" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
+<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
+<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Most basic drawing command in the library is .drawPixel();</div>
+<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces like:</div>
+</div>
+<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-einkon">
+<h3><span class="section-number">3.1.1.11. </span>Inkplate::einkOn();<a class="headerlink" href="#inkplate-einkon" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
+<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
+<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Most basic drawing command in the library is .drawPixel();</div>
+<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces like:</div>
+</div>
+<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="drawing-functions">
+<h2><span class="section-number">3.1.2. </span>Drawing Functions<a class="headerlink" href="#drawing-functions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="inkplate-drawpixel">
+<h3><span class="section-number">3.1.2.1. </span>Inkplate::drawPixel();<a class="headerlink" href="#inkplate-drawpixel" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
+<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
+<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Most basic drawing command in the library is .drawPixel();</div>
+<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces like:</div>
+</div>
+<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-cleardisplay">
+<h3><span class="section-number">3.1.2.2. </span>Inkplate::clearDisplay();<a class="headerlink" href="#inkplate-cleardisplay" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
+<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
+<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Most basic drawing command in the library is .drawPixel();</div>
+<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces like:</div>
+</div>
+<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-display">
+<h3><span class="section-number">3.1.2.3. </span>Inkplate::display();<a class="headerlink" href="#inkplate-display" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
+<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
+<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Most basic drawing command in the library is .drawPixel();</div>
+<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces like:</div>
+</div>
+<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-partialupdate">
+<h3><span class="section-number">3.1.2.4. </span>Inkplate::partialUpdate();<a class="headerlink" href="#inkplate-partialupdate" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
+<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
+<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Most basic drawing command in the library is .drawPixel();</div>
+<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces like:</div>
+</div>
+<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-drawbitmap3bit">
+<h3><span class="section-number">3.1.2.5. </span>Inkplate::drawBitmap3Bit();<a class="headerlink" href="#inkplate-drawbitmap3bit" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
+<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
+<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Most basic drawing command in the library is .drawPixel();</div>
+<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces like:</div>
+</div>
+<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-setrotation">
+<h3><span class="section-number">3.1.2.6. </span>Inkplate::setRotation();<a class="headerlink" href="#inkplate-setrotation" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
+<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
+<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Most basic drawing command in the library is .drawPixel();</div>
+<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces like:</div>
+</div>
+<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-selectdisplaymode">
+<h3><span class="section-number">3.1.2.7. </span>Inkplate::selectDisplayMode();<a class="headerlink" href="#inkplate-selectdisplaymode" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
+<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
+<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Most basic drawing command in the library is .drawPixel();</div>
+<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces like:</div>
+</div>
+<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-getdisplaymode">
+<h3><span class="section-number">3.1.2.8. </span>Inkplate::getDisplayMode();<a class="headerlink" href="#inkplate-getdisplaymode" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
+<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
+<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Most basic drawing command in the library is .drawPixel();</div>
+<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces like:</div>
+</div>
+<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-drawbitmapfromsd">
+<h3><span class="section-number">3.1.2.9. </span>Inkplate::drawBitmapFromSD();<a class="headerlink" href="#inkplate-drawbitmapfromsd" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
+<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
+<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Most basic drawing command in the library is .drawPixel();</div>
+<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces like:</div>
+</div>
+<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-drawbitmapfromweb">
+<h3><span class="section-number">3.1.2.10. </span>Inkplate::drawBitmapFromWeb();<a class="headerlink" href="#inkplate-drawbitmapfromweb" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
+<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
+<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Most basic drawing command in the library is .drawPixel();</div>
+<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces like:</div>
+</div>
+<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-drawthickline">
+<h3><span class="section-number">3.1.2.11. </span>Inkplate::drawThickLine();<a class="headerlink" href="#inkplate-drawthickline" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
+<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
+<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Most basic drawing command in the library is .drawPixel();</div>
+<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces like:</div>
+</div>
+<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-drawgradientline">
+<h3><span class="section-number">3.1.2.12. </span>Inkplate::drawGradientLine();<a class="headerlink" href="#inkplate-drawgradientline" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
+<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
+<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Most basic drawing command in the library is .drawPixel();</div>
+<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces like:</div>
+</div>
+<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-clean">
+<h3><span class="section-number">3.1.2.13. </span>Inkplate::clean();<a class="headerlink" href="#inkplate-clean" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
+<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
+<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Most basic drawing command in the library is .drawPixel();</div>
+<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces like:</div>
+</div>
+<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
 </div>
 </div>
 
@@ -186,10 +1224,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="micropython.html" class="btn btn-neutral float-right" title="3.2. Inkplate 6 Micropython" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="micropython.html" class="btn btn-neutral float-right" title="3.2. Inkplate Micropython" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="api-refrence.html" class="btn btn-neutral float-left" title="3. Inkplate 6 API Refrence" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="api-refrence.html" class="btn btn-neutral float-left" title="3. Inkplate API Refrence" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
