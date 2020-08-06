@@ -263,6 +263,8 @@ Inkplate::drawPixel();
 * **Description**:
     | Most basic drawing command in the library is .drawPixel();
     | Draws one pixel at x0, y0 in desired color.
+    | Requires Inkplate::display() to be called afterwards to update the screen,
+    | See below.
 
 * **Example**:
     .. code-block:: c
@@ -270,7 +272,7 @@ Inkplate::drawPixel();
         display.drawPixel(100, 50, BLACK);
 
 * **Result**:
-    | Here is what the code above produces like:
+    | Here is what the code above produces:
 
     .. image:: images/index.jpg
         :width: 600
@@ -291,13 +293,6 @@ Inkplate::clearDisplay();
 
         display.clearDisplay();
 
-* **Result**:
-    | Here is what the code above produces like:
-
-    .. image:: images/index.jpg
-        :width: 600
-
-
 
 Inkplate::display();
 ####################
@@ -314,7 +309,7 @@ Inkplate::display();
     Returns nothing.
 
 * **Description**:
-    | Puts all data in frame buffer to screen.
+    | Displays all data in frame buffer to screen.
 
 * **Example**:
     .. code-block:: c
@@ -323,13 +318,6 @@ Inkplate::display();
         display.drawPixel(10, 100, BLACK);
 
         display.display();
-
-* **Result**:
-    | Here is what the code above produces like:
-
-    .. image:: images/index.jpg
-        :width: 600
-
 
 
 Inkplate::partialUpdate();
@@ -360,8 +348,763 @@ Inkplate::partialUpdate();
 
         display.drawPixel(100, 100, BLACK);
 
+
+
+Inkplate::setRotation();
+########################
+
+* **Method prototype (as seen in Inkplate.h)**:
+
+.. code-block:: c
+
+    void setRotation(uint8_t r);
+
+* **Arguments and return value**:
+    | uint8_t **r** - screen rotation.
+
+    Returns nothing.
+
+* **Description**:
+    | Rotates the screen to be used in different orientations.
+    | Default is 2, to fip 180 input 4
+    | 1 and 3 are for portait mode.
+    | Once flipped coordinate space remains to have the origin in the top left corner.
+
+* **Example**:
+    .. code-block:: c
+        
+        display.setRotation(3);
+
+        display.setCursor(100, 100);
+        display.print("INKPLATE6");
+
 * **Result**:
-    | Here is what the code above produces like:
+    | Here is what the code above produces:
+
+    .. image:: images/index.jpg
+        :width: 600
+
+
+
+Inkplate::selectDisplayMode();
+##############################
+
+* **Method prototype (as seen in Inkplate.h)**:
+
+.. code-block:: c
+
+    void selectDisplayMode(uint8_t _mode)
+
+* **Arguments and return value**:
+    | uint8_t **_mode** - New display mode, INKPLATE_1BIT or INKPLATE_3BIT.
+
+    Returns nothing.
+
+* **Description**:
+    | Changes the screen mode to from monochrome to 3 bit grayscale or vice versa.
+
+* **Example**:
+    .. code-block:: c
+
+        display.selectDisplayMode(INKPLATE_3BIT);
+
+
+Inkplate::getDisplayMode();
+###########################
+
+* **Method prototype (as seen in Inkplate.h)**:
+
+.. code-block:: c
+
+    uint8_t getDisplayMode();
+
+* **Arguments and return value**:
+    | No arguments.
+
+    Returns currently set display mode.
+
+* **Description**:
+    | Used to determine which display mode is currently used.
+    | Returns INKPLATE_1BIT or INKPLATE_3BIT.
+
+* **Example**:
+    .. code-block:: c
+
+        if(display.getDisplayMode() == INKPLATE_3BIT)
+            Serial.println("I'm in grayscale mode!");
+
+
+
+Inkplate::drawBitmapFromSD();
+#############################
+
+* **Method prototype (as seen in Inkplate.h)**:
+
+.. code-block:: c
+
+    int drawBitmapFromSD(SdFile *p, int x, int y, bool invert = false);
+    int drawBitmapFromSD(char *fileName, int x, int y, bool invert = false);
+
+* **Arguments and return value**:
+    | SdFile ***p** - SdFile pointer to draw to screen
+    | int **x** - x coordinate to draw the image at
+    | int **y** - y coordinate to draw the image at
+    | bool **invert** - invert all colors, defaults to false
+    |
+    | char ***fileName** - filename of the bmp on the sd card
+    | int **x** - x coordinate to draw the image at
+    | int **y** - y coordinate to draw the image at
+    | bool **invert** - invert all colors, defaults to false
+
+    Returns 0 if error occured, else returns 1.
+
+* **Description**:
+    | Should always have Inkplate::sdCardInit() called before.
+    | Draws a bitmap image from sd card to screen.
+    | Image can currently have 1, 4, 8 or 24 bit color depth.
+
+* **Example**:
+    .. code-block:: c
+
+        if (display.sdCardInit())
+        {
+            display.println("SD Card OK! Reading image...");
+            display.partialUpdate();
+            if(!display.drawBitmapFromSD("pandaImage.bmp", 0, 0)) {
+                display.println("Image open error");
+                display.display();
+            }
+        }
+
+* **Result**:
+    | Here is what the code above produces:
+
+    .. image:: images/index.jpg
+        :width: 600
+
+
+Inkplate::drawBitmapFromWeb();
+##############################
+
+* **Method prototype (as seen in Inkplate.h)**:
+
+.. code-block:: c
+
+    int drawBitmapFromWeb(WiFiClient *s, int x, int y, int len, bool invert = false);
+    int drawBitmapFromWeb(char *url, int x, int y, bool invert = false);
+
+* **Arguments and return value**:
+    | WiFiClient ***s** - WiFiClient stream to dowload image from.
+    | int **x** - x coordinate at which to display the image.
+    | int **y** - y coordinate at which to display the image.
+    | int **len** - file size (header included).
+    | bool **invert** - invert all image colors.
+    |
+    | char ***url** - url of the image.
+    | int **x** - x coordinate at which to display the image.
+    | int **y** - y coordinate at which to display the image.
+    | bool **invert** - invert all image colors.
+
+    Returns 0 if failed and 1 if successful.
+
+* **Description**:
+    | 
+
+* **Example**:
+    .. code-block:: c
+
+        if(!display.drawBitmapFromWeb("https://varipass.org/neowise_mono.bmp", 0, 0, true)) {
+            display.println("Image open error");
+            display.display();
+        }
+
+* **Result**:
+    | Here is what the code above produces:
+
+    .. image:: images/index.jpg
+        :width: 600
+
+
+Inkplate::drawThickLine();
+##########################
+
+* **Method prototype (as seen in Inkplate.h)**:
+
+.. code-block:: c
+
+    void drawThickLine(int x1, int y1, int x2, int y2, int color, float thickness);
+
+* **Arguments and return value**:
+    | int **x1** - x coordinate of line start, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3
+    | int **y1** - y coordinate of line start, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3 
+    | int **x2** - x coordinate of line end, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3
+    | int **y2** - y coordinate of line end, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3 
+    | int **color** - line color, in 3 bit mode in range [0, 7]
+    | float **thickness** - line thickness
+
+    Returns nothing.
+
+* **Description**:
+    | For drawing thick lines.
+
+* **Example**:
+    .. code-block:: c
+
+        display.drawThickLine(random(0, 799), random(0, 599), random(0, 799), random(0, 599), BLACK, (float)random(1, 20));
+
+* **Result**:
+    | Here is what the code above produces:
+
+    .. image:: images/index.jpg
+        :width: 600
+
+
+
+Inkplate::drawGradientLine();
+#############################
+
+* **Method prototype (as seen in Inkplate.h)**:
+
+.. code-block:: c
+
+    void drawGradientLine(int x1, int y1, int x2, int y2, int color1, int color2, float thickness = -1);
+
+* **Arguments and return value**:
+    | int **x1** - x coordinate of line start, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3
+    | int **y1** - y coordinate of line start, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3 
+    | int **x2** - x coordinate of line end, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3
+    | int **y2** - y coordinate of line end, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3 
+    | int **color1** - start line color, in 3 bit mode in range [0, 7]
+    | int **color2** - start line color, in 3 bit mode in range [0, 7]
+    | float **thickness** - line thickness, defaults to -1 meaning use normal, non thick, line.
+
+    Returns nothing.
+
+* **Description**:
+    | For drawing color gradient lines.
+    | color1 should always be less than color2.
+
+* **Example**:
+    .. code-block:: c
+
+        int startColor = random(0, 7);
+        int endColor = random(startColor, 7);
+        display.drawGradientLine(random(0, 799), random(0, 599), random(0, 799), random(0, 599), startColor, endColor, (float)random(1, 20));
+
+* **Result**:
+    | Here is what the code above produces:
+
+    .. image:: images/index.jpg
+        :width: 600
+
+
+
+
+Inkplate::clean();
+#########################
+
+* **Method prototype (as seen in Inkplate.h)**:
+
+.. code-block:: c
+
+    void clean();
+
+* **Arguments and return value**:
+    | No arguments.
+
+    Returns nothing.
+
+* **Description**:
+    | Cleans the actual screen of any possible burn in.
+    | Should not be used in intervals less than 5 seconds.
+
+* **Example**:
+    .. code-block:: c
+
+        display.clear();
+
+
+
+Inkplate::drawFastVLine();
+##########################
+
+* **Method prototype (as seen in Adafruit_GFX.h)**:
+
+.. code-block:: c
+
+    void drawFastVLine(int16_t x, int16_t y, int16_t h, uint16_t color);
+
+* **Arguments and return value**:
+    | int16_t **x** - x coordinate of the line start point
+    | int16_t **y** - y coordinate of the line start point
+    | int16_t **h** - line height
+    | uint16_t **color** - line color
+
+    Returns nothing.
+
+* **Description**:
+    | Draw a perfectly vertical line.
+    | Garantees to be faster than regular line draw.
+
+* **Example**:
+    .. code-block:: c
+
+        display.drawFastVLine(100, 100, 400, 0);
+
+* **Result**:
+    | Here is what the code above produces:
+
+    .. image:: images/index.jpg
+        :width: 600
+
+
+
+Inkplate::drawFastHLine();
+##########################
+
+* **Method prototype (as seen in Adafruit_GFX.h)**:
+
+.. code-block:: c
+
+    void drawFastHLine(int16_t x, int16_t y, int16_t w, uint16_t color);
+
+* **Arguments and return value**:
+    | int16_t **x** - x coordinate of the line start point
+    | int16_t **y** - y coordinate of the line start point
+    | int16_t **w** - line width
+    | uint16_t **color** - line color
+
+    Returns nothing.
+
+* **Description**:
+    | Draw a perfectly horizontal line.
+    | Garantees to be faster than regular line draw.
+
+* **Example**:
+    .. code-block:: c
+
+        display.drawFastHLine(100, 100, 600, 0);
+
+* **Result**:
+    | Here is what the code above produces:
+
+    .. image:: images/index.jpg
+        :width: 600
+
+
+
+Inkplate::fillRect();
+#####################
+
+* **Method prototype (as seen in Adafruit_GFX.h)**:
+
+.. code-block:: c
+
+    void fillRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t color);
+
+* **Arguments and return value**:
+    | int16_t **x** - x coordinate of the rectangle
+    | int16_t **y** - y coordinate of the rectangle
+    | int16_t **w** - rectangle width
+    | int16_t **h** - rectangle height
+    | uint16_t **color** - rectanle color, in range [0, 6]
+
+    Returns nothing.
+
+* **Description**:
+    | Draws a filled rectangle on the screen.
+
+* **Example**:
+    .. code-block:: c
+
+        display.fillRect(random(0, 799), random(0, 599), 30, 30, random(0, 7));
+
+* **Result**:
+    | Here is what the code above produces:
+
+    .. image:: images/index.jpg
+        :width: 600
+
+
+
+
+Inkplate::fillScreen();
+#######################
+
+* **Method prototype (as seen in Adafruit_GFX.h)**:
+
+.. code-block:: c
+
+    void fillScreen(uint16_t color);
+
+* **Arguments and return value**:
+    | uint16_t **color** - color of the screen after filling.
+
+    Returns nothing.
+
+* **Description**:
+    | Fills the whole screen to a solid color.
+
+* **Example**:
+    .. code-block:: c
+
+        display.fillScreen(0);
+
+* **Result**:
+    | Here is what the code above produces:
+
+    .. image:: images/index.jpg
+        :width: 600
+
+
+
+Inkplate::drawLine();
+#####################
+
+* **Method prototype (as seen in Adafruit_GFX.h)**:
+
+.. code-block:: c
+
+    void drawLine(int16_t x0, int16_t y0, int16_t x1, int16_t y1, uint16_t color);
+
+* **Arguments and return value**:
+    | int16_t **x0** - Start point x coordinate.
+    | int16_t **y0** - Start point y coordinate.
+    | int16_t **x1** - End point x coordinate.
+    | int16_t **y1** - End point y coordinate.
+    | uint16_t **color** - Line color.
+
+    Returns nothing.
+
+* **Description**:
+    | General purpose line drawing function.
+    | If the line is vertical or horizontal it is recommended to use drawFastHLine or drawFastVLine,
+    | although drawLine automatically checks and uses faster drawing function if needed.
+
+* **Example**:
+    .. code-block:: c
+
+        //Diagonal lines
+        display.drawLine(0, 0, 799, 599, 0);
+        display.drawLine(799, 0, 0, 599, 0);
+
+* **Result**:
+    | Here is what the code above produces:
+
+    .. image:: images/index.jpg
+        :width: 600
+
+
+
+Inkplate::drawRect();
+#####################
+
+* **Method prototype (as seen in Adafruit_GFX.h)**:
+
+.. code-block:: c
+
+    void drawRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t color);
+
+* **Arguments and return value**:
+    | int16_t **x** - Rectangle x coordinate.
+    | int16_t **y** - Rectangle y coordinate.
+    | int16_t **w** - Rectangle width.
+    | int16_t **h** - Rectangle height.
+    | uint16_t **color** - Rectangle color (edges only, see fillRect for fully filled one).
+
+    Returns nothing.
+
+* **Description**:
+    | Draws and empty (not filled) rectangle.
+
+* **Example**:
+    .. code-block:: c
+
+        display.drawRect(200, 200, 400, 300, 0);
+
+* **Result**:
+    | Here is what the code above produces:
+
+    .. image:: images/index.jpg
+        :width: 600
+
+
+
+Inkplate::drawCircle();
+#######################
+
+* **Method prototype (as seen in Adafruit_GFX.h)**:
+
+.. code-block:: c
+
+    void drawCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color);
+
+* **Arguments and return value**:
+    | int16_t **x0** - Circle center x coordinte.
+    | int16_t **y0** - Circle center y coordinate.
+    | int16_t **r** - Circle radius.
+    | uint16_t **color** - Circle color (just the edge, see fillCircle for fully filled).
+
+    Returns nothing.
+
+* **Description**:
+    | Draws an empty(not filled) circle.
+
+* **Example**:
+    .. code-block:: c
+
+        display.drawCircle(400, 300, 75, 0);
+
+* **Result**:
+    | Here is what the code above produces:
+
+    .. image:: images/index.jpg
+        :width: 600
+
+
+
+Inkplate::fillCircle();
+#######################
+
+* **Method prototype (as seen in Adafruit_GFX.h)**:
+
+.. code-block:: c
+
+    void fillCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color);
+
+* **Arguments and return value**:
+    | int16_t **x0** - Circle center x coordinte.
+    | int16_t **y0** - Circle center y coordinate.
+    | int16_t **r** - Circle radius.
+    | uint16_t **color** - Circle color (fully filled).
+
+
+    Returns nothing.
+
+* **Description**:
+    | Draws a filled circle to screen in a supplied color.
+
+* **Example**:
+    .. code-block:: c
+
+        display.fillCircle(random(0, 799), random(0, 599), 15, random(0, 7));
+
+* **Result**:
+    | Here is what the code above produces:
+
+    .. image:: images/index.jpg
+        :width: 600
+
+
+
+Inkplate::drawTriangle();
+#########################
+
+* **Method prototype (as seen in Adafruit_GFX.h)**:
+
+.. code-block:: c
+
+    void drawTriangle(int16_t x0, int16_t y0, int16_t x1, int16_t y1,
+      int16_t x2, int16_t y2, uint16_t color);
+
+* **Arguments and return value**:
+    | int16_t **x0** - First point x coordinate.
+    | int16_t **y0** - First point y coordinate.
+    | int16_t **x1** - Second point x coordinate.
+    | int16_t **y1** - Second point y coordinate.
+    | int16_t **x2** - Third point x coordinate.
+    | int16_t **y2** - Third point y coordinate.
+    | uint16_t **color** - Triangle edge color(see fillTriangle for a fully filled one).
+
+    Returns nothing.
+
+* **Description**:
+    | Draw an empty rectangle to screen.
+
+* **Example**:
+    .. code-block:: c
+
+        display.drawTriangle(250, 400, 550, 400, 400, 100, 0);
+
+* **Result**:
+    | Here is what the code above produces:
+
+    .. image:: images/index.jpg
+        :width: 600
+
+
+Inkplate::fillTriangle();
+#########################
+
+* **Method prototype (as seen in Adafruit_GFX.h)**:
+
+.. code-block:: c
+
+    void fillTriangle(int16_t x0, int16_t y0, int16_t x1, int16_t y1,
+      int16_t x2, int16_t y2, uint16_t color);
+
+* **Arguments and return value**:
+    | int16_t **x0** - First point x coordinate.
+    | int16_t **y0** - First point y coordinate.
+    | int16_t **x1** - Second point x coordinate.
+    | int16_t **y1** - Second point y coordinate.
+    | int16_t **x2** - Third point x coordinate.
+    | int16_t **y2** - Third point y coordinate.
+    | uint16_t **color** - Triangle fill color.
+
+    Returns nothing.
+
+* **Description**:
+    | Draw a rectangle filled with a certain color.
+
+* **Example**:
+    .. code-block:: c
+
+        display.fillTriangle(300, 350, 500, 350, 400, 150, 0);
+
+* **Result**:
+    | Here is what the code above produces:
+
+    .. image:: images/index.jpg
+        :width: 600
+
+
+Inkplate::drawRoundRect();
+##########################
+
+* **Method prototype (as seen in Adafruit_GFX.h)**:
+
+.. code-block:: c
+
+    void drawRoundRect(int16_t x0, int16_t y0, int16_t w, int16_t h,
+      int16_t radius, uint16_t color);
+
+* **Arguments and return value**:
+    | int16_t **x0** - Rectangle x coordinate.
+    | int16_t **y0** - Rectangle y coordinate.
+    | int16_t **w** - Rectangle width.
+    | int16_t **h** - Rectangle height.
+    | int16_t **radius** - Curvature radius of the edges.
+    | uint16_t **color** - Rectangle edges color (for a fully filled one see fillRoundRect).
+
+    Returns nothing.
+
+* **Description**:
+    | Draws an empty (not filled) rectangle with round edges to screen.
+
+* **Example**:
+    .. code-block:: c
+
+        display.drawRoundRect(200, 200, 400, 300, 10, 0); 
+
+* **Result**:
+    | Here is what the code above produces:
+
+    .. image:: images/index.jpg
+        :width: 600
+
+
+
+Inkplate::fillRoundRect();
+##########################
+
+* **Method prototype (as seen in Adafruit_GFX.h)**:
+
+.. code-block:: c
+
+    void fillRoundRect(int16_t x0, int16_t y0, int16_t w, int16_t h,
+      int16_t radius, uint16_t color);
+
+* **Arguments and return value**:
+    | int16_t **x0** - Rectangle x coordinate.
+    | int16_t **y0** - Rectangle y coordinate.
+    | int16_t **w** - Rectangle width.
+    | int16_t **h** - Rectangle height.
+    | int16_t **radius** - Curvature radius of the edges.
+    | uint16_t **color** - Rectangle fill color.
+
+    Returns nothing.
+
+* **Description**:
+    | Draws a fully filled rectangle with rounded corners to screen.
+
+* **Example**:
+    .. code-block:: c
+
+        display.fillRoundRect(200, 200, 400, 300, 10, 0);
+
+* **Result**:
+    | Here is what the code above produces:
+
+    .. image:: images/index.jpg
+        :width: 600
+
+
+
+Inkplate::drawBitmap();
+#######################
+
+* **Method prototype (as seen in Adafruit_GFX.h)**:
+
+.. code-block:: c
+
+    void drawBitmap(int16_t x, int16_t y, const uint8_t bitmap[],
+      int16_t w, int16_t h, uint16_t color);
+
+    void drawBitmap(int16_t x, int16_t y, const uint8_t bitmap[],
+      int16_t w, int16_t h, uint16_t color, uint16_t bg);
+
+    void drawBitmap(int16_t x, int16_t y, uint8_t *bitmap,
+      int16_t w, int16_t h, uint16_t color);
+
+    void drawBitmap(int16_t x, int16_t y, uint8_t *bitmap,
+      int16_t w, int16_t h, uint16_t color, uint16_t bg);
+
+* **Arguments and return value**:
+    | int16_t **x** - Bitmap x coordinate.
+    | int16_t **y** - Bitmap y coordinate.
+    | const uint8_t **bitmap** [] - Buffer storing the image information.
+    | int16_t **w** - Bitmap width.
+    | int16_t **h** - Bitmap height.
+    | uint16_t **color** - Color to draw pixels marked with a 1.
+    |
+    | int16_t **x** - Bitmap x coordinate.
+    | int16_t **y** - Bitmap y coordinate.
+    | const uint8_t **bitmap** [] - Buffer storing the image information.
+    | int16_t **w** - Bitmap width.
+    | int16_t **h** - Bitmap height.
+    | uint16_t **color** - Color to draw pixels marked with a 1.
+    | uint16_t **bg** - Color to draw pixels marked with a 0.
+    |
+    | int16_t **x** - Bitmap x coordinate.
+    | int16_t **y** - Bitmap y coordinate.
+    | const uint8_t ***bitmap** - Buffer storing the image information.
+    | int16_t **w** - Bitmap width.
+    | int16_t **h** - Bitmap height.
+    | uint16_t **color** - Color to draw pixels marked with a 1.
+    |
+    | int16_t **x** - Bitmap x coordinate.
+    | int16_t **y** - Bitmap y coordinate.
+    | const uint8_t ***bitmap** - Buffer storing the image information.
+    | int16_t **w** - Bitmap width.
+    | int16_t **h** - Bitmap height.
+    | uint16_t **color** - Color to draw pixels marked with a 1.
+    | uint16_t **bg** - Color to draw pixels marked with a 0.
+
+
+    Returns nothing.
+
+* **Description**:
+    | Draws a monochrome bitmap to screen. 
+    | To get image data, use LCD image Converter.
+
+* **Example**:
+    .. code-block:: c
+
+        display.drawBitmap(100, 250, logo, 576, 100, BLACK);
+
+* **Result**:
+    | Here is what the code above produces:
 
     .. image:: images/index.jpg
         :width: 600
@@ -393,275 +1136,348 @@ Inkplate::drawBitmap3Bit();
 * **Example**:
     .. code-block:: c
 
-        //Picture is a predefined image buffer
+        //Picture is a predefined image buffer (const uint8_t, see 2-Inkplate_basic_grayscale example)
         display.drawBitmap3Bit(0, 0, picture, 800, 600);
         display.display();  
 
 * **Result**:
-    | Here is what the code above produces like:
+    | Here is what the code above produces:
 
     .. image:: images/index.jpg
         :width: 600
 
 
+Inkplate::drawChar();
+#####################
 
-Inkplate::setRotation();
-########################
-
-* **Method prototype (as seen in Inkplate.h)**:
+* **Method prototype (as seen in Adafruit_GFX.h)**:
 
 .. code-block:: c
 
-    void drawPixel(int16_t x0, int16_t y0, uint16_t color);
+    void drawChar(int16_t x, int16_t y, unsigned char c, uint16_t color,
+      uint16_t bg, uint8_t size);
+    void drawChar(int16_t x, int16_t y, unsigned char c, uint16_t color,
+	      uint16_t bg, uint8_t size_x, uint8_t size_y);
 
 * **Arguments and return value**:
-    | int16_t **x0** - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3
-    | int16_t **y0** - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3 
-    | uint16_t **color** - pixel color, in 3 bit mode in range [0, 7]
+    | No arguments.
 
     Returns nothing.
 
 * **Description**:
-    | Most basic drawing command in the library is .drawPixel();
-    | Draws one pixel at x0, y0 in desired color.
+    | Cleans the actual screen of any possible burn in.
+    | Should not be used in intervals less than 5 seconds.
 
 * **Example**:
     .. code-block:: c
 
-        display.drawPixel(100, 50, 0);
+        display.clear();
 
 * **Result**:
-    | Here is what the code above produces like:
+    | Here is what the code above produces:
 
     .. image:: images/index.jpg
         :width: 600
 
 
 
-Inkplate::selectDisplayMode();
-##############################
-
-* **Method prototype (as seen in Inkplate.h)**:
-
-.. code-block:: c
-
-    void drawPixel(int16_t x0, int16_t y0, uint16_t color);
-
-* **Arguments and return value**:
-    | int16_t **x0** - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3
-    | int16_t **y0** - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3 
-    | uint16_t **color** - pixel color, in 3 bit mode in range [0, 7]
-
-    Returns nothing.
-
-* **Description**:
-    | Most basic drawing command in the library is .drawPixel();
-    | Draws one pixel at x0, y0 in desired color.
-
-* **Example**:
-    .. code-block:: c
-
-        display.drawPixel(100, 50, 0);
-
-* **Result**:
-    | Here is what the code above produces like:
-
-    .. image:: images/index.jpg
-        :width: 600
-
-
-
-Inkplate::getDisplayMode();
-###########################
-
-* **Method prototype (as seen in Inkplate.h)**:
-
-.. code-block:: c
-
-    void drawPixel(int16_t x0, int16_t y0, uint16_t color);
-
-* **Arguments and return value**:
-    | int16_t **x0** - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3
-    | int16_t **y0** - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3 
-    | uint16_t **color** - pixel color, in 3 bit mode in range [0, 7]
-
-    Returns nothing.
-
-* **Description**:
-    | Most basic drawing command in the library is .drawPixel();
-    | Draws one pixel at x0, y0 in desired color.
-
-* **Example**:
-    .. code-block:: c
-
-        display.drawPixel(100, 50, 0);
-
-* **Result**:
-    | Here is what the code above produces like:
-
-    .. image:: images/index.jpg
-        :width: 600
-
-
-Inkplate::drawBitmapFromSD();
-#############################
-
-* **Method prototype (as seen in Inkplate.h)**:
-
-.. code-block:: c
-
-    void drawPixel(int16_t x0, int16_t y0, uint16_t color);
-
-* **Arguments and return value**:
-    | int16_t **x0** - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3
-    | int16_t **y0** - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3 
-    | uint16_t **color** - pixel color, in 3 bit mode in range [0, 7]
-
-    Returns nothing.
-
-* **Description**:
-    | Most basic drawing command in the library is .drawPixel();
-    | Draws one pixel at x0, y0 in desired color.
-
-* **Example**:
-    .. code-block:: c
-
-        display.drawPixel(100, 50, 0);
-
-* **Result**:
-    | Here is what the code above produces like:
-
-    .. image:: images/index.jpg
-        :width: 600
-
-
-Inkplate::drawBitmapFromWeb();
-##############################
-
-* **Method prototype (as seen in Inkplate.h)**:
-
-.. code-block:: c
-
-    void drawPixel(int16_t x0, int16_t y0, uint16_t color);
-
-* **Arguments and return value**:
-    | int16_t **x0** - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3
-    | int16_t **y0** - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3 
-    | uint16_t **color** - pixel color, in 3 bit mode in range [0, 7]
-
-    Returns nothing.
-
-* **Description**:
-    | Most basic drawing command in the library is .drawPixel();
-    | Draws one pixel at x0, y0 in desired color.
-
-* **Example**:
-    .. code-block:: c
-
-        display.drawPixel(100, 50, 0);
-
-* **Result**:
-    | Here is what the code above produces like:
-
-    .. image:: images/index.jpg
-        :width: 600
-
-
-Inkplate::drawThickLine();
+Inkplate::getTextBounds();
 ##########################
 
-* **Method prototype (as seen in Inkplate.h)**:
+* **Method prototype (as seen in Adafruit_GFX.h)**:
 
 .. code-block:: c
 
-    void drawPixel(int16_t x0, int16_t y0, uint16_t color);
+    void getTextBounds(const char *string, int16_t x, int16_t y,
+      int16_t *x1, int16_t *y1, uint16_t *w, uint16_t *h);
+    void getTextBounds(const __FlashStringHelper *s, int16_t x, int16_t y,
+      int16_t *x1, int16_t *y1, uint16_t *w, uint16_t *h);
+    void getTextBounds(const String &str, int16_t x, int16_t y,
+      int16_t *x1, int16_t *y1, uint16_t *w, uint16_t *h);
 
 * **Arguments and return value**:
-    | int16_t **x0** - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3
-    | int16_t **y0** - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3 
-    | uint16_t **color** - pixel color, in 3 bit mode in range [0, 7]
+    | const char ***string** - Text string from a char buffer (c style string - preferred).
+    | int16_t **x** - Starting x coordinate.
+    | int16_t **y** - Starting y coordinate.
+    | int16_t ***x1** - Pointer showing where to put end x coordinate.
+    | int16_t ***y1** - Pointer showing where to put end y coordinate.
+    | uint16_t ***w** - Pointer showing where to put text width.
+    | uint16_t ***h** -Pointer showing where to put text height.
+    |
+    | const __FlashStringHelper ***s** - Text string from a flash string (preferred when string doesn't have to be changed)
+    | int16_t **x** - Starting x coordinate.
+    | int16_t **y** - Starting y coordinate.
+    | int16_t ***x1** - Pointer showing where to put end x coordinate.
+    | int16_t ***y1** - Pointer showing where to put end y coordinate.
+    | uint16_t ***w** - Pointer showing where to put text width.
+    | uint16_t ***h** -Pointer showing where to put text height.
+    |
+    | String &**string** - Text string from a String object refrence (should be avoided).
+    | int16_t **x** - Starting x coordinate.
+    | int16_t **y** - Starting y coordinate.
+    | int16_t ***x1** - Pointer showing where to put end x coordinate.
+    | int16_t ***y1** - Pointer showing where to put end y coordinate.
+    | uint16_t ***w** - Pointer showing where to put text width.
+    | uint16_t ***h** -Pointer showing where to put text height.
 
     Returns nothing.
 
 * **Description**:
-    | Most basic drawing command in the library is .drawPixel();
-    | Draws one pixel at x0, y0 in desired color.
+    | Puts data about text box end coordinates, width and height in variable pointers.
 
 * **Example**:
     .. code-block:: c
 
-        display.drawPixel(100, 50, 0);
+        int16_t x, y;
+        uint16_t w, h;
+
+        display.getTextBounds("Some text", 0, 0, &x, &y, &w, &h);
+
+        // Now x, y, w and h were set to respected values
+
+
+
+Inkplate::setTextSize();
+########################
+
+* **Method prototype (as seen in Adafruit_GFX.h)**:
+
+.. code-block:: c
+
+    void setTextSize(uint8_t s);
+    void setTextSize(uint8_t sx, uint8_t sy);
+
+* **Arguments and return value**:
+    | uint8_t **s** - font scale
+    | 
+    | uint8_t **sx** - font x scale
+    | uint8_t **sy** - font y scale
+
+    Returns nothing.
+
+* **Description**:
+    | Scales the font to some value.
+
+* **Example**:
+    .. code-block:: c
+
+        display.setTextSize(4);
+        display.print("Welcome to Inkplate 6!");
+
+
+
+
+
+Inkplate::setFont();
+####################
+
+* **Method prototype (as seen in Adafruit_GFX.h)**:
+
+.. code-block:: c
+
+    void setFont(const GFXfont *f = NULL);
+
+* **Arguments and return value**:
+    | const GFXfont ***f** - font struct pointer, defaults to NULL meaning default font
+
+    Returns nothing.
+
+* **Description**:
+    | Used to change the text font.
+    | Fonts can be found in the supplied Fonts folder or made using tools.
+    | Example tool: https://oleddisplay.squix.ch/#/home (select Library version -> gfx font)
+
+* **Example**:
+    .. code-block:: c
+
+        //Font has to be included
+        display.setFont(&Not_Just_Groovy20pt7b);
+        display.println("Inkplate 6");
 
 * **Result**:
-    | Here is what the code above produces like:
+    | Here is what the code above produces:
 
     .. image:: images/index.jpg
         :width: 600
 
 
 
-Inkplate::drawGradientLine();
-#############################
+Inkplate::setCursor();
+######################
 
-* **Method prototype (as seen in Inkplate.h)**:
+* **Method prototype (as seen in Adafruit_GFX.h)**:
 
 .. code-block:: c
 
-    void drawPixel(int16_t x0, int16_t y0, uint16_t color);
+    void setCursor(int16_t x, int16_t y);
 
 * **Arguments and return value**:
-    | int16_t **x0** - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3
-    | int16_t **y0** - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3 
-    | uint16_t **color** - pixel color, in 3 bit mode in range [0, 7]
+    | int16_t **x** - Cursor x position. 
+    | int16_t **y** - Cursor y position.
 
     Returns nothing.
 
 * **Description**:
-    | Most basic drawing command in the library is .drawPixel();
-    | Draws one pixel at x0, y0 in desired color.
+    | Sets the cursor text position. 
 
 * **Example**:
     .. code-block:: c
 
-        display.drawPixel(100, 50, 0);
+        display.setCursor(0, 550);
+        display.print("Some text");
 
 * **Result**:
-    | Here is what the code above produces like:
+    | Here is what the code above produces:
 
     .. image:: images/index.jpg
         :width: 600
 
 
 
+Inkplate::setTextWrap();
+########################
 
-Inkplate::clean();
-#########################
-
-* **Method prototype (as seen in Inkplate.h)**:
+* **Method prototype (as seen in Adafruit_GFX.h)**:
 
 .. code-block:: c
 
-    void drawPixel(int16_t x0, int16_t y0, uint16_t color);
+    void setTextWrap(boolean w);
 
 * **Arguments and return value**:
-    | int16_t **x0** - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3
-    | int16_t **y0** - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3 
-    | uint16_t **color** - pixel color, in 3 bit mode in range [0, 7]
+    | boolean **w** - to wrap or not to wrap text.
 
     Returns nothing.
 
 * **Description**:
-    | Most basic drawing command in the library is .drawPixel();
-    | Draws one pixel at x0, y0 in desired color.
+    | Wrap text thats gone of the edge.
 
 * **Example**:
     .. code-block:: c
 
-        display.drawPixel(100, 50, 0);
+        //Disables text wrapping
+        display.setTextWrap(false); 
 
-* **Result**:
-    | Here is what the code above produces like:
 
-    .. image:: images/index.jpg
-        :width: 600
+Inkplate::width();
+##################
+
+* **Method prototype (as seen in Adafruit_GFX.h)**:
+
+.. code-block:: c
+
+    int16_t width(void);
+
+* **Arguments and return value**:
+    | No arguments.
+
+    Returns nothing.
+
+* **Description**:
+    | Returns screen width.
+
+* **Example**:
+    .. code-block:: c
+
+        display.width();
+
+
+
+
+
+Inkplate::height();
+###################
+
+* **Method prototype (as seen in Adafruit_GFX.h)**:
+
+.. code-block:: c
+
+    int16_t height(void);
+
+* **Arguments and return value**:
+    | No arguments.
+
+    Returns nothing.
+
+* **Description**:
+    | Returns screen height.
+
+* **Example**:
+    .. code-block:: c
+
+        display.height();
+
+
+Inkplate::getRotation();
+########################
+
+* **Method prototype (as seen in Adafruit_GFX.h)**:
+
+.. code-block:: c
+
+    int16_t getRotation(void);
+
+* **Arguments and return value**:
+    | No arguments.
+
+    Returns nothing.
+
+* **Description**:
+    | Returns screen rotation, in range [0,3], 2 is default.
+
+* **Example**:
+    .. code-block:: c
+
+        if(display.getRotation() == 4)
+            Serial.println("I'm upside down!");
+
+
+
+Inkplate::getCursorX();
+#######################
+
+* **Method prototype (as seen in Adafruit_GFX.h)**:
+
+.. code-block:: c
+
+    int16_t getCursorX(void);
+
+* **Arguments and return value**:
+    | No arguments.
+
+    Returns nothing.
+
+* **Description**:
+    | Returns text cursor x coordinate.
+
+* **Example**:
+    .. code-block:: c
+
+        if(display.getCursorX() > 400)
+            Serial.println("Were in the second half of the screen!");
+
+
+
+
+Inkplate::getCursorY();
+#######################
+
+* **Method prototype (as seen in Adafruit_GFX.h)**:
+
+.. code-block:: c
+
+    int16_t getCursorY(void);
+
+* **Arguments and return value**:
+    | No arguments.
+
+    Returns nothing.
+
+* **Description**:
+    | Returns text cursor y coordinate.
+
+* **Example**:
+    .. code-block:: c
+
+        if(display.getCursorY() > 300)
+            Serial.println("Were in the bottom half of the screen!");
 
