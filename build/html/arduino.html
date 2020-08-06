@@ -91,16 +91,17 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">3.1. Inkplate Arduino</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#system-functions">3.1.1. System Functions</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#inkplate-object-initialization">3.1.1.1. Inkplate object initialization</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#begin-method">3.1.1.2. begin() method</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-sdcardinit">3.1.1.3. Inkplate::sdCardInit();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-getsdfat">3.1.1.4. Inkplate::getSdFat();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-getspi">3.1.1.5. Inkplate::getSPI();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-getpanelstate">3.1.1.6. Inkplate::getPanelState();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-readtouchpad">3.1.1.7. Inkplate::readTouchpad();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-readtemperature">3.1.1.8. Inkplate::readTemperature();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-readbattery">3.1.1.9. Inkplate::readBattery();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-einkoff">3.1.1.10. Inkplate::einkOff();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id1">3.1.1.11. Inkplate::einkOff();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wifi-connectivity">3.1.1.2. WiFi connectivity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#begin-method">3.1.1.3. begin() method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-sdcardinit">3.1.1.4. Inkplate::sdCardInit();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-getsdfat">3.1.1.5. Inkplate::getSdFat();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-getspi">3.1.1.6. Inkplate::getSPI();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-getpanelstate">3.1.1.7. Inkplate::getPanelState();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-readtouchpad">3.1.1.8. Inkplate::readTouchpad();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-readtemperature">3.1.1.9. Inkplate::readTemperature();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-readbattery">3.1.1.10. Inkplate::readBattery();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-einkoff">3.1.1.11. Inkplate::einkOff();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">3.1.1.12. Inkplate::einkOff();</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#drawing-functions">3.1.2. Drawing Functions</a><ul>
@@ -135,12 +136,14 @@
 <li class="toctree-l4"><a class="reference internal" href="#inkplate-settextsize">3.1.2.29. Inkplate::setTextSize();</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#inkplate-setfont">3.1.2.30. Inkplate::setFont();</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#inkplate-setcursor">3.1.2.31. Inkplate::setCursor();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-settextwrap">3.1.2.32. Inkplate::setTextWrap();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-width">3.1.2.33. Inkplate::width();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-height">3.1.2.34. Inkplate::height();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-getrotation">3.1.2.35. Inkplate::getRotation();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-getcursorx">3.1.2.36. Inkplate::getCursorX();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-getcursory">3.1.2.37. Inkplate::getCursorY();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-print">3.1.2.32. Inkplate::print();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-println">3.1.2.33. Inkplate::println();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-settextwrap">3.1.2.34. Inkplate::setTextWrap();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-width">3.1.2.35. Inkplate::width();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-height">3.1.2.36. Inkplate::height();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-getrotation">3.1.2.37. Inkplate::getRotation();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-getcursorx">3.1.2.38. Inkplate::getCursorX();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-getcursory">3.1.2.39. Inkplate::getCursorY();</a></li>
 </ul>
 </li>
 </ul>
@@ -246,8 +249,49 @@
 After calling this below your imports you have access to all Inkplate functionality as display object methods.</p>
 </div></blockquote>
 </div>
+<div class="section" id="wifi-connectivity">
+<h3><span class="section-number">3.1.1.2. </span>WiFi connectivity<a class="headerlink" href="#wifi-connectivity" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><div class="line-block">
+<div class="line">For some functionalities of the Inkplate to work you must be connected to WiFi.</div>
+<div class="line">For more information see our examples.</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &lt;WiFi.h&gt;</span>
+<span class="c1">#include &lt;WiFiMulti.h&gt;</span>
+
+<span class="c1">#include &lt;HTTPClient.h&gt;</span>
+
+<span class="o">//</span><span class="n">Below</span> <span class="n">includes</span>
+<span class="n">WiFiMulti</span> <span class="n">wifiMulti</span><span class="p">;</span>
+
+<span class="o">...</span>
+
+<span class="o">//</span><span class="n">In</span> <span class="n">setup</span> <span class="ow">or</span> <span class="n">loop</span>
+<span class="n">wifiMulti</span><span class="o">.</span><span class="n">addAP</span><span class="p">(</span><span class="s2">&quot;SSID&quot;</span><span class="p">,</span> <span class="s2">&quot;PASSWORD&quot;</span><span class="p">);</span>
+
+<span class="k">if</span><span class="p">((</span><span class="n">wifiMulti</span><span class="o">.</span><span class="n">run</span><span class="p">()</span> <span class="o">==</span> <span class="n">WL_CONNECTED</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">HTTPClient</span> <span class="n">http</span><span class="p">;</span>
+
+    <span class="n">http</span><span class="o">.</span><span class="n">begin</span><span class="p">(</span><span class="s2">&quot;http://example.com/index.html&quot;</span><span class="p">);</span>
+
+    <span class="nb">int</span> <span class="n">httpCode</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">GET</span><span class="p">();</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="n">httpCode</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">httpCode</span> <span class="o">==</span> <span class="n">HTTP_CODE_OK</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">String</span> <span class="n">payload</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">getString</span><span class="p">();</span>
+
+            <span class="o">...</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>Description</strong>:</p></li>
+</ul>
+</div>
 <div class="section" id="begin-method">
-<h3><span class="section-number">3.1.1.2. </span>begin() method<a class="headerlink" href="#begin-method" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.1.1.3. </span>begin() method<a class="headerlink" href="#begin-method" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><div class="line-block">
 <div class="line">Before calling any display method you <strong>must</strong> call .begin() like this:</div>
@@ -267,7 +311,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-sdcardinit">
-<h3><span class="section-number">3.1.1.3. </span>Inkplate::sdCardInit();<a class="headerlink" href="#inkplate-sdcardinit" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.1.1.4. </span>Inkplate::sdCardInit();<a class="headerlink" href="#inkplate-sdcardinit" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -294,7 +338,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-getsdfat">
-<h3><span class="section-number">3.1.1.4. </span>Inkplate::getSdFat();<a class="headerlink" href="#inkplate-getsdfat" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.1.1.5. </span>Inkplate::getSdFat();<a class="headerlink" href="#inkplate-getsdfat" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -320,7 +364,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-getspi">
-<h3><span class="section-number">3.1.1.5. </span>Inkplate::getSPI();<a class="headerlink" href="#inkplate-getspi" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.1.1.6. </span>Inkplate::getSPI();<a class="headerlink" href="#inkplate-getspi" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -339,7 +383,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-getpanelstate">
-<h3><span class="section-number">3.1.1.6. </span>Inkplate::getPanelState();<a class="headerlink" href="#inkplate-getpanelstate" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.1.1.7. </span>Inkplate::getPanelState();<a class="headerlink" href="#inkplate-getpanelstate" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -372,7 +416,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-readtouchpad">
-<h3><span class="section-number">3.1.1.7. </span>Inkplate::readTouchpad();<a class="headerlink" href="#inkplate-readtouchpad" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.1.1.8. </span>Inkplate::readTouchpad();<a class="headerlink" href="#inkplate-readtouchpad" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -408,7 +452,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-readtemperature">
-<h3><span class="section-number">3.1.1.8. </span>Inkplate::readTemperature();<a class="headerlink" href="#inkplate-readtemperature" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.1.1.9. </span>Inkplate::readTemperature();<a class="headerlink" href="#inkplate-readtemperature" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -442,7 +486,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-readbattery">
-<h3><span class="section-number">3.1.1.9. </span>Inkplate::readBattery();<a class="headerlink" href="#inkplate-readbattery" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.1.1.10. </span>Inkplate::readBattery();<a class="headerlink" href="#inkplate-readbattery" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -476,7 +520,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-einkoff">
-<h3><span class="section-number">3.1.1.10. </span>Inkplate::einkOff();<a class="headerlink" href="#inkplate-einkoff" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.1.1.11. </span>Inkplate::einkOff();<a class="headerlink" href="#inkplate-einkoff" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -509,7 +553,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="id1">
-<h3><span class="section-number">3.1.1.11. </span>Inkplate::einkOff();<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.1.1.12. </span>Inkplate::einkOff();<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -583,8 +627,9 @@ After you’ve done this you can proceed calling all other methods described bel
 <li><dl>
 <dt><strong>Result</strong>:</dt><dd><div class="line-block">
 <div class="line">Here is what the code above produces:</div>
+<div class="line">Quite small, isn’t it.</div>
 </div>
-<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="_images/IMG_4345.jpg"><img alt="_images/IMG_4345.jpg" src="_images/IMG_4345.jpg" style="width: 600px;" /></a>
 </dd>
 </dl>
 </li>
@@ -599,6 +644,21 @@ After you’ve done this you can proceed calling all other methods described bel
 </pre></div>
 </div>
 <ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">No Arguments</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Clears all data in buffer.</div>
+</div>
+</dd>
+</dl>
+</li>
 <li><dl>
 <dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">clearDisplay</span><span class="p">();</span>
 </pre></div>
@@ -665,7 +725,7 @@ After you’ve done this you can proceed calling all other methods described bel
 <dt><strong>Description</strong>:</dt><dd><div class="line-block">
 <div class="line">Updates only the changed parts of the screen.</div>
 <div class="line">After a few updates creates blurry parts of the screen.</div>
-<div class="line">Fixed by calling Inkplate::clear();</div>
+<div class="line">Fixed by calling Inkplate::clean();</div>
 </div>
 </dd>
 </dl>
@@ -724,7 +784,7 @@ After you’ve done this you can proceed calling all other methods described bel
 <dt><strong>Result</strong>:</dt><dd><div class="line-block">
 <div class="line">Here is what the code above produces:</div>
 </div>
-<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="_images/IMG_4347.jpg"><img alt="_images/IMG_4347.jpg" src="_images/IMG_4347.jpg" style="width: 600px;" /></a>
 </dd>
 </dl>
 </li>
@@ -852,7 +912,7 @@ After you’ve done this you can proceed calling all other methods described bel
 <dt><strong>Result</strong>:</dt><dd><div class="line-block">
 <div class="line">Here is what the code above produces:</div>
 </div>
-<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="_images/IMG_4348.jpg"><img alt="_images/IMG_4348.jpg" src="_images/IMG_4348.jpg" style="width: 600px;" /></a>
 </dd>
 </dl>
 </li>
@@ -887,7 +947,8 @@ After you’ve done this you can proceed calling all other methods described bel
 </li>
 <li><dl>
 <dt><strong>Description</strong>:</dt><dd><div class="line-block">
-<div class="line"><br /></div>
+<div class="line">Draws an image frmo the web.</div>
+<div class="line">Make sure WiFi is setup beforehand as in examples (10-Inkplate_download_and_show).</div>
 </div>
 </dd>
 </dl>
@@ -906,7 +967,7 @@ After you’ve done this you can proceed calling all other methods described bel
 <dt><strong>Result</strong>:</dt><dd><div class="line-block">
 <div class="line">Here is what the code above produces:</div>
 </div>
-<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="_images/IMG_4349.jpg"><img alt="_images/IMG_4349.jpg" src="_images/IMG_4349.jpg" style="width: 600px;" /></a>
 </dd>
 </dl>
 </li>
@@ -952,7 +1013,7 @@ After you’ve done this you can proceed calling all other methods described bel
 <dt><strong>Result</strong>:</dt><dd><div class="line-block">
 <div class="line">Here is what the code above produces:</div>
 </div>
-<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="_images/IMG_4350.jpg"><img alt="_images/IMG_4350.jpg" src="_images/IMG_4350.jpg" style="width: 600px;" /></a>
 </dd>
 </dl>
 </li>
@@ -1002,7 +1063,7 @@ After you’ve done this you can proceed calling all other methods described bel
 <dt><strong>Result</strong>:</dt><dd><div class="line-block">
 <div class="line">Here is what the code above produces:</div>
 </div>
-<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="_images/IMG_4353.jpg"><img alt="_images/IMG_4353.jpg" src="_images/IMG_4353.jpg" style="width: 600px;" /></a>
 </dd>
 </dl>
 </li>
@@ -1034,7 +1095,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </dl>
 </li>
 <li><dl>
-<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">clean</span><span class="p">();</span>
 </pre></div>
 </div>
 </dd>
@@ -1081,7 +1142,7 @@ After you’ve done this you can proceed calling all other methods described bel
 <dt><strong>Result</strong>:</dt><dd><div class="line-block">
 <div class="line">Here is what the code above produces:</div>
 </div>
-<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="_images/IMG_4354.jpg"><img alt="_images/IMG_4354.jpg" src="_images/IMG_4354.jpg" style="width: 600px;" /></a>
 </dd>
 </dl>
 </li>
@@ -1126,7 +1187,7 @@ After you’ve done this you can proceed calling all other methods described bel
 <dt><strong>Result</strong>:</dt><dd><div class="line-block">
 <div class="line">Here is what the code above produces:</div>
 </div>
-<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="_images/IMG_4355.jpg"><img alt="_images/IMG_4355.jpg" src="_images/IMG_4355.jpg" style="width: 600px;" /></a>
 </dd>
 </dl>
 </li>
@@ -1171,7 +1232,7 @@ After you’ve done this you can proceed calling all other methods described bel
 <dt><strong>Result</strong>:</dt><dd><div class="line-block">
 <div class="line">Here is what the code above produces:</div>
 </div>
-<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="_images/IMG_4356.jpg"><img alt="_images/IMG_4356.jpg" src="_images/IMG_4356.jpg" style="width: 600px;" /></a>
 </dd>
 </dl>
 </li>
@@ -1212,7 +1273,7 @@ After you’ve done this you can proceed calling all other methods described bel
 <dt><strong>Result</strong>:</dt><dd><div class="line-block">
 <div class="line">Here is what the code above produces:</div>
 </div>
-<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="_images/IMG_4357.jpg"><img alt="_images/IMG_4357.jpg" src="_images/IMG_4357.jpg" style="width: 600px;" /></a>
 </dd>
 </dl>
 </li>
@@ -1261,7 +1322,7 @@ After you’ve done this you can proceed calling all other methods described bel
 <dt><strong>Result</strong>:</dt><dd><div class="line-block">
 <div class="line">Here is what the code above produces:</div>
 </div>
-<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="_images/IMG_4358.jpg"><img alt="_images/IMG_4358.jpg" src="_images/IMG_4358.jpg" style="width: 600px;" /></a>
 </dd>
 </dl>
 </li>
@@ -1306,7 +1367,7 @@ After you’ve done this you can proceed calling all other methods described bel
 <dt><strong>Result</strong>:</dt><dd><div class="line-block">
 <div class="line">Here is what the code above produces:</div>
 </div>
-<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="_images/IMG_4359.jpg"><img alt="_images/IMG_4359.jpg" src="_images/IMG_4359.jpg" style="width: 600px;" /></a>
 </dd>
 </dl>
 </li>
@@ -1350,7 +1411,7 @@ After you’ve done this you can proceed calling all other methods described bel
 <dt><strong>Result</strong>:</dt><dd><div class="line-block">
 <div class="line">Here is what the code above produces:</div>
 </div>
-<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="_images/IMG_4360.jpg"><img alt="_images/IMG_4360.jpg" src="_images/IMG_4360.jpg" style="width: 600px;" /></a>
 </dd>
 </dl>
 </li>
@@ -1394,7 +1455,7 @@ After you’ve done this you can proceed calling all other methods described bel
 <dt><strong>Result</strong>:</dt><dd><div class="line-block">
 <div class="line">Here is what the code above produces:</div>
 </div>
-<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="_images/IMG_4361.jpg"><img alt="_images/IMG_4361.jpg" src="_images/IMG_4361.jpg" style="width: 600px;" /></a>
 </dd>
 </dl>
 </li>
@@ -1442,7 +1503,7 @@ After you’ve done this you can proceed calling all other methods described bel
 <dt><strong>Result</strong>:</dt><dd><div class="line-block">
 <div class="line">Here is what the code above produces:</div>
 </div>
-<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="_images/IMG_4362.jpg"><img alt="_images/IMG_4362.jpg" src="_images/IMG_4362.jpg" style="width: 600px;" /></a>
 </dd>
 </dl>
 </li>
@@ -1490,7 +1551,7 @@ After you’ve done this you can proceed calling all other methods described bel
 <dt><strong>Result</strong>:</dt><dd><div class="line-block">
 <div class="line">Here is what the code above produces:</div>
 </div>
-<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="_images/IMG_4363.jpg"><img alt="_images/IMG_4363.jpg" src="_images/IMG_4363.jpg" style="width: 600px;" /></a>
 </dd>
 </dl>
 </li>
@@ -1537,7 +1598,7 @@ After you’ve done this you can proceed calling all other methods described bel
 <dt><strong>Result</strong>:</dt><dd><div class="line-block">
 <div class="line">Here is what the code above produces:</div>
 </div>
-<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="_images/IMG_4364.jpg"><img alt="_images/IMG_4364.jpg" src="_images/IMG_4364.jpg" style="width: 600px;" /></a>
 </dd>
 </dl>
 </li>
@@ -1584,7 +1645,7 @@ After you’ve done this you can proceed calling all other methods described bel
 <dt><strong>Result</strong>:</dt><dd><div class="line-block">
 <div class="line">Here is what the code above produces:</div>
 </div>
-<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="_images/IMG_4365.jpg"><img alt="_images/IMG_4365.jpg" src="_images/IMG_4365.jpg" style="width: 600px;" /></a>
 </dd>
 </dl>
 </li>
@@ -1664,7 +1725,7 @@ After you’ve done this you can proceed calling all other methods described bel
 <dt><strong>Result</strong>:</dt><dd><div class="line-block">
 <div class="line">Here is what the code above produces:</div>
 </div>
-<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="_images/IMG_4366.jpg"><img alt="_images/IMG_4366.jpg" src="_images/IMG_4366.jpg" style="width: 600px;" /></a>
 </dd>
 </dl>
 </li>
@@ -1702,7 +1763,6 @@ After you’ve done this you can proceed calling all other methods described bel
 <li><dl>
 <dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">//Picture is a predefined image buffer (const uint8_t, see 2-Inkplate_basic_grayscale example)</span>
 <span class="n">display</span><span class="p">.</span><span class="n">drawBitmap3Bit</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">picture</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">);</span>
-<span class="n">display</span><span class="p">.</span><span class="n">display</span><span class="p">();</span>
 </pre></div>
 </div>
 </dd>
@@ -1712,7 +1772,7 @@ After you’ve done this you can proceed calling all other methods described bel
 <dt><strong>Result</strong>:</dt><dd><div class="line-block">
 <div class="line">Here is what the code above produces:</div>
 </div>
-<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="_images/IMG_4369.jpg"><img alt="_images/IMG_4369.jpg" src="_images/IMG_4369.jpg" style="width: 600px;" /></a>
 </dd>
 </dl>
 </li>
@@ -1747,7 +1807,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </dl>
 </li>
 <li><dl>
-<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawChar</span><span class="p">();</span>
 </pre></div>
 </div>
 </dd>
@@ -1757,7 +1817,7 @@ After you’ve done this you can proceed calling all other methods described bel
 <dt><strong>Result</strong>:</dt><dd><div class="line-block">
 <div class="line">Here is what the code above produces:</div>
 </div>
-<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="_images/IMG_4371.jpg"><img alt="_images/IMG_4371.jpg" src="_images/IMG_4371.jpg" style="width: 600px;" /></a>
 </dd>
 </dl>
 </li>
@@ -1905,7 +1965,7 @@ After you’ve done this you can proceed calling all other methods described bel
 <dt><strong>Result</strong>:</dt><dd><div class="line-block">
 <div class="line">Here is what the code above produces:</div>
 </div>
-<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="_images/IMG_4371.jpg"><img alt="_images/IMG_4371.jpg" src="_images/IMG_4371.jpg" style="width: 600px;" /></a>
 </dd>
 </dl>
 </li>
@@ -1948,14 +2008,94 @@ After you’ve done this you can proceed calling all other methods described bel
 <dt><strong>Result</strong>:</dt><dd><div class="line-block">
 <div class="line">Here is what the code above produces:</div>
 </div>
-<a class="reference internal image-reference" href="_images/index.jpg"><img alt="_images/index.jpg" src="_images/index.jpg" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="_images/IMG_4373.jpg"><img alt="_images/IMG_4373.jpg" src="_images/IMG_4373.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-print">
+<h3><span class="section-number">3.1.2.32. </span>Inkplate::print();<a class="headerlink" href="#inkplate-print" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">s</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="n">String</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">char <strong>*s</strong> - C string to be printed.</div>
+<div class="line"><br /></div>
+<div class="line">String &amp;**s** - String to be printed.</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Puts the text on screen.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Some text&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces:</div>
+</div>
+<a class="reference internal image-reference" href="_images/IMG_4373.jpg"><img alt="_images/IMG_4373.jpg" src="_images/IMG_4373.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-println">
+<h3><span class="section-number">3.1.2.33. </span>Inkplate::println();<a class="headerlink" href="#inkplate-println" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">println</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">s</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">println</span><span class="p">(</span><span class="n">String</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">char <strong>*s</strong> - C string to be printed.</div>
+<div class="line"><br /></div>
+<div class="line">String &amp;**s** - String to be printed.</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Essentially the same as print but adds a new line to end.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Some text&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
 </dd>
 </dl>
 </li>
 </ul>
 </div>
 <div class="section" id="inkplate-settextwrap">
-<h3><span class="section-number">3.1.2.32. </span>Inkplate::setTextWrap();<a class="headerlink" href="#inkplate-settextwrap" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.1.2.34. </span>Inkplate::setTextWrap();<a class="headerlink" href="#inkplate-settextwrap" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Adafruit_GFX.h)</strong>:</p></li>
 </ul>
@@ -1989,7 +2129,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-width">
-<h3><span class="section-number">3.1.2.33. </span>Inkplate::width();<a class="headerlink" href="#inkplate-width" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.1.2.35. </span>Inkplate::width();<a class="headerlink" href="#inkplate-width" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Adafruit_GFX.h)</strong>:</p></li>
 </ul>
@@ -2022,7 +2162,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-height">
-<h3><span class="section-number">3.1.2.34. </span>Inkplate::height();<a class="headerlink" href="#inkplate-height" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.1.2.36. </span>Inkplate::height();<a class="headerlink" href="#inkplate-height" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Adafruit_GFX.h)</strong>:</p></li>
 </ul>
@@ -2055,7 +2195,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-getrotation">
-<h3><span class="section-number">3.1.2.35. </span>Inkplate::getRotation();<a class="headerlink" href="#inkplate-getrotation" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.1.2.37. </span>Inkplate::getRotation();<a class="headerlink" href="#inkplate-getrotation" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Adafruit_GFX.h)</strong>:</p></li>
 </ul>
@@ -2089,7 +2229,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-getcursorx">
-<h3><span class="section-number">3.1.2.36. </span>Inkplate::getCursorX();<a class="headerlink" href="#inkplate-getcursorx" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.1.2.38. </span>Inkplate::getCursorX();<a class="headerlink" href="#inkplate-getcursorx" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Adafruit_GFX.h)</strong>:</p></li>
 </ul>
@@ -2123,7 +2263,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-getcursory">
-<h3><span class="section-number">3.1.2.37. </span>Inkplate::getCursorY();<a class="headerlink" href="#inkplate-getcursory" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.1.2.39. </span>Inkplate::getCursorY();<a class="headerlink" href="#inkplate-getcursory" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Adafruit_GFX.h)</strong>:</p></li>
 </ul>

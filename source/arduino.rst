@@ -24,6 +24,49 @@ Inkplate object initialization
     In here given examples, Inkplate object will always be named display, if not said otherwise.
     After calling this below your imports you have access to all Inkplate functionality as display object methods.
 
+
+WiFi connectivity
+#################
+    | For some functionalities of the Inkplate to work you must be connected to WiFi.
+    | For more information see our examples.
+
+    .. code-block::
+
+        #include <WiFi.h>
+        #include <WiFiMulti.h>
+
+        #include <HTTPClient.h>
+
+        //Below includes
+        WiFiMulti wifiMulti;
+
+        ...
+
+        //In setup or loop
+        wifiMulti.addAP("SSID", "PASSWORD");
+
+        if((wifiMulti.run() == WL_CONNECTED)) {
+            HTTPClient http;
+
+            http.begin("http://example.com/index.html");
+
+            int httpCode = http.GET();
+
+            if(httpCode > 0) {
+                if(httpCode == HTTP_CODE_OK) {
+                    String payload = http.getString();
+
+                    ...
+                }       
+        }
+
+
+
+* **Description**:
+
+    
+
+
 begin() method
 ##############
     | Before calling any display method you **must** call .begin() like this: 
@@ -273,8 +316,9 @@ Inkplate::drawPixel();
 
 * **Result**:
     | Here is what the code above produces:
+    | Quite small, isn't it.
 
-    .. image:: images/index.jpg
+    .. image:: images/IMG_4345.jpg
         :width: 600
 
 
@@ -287,6 +331,14 @@ Inkplate::clearDisplay();
 .. code-block:: c
 
     void clearDisplay();
+
+* **Arguments and return value**:
+    | No Arguments
+
+    Returns nothing.
+
+* **Description**:
+    | Clears all data in buffer.
 
 * **Example**:
     .. code-block:: c
@@ -337,7 +389,7 @@ Inkplate::partialUpdate();
 * **Description**:
     | Updates only the changed parts of the screen.
     | After a few updates creates blurry parts of the screen.
-    | Fixed by calling Inkplate::clear();
+    | Fixed by calling Inkplate::clean();
 
 * **Example**:
     .. code-block:: c
@@ -381,7 +433,7 @@ Inkplate::setRotation();
 * **Result**:
     | Here is what the code above produces:
 
-    .. image:: images/index.jpg
+    .. image:: images/IMG_4347.jpg
         :width: 600
 
 
@@ -479,7 +531,7 @@ Inkplate::drawBitmapFromSD();
 * **Result**:
     | Here is what the code above produces:
 
-    .. image:: images/index.jpg
+    .. image:: images/IMG_4348.jpg
         :width: 600
 
 
@@ -508,7 +560,8 @@ Inkplate::drawBitmapFromWeb();
     Returns 0 if failed and 1 if successful.
 
 * **Description**:
-    | 
+    | Draws an image frmo the web.
+    | Make sure WiFi is setup beforehand as in examples (10-Inkplate_download_and_show).
 
 * **Example**:
     .. code-block:: c
@@ -521,7 +574,7 @@ Inkplate::drawBitmapFromWeb();
 * **Result**:
     | Here is what the code above produces:
 
-    .. image:: images/index.jpg
+    .. image:: images/IMG_4349.jpg
         :width: 600
 
 
@@ -555,7 +608,7 @@ Inkplate::drawThickLine();
 * **Result**:
     | Here is what the code above produces:
 
-    .. image:: images/index.jpg
+    .. image:: images/IMG_4350.jpg
         :width: 600
 
 
@@ -594,7 +647,7 @@ Inkplate::drawGradientLine();
 * **Result**:
     | Here is what the code above produces:
 
-    .. image:: images/index.jpg
+    .. image:: images/IMG_4353.jpg
         :width: 600
 
 
@@ -621,7 +674,7 @@ Inkplate::clean();
 * **Example**:
     .. code-block:: c
 
-        display.clear();
+        display.clean();
 
 
 
@@ -654,7 +707,7 @@ Inkplate::drawFastVLine();
 * **Result**:
     | Here is what the code above produces:
 
-    .. image:: images/index.jpg
+    .. image:: images/IMG_4354.jpg
         :width: 600
 
 
@@ -688,7 +741,7 @@ Inkplate::drawFastHLine();
 * **Result**:
     | Here is what the code above produces:
 
-    .. image:: images/index.jpg
+    .. image:: images/IMG_4355.jpg
         :width: 600
 
 
@@ -722,7 +775,7 @@ Inkplate::fillRect();
 * **Result**:
     | Here is what the code above produces:
 
-    .. image:: images/index.jpg
+    .. image:: images/IMG_4356.jpg
         :width: 600
 
 
@@ -753,7 +806,7 @@ Inkplate::fillScreen();
 * **Result**:
     | Here is what the code above produces:
 
-    .. image:: images/index.jpg
+    .. image:: images/IMG_4357.jpg
         :width: 600
 
 
@@ -791,7 +844,7 @@ Inkplate::drawLine();
 * **Result**:
     | Here is what the code above produces:
 
-    .. image:: images/index.jpg
+    .. image:: images/IMG_4358.jpg
         :width: 600
 
 
@@ -825,7 +878,7 @@ Inkplate::drawRect();
 * **Result**:
     | Here is what the code above produces:
 
-    .. image:: images/index.jpg
+    .. image:: images/IMG_4359.jpg
         :width: 600
 
 
@@ -858,7 +911,7 @@ Inkplate::drawCircle();
 * **Result**:
     | Here is what the code above produces:
 
-    .. image:: images/index.jpg
+    .. image:: images/IMG_4360.jpg
         :width: 600
 
 
@@ -892,7 +945,7 @@ Inkplate::fillCircle();
 * **Result**:
     | Here is what the code above produces:
 
-    .. image:: images/index.jpg
+    .. image:: images/IMG_4361.jpg
         :width: 600
 
 
@@ -929,7 +982,7 @@ Inkplate::drawTriangle();
 * **Result**:
     | Here is what the code above produces:
 
-    .. image:: images/index.jpg
+    .. image:: images/IMG_4362.jpg
         :width: 600
 
 
@@ -965,7 +1018,7 @@ Inkplate::fillTriangle();
 * **Result**:
     | Here is what the code above produces:
 
-    .. image:: images/index.jpg
+    .. image:: images/IMG_4363.jpg
         :width: 600
 
 
@@ -1000,7 +1053,7 @@ Inkplate::drawRoundRect();
 * **Result**:
     | Here is what the code above produces:
 
-    .. image:: images/index.jpg
+    .. image:: images/IMG_4364.jpg
         :width: 600
 
 
@@ -1036,7 +1089,7 @@ Inkplate::fillRoundRect();
 * **Result**:
     | Here is what the code above produces:
 
-    .. image:: images/index.jpg
+    .. image:: images/IMG_4365.jpg
         :width: 600
 
 
@@ -1106,7 +1159,7 @@ Inkplate::drawBitmap();
 * **Result**:
     | Here is what the code above produces:
 
-    .. image:: images/index.jpg
+    .. image:: images/IMG_4366.jpg
         :width: 600
 
 
@@ -1138,12 +1191,11 @@ Inkplate::drawBitmap3Bit();
 
         //Picture is a predefined image buffer (const uint8_t, see 2-Inkplate_basic_grayscale example)
         display.drawBitmap3Bit(0, 0, picture, 800, 600);
-        display.display();  
 
 * **Result**:
     | Here is what the code above produces:
 
-    .. image:: images/index.jpg
+    .. image:: images/IMG_4369.jpg
         :width: 600
 
 
@@ -1171,12 +1223,12 @@ Inkplate::drawChar();
 * **Example**:
     .. code-block:: c
 
-        display.clear();
+        display.drawChar();
 
 * **Result**:
     | Here is what the code above produces:
 
-    .. image:: images/index.jpg
+    .. image:: images/IMG_4371.jpg
         :width: 600
 
 
@@ -1297,7 +1349,7 @@ Inkplate::setFont();
 * **Result**:
     | Here is what the code above produces:
 
-    .. image:: images/index.jpg
+    .. image:: images/IMG_4371.jpg
         :width: 600
 
 
@@ -1329,9 +1381,66 @@ Inkplate::setCursor();
 * **Result**:
     | Here is what the code above produces:
 
-    .. image:: images/index.jpg
+    .. image:: images/IMG_4373.jpg
         :width: 600
 
+
+Inkplate::print();
+######################
+
+* **Method prototype**:
+
+.. code-block:: c
+
+    void print(char *s);
+    void print(String &s);
+
+* **Arguments and return value**:
+    | char ***s** - C string to be printed. 
+    |
+    | String &**s** - String to be printed.
+
+    Returns nothing.
+
+* **Description**:
+    | Puts the text on screen. 
+
+* **Example**:
+    .. code-block:: c
+
+        display.print("Some text");
+
+* **Result**:
+    | Here is what the code above produces:
+
+    .. image:: images/IMG_4373.jpg
+        :width: 600
+
+
+Inkplate::println();
+######################
+
+* **Method prototype**:
+
+.. code-block:: c
+
+    void println(char *s);
+    void println(String &s);
+
+* **Arguments and return value**:
+    | char ***s** - C string to be printed. 
+    |
+    | String &**s** - String to be printed.
+
+    Returns nothing.
+
+* **Description**:
+    | Essentially the same as print but adds a new line to end.
+
+* **Example**:
+    .. code-block:: c
+    
+        display.println("Some text");
 
 
 Inkplate::setTextWrap();
