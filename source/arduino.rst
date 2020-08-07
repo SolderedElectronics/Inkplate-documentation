@@ -494,18 +494,20 @@ Inkplate::drawBitmapFromSD();
 
 .. code-block:: c
 
-    int drawBitmapFromSD(SdFile *p, int x, int y, bool invert = false);
-    int drawBitmapFromSD(char *fileName, int x, int y, bool invert = false);
+    int drawBitmapFromSD(SdFile *p, int x, int y, bool dither = false, bool invert = false);
+    int drawBitmapFromSD(char *fileName, int x, int y, bool dither = false, bool invert = false);
 
 * **Arguments and return value**:
     | SdFile ***p** - SdFile pointer to draw to screen
     | int **x** - x coordinate to draw the image at
     | int **y** - y coordinate to draw the image at
+    | bool **dither** - to dither the image or not (currently 24 or 8 bit only)
     | bool **invert** - invert all colors, defaults to false
     |
     | char ***fileName** - filename of the bmp on the sd card
     | int **x** - x coordinate to draw the image at
     | int **y** - y coordinate to draw the image at
+    | bool **dither** - to dither the image or not (currently 24 or 8 bit only)
     | bool **invert** - invert all colors, defaults to false
 
     Returns 0 if error occured, else returns 1.
@@ -514,6 +516,8 @@ Inkplate::drawBitmapFromSD();
     | Should always have Inkplate::sdCardInit() called before.
     | Draws a bitmap image from sd card to screen.
     | Image can currently have 1, 4, 8 or 24 bit color depth.
+    | 24 or 8 bit ones can be dithered, else the argument is ignored.
+    | Info on dithering: https://en.wikipedia.org/wiki/Floyd%E2%80%93Steinberg_dithering
 
 * **Example**:
     .. code-block:: c
