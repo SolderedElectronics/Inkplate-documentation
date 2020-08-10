@@ -546,19 +546,21 @@ Inkplate::drawBitmapFromWeb();
 
 .. code-block:: c
 
-    int drawBitmapFromWeb(WiFiClient *s, int x, int y, int len, bool invert = false);
-    int drawBitmapFromWeb(char *url, int x, int y, bool invert = false);
+    int drawBitmapFromWeb(WiFiClient *s, int x, int y, int len, bool dither = false, bool invert = false);
+    int drawBitmapFromWeb(char *url, int x, int y, bool dither = false, bool invert = false);
 
 * **Arguments and return value**:
     | WiFiClient ***s** - WiFiClient stream to dowload image from.
     | int **x** - x coordinate at which to display the image.
     | int **y** - y coordinate at which to display the image.
     | int **len** - file size (header included).
+    | bool **dither** - flag indicating to dither the image
     | bool **invert** - invert all image colors.
     |
     | char ***url** - url of the image.
     | int **x** - x coordinate at which to display the image.
     | int **y** - y coordinate at which to display the image.
+    | bool **dither** - flag indicating to dither the image
     | bool **invert** - invert all image colors.
 
     Returns 0 if failed and 1 if successful.

@@ -863,8 +863,8 @@ After you’ve done this you can proceed calling all other methods described bel
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">drawBitmapFromSD</span><span class="p">(</span><span class="n">SdFile</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">invert</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
-<span class="kt">int</span> <span class="nf">drawBitmapFromSD</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">fileName</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">invert</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">drawBitmapFromSD</span><span class="p">(</span><span class="n">SdFile</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">dither</span> <span class="o">=</span> <span class="nb">false</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">invert</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">drawBitmapFromSD</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">fileName</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">dither</span> <span class="o">=</span> <span class="nb">false</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">invert</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
 </pre></div>
 </div>
 <ul>
@@ -873,11 +873,13 @@ After you’ve done this you can proceed calling all other methods described bel
 <div class="line">SdFile <strong>*p</strong> - SdFile pointer to draw to screen</div>
 <div class="line">int <strong>x</strong> - x coordinate to draw the image at</div>
 <div class="line">int <strong>y</strong> - y coordinate to draw the image at</div>
+<div class="line">bool <strong>dither</strong> - to dither the image or not (currently 24 or 8 bit only)</div>
 <div class="line">bool <strong>invert</strong> - invert all colors, defaults to false</div>
 <div class="line"><br /></div>
 <div class="line">char <strong>*fileName</strong> - filename of the bmp on the sd card</div>
 <div class="line">int <strong>x</strong> - x coordinate to draw the image at</div>
 <div class="line">int <strong>y</strong> - y coordinate to draw the image at</div>
+<div class="line">bool <strong>dither</strong> - to dither the image or not (currently 24 or 8 bit only)</div>
 <div class="line">bool <strong>invert</strong> - invert all colors, defaults to false</div>
 </div>
 <p>Returns 0 if error occured, else returns 1.</p>
@@ -889,6 +891,8 @@ After you’ve done this you can proceed calling all other methods described bel
 <div class="line">Should always have Inkplate::sdCardInit() called before.</div>
 <div class="line">Draws a bitmap image from sd card to screen.</div>
 <div class="line">Image can currently have 1, 4, 8 or 24 bit color depth.</div>
+<div class="line">24 or 8 bit ones can be dithered, else the argument is ignored.</div>
+<div class="line">Info on dithering: <a class="reference external" href="https://en.wikipedia.org/wiki/Floyd%E2%80%93Steinberg_dithering">https://en.wikipedia.org/wiki/Floyd%E2%80%93Steinberg_dithering</a></div>
 </div>
 </dd>
 </dl>
@@ -923,8 +927,8 @@ After you’ve done this you can proceed calling all other methods described bel
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">drawBitmapFromWeb</span><span class="p">(</span><span class="n">WiFiClient</span> <span class="o">*</span><span class="n">s</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="kt">int</span> <span class="n">len</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">invert</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
-<span class="kt">int</span> <span class="nf">drawBitmapFromWeb</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">url</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">invert</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">drawBitmapFromWeb</span><span class="p">(</span><span class="n">WiFiClient</span> <span class="o">*</span><span class="n">s</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="kt">int</span> <span class="n">len</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">dither</span> <span class="o">=</span> <span class="nb">false</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">invert</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">drawBitmapFromWeb</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">url</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">dither</span> <span class="o">=</span> <span class="nb">false</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">invert</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
 </pre></div>
 </div>
 <ul>
@@ -934,11 +938,13 @@ After you’ve done this you can proceed calling all other methods described bel
 <div class="line">int <strong>x</strong> - x coordinate at which to display the image.</div>
 <div class="line">int <strong>y</strong> - y coordinate at which to display the image.</div>
 <div class="line">int <strong>len</strong> - file size (header included).</div>
+<div class="line">bool <strong>dither</strong> - flag indicating to dither the image</div>
 <div class="line">bool <strong>invert</strong> - invert all image colors.</div>
 <div class="line"><br /></div>
 <div class="line">char <strong>*url</strong> - url of the image.</div>
 <div class="line">int <strong>x</strong> - x coordinate at which to display the image.</div>
 <div class="line">int <strong>y</strong> - y coordinate at which to display the image.</div>
+<div class="line">bool <strong>dither</strong> - flag indicating to dither the image</div>
 <div class="line">bool <strong>invert</strong> - invert all image colors.</div>
 </div>
 <p>Returns 0 if failed and 1 if successful.</p>
