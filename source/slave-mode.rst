@@ -14,7 +14,7 @@ Inkplate Slave Mode
 echo: #?*
 ---------
     | Check if the Inkplate receives commands on UART
-    | response:  OK
+    | Response:  OK
 
 drawPixel: #0(XXX,YYY,CC)*
 --------------------------
@@ -22,7 +22,7 @@ drawPixel: #0(XXX,YYY,CC)*
     | YYY - Y coordinate (with leading zeros)
     | CC - Color (with leading zeros)
     | example:
-
+    
     .. code-block::
 
          #0(001,005,04)*
@@ -98,7 +98,7 @@ drawTriangle: #6(XX1,YY1,XX2,YY2,XX3,YY3,CC)*
     | XX3 - X coordinate of third corner (with leading zeros)
     | YY3 - Y coordinate of third corner (with leading zeros)
     | CC - Color (with leading zeros)
-    | example 
+    | example: 
     
     .. code-block::
     
@@ -112,7 +112,7 @@ drawRoudRect: #7(XXX,YYY,WWW,HHH,RRR,CC)*
     | HHH - Height of rect. (with leading zeros)
     | RRR - Radius (with leading zeros)
     | CC - Color (with leading zeros)
-    | example 
+    | example: 
     
     .. code-block::
     
@@ -175,7 +175,7 @@ fillRoudRect: #B(XXX,YYY,WWW,HHH,RRR,CC)*
 print: #C("STRING")*
 --------------------
     | STRING - Text/Strig coded in HEX Char (example: HELLO WORLD would be coded like 48454c4c4f20574f524c44, where 48 means 0x48 which is H in ASCII table)
-    | example for HELLO WORLD:
+    | example: for HELLO WORLD:
     
     .. code-block::
     
@@ -230,7 +230,7 @@ drawBitmap: #H(XXX,YYY,"PATH")*
 
         #H(000,000,"2f696d616765312e626d70")* 
     
-    | response:
+    | Response:
     
     .. code-block::
 
@@ -277,7 +277,7 @@ partialUpdate: #M(YY1, XX2, YY2)*
 
 readTemperature: #N(?)*
 -----------------------
-    | response:
+    | Response:
     
     .. code-block::
     
@@ -286,7 +286,7 @@ readTemperature: #N(?)*
 readTouchpad: #O(P)*
 --------------------
     | P - Name of pad that needs to be read (1, 2 or 3)
-    | resposne:
+    | Response:
     
     .. code-block::
     
@@ -296,7 +296,7 @@ readTouchpad: #O(P)*
 
 readBattery: #P(?)*
 -------------------
-    | response:
+    | Response:
     
     .. code-block::
     
@@ -308,7 +308,7 @@ panelSupply(einkOff/on):#Q(S)*
 
 getPanelState: #R(?)*
 ---------------------
-    | response:
+    | Response:
     
     .. code-block::
     

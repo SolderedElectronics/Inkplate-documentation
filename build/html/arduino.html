@@ -38,7 +38,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="3.3. Inkplate Slave Mode" href="micropython.html" />
-    <link rel="prev" title="3.1. Inkplate Python" href="slave-mode.html" /> 
+    <link rel="prev" title="3.1. Inkplate Slave Mode" href="slave-mode.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,7 +88,7 @@
 <li class="toctree-l1"><a class="reference internal" href="get-started.html">1. Inkplate Get Started Page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="features.html">2. Inkplate Features</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="api-refrence.html">3. Inkplate API Refrence</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="slave-mode.html">3.1. Inkplate Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slave-mode.html">3.1. Inkplate Slave Mode</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">3.2. Inkplate Arduino</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#system-functions">3.2.1. System Functions</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#inkplate-object-initialization">3.2.1.1. Inkplate object initialization</a></li>
@@ -245,9 +245,9 @@
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">Inkplate</span> <span class="nf">display</span><span class="p">(</span><span class="n">INKPLATE_3BIT</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>depending on what you need, monochrome (INKPLATE_1BIT) of grayscale(INKPLATE_3BIT) functionality.</p>
+<p>depending on what you need, monochrome (INKPLATE_1BIT) of grayscale (INKPLATE_3BIT) functionality.</p>
 <p>In here given examples, Inkplate object will always be named display, if not said otherwise.
-After calling this below your imports you have access to all Inkplate functionality as display object methods.</p>
+After calling this below your “#include” lines, you have access to all Inkplate functionality as display object methods.</p>
 </div></blockquote>
 </div>
 <div class="section" id="wifi-connectivity">
@@ -257,31 +257,31 @@ After calling this below your imports you have access to all Inkplate functional
 <div class="line">For some functionalities of the Inkplate to work you must be connected to WiFi.</div>
 <div class="line">For more information see our examples.</div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &lt;WiFi.h&gt;</span>
-<span class="c1">#include &lt;WiFiMulti.h&gt;</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;WiFi.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;WiFiMulti.h&gt;</span><span class="cp"></span>
 
-<span class="c1">#include &lt;HTTPClient.h&gt;</span>
+<span class="cp">#include</span> <span class="cpf">&lt;HTTPClient.h&gt;</span><span class="cp"></span>
 
-<span class="o">//</span><span class="n">Below</span> <span class="n">includes</span>
+<span class="c1">//Below includes</span>
 <span class="n">WiFiMulti</span> <span class="n">wifiMulti</span><span class="p">;</span>
 
-<span class="o">...</span>
+<span class="p">...</span>
 
-<span class="o">//</span><span class="n">In</span> <span class="n">setup</span> <span class="ow">or</span> <span class="n">loop</span>
-<span class="n">wifiMulti</span><span class="o">.</span><span class="n">addAP</span><span class="p">(</span><span class="s2">&quot;SSID&quot;</span><span class="p">,</span> <span class="s2">&quot;PASSWORD&quot;</span><span class="p">);</span>
+<span class="c1">//In setup or loop</span>
+<span class="n">wifiMulti</span><span class="p">.</span><span class="n">addAP</span><span class="p">(</span><span class="s">&quot;SSID&quot;</span><span class="p">,</span> <span class="s">&quot;PASSWORD&quot;</span><span class="p">);</span>
 
-<span class="k">if</span><span class="p">((</span><span class="n">wifiMulti</span><span class="o">.</span><span class="n">run</span><span class="p">()</span> <span class="o">==</span> <span class="n">WL_CONNECTED</span><span class="p">))</span> <span class="p">{</span>
+<span class="k">if</span><span class="p">((</span><span class="n">wifiMulti</span><span class="p">.</span><span class="n">run</span><span class="p">()</span> <span class="o">==</span> <span class="n">WL_CONNECTED</span><span class="p">))</span> <span class="p">{</span>
     <span class="n">HTTPClient</span> <span class="n">http</span><span class="p">;</span>
 
-    <span class="n">http</span><span class="o">.</span><span class="n">begin</span><span class="p">(</span><span class="s2">&quot;http://example.com/index.html&quot;</span><span class="p">);</span>
+    <span class="n">http</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="s">&quot;http://example.com/index.html&quot;</span><span class="p">);</span>
 
-    <span class="nb">int</span> <span class="n">httpCode</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">GET</span><span class="p">();</span>
+    <span class="kt">int</span> <span class="n">httpCode</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="n">GET</span><span class="p">();</span>
 
     <span class="k">if</span><span class="p">(</span><span class="n">httpCode</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">if</span><span class="p">(</span><span class="n">httpCode</span> <span class="o">==</span> <span class="n">HTTP_CODE_OK</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">String</span> <span class="n">payload</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">getString</span><span class="p">();</span>
+            <span class="n">String</span> <span class="n">payload</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="n">getString</span><span class="p">();</span>
 
-            <span class="o">...</span>
+            <span class="p">...</span>
         <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -2317,7 +2317,7 @@ After you’ve done this you can proceed calling all other methods described bel
         <a href="micropython.html" class="btn btn-neutral float-right" title="3.3. Inkplate Slave Mode" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="slave-mode.html" class="btn btn-neutral float-left" title="3.1. Inkplate Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="slave-mode.html" class="btn btn-neutral float-left" title="3.1. Inkplate Slave Mode" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

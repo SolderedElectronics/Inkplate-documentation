@@ -19,10 +19,10 @@ Inkplate object initialization
 
         Inkplate display(INKPLATE_3BIT);
 
-    depending on what you need, monochrome (INKPLATE_1BIT) of grayscale(INKPLATE_3BIT) functionality.
+    depending on what you need, monochrome (INKPLATE_1BIT) of grayscale (INKPLATE_3BIT) functionality.
 
     In here given examples, Inkplate object will always be named display, if not said otherwise.
-    After calling this below your imports you have access to all Inkplate functionality as display object methods.
+    After calling this below your "#include" lines, you have access to all Inkplate functionality as display object methods.
 
 
 WiFi connectivity
@@ -30,7 +30,7 @@ WiFi connectivity
     | For some functionalities of the Inkplate to work you must be connected to WiFi.
     | For more information see our examples.
 
-    .. code-block::
+    .. code-block:: c
 
         #include <WiFi.h>
         #include <WiFiMulti.h>
