@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.1. Inkplate Arduino &mdash; Inkplate docs  documentation</title>
+  <title>3.2. Inkplate Arduino &mdash; Inkplate docs  documentation</title>
   
 
   
@@ -37,8 +37,8 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3.2. Inkplate Micropython" href="micropython.html" />
-    <link rel="prev" title="3. Inkplate API Refrence" href="api-refrence.html" /> 
+    <link rel="next" title="3.3. Inkplate Slave Mode" href="micropython.html" />
+    <link rel="prev" title="3.1. Inkplate Python" href="slave-mode.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,69 +88,70 @@
 <li class="toctree-l1"><a class="reference internal" href="get-started.html">1. Inkplate Get Started Page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="features.html">2. Inkplate Features</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="api-refrence.html">3. Inkplate API Refrence</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.1. Inkplate Arduino</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#system-functions">3.1.1. System Functions</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-object-initialization">3.1.1.1. Inkplate object initialization</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#wifi-connectivity">3.1.1.2. WiFi connectivity</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#begin-method">3.1.1.3. begin() method</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-sdcardinit">3.1.1.4. Inkplate::sdCardInit();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-getsdfat">3.1.1.5. Inkplate::getSdFat();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-getspi">3.1.1.6. Inkplate::getSPI();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-getpanelstate">3.1.1.7. Inkplate::getPanelState();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-readtouchpad">3.1.1.8. Inkplate::readTouchpad();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-readtemperature">3.1.1.9. Inkplate::readTemperature();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-readbattery">3.1.1.10. Inkplate::readBattery();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-einkoff">3.1.1.11. Inkplate::einkOff();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id1">3.1.1.12. Inkplate::einkOff();</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slave-mode.html">3.1. Inkplate Python</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.2. Inkplate Arduino</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#system-functions">3.2.1. System Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-object-initialization">3.2.1.1. Inkplate object initialization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wifi-connectivity">3.2.1.2. WiFi connectivity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#begin-method">3.2.1.3. begin() method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-sdcardinit">3.2.1.4. Inkplate::sdCardInit();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-getsdfat">3.2.1.5. Inkplate::getSdFat();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-getspi">3.2.1.6. Inkplate::getSPI();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-getpanelstate">3.2.1.7. Inkplate::getPanelState();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-readtouchpad">3.2.1.8. Inkplate::readTouchpad();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-readtemperature">3.2.1.9. Inkplate::readTemperature();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-readbattery">3.2.1.10. Inkplate::readBattery();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-einkoff">3.2.1.11. Inkplate::einkOff();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">3.2.1.12. Inkplate::einkOff();</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#drawing-functions">3.1.2. Drawing Functions</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawpixel">3.1.2.1. Inkplate::drawPixel();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-cleardisplay">3.1.2.2. Inkplate::clearDisplay();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-display">3.1.2.3. Inkplate::display();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-partialupdate">3.1.2.4. Inkplate::partialUpdate();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-setrotation">3.1.2.5. Inkplate::setRotation();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-selectdisplaymode">3.1.2.6. Inkplate::selectDisplayMode();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-getdisplaymode">3.1.2.7. Inkplate::getDisplayMode();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawbitmapfromsd">3.1.2.8. Inkplate::drawBitmapFromSD();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawbitmapfromweb">3.1.2.9. Inkplate::drawBitmapFromWeb();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawthickline">3.1.2.10. Inkplate::drawThickLine();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawgradientline">3.1.2.11. Inkplate::drawGradientLine();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-clean">3.1.2.12. Inkplate::clean();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawfastvline">3.1.2.13. Inkplate::drawFastVLine();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawfasthline">3.1.2.14. Inkplate::drawFastHLine();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-fillrect">3.1.2.15. Inkplate::fillRect();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-fillscreen">3.1.2.16. Inkplate::fillScreen();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawline">3.1.2.17. Inkplate::drawLine();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawrect">3.1.2.18. Inkplate::drawRect();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawcircle">3.1.2.19. Inkplate::drawCircle();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-fillcircle">3.1.2.20. Inkplate::fillCircle();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawtriangle">3.1.2.21. Inkplate::drawTriangle();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-filltriangle">3.1.2.22. Inkplate::fillTriangle();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawroundrect">3.1.2.23. Inkplate::drawRoundRect();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-fillroundrect">3.1.2.24. Inkplate::fillRoundRect();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawbitmap">3.1.2.25. Inkplate::drawBitmap();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawbitmap3bit">3.1.2.26. Inkplate::drawBitmap3Bit();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawchar">3.1.2.27. Inkplate::drawChar();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-gettextbounds">3.1.2.28. Inkplate::getTextBounds();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-settextsize">3.1.2.29. Inkplate::setTextSize();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-setfont">3.1.2.30. Inkplate::setFont();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-setcursor">3.1.2.31. Inkplate::setCursor();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-print">3.1.2.32. Inkplate::print();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-println">3.1.2.33. Inkplate::println();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-settextwrap">3.1.2.34. Inkplate::setTextWrap();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-width">3.1.2.35. Inkplate::width();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-height">3.1.2.36. Inkplate::height();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-getrotation">3.1.2.37. Inkplate::getRotation();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-getcursorx">3.1.2.38. Inkplate::getCursorX();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-getcursory">3.1.2.39. Inkplate::getCursorY();</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drawing-functions">3.2.2. Drawing Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawpixel">3.2.2.1. Inkplate::drawPixel();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-cleardisplay">3.2.2.2. Inkplate::clearDisplay();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-display">3.2.2.3. Inkplate::display();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-partialupdate">3.2.2.4. Inkplate::partialUpdate();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-setrotation">3.2.2.5. Inkplate::setRotation();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-selectdisplaymode">3.2.2.6. Inkplate::selectDisplayMode();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-getdisplaymode">3.2.2.7. Inkplate::getDisplayMode();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawbitmapfromsd">3.2.2.8. Inkplate::drawBitmapFromSD();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawbitmapfromweb">3.2.2.9. Inkplate::drawBitmapFromWeb();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawthickline">3.2.2.10. Inkplate::drawThickLine();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawgradientline">3.2.2.11. Inkplate::drawGradientLine();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-clean">3.2.2.12. Inkplate::clean();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawfastvline">3.2.2.13. Inkplate::drawFastVLine();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawfasthline">3.2.2.14. Inkplate::drawFastHLine();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-fillrect">3.2.2.15. Inkplate::fillRect();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-fillscreen">3.2.2.16. Inkplate::fillScreen();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawline">3.2.2.17. Inkplate::drawLine();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawrect">3.2.2.18. Inkplate::drawRect();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawcircle">3.2.2.19. Inkplate::drawCircle();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-fillcircle">3.2.2.20. Inkplate::fillCircle();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawtriangle">3.2.2.21. Inkplate::drawTriangle();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-filltriangle">3.2.2.22. Inkplate::fillTriangle();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawroundrect">3.2.2.23. Inkplate::drawRoundRect();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-fillroundrect">3.2.2.24. Inkplate::fillRoundRect();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawbitmap">3.2.2.25. Inkplate::drawBitmap();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawbitmap3bit">3.2.2.26. Inkplate::drawBitmap3Bit();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawchar">3.2.2.27. Inkplate::drawChar();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-gettextbounds">3.2.2.28. Inkplate::getTextBounds();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-settextsize">3.2.2.29. Inkplate::setTextSize();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-setfont">3.2.2.30. Inkplate::setFont();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-setcursor">3.2.2.31. Inkplate::setCursor();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-print">3.2.2.32. Inkplate::print();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-println">3.2.2.33. Inkplate::println();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-settextwrap">3.2.2.34. Inkplate::setTextWrap();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-width">3.2.2.35. Inkplate::width();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-height">3.2.2.36. Inkplate::height();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-getrotation">3.2.2.37. Inkplate::getRotation();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-getcursorx">3.2.2.38. Inkplate::getCursorX();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-getcursory">3.2.2.39. Inkplate::getCursorY();</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="micropython.html">3.2. Inkplate Micropython</a></li>
-<li class="toctree-l2"><a class="reference internal" href="esp-idf.html">3.3. Inkplate esp-idf</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api-refrence.html#library-functions">3.4. Library functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="micropython.html">3.3. Inkplate Slave Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="esp-idf.html">3.4. Inkplate esp-idf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-refrence.html#library-functions">3.5. Library functions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="hardware-refrence.html">4. Inkplate Hardware Refrence</a></li>
@@ -207,7 +208,7 @@
         
           <li><a href="api-refrence.html"><span class="section-number">3. </span>Inkplate API Refrence</a> &raquo;</li>
         
-      <li><span class="section-number">3.1. </span>Inkplate Arduino</li>
+      <li><span class="section-number">3.2. </span>Inkplate Arduino</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -227,11 +228,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="inkplate-arduino">
-<h1><span class="section-number">3.1. </span>Inkplate Arduino<a class="headerlink" href="#inkplate-arduino" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3.2. </span>Inkplate Arduino<a class="headerlink" href="#inkplate-arduino" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="system-functions">
-<h2><span class="section-number">3.1.1. </span>System Functions<a class="headerlink" href="#system-functions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2.1. </span>System Functions<a class="headerlink" href="#system-functions" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="inkplate-object-initialization">
-<h3><span class="section-number">3.1.1.1. </span>Inkplate object initialization<a class="headerlink" href="#inkplate-object-initialization" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.1.1. </span>Inkplate object initialization<a class="headerlink" href="#inkplate-object-initialization" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><div class="line-block">
 <div class="line">To use any of Inkplates functionalities in Arduino IDE you need to include Inkplate header, as mentioned on the Index and Get Started pages.</div>
@@ -250,7 +251,7 @@ After calling this below your imports you have access to all Inkplate functional
 </div></blockquote>
 </div>
 <div class="section" id="wifi-connectivity">
-<h3><span class="section-number">3.1.1.2. </span>WiFi connectivity<a class="headerlink" href="#wifi-connectivity" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.1.2. </span>WiFi connectivity<a class="headerlink" href="#wifi-connectivity" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><div class="line-block">
 <div class="line">For some functionalities of the Inkplate to work you must be connected to WiFi.</div>
@@ -291,7 +292,7 @@ After calling this below your imports you have access to all Inkplate functional
 </ul>
 </div>
 <div class="section" id="begin-method">
-<h3><span class="section-number">3.1.1.3. </span>begin() method<a class="headerlink" href="#begin-method" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.1.3. </span>begin() method<a class="headerlink" href="#begin-method" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><div class="line-block">
 <div class="line">Before calling any display method you <strong>must</strong> call .begin() like this:</div>
@@ -311,7 +312,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-sdcardinit">
-<h3><span class="section-number">3.1.1.4. </span>Inkplate::sdCardInit();<a class="headerlink" href="#inkplate-sdcardinit" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.1.4. </span>Inkplate::sdCardInit();<a class="headerlink" href="#inkplate-sdcardinit" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -338,7 +339,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-getsdfat">
-<h3><span class="section-number">3.1.1.5. </span>Inkplate::getSdFat();<a class="headerlink" href="#inkplate-getsdfat" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.1.5. </span>Inkplate::getSdFat();<a class="headerlink" href="#inkplate-getsdfat" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -364,7 +365,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-getspi">
-<h3><span class="section-number">3.1.1.6. </span>Inkplate::getSPI();<a class="headerlink" href="#inkplate-getspi" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.1.6. </span>Inkplate::getSPI();<a class="headerlink" href="#inkplate-getspi" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -383,7 +384,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-getpanelstate">
-<h3><span class="section-number">3.1.1.7. </span>Inkplate::getPanelState();<a class="headerlink" href="#inkplate-getpanelstate" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.1.7. </span>Inkplate::getPanelState();<a class="headerlink" href="#inkplate-getpanelstate" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -416,7 +417,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-readtouchpad">
-<h3><span class="section-number">3.1.1.8. </span>Inkplate::readTouchpad();<a class="headerlink" href="#inkplate-readtouchpad" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.1.8. </span>Inkplate::readTouchpad();<a class="headerlink" href="#inkplate-readtouchpad" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -452,7 +453,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-readtemperature">
-<h3><span class="section-number">3.1.1.9. </span>Inkplate::readTemperature();<a class="headerlink" href="#inkplate-readtemperature" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.1.9. </span>Inkplate::readTemperature();<a class="headerlink" href="#inkplate-readtemperature" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -486,7 +487,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-readbattery">
-<h3><span class="section-number">3.1.1.10. </span>Inkplate::readBattery();<a class="headerlink" href="#inkplate-readbattery" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.1.10. </span>Inkplate::readBattery();<a class="headerlink" href="#inkplate-readbattery" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -520,7 +521,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-einkoff">
-<h3><span class="section-number">3.1.1.11. </span>Inkplate::einkOff();<a class="headerlink" href="#inkplate-einkoff" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.1.11. </span>Inkplate::einkOff();<a class="headerlink" href="#inkplate-einkoff" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -553,7 +554,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="id1">
-<h3><span class="section-number">3.1.1.12. </span>Inkplate::einkOff();<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.1.12. </span>Inkplate::einkOff();<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -587,9 +588,9 @@ After you’ve done this you can proceed calling all other methods described bel
 </div>
 </div>
 <div class="section" id="drawing-functions">
-<h2><span class="section-number">3.1.2. </span>Drawing Functions<a class="headerlink" href="#drawing-functions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2.2. </span>Drawing Functions<a class="headerlink" href="#drawing-functions" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="inkplate-drawpixel">
-<h3><span class="section-number">3.1.2.1. </span>Inkplate::drawPixel();<a class="headerlink" href="#inkplate-drawpixel" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.1. </span>Inkplate::drawPixel();<a class="headerlink" href="#inkplate-drawpixel" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -636,7 +637,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-cleardisplay">
-<h3><span class="section-number">3.1.2.2. </span>Inkplate::clearDisplay();<a class="headerlink" href="#inkplate-cleardisplay" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.2. </span>Inkplate::clearDisplay();<a class="headerlink" href="#inkplate-cleardisplay" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -669,7 +670,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-display">
-<h3><span class="section-number">3.1.2.3. </span>Inkplate::display();<a class="headerlink" href="#inkplate-display" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.3. </span>Inkplate::display();<a class="headerlink" href="#inkplate-display" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -705,7 +706,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-partialupdate">
-<h3><span class="section-number">3.1.2.4. </span>Inkplate::partialUpdate();<a class="headerlink" href="#inkplate-partialupdate" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.4. </span>Inkplate::partialUpdate();<a class="headerlink" href="#inkplate-partialupdate" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -744,7 +745,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-setrotation">
-<h3><span class="section-number">3.1.2.5. </span>Inkplate::setRotation();<a class="headerlink" href="#inkplate-setrotation" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.5. </span>Inkplate::setRotation();<a class="headerlink" href="#inkplate-setrotation" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -791,7 +792,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-selectdisplaymode">
-<h3><span class="section-number">3.1.2.6. </span>Inkplate::selectDisplayMode();<a class="headerlink" href="#inkplate-selectdisplaymode" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.6. </span>Inkplate::selectDisplayMode();<a class="headerlink" href="#inkplate-selectdisplaymode" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -824,7 +825,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-getdisplaymode">
-<h3><span class="section-number">3.1.2.7. </span>Inkplate::getDisplayMode();<a class="headerlink" href="#inkplate-getdisplaymode" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.7. </span>Inkplate::getDisplayMode();<a class="headerlink" href="#inkplate-getdisplaymode" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -859,7 +860,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-drawbitmapfromsd">
-<h3><span class="section-number">3.1.2.8. </span>Inkplate::drawBitmapFromSD();<a class="headerlink" href="#inkplate-drawbitmapfromsd" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.8. </span>Inkplate::drawBitmapFromSD();<a class="headerlink" href="#inkplate-drawbitmapfromsd" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -923,7 +924,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-drawbitmapfromweb">
-<h3><span class="section-number">3.1.2.9. </span>Inkplate::drawBitmapFromWeb();<a class="headerlink" href="#inkplate-drawbitmapfromweb" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.9. </span>Inkplate::drawBitmapFromWeb();<a class="headerlink" href="#inkplate-drawbitmapfromweb" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -980,7 +981,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-drawthickline">
-<h3><span class="section-number">3.1.2.10. </span>Inkplate::drawThickLine();<a class="headerlink" href="#inkplate-drawthickline" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.10. </span>Inkplate::drawThickLine();<a class="headerlink" href="#inkplate-drawthickline" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -1026,7 +1027,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-drawgradientline">
-<h3><span class="section-number">3.1.2.11. </span>Inkplate::drawGradientLine();<a class="headerlink" href="#inkplate-drawgradientline" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.11. </span>Inkplate::drawGradientLine();<a class="headerlink" href="#inkplate-drawgradientline" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -1076,7 +1077,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-clean">
-<h3><span class="section-number">3.1.2.12. </span>Inkplate::clean();<a class="headerlink" href="#inkplate-clean" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.12. </span>Inkplate::clean();<a class="headerlink" href="#inkplate-clean" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -1110,7 +1111,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-drawfastvline">
-<h3><span class="section-number">3.1.2.13. </span>Inkplate::drawFastVLine();<a class="headerlink" href="#inkplate-drawfastvline" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.13. </span>Inkplate::drawFastVLine();<a class="headerlink" href="#inkplate-drawfastvline" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Adafruit_GFX.h)</strong>:</p></li>
 </ul>
@@ -1155,7 +1156,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-drawfasthline">
-<h3><span class="section-number">3.1.2.14. </span>Inkplate::drawFastHLine();<a class="headerlink" href="#inkplate-drawfasthline" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.14. </span>Inkplate::drawFastHLine();<a class="headerlink" href="#inkplate-drawfasthline" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Adafruit_GFX.h)</strong>:</p></li>
 </ul>
@@ -1200,7 +1201,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-fillrect">
-<h3><span class="section-number">3.1.2.15. </span>Inkplate::fillRect();<a class="headerlink" href="#inkplate-fillrect" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.15. </span>Inkplate::fillRect();<a class="headerlink" href="#inkplate-fillrect" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Adafruit_GFX.h)</strong>:</p></li>
 </ul>
@@ -1245,7 +1246,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-fillscreen">
-<h3><span class="section-number">3.1.2.16. </span>Inkplate::fillScreen();<a class="headerlink" href="#inkplate-fillscreen" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.16. </span>Inkplate::fillScreen();<a class="headerlink" href="#inkplate-fillscreen" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Adafruit_GFX.h)</strong>:</p></li>
 </ul>
@@ -1286,7 +1287,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-drawline">
-<h3><span class="section-number">3.1.2.17. </span>Inkplate::drawLine();<a class="headerlink" href="#inkplate-drawline" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.17. </span>Inkplate::drawLine();<a class="headerlink" href="#inkplate-drawline" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Adafruit_GFX.h)</strong>:</p></li>
 </ul>
@@ -1335,7 +1336,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-drawrect">
-<h3><span class="section-number">3.1.2.18. </span>Inkplate::drawRect();<a class="headerlink" href="#inkplate-drawrect" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.18. </span>Inkplate::drawRect();<a class="headerlink" href="#inkplate-drawrect" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Adafruit_GFX.h)</strong>:</p></li>
 </ul>
@@ -1380,7 +1381,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-drawcircle">
-<h3><span class="section-number">3.1.2.19. </span>Inkplate::drawCircle();<a class="headerlink" href="#inkplate-drawcircle" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.19. </span>Inkplate::drawCircle();<a class="headerlink" href="#inkplate-drawcircle" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Adafruit_GFX.h)</strong>:</p></li>
 </ul>
@@ -1424,7 +1425,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-fillcircle">
-<h3><span class="section-number">3.1.2.20. </span>Inkplate::fillCircle();<a class="headerlink" href="#inkplate-fillcircle" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.20. </span>Inkplate::fillCircle();<a class="headerlink" href="#inkplate-fillcircle" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Adafruit_GFX.h)</strong>:</p></li>
 </ul>
@@ -1468,7 +1469,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-drawtriangle">
-<h3><span class="section-number">3.1.2.21. </span>Inkplate::drawTriangle();<a class="headerlink" href="#inkplate-drawtriangle" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.21. </span>Inkplate::drawTriangle();<a class="headerlink" href="#inkplate-drawtriangle" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Adafruit_GFX.h)</strong>:</p></li>
 </ul>
@@ -1516,7 +1517,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-filltriangle">
-<h3><span class="section-number">3.1.2.22. </span>Inkplate::fillTriangle();<a class="headerlink" href="#inkplate-filltriangle" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.22. </span>Inkplate::fillTriangle();<a class="headerlink" href="#inkplate-filltriangle" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Adafruit_GFX.h)</strong>:</p></li>
 </ul>
@@ -1564,7 +1565,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-drawroundrect">
-<h3><span class="section-number">3.1.2.23. </span>Inkplate::drawRoundRect();<a class="headerlink" href="#inkplate-drawroundrect" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.23. </span>Inkplate::drawRoundRect();<a class="headerlink" href="#inkplate-drawroundrect" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Adafruit_GFX.h)</strong>:</p></li>
 </ul>
@@ -1611,7 +1612,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-fillroundrect">
-<h3><span class="section-number">3.1.2.24. </span>Inkplate::fillRoundRect();<a class="headerlink" href="#inkplate-fillroundrect" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.24. </span>Inkplate::fillRoundRect();<a class="headerlink" href="#inkplate-fillroundrect" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Adafruit_GFX.h)</strong>:</p></li>
 </ul>
@@ -1658,7 +1659,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-drawbitmap">
-<h3><span class="section-number">3.1.2.25. </span>Inkplate::drawBitmap();<a class="headerlink" href="#inkplate-drawbitmap" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.25. </span>Inkplate::drawBitmap();<a class="headerlink" href="#inkplate-drawbitmap" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Adafruit_GFX.h)</strong>:</p></li>
 </ul>
@@ -1738,7 +1739,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-drawbitmap3bit">
-<h3><span class="section-number">3.1.2.26. </span>Inkplate::drawBitmap3Bit();<a class="headerlink" href="#inkplate-drawbitmap3bit" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.26. </span>Inkplate::drawBitmap3Bit();<a class="headerlink" href="#inkplate-drawbitmap3bit" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -1785,7 +1786,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-drawchar">
-<h3><span class="section-number">3.1.2.27. </span>Inkplate::drawChar();<a class="headerlink" href="#inkplate-drawchar" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.27. </span>Inkplate::drawChar();<a class="headerlink" href="#inkplate-drawchar" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Adafruit_GFX.h)</strong>:</p></li>
 </ul>
@@ -1830,7 +1831,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-gettextbounds">
-<h3><span class="section-number">3.1.2.28. </span>Inkplate::getTextBounds();<a class="headerlink" href="#inkplate-gettextbounds" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.28. </span>Inkplate::getTextBounds();<a class="headerlink" href="#inkplate-gettextbounds" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Adafruit_GFX.h)</strong>:</p></li>
 </ul>
@@ -1895,7 +1896,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-settextsize">
-<h3><span class="section-number">3.1.2.29. </span>Inkplate::setTextSize();<a class="headerlink" href="#inkplate-settextsize" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.29. </span>Inkplate::setTextSize();<a class="headerlink" href="#inkplate-settextsize" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Adafruit_GFX.h)</strong>:</p></li>
 </ul>
@@ -1933,7 +1934,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-setfont">
-<h3><span class="section-number">3.1.2.30. </span>Inkplate::setFont();<a class="headerlink" href="#inkplate-setfont" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.30. </span>Inkplate::setFont();<a class="headerlink" href="#inkplate-setfont" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Adafruit_GFX.h)</strong>:</p></li>
 </ul>
@@ -1978,7 +1979,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-setcursor">
-<h3><span class="section-number">3.1.2.31. </span>Inkplate::setCursor();<a class="headerlink" href="#inkplate-setcursor" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.31. </span>Inkplate::setCursor();<a class="headerlink" href="#inkplate-setcursor" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Adafruit_GFX.h)</strong>:</p></li>
 </ul>
@@ -2021,7 +2022,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-print">
-<h3><span class="section-number">3.1.2.32. </span>Inkplate::print();<a class="headerlink" href="#inkplate-print" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.32. </span>Inkplate::print();<a class="headerlink" href="#inkplate-print" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype</strong>:</p></li>
 </ul>
@@ -2065,7 +2066,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-println">
-<h3><span class="section-number">3.1.2.33. </span>Inkplate::println();<a class="headerlink" href="#inkplate-println" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.33. </span>Inkplate::println();<a class="headerlink" href="#inkplate-println" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype</strong>:</p></li>
 </ul>
@@ -2101,7 +2102,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-settextwrap">
-<h3><span class="section-number">3.1.2.34. </span>Inkplate::setTextWrap();<a class="headerlink" href="#inkplate-settextwrap" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.34. </span>Inkplate::setTextWrap();<a class="headerlink" href="#inkplate-settextwrap" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Adafruit_GFX.h)</strong>:</p></li>
 </ul>
@@ -2135,7 +2136,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-width">
-<h3><span class="section-number">3.1.2.35. </span>Inkplate::width();<a class="headerlink" href="#inkplate-width" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.35. </span>Inkplate::width();<a class="headerlink" href="#inkplate-width" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Adafruit_GFX.h)</strong>:</p></li>
 </ul>
@@ -2168,7 +2169,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-height">
-<h3><span class="section-number">3.1.2.36. </span>Inkplate::height();<a class="headerlink" href="#inkplate-height" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.36. </span>Inkplate::height();<a class="headerlink" href="#inkplate-height" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Adafruit_GFX.h)</strong>:</p></li>
 </ul>
@@ -2201,7 +2202,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-getrotation">
-<h3><span class="section-number">3.1.2.37. </span>Inkplate::getRotation();<a class="headerlink" href="#inkplate-getrotation" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.37. </span>Inkplate::getRotation();<a class="headerlink" href="#inkplate-getrotation" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Adafruit_GFX.h)</strong>:</p></li>
 </ul>
@@ -2235,7 +2236,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-getcursorx">
-<h3><span class="section-number">3.1.2.38. </span>Inkplate::getCursorX();<a class="headerlink" href="#inkplate-getcursorx" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.38. </span>Inkplate::getCursorX();<a class="headerlink" href="#inkplate-getcursorx" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Adafruit_GFX.h)</strong>:</p></li>
 </ul>
@@ -2269,7 +2270,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </div>
 <div class="section" id="inkplate-getcursory">
-<h3><span class="section-number">3.1.2.39. </span>Inkplate::getCursorY();<a class="headerlink" href="#inkplate-getcursory" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2.39. </span>Inkplate::getCursorY();<a class="headerlink" href="#inkplate-getcursory" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Adafruit_GFX.h)</strong>:</p></li>
 </ul>
@@ -2313,10 +2314,10 @@ After you’ve done this you can proceed calling all other methods described bel
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="micropython.html" class="btn btn-neutral float-right" title="3.2. Inkplate Micropython" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="micropython.html" class="btn btn-neutral float-right" title="3.3. Inkplate Slave Mode" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="api-refrence.html" class="btn btn-neutral float-left" title="3. Inkplate API Refrence" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="slave-mode.html" class="btn btn-neutral float-left" title="3.1. Inkplate Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
