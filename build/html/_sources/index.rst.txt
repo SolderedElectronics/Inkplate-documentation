@@ -15,6 +15,7 @@ Welcome to Inkplate's documentation!
    /features
    /api-refrence
    /hardware-refrence
+   /gui-designer
    /contribute
    /resources
    /open-source

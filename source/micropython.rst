@@ -14,7 +14,7 @@ Inkplate Slave Mode
 echo: #?*
 ---------
     | Check if the Inkplate receives commands on UART
-    | response:  OK
+    | response:		OK
 
 drawPixel: #0(XXX,YYY,CC)*
 --------------------------
@@ -186,130 +186,63 @@ setTextSize: #D(NN)*
     | NNN - Text scaling (with leading zeros)
     | example:
     
-    .. code-block::
+    
     
         #D(02)*
 
-setCursor: #E(XXX,YYY)*
------------------------
-    | XXX - X position of text cursor (with leading zeros)
-    | YYY - Y position of text cursor (with leading zeros)
-    | example:
-    
-    .. code-block::
-    
-        #E(002,010)*
+setCursor:		#E(XXX,YYY)*
+XXX - X position of text cursor (with leading zeros)
+YYY - Y position of text cursor (with leading zeros)
+example #E(002,010)*
 
-setTextWrap: #F(T/F)*
----------------------
-    | T - True if enable text wraping
-    | F - False if disable text wraping
-    | example: 
-    
-    .. code-block::
-    
-        #F(T)* or #F(F)*
+setTextWrap:		#F(T/F)*
+T - True if enable text wraping
+F - False if disable text wraping
+example #F(T)* or #F(F)*
 
-setRotation: #G(RRR)*
----------------------
-    | RRR - Sets rotation (0-3, where each increment rotates whole screen by 90 deg)
-    | example:
-    
-    .. code-block::
-    
-        #G(003)*
+setRotation:		#G(RRR)*
+RRR - Sets rotation (0-3, where each increment rotates whole screen by 90 deg)
+example #G(003)*
 
-drawBitmap: #H(XXX,YYY,"PATH")*
--------------------------------
-    | XXX - X position of bitmap on display
-    | YYY - Y position of bitmap on display
-    | PATH - path to bitmap image on SD card, where path should be sent as HEX Char (same as for print command). Example: /image1.bmp should be sent as 2f696d616765312e626d70
-    | example:  (2f696d616765312e626d70 means /image1.bmp)
-    
-    .. code-block::
+drawBitmap:		#H(XXX,YYY,"PATH")*
+XXX - X position of bitmap on display
+YYY - Y position of bitmap on display
+PATH - path to bitmap image on SD card, where path should be sent as HEX Char (same as for print command). Example: /image1.bmp should be sent as 2f696d616765312e626d70
+example: #H(000,000,"2f696d616765312e626d70")* where 2f696d616765312e626d70 means /image1.bmp
+response:		#H(1)* - Image loaded succesfully
+			#H(0)* - Image load failed
+			#H(-1)* - SD Card Init Error
 
-        #H(000,000,"2f696d616765312e626d70")* 
-    
-    | response:
-    
-    .. code-block::
+setDisplayMode:		#I(D)*
+D - Display Mode (D = 3 -> 3 bit mode, D = 1 -> 1 bit mode)
+example: #I(3)* or #I(1)*
 
-        #H(1)* - Image loaded succesfully
-        #H(0)* - Image load failed
-        #H(-1)* - SD Card Init Error
+getDisplayMode:		#J(?)*
+Response:		#J(1)* - 3 bit mode
+			#J(0)* - 1 bit mode
 
-setDisplayMode: #I(D)*
-----------------------
-    | D - Display Mode (D = 3 -> 3 bit mode, D = 1 -> 1 bit mode)
-    | example:
-    
-    .. code-block::
+clearDisplay:		#K(1)*
 
-        #I(3)* or #I(1)*
+display:		#L(1)*
 
-getDisplayMode: #J(?)*
-----------------------
-    | Response:
-    
-    .. code-block::
+partialUpdate:		#M(YY1, XX2, YY2)*
+YY1 - Start Y position of part of the screen that will be updated
+XX2 - End X position of part of the screen that will be updated
+YY2 - End Y position of part of the screen that will be updated
+example: #M(005,400,040)*
 
-        #J(1)* - 3 bit mode
-        #J(0)* - 1 bit mode
+readTemperature:	#N(?)*
+response:		#N(23)* - 23 Celsius degrees
 
-clearDisplay: #K(1)*
---------------------
-    | Clears display.
+readTouchpad:		#O(P)*
+P - Name of pad that needs to be read (1, 2 or 3)
+resposne:		#O(1)* for high state of pad or #O(0)* for low state of pad
 
-display: #L(1)*
----------------
-    | Displays image buffer data to screen.
-
-partialUpdate: #M(YY1, XX2, YY2)*
----------------------------------
-    | YY1 - Start Y position of part of the screen that will be updated
-    | XX2 - End X position of part of the screen that will be updated
-    | YY2 - End Y position of part of the screen that will be updated
-    | example:
-    
-    .. code-block::
-    
-        #M(005,400,040)*
-
-readTemperature: #N(?)*
------------------------
-    | response:
-    
-    .. code-block::
-    
-        #N(23)* - 23 Celsius degrees
-
-readTouchpad: #O(P)*
---------------------
-    | P - Name of pad that needs to be read (1, 2 or 3)
-    | resposne:
-    
-    .. code-block::
-    
-        #O(1)* for high state of pad 
-        or 
-        #O(0)* for low state of pad
-
-readBattery: #P(?)*
--------------------
-    | response:
-    
-    .. code-block::
-    
-        #P(3.65)* - Measured voltage on battery is 3.65VDC
+readBattery:		#P(?)*
+response:		#P(3.65)* - Measured voltage on battery is 3.65VDC
 
 panelSupply(einkOff/on):#Q(S)*
-------------------------------
-    | S - State of panel power supply (S = 1 -> panel has power supply, S = 0 -> panel power supply has benn turned off)
+S - State of panel power supply (S = 1 -> panel has power supply, S = 0 -> panel power supply has benn turned off)
 
-getPanelState: #R(?)*
----------------------
-    | response:
-    
-    .. code-block::
-    
-        #R(1)* - panel has power supply or #R(0)* - panel supply has been turned off
+getPanelState:		#R(?)*
+response:		#R(1)* - panel has power supply or #R(0)* - panel supply has been turned off
