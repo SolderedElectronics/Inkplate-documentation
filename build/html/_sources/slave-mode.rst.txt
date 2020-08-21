@@ -23,9 +23,9 @@ drawPixel: #0(XXX,YYY,CC)*
     | CC - Color (with leading zeros)
     | example:
     
-    .. code-block:: C
+.. code-block:: c
 
-         #0(001,005,04)*
+    #0(001,005,04)*
 
 drawLine: #1(XXX,YYY,III,JJJ,CC)*
 ---------------------------------
@@ -36,9 +36,9 @@ drawLine: #1(XXX,YYY,III,JJJ,CC)*
     | CC - Color (with leading zeros)
     | example:
     
-    .. code-block:: C
+.. code-block:: C
 
-        #1(001,004,010,123,01)*
+    #1(001,004,010,123,01)*
 
 drawFastVLine: #2(XXX,YYY,LLL,CC)*
 ----------------------------------
@@ -48,9 +48,9 @@ drawFastVLine: #2(XXX,YYY,LLL,CC)*
     | CC - Solor (with leading zeros)
     | example: 
     
-    .. code-block:: C
+.. code-block:: C
 
-        #2(142,425,040,05)*
+    #2(142,425,040,05)*
 
 drawFastHLine: #3(XXX,YYY,LLL,CC)*
 ----------------------------------
@@ -60,9 +60,9 @@ drawFastHLine: #3(XXX,YYY,LLL,CC)*
     | CC - Color (with leading zeros)
     | example:
     
-    .. code-block:: C
+.. code-block:: c
     
-        #3(123,014,100,03)*
+    #3(123,014,100,03)*
 
 drawRect: #4(XXX,YYY,WWW,HHH,CC)*
 ---------------------------------
@@ -73,9 +73,9 @@ drawRect: #4(XXX,YYY,WWW,HHH,CC)*
     | CC - Color (with leading zeros)
     | example:
     
-    .. code-block:: C
+.. code-block:: c
     
-        #4(123,014,050,010,01)*
+    #4(123,014,050,010,01)*
 
 drawCircle: #5(XXX,YYY,RRR,CC)*
 -------------------------------
@@ -85,9 +85,9 @@ drawCircle: #5(XXX,YYY,RRR,CC)*
     | CC - Color (with leading zeros)
     | example:
     
-    .. code-block:: C
+.. code-block:: c
     
-        #5(050,100,040,01)*
+    #5(050,100,040,01)*
 
 drawTriangle: #6(XX1,YY1,XX2,YY2,XX3,YY3,CC)*
 ---------------------------------------------
@@ -100,9 +100,9 @@ drawTriangle: #6(XX1,YY1,XX2,YY2,XX3,YY3,CC)*
     | CC - Color (with leading zeros)
     | example: 
     
-    .. code-block:: C
+.. code-block:: c
     
-        #6(250,250,100,400,375,450,04)*
+    #6(250,250,100,400,375,450,04)*
 
 drawRoudRect: #7(XXX,YYY,WWW,HHH,RRR,CC)*
 -----------------------------------------
@@ -114,9 +114,9 @@ drawRoudRect: #7(XXX,YYY,WWW,HHH,RRR,CC)*
     | CC - Color (with leading zeros)
     | example: 
     
-    .. code-block:: C
+.. code-block:: c
     
-        #7(123,014,050,010,005,00)*
+    #7(123,014,050,010,005,00)*
 
 fillRect: #8(XXX,YYY,WWW,HHH,CC)*
 ---------------------------------
@@ -127,9 +127,9 @@ fillRect: #8(XXX,YYY,WWW,HHH,CC)*
     | CC - Color (with leading zeros)
     | example:
     
-    .. code-block:: C
+.. code-block:: c
     
-        #8(123,014,050,010,01)*
+    #8(123,014,050,010,01)*
 
 fillCircle: #9(XXX,YYY,RRR,CC)*
 -------------------------------
@@ -139,9 +139,9 @@ fillCircle: #9(XXX,YYY,RRR,CC)*
     | CC - Color (with leading zeros)
     | example:
     
-    .. code-block:: C
+.. code-block:: c
     
-        #9(050,100,040,01)*
+    #9(050,100,040,01)*
 
 fillTriangle: #A(XX1,YY1,XX2,YY2,XX3,YY3,CC)*
 ---------------------------------------------
@@ -154,9 +154,9 @@ fillTriangle: #A(XX1,YY1,XX2,YY2,XX3,YY3,CC)*
     | CC - Color (with leading zeros)
     | example:
     
-    .. code-block:: C
+.. code-block:: c
     
-        #A(250,250,100,400,375,450,04)*
+    #A(250,250,100,400,375,450,04)*
 
 fillRoudRect: #B(XXX,YYY,WWW,HHH,RRR,CC)*
 -----------------------------------------
@@ -168,27 +168,27 @@ fillRoudRect: #B(XXX,YYY,WWW,HHH,RRR,CC)*
     | CC - Color (with leading zeros)
     | example:
     
-    .. code-block:: C
+.. code-block:: c
     
-        #B(123,014,050,010,005,00)*
+    #B(123,014,050,010,005,00)*
 
 print: #C("STRING")*
 --------------------
     | STRING - Text/Strig coded in HEX Char (example: HELLO WORLD would be coded like 48454c4c4f20574f524c44, where 48 means 0x48 which is H in ASCII table)
     | example: for HELLO WORLD:
     
-    .. code-block:: C
+.. code-block:: c
     
-        #C("48454c4c4f20574f524c44")*
+    #C("48454c4c4f20574f524c44")*
 
 setTextSize: #D(NN)*
 --------------------
     | NNN - Text scaling (with leading zeros)
     | example:
     
-    .. code-block:: C
+.. code-block:: c
     
-        #D(02)*
+    #D(02)*
 
 setCursor: #E(XXX,YYY)*
 -----------------------
@@ -196,9 +196,9 @@ setCursor: #E(XXX,YYY)*
     | YYY - Y position of text cursor (with leading zeros)
     | example:
     
-    .. code-block:: C
+.. code-block:: c
     
-        #E(002,010)*
+    #E(002,010)*
 
 setTextWrap: #F(T/F)*
 ---------------------
@@ -206,18 +206,18 @@ setTextWrap: #F(T/F)*
     | F - False if disable text wraping
     | example: 
     
-    .. code-block:: C
+.. code-block:: c
     
-        #F(T)* or #F(F)*
+    #F(T)* or #F(F)*
 
 setRotation: #G(RRR)*
 ---------------------
     | RRR - Sets rotation (0-3, where each increment rotates whole screen by 90 deg)
     | example:
     
-    .. code-block:: C
+.. code-block:: c
     
-        #G(003)*
+    #G(003)*
 
 drawBitmap: #H(XXX,YYY,"PATH")*
 -------------------------------
@@ -226,35 +226,35 @@ drawBitmap: #H(XXX,YYY,"PATH")*
     | PATH - path to bitmap image on SD card, where path should be sent as HEX Char (same as for print command). Example: /image1.bmp should be sent as 2f696d616765312e626d70
     | example:  (2f696d616765312e626d70 means /image1.bmp)
     
-    .. code-block:: C
+.. code-block:: c
 
-        #H(000,000,"2f696d616765312e626d70")* 
+    #H(000,000,"2f696d616765312e626d70")* 
     
     | Response:
     
-    .. code-block:: C
+.. code-block:: c
 
-        #H(1)* - Image loaded succesfully
-        #H(0)* - Image load failed
-        #H(-1)* - SD Card Init Error
+    #H(1)* - Image loaded succesfully
+    #H(0)* - Image load failed
+    #H(-1)* - SD Card Init Error
 
 setDisplayMode: #I(D)*
 ----------------------
     | D - Display Mode (D = 3 -> 3 bit mode, D = 1 -> 1 bit mode)
     | example:
     
-    .. code-block:: C
+.. code-block:: c
 
-        #I(3)* or #I(1)*
+    #I(3)* or #I(1)*
 
 getDisplayMode: #J(?)*
 ----------------------
     | Response:
     
-    .. code-block:: C
+.. code-block:: c
 
-        #J(1)* - 3 bit mode
-        #J(0)* - 1 bit mode
+    #J(1)* - 3 bit mode
+    #J(0)* - 1 bit mode
 
 clearDisplay: #K(1)*
 --------------------
@@ -271,7 +271,7 @@ partialUpdate: #M(YY1, XX2, YY2)*
     | YY2 - End Y position of part of the screen that will be updated
     | example:
     
-    .. code-block:: C
+.. code-block:: c
     
         #M(005,400,040)*
 
@@ -279,28 +279,28 @@ readTemperature: #N(?)*
 -----------------------
     | Response:
     
-    .. code-block:: C
+.. code-block:: c
     
-        #N(23)* - 23 Celsius degrees
+    #N(23)* - 23 Celsius degrees
 
 readTouchpad: #O(P)*
 --------------------
     | P - Name of pad that needs to be read (1, 2 or 3)
     | Response:
     
-    .. code-block:: C
+.. code-block:: c
     
-        #O(1)* for high state of pad 
-        or 
-        #O(0)* for low state of pad
+    #O(1)* for high state of pad 
+    or 
+    #O(0)* for low state of pad
 
 readBattery: #P(?)*
 -------------------
     | Response:
     
-    .. code-block:: C
+.. code-block:: c
     
-        #P(3.65)* - Measured voltage on battery is 3.65VDC
+    #P(3.65)* - Measured voltage on battery is 3.65VDC
 
 panelSupply(einkOff/on):#Q(S)*
 ------------------------------
@@ -310,6 +310,6 @@ getPanelState: #R(?)*
 ---------------------
     | Response:
     
-    .. code-block:: C
+.. code-block:: c
     
-        #R(1)* - panel has power supply or #R(0)* - panel supply has been turned off
+    #R(1)* - panel has power supply or #R(0)* - panel supply has been turned off
