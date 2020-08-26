@@ -887,6 +887,109 @@ Inkplate::drawRect();
     .. image:: images/IMG_4359.jpg
         :width: 600
 
+Inkplate::drawElipse();
+#######################
+
+* **Method prototype (as seen in Adafruit_GFX.h)**:
+
+.. code-block:: c
+
+    void drawElipse(int rx, int ry, int xc, int yc, int c);
+
+* **Arguments and return value**:
+    | int **rx** - Elipse X radius.
+    | int **ry** - Elipse Y radius.
+    | int **xc** - Elipse center x.
+    | int **yc** - Elipse center y.
+    | int **color** - Elipse color (just the edge, see fillElipse for fully filled).
+
+    Returns nothing.
+
+* **Description**:
+    | Draws an empty(not filled) elipse.
+
+* **Example**:
+    .. code-block:: c
+
+       display.drawElipse(100, 200, 400, 300, 0);
+
+Inkplate::fillElipse();
+#######################
+
+* **Method prototype (as seen in Adafruit_GFX.h)**:
+
+.. code-block:: c
+
+    void fillElipse(int rx, int ry, int xc, int yc, int c);
+
+* **Arguments and return value**:
+    | int **rx** - Elipse X radius.
+    | int **ry** - Elipse Y radius.
+    | int **xc** - Elipse center x.
+    | int **yc** - Elipse center y.
+    | int **color** - Elipse color.
+
+    Returns nothing.
+
+* **Description**:
+    | Draws an filled elipse.
+
+* **Example**:
+    .. code-block:: c
+
+       display.fillElipse(100, 200, 400, 300, 0);
+
+
+Inkplate::drawPolygon();
+########################
+
+* **Method prototype (as seen in Adafruit_GFX.h)**:
+
+.. code-block:: c
+
+    void drawPolygon(int *x, int *y, int n, int color);
+
+* **Arguments and return value**:
+    | int ***x** - Polygon points X coordinates.
+    | int ***y** - Polygon points Y coordinates.
+    | int **n** - Number of points.
+    | int **color** - Elipse color (just the edge, see fillElipse for fully filled).
+
+    Returns nothing.
+
+* **Description**:
+    | Draws an empty(not filled) polygon.
+
+* **Example**:
+    .. code-block:: c
+
+       display.drawPolygon(xt, yt, n, 0);
+
+Inkplate::drawPolygon();
+########################
+
+* **Method prototype (as seen in Adafruit_GFX.h)**:
+
+.. code-block:: c
+
+    void drawPolygon(int *x, int *y, int n, int color);
+
+* **Arguments and return value**:
+    | int ***x** - Polygon points X coordinates.
+    | int ***y** - Polygon points Y coordinates.
+    | int **n** - Number of points.
+    | int **color** - Elipse color (just the edge, see fillElipse for fully filled).
+
+    Returns nothing.
+
+* **Description**:
+    | Draws a filled polygon.
+    | Can be quite slow.
+
+* **Example**:
+    .. code-block:: c
+
+       display.fillPolygon(xt, yt, n, 0);
 
 
 Inkplate::drawCircle();
