@@ -90,32 +90,33 @@
 <li class="toctree-l1"><a class="reference internal" href="api-refrence.html">3. Inkplate API Refrence</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hardware-refrence.html">4. Inkplate Hardware Refrence</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">5. Inkplate GUI designer</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#nomenclature">5.1. Nomenclature</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#component">5.1.1. Component</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#entity">5.1.2. Entity</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#primitives-and-widgets">5.1.3. Primitives and widgets</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#editables">5.1.4. Editables</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#modifiers">5.1.5. Modifiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">5.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nomenclature">5.2. Nomenclature</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#component">5.2.1. Component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#entity">5.2.2. Entity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#primitives-and-widgets">5.2.3. Primitives and widgets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#editables">5.2.4. Editables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modifiers">5.2.5. Modifiers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#exporting-code">5.2. Exporting code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#in-code-rendering">5.3. In code rendering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#custom-data-rendering">5.4. Custom data rendering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#editing-widgets">5.5. Editing widgets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#making-widgets">5.6. Making widgets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#using-fonts">5.7. Using fonts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#primitives-list">5.8. Primitives list</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#line">5.8.1. Line</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#rectangle">5.8.2. Rectangle</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#circle">5.8.3. Circle</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#triangle">5.8.4. Triangle</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#text">5.8.5. Text</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#bitmap">5.8.6. Bitmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exporting-code">5.3. Exporting code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#in-code-rendering">5.4. In code rendering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#custom-data-rendering">5.5. Custom data rendering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#editing-widgets">5.6. Editing widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#making-widgets">5.7. Making widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-fonts">5.8. Using fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#primitives-list">5.9. Primitives list</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#line">5.9.1. Line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rectangle">5.9.2. Rectangle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#circle">5.9.3. Circle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#triangle">5.9.4. Triangle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#text">5.9.5. Text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bitmap">5.9.6. Bitmap</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#widgets-list">5.9. Widgets list</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#graph">5.9.1. Graph</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#clock">5.9.2. Clock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#widgets-list">5.10. Widgets list</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#graph">5.10.1. Graph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clock">5.10.2. Clock</a></li>
 </ul>
 </li>
 </ul>
@@ -192,10 +193,20 @@
             
   <div class="section" id="inkplate-gui-designer">
 <h1><span class="section-number">5. </span>Inkplate GUI designer<a class="headerlink" href="#inkplate-gui-designer" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2><span class="section-number">5.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">GUI designer is intended to be a used as a tool for rapid design of user interfaces for</div>
+<div class="line">Inkplate devices. It offers standard library primitives, but has support for more advaced usage examples,</div>
+<div class="line">by allowing advaced users to create JS and C code to be run in editor and on Inkplate device (see Widgets).</div>
+</div>
+</div></blockquote>
+</div>
 <div class="section" id="nomenclature">
-<h2><span class="section-number">5.1. </span>Nomenclature<a class="headerlink" href="#nomenclature" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.2. </span>Nomenclature<a class="headerlink" href="#nomenclature" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="component">
-<h3><span class="section-number">5.1.1. </span>Component<a class="headerlink" href="#component" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.2.1. </span>Component<a class="headerlink" href="#component" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><div class="line-block">
 <div class="line">Primitive or widget, object representation that can be drawn to screen on Inkplate or in web editor.</div>
@@ -203,7 +214,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="entity">
-<h3><span class="section-number">5.1.2. </span>Entity<a class="headerlink" href="#entity" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.2.2. </span>Entity<a class="headerlink" href="#entity" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><div class="line-block">
 <div class="line">Component but in code, or when rendering.</div>
@@ -211,7 +222,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="primitives-and-widgets">
-<h3><span class="section-number">5.1.3. </span>Primitives and widgets<a class="headerlink" href="#primitives-and-widgets" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.2.3. </span>Primitives and widgets<a class="headerlink" href="#primitives-and-widgets" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><div class="line-block">
 <div class="line">A design component can be a primitive or a widget.</div>
@@ -222,7 +233,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="editables">
-<h3><span class="section-number">5.1.4. </span>Editables<a class="headerlink" href="#editables" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.2.4. </span>Editables<a class="headerlink" href="#editables" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><div class="line-block">
 <div class="line">Sliders, input boxes, buttons etc. on the right of the screen.</div>
@@ -230,7 +241,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="modifiers">
-<h3><span class="section-number">5.1.5. </span>Modifiers<a class="headerlink" href="#modifiers" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.2.5. </span>Modifiers<a class="headerlink" href="#modifiers" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><div class="line-block">
 <div class="line">Draggable elements on screen, also mutable by editables if specified.</div>
@@ -240,7 +251,7 @@
 </div>
 </div>
 <div class="section" id="exporting-code">
-<h2><span class="section-number">5.2. </span>Exporting code<a class="headerlink" href="#exporting-code" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.3. </span>Exporting code<a class="headerlink" href="#exporting-code" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="line-block">
 <div class="line">After you’re done with editing, simlpy click on “Export C Code” in the upper left corner.</div>
@@ -256,17 +267,21 @@
 </div></blockquote>
 </div>
 <div class="section" id="in-code-rendering">
-<h2><span class="section-number">5.3. </span>In code rendering<a class="headerlink" href="#in-code-rendering" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.4. </span>In code rendering<a class="headerlink" href="#in-code-rendering" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="line-block">
 <div class="line">Be sure to call mainDraw(); in your code when you want it to draw prespecified content.</div>
 <div class="line">You must clear the buffer before hand by calling display.clearDisplay();</div>
 <div class="line">and call display.display(); after mainDraw(); to put data on screen.</div>
 </div>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="n">mainDraw</span><span class="p">();</span>
+<span class="n">display</span><span class="p">.</span><span class="n">display</span><span class="p">();</span> <span class="c1">// Needs to be called to put buffer data on screen.</span>
+</pre></div>
+</div>
 </div></blockquote>
 </div>
 <div class="section" id="custom-data-rendering">
-<h2><span class="section-number">5.4. </span>Custom data rendering<a class="headerlink" href="#custom-data-rendering" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.5. </span>Custom data rendering<a class="headerlink" href="#custom-data-rendering" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="line-block">
 <div class="line">Of course you can leave the default values to be drawn on screen, but where’s the fun in that.</div>
@@ -285,7 +300,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="editing-widgets">
-<h2><span class="section-number">5.5. </span>Editing widgets<a class="headerlink" href="#editing-widgets" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.6. </span>Editing widgets<a class="headerlink" href="#editing-widgets" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="line-block">
 <div class="line">To be sure that widgets are as customizable as possible, they directly allow you to eddit their variables.</div>
@@ -296,7 +311,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="making-widgets">
-<h2><span class="section-number">5.6. </span>Making widgets<a class="headerlink" href="#making-widgets" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.7. </span>Making widgets<a class="headerlink" href="#making-widgets" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="line-block">
 <div class="line">We strongly incourage those familiar with JavaScript to try their luck making widgets.</div>
@@ -315,24 +330,52 @@
 </div></blockquote>
 </div>
 <div class="section" id="using-fonts">
-<h2><span class="section-number">5.7. </span>Using fonts<a class="headerlink" href="#using-fonts" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.8. </span>Using fonts<a class="headerlink" href="#using-fonts" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="line-block">
 <div class="line">Our editor does not include fonts, that needs to be done locally.</div>
 <div class="line">Easiest way is to use fonts already included in library, see <a class="reference external" href="https://learn.adafruit.com/adafruit-gfx-graphics-library/using-fonts">https://learn.adafruit.com/adafruit-gfx-graphics-library/using-fonts</a></div>
 <div class="line">for list.</div>
 <div class="line"><br /></div>
-<div class="line">Fonts <strong>need</strong> to be specified like this:</div>
-<div class="line">[ editor size ]px [ c font name ]</div>
-<div class="line">Example:</div>
-<div class="line">32px FreeSansBold24pt7b</div>
+<div class="line">User specifies font size in pixels, for rendering in editor, using default Arial font, while</div>
+<div class="line">Inkplate commonly uses pt for pixel size, so be aware to convert those.</div>
+<div class="line">One px is 0.75 pt, or a pt is 1.33 px</div>
+<div class="line"><br /></div>
+<div class="line">More fonts can be added in /Fonts folder in Inkplate library, or by creating a /Fonts folder in sketch folder and adding them there.</div>
+<div class="line">As of writing, default supported fonts are:</div>
+</div>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="n">FreeMono12pt7b</span><span class="p">.</span><span class="n">h</span>                <span class="n">FreeSansBoldOblique12pt7b</span><span class="p">.</span><span class="n">h</span>
+<span class="n">FreeMono18pt7b</span><span class="p">.</span><span class="n">h</span>                <span class="n">FreeSansBoldOblique18pt7b</span><span class="p">.</span><span class="n">h</span>
+<span class="n">FreeMono24pt7b</span><span class="p">.</span><span class="n">h</span>                <span class="n">FreeSansBoldOblique24pt7b</span><span class="p">.</span><span class="n">h</span>
+<span class="n">FreeMono9pt7b</span><span class="p">.</span><span class="n">h</span>                 <span class="n">FreeSansBoldOblique9pt7b</span><span class="p">.</span><span class="n">h</span>
+<span class="n">FreeMonoBold12pt7b</span><span class="p">.</span><span class="n">h</span>            <span class="n">FreeSansOblique12pt7b</span><span class="p">.</span><span class="n">h</span>
+<span class="n">FreeMonoBold18pt7b</span><span class="p">.</span><span class="n">h</span>            <span class="n">FreeSansOblique18pt7b</span><span class="p">.</span><span class="n">h</span>
+<span class="n">FreeMonoBold24pt7b</span><span class="p">.</span><span class="n">h</span>            <span class="n">FreeSansOblique24pt7b</span><span class="p">.</span><span class="n">h</span>
+<span class="n">FreeMonoBold9pt7b</span><span class="p">.</span><span class="n">h</span>             <span class="n">FreeSansOblique9pt7b</span><span class="p">.</span><span class="n">h</span>
+<span class="n">FreeMonoBoldOblique12pt7b</span><span class="p">.</span><span class="n">h</span>     <span class="n">FreeSerif12pt7b</span><span class="p">.</span><span class="n">h</span>
+<span class="n">FreeMonoBoldOblique18pt7b</span><span class="p">.</span><span class="n">h</span>     <span class="n">FreeSerif18pt7b</span><span class="p">.</span><span class="n">h</span>
+<span class="n">FreeMonoBoldOblique24pt7b</span><span class="p">.</span><span class="n">h</span>     <span class="n">FreeSerif24pt7b</span><span class="p">.</span><span class="n">h</span>
+<span class="n">FreeMonoBoldOblique9pt7b</span><span class="p">.</span><span class="n">h</span>      <span class="n">FreeSerif9pt7b</span><span class="p">.</span><span class="n">h</span>
+<span class="n">FreeMonoOblique12pt7b</span><span class="p">.</span><span class="n">h</span>         <span class="n">FreeSerifBold12pt7b</span><span class="p">.</span><span class="n">h</span>
+<span class="n">FreeMonoOblique18pt7b</span><span class="p">.</span><span class="n">h</span>         <span class="n">FreeSerifBold18pt7b</span><span class="p">.</span><span class="n">h</span>
+<span class="n">FreeMonoOblique24pt7b</span><span class="p">.</span><span class="n">h</span>         <span class="n">FreeSerifBold24pt7b</span><span class="p">.</span><span class="n">h</span>
+<span class="n">FreeMonoOblique9pt7b</span><span class="p">.</span><span class="n">h</span>          <span class="n">FreeSerifBold9pt7b</span><span class="p">.</span><span class="n">h</span>
+<span class="n">FreeSans12pt7b</span><span class="p">.</span><span class="n">h</span>                <span class="n">FreeSerifBoldItalic12pt7b</span><span class="p">.</span><span class="n">h</span>
+<span class="n">FreeSans18pt7b</span><span class="p">.</span><span class="n">h</span>                <span class="n">FreeSerifBoldItalic18pt7b</span><span class="p">.</span><span class="n">h</span>
+<span class="n">FreeSans24pt7b</span><span class="p">.</span><span class="n">h</span>                <span class="n">FreeSerifBoldItalic24pt7b</span><span class="p">.</span><span class="n">h</span>
+<span class="n">FreeSans9pt7b</span><span class="p">.</span><span class="n">h</span>                 <span class="n">FreeSerifBoldItalic9pt7b</span><span class="p">.</span><span class="n">h</span>
+<span class="n">FreeSansBold12pt7b</span><span class="p">.</span><span class="n">h</span>            <span class="n">FreeSerifItalic12pt7b</span><span class="p">.</span><span class="n">h</span>
+<span class="n">FreeSansBold18pt7b</span><span class="p">.</span><span class="n">h</span>            <span class="n">FreeSerifItalic18pt7b</span><span class="p">.</span><span class="n">h</span>
+<span class="n">FreeSansBold24pt7b</span><span class="p">.</span><span class="n">h</span>            <span class="n">FreeSerifItalic24pt7b</span><span class="p">.</span><span class="n">h</span>
+<span class="n">FreeSansBold9pt7b</span><span class="p">.</span><span class="n">h</span>             <span class="n">FreeSerifItalic9pt7b</span><span class="p">.</span><span class="n">h</span>
+</pre></div>
 </div>
 </div></blockquote>
 </div>
 <div class="section" id="primitives-list">
-<h2><span class="section-number">5.8. </span>Primitives list<a class="headerlink" href="#primitives-list" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.9. </span>Primitives list<a class="headerlink" href="#primitives-list" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="line">
-<h3><span class="section-number">5.8.1. </span>Line<a class="headerlink" href="#line" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.9.1. </span>Line<a class="headerlink" href="#line" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><div class="line-block">
 <div class="line">Basic line.</div>
@@ -355,7 +398,7 @@
 </dl>
 </div>
 <div class="section" id="rectangle">
-<h3><span class="section-number">5.8.2. </span>Rectangle<a class="headerlink" href="#rectangle" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.9.2. </span>Rectangle<a class="headerlink" href="#rectangle" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><div class="line-block">
 <div class="line">Basic rectangle.</div>
@@ -378,7 +421,7 @@
 </dl>
 </div>
 <div class="section" id="circle">
-<h3><span class="section-number">5.8.3. </span>Circle<a class="headerlink" href="#circle" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.9.3. </span>Circle<a class="headerlink" href="#circle" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><div class="line-block">
 <div class="line">Basic circle.</div>
@@ -399,7 +442,7 @@
 </dl>
 </div>
 <div class="section" id="triangle">
-<h3><span class="section-number">5.8.4. </span>Triangle<a class="headerlink" href="#triangle" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.9.4. </span>Triangle<a class="headerlink" href="#triangle" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><div class="line-block">
 <div class="line">Basic triangle.</div>
@@ -423,7 +466,7 @@
 </dl>
 </div>
 <div class="section" id="text">
-<h3><span class="section-number">5.8.5. </span>Text<a class="headerlink" href="#text" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.9.5. </span>Text<a class="headerlink" href="#text" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><div class="line-block">
 <div class="line">Basic text element.</div>
@@ -444,7 +487,7 @@
 </dl>
 </div>
 <div class="section" id="bitmap">
-<h3><span class="section-number">5.8.6. </span>Bitmap<a class="headerlink" href="#bitmap" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.9.6. </span>Bitmap<a class="headerlink" href="#bitmap" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><div class="line-block">
 <div class="line">Basic bitmap, dithers and stores data into an array.</div>
@@ -466,9 +509,9 @@
 </div>
 </div>
 <div class="section" id="widgets-list">
-<h2><span class="section-number">5.9. </span>Widgets list<a class="headerlink" href="#widgets-list" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.10. </span>Widgets list<a class="headerlink" href="#widgets-list" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="graph">
-<h3><span class="section-number">5.9.1. </span>Graph<a class="headerlink" href="#graph" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.10.1. </span>Graph<a class="headerlink" href="#graph" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><div class="line-block">
 <div class="line">As seen in bitcoin tracker example.</div>
@@ -490,7 +533,7 @@
 </dl>
 </div>
 <div class="section" id="clock">
-<h3><span class="section-number">5.9.2. </span>Clock<a class="headerlink" href="#clock" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.10.2. </span>Clock<a class="headerlink" href="#clock" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><div class="line-block">
 <div class="line">Simple auto scalable clock.</div>

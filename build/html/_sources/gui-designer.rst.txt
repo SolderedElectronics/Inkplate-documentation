@@ -1,6 +1,12 @@
 Inkplate GUI designer 
 =====================
 
+Introduction
+############
+    | GUI designer is intended to be a used as a tool for rapid design of user interfaces for 
+    | Inkplate devices. It offers standard library primitives, but has support for more advaced usage examples,
+    | by allowing advaced users to create JS and C code to be run in editor and on Inkplate device (see Widgets).
+
 Nomenclature
 ############
 
@@ -46,6 +52,11 @@ In code rendering
     | You must clear the buffer before hand by calling display.clearDisplay();
     | and call display.display(); after mainDraw(); to put data on screen.
 
+    .. code-block:: C
+
+        mainDraw();
+        display.display(); // Needs to be called to put buffer data on screen.
+
 Custom data rendering
 #####################
     | Of course you can leave the default values to be drawn on screen, but where's the fun in that.
@@ -88,11 +99,41 @@ Using fonts
     | Our editor does not include fonts, that needs to be done locally.
     | Easiest way is to use fonts already included in library, see https://learn.adafruit.com/adafruit-gfx-graphics-library/using-fonts
     | for list.
+    | 
+    | User specifies font size in pixels, for rendering in editor, using default Arial font, while
+    | Inkplate commonly uses pt for pixel size, so be aware to convert those.
+    | One px is 0.75 pt, or a pt is 1.33 px
     |
-    | Fonts **need** to be specified like this:
-    | [ editor size ]px [ c font name ]
-    | Example:
-    | 32px FreeSansBold24pt7b
+    | More fonts can be added in /Fonts folder in Inkplate library, or by creating a /Fonts folder in sketch folder and adding them there.
+    | As of writing, default supported fonts are:
+    
+    .. code-block:: C
+
+        FreeMono12pt7b.h		FreeSansBoldOblique12pt7b.h
+        FreeMono18pt7b.h		FreeSansBoldOblique18pt7b.h
+        FreeMono24pt7b.h		FreeSansBoldOblique24pt7b.h
+        FreeMono9pt7b.h			FreeSansBoldOblique9pt7b.h
+        FreeMonoBold12pt7b.h		FreeSansOblique12pt7b.h
+        FreeMonoBold18pt7b.h		FreeSansOblique18pt7b.h
+        FreeMonoBold24pt7b.h		FreeSansOblique24pt7b.h
+        FreeMonoBold9pt7b.h		FreeSansOblique9pt7b.h
+        FreeMonoBoldOblique12pt7b.h	FreeSerif12pt7b.h
+        FreeMonoBoldOblique18pt7b.h	FreeSerif18pt7b.h
+        FreeMonoBoldOblique24pt7b.h	FreeSerif24pt7b.h
+        FreeMonoBoldOblique9pt7b.h	FreeSerif9pt7b.h
+        FreeMonoOblique12pt7b.h		FreeSerifBold12pt7b.h
+        FreeMonoOblique18pt7b.h		FreeSerifBold18pt7b.h
+        FreeMonoOblique24pt7b.h		FreeSerifBold24pt7b.h
+        FreeMonoOblique9pt7b.h		FreeSerifBold9pt7b.h
+        FreeSans12pt7b.h		FreeSerifBoldItalic12pt7b.h
+        FreeSans18pt7b.h		FreeSerifBoldItalic18pt7b.h
+        FreeSans24pt7b.h		FreeSerifBoldItalic24pt7b.h
+        FreeSans9pt7b.h			FreeSerifBoldItalic9pt7b.h
+        FreeSansBold12pt7b.h		FreeSerifItalic12pt7b.h
+        FreeSansBold18pt7b.h		FreeSerifItalic18pt7b.h
+        FreeSansBold24pt7b.h		FreeSerifItalic24pt7b.h
+        FreeSansBold9pt7b.h		FreeSerifItalic9pt7b.h
+
 
 Primitives list
 ###############
