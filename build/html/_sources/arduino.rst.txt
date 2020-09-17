@@ -260,7 +260,7 @@ Inkplate::einkOff();
 
 
 
-Inkplate::einkOff();
+Inkplate::einkOn();
 ####################
 
 * **Method prototype (as seen in Inkplate.h)**:
