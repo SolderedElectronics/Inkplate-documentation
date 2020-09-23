@@ -14,6 +14,7 @@ Welcome to Inkplate's documentation!
    /get-started
    /features
    /api-refrence
+   /examples
    /hardware-refrence
    /gui-designer
    /contribute
@@ -21,6 +22,8 @@ Welcome to Inkplate's documentation!
    /open-source
    /about
    /downloads
+
+
 
 
 *************

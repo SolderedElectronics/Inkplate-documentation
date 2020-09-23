@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; Inkplate docs  documentation</title>
+  <title>4. Examples &mdash; Inkplate docs  documentation</title>
   
 
   
@@ -35,8 +35,10 @@
 
     
     <link rel="author" title="About these documents" href="about.html" />
-    <link rel="index" title="Index" href="#" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="5. Inkplate Hardware Refrence" href="hardware-refrence.html" />
+    <link rel="prev" title="3.4. Inkplate esp-idf" href="esp-idf.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -82,11 +84,14 @@
             
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="get-started.html">1. Inkplate Get Started Page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="features.html">2. Inkplate Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api-refrence.html">3. Inkplate API Refrence</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples.html">4. Examples</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#spotify-api">4.1. Spotify API</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="hardware-refrence.html">5. Inkplate Hardware Refrence</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gui-designer.html">6. Inkplate GUI designer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribute.html">7. Inkplate Contribute</a></li>
@@ -140,12 +145,14 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Index</li>
+      <li><span class="section-number">4. </span>Examples</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
+            <a href="_sources/examples.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -157,11 +164,27 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
+  <div class="section" id="examples">
+<h1><span class="section-number">4. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
+<p>Here are some examples included in our Inkplate library.</p>
+<div class="section" id="spotify-api">
+<h2><span class="section-number">4.1. </span>Spotify API<a class="headerlink" href="#spotify-api" title="Permalink to this headline">¶</a></h2>
+<p>This one is a bit harder to get working.
+Follow these steps:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>First you need to install this library: <a class="reference external" href="https://github.com/witnessmenow/arduino-spotify-api">https://github.com/witnessmenow/arduino-spotify-api</a></p></li>
+<li><p>After you’ve done that follow it’s installation instructions and get your refresh token, here’s the summary</p></li>
+<li><p>To do that you need to login in to Spotify developers</p></li>
+<li><p>Create an app</p></li>
+<li><p>Copy your app credentials to refresh token example and run it</p></li>
+<li><p>Whitelist your ESPs ip that was written to serial monitor</p></li>
+<li><p>Go to your ESPs ip and click login</p></li>
+<li><p>If it all worked well you should see the token</p></li>
+<li><p>Copy that token alongside your app credentials and WiFi AP info and upload to Inkplate</p></li>
+</ul>
+</div></blockquote>
+</div>
 </div>
 
 
@@ -169,6 +192,15 @@
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="hardware-refrence.html" class="btn btn-neutral float-right" title="5. Inkplate Hardware Refrence" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="esp-idf.html" class="btn btn-neutral float-left" title="3.4. Inkplate esp-idf" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

@@ -8,8 +8,3 @@ Inkplate API Refrence
     /arduino
     /micropython
     /esp-idf
-
-Library functions
------------------
-
-neki tekst
