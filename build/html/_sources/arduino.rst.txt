@@ -486,6 +486,49 @@ Inkplate::getDisplayMode();
             Serial.println("I'm in grayscale mode!");
 
 
+Inkplate::drawImage();
+#############################
+
+* **Method prototype (as seen in Inkplate.h)**:
+
+.. code-block:: c
+
+    bool drawImage(const char *path, int x, int y, bool dither = 1, bool invert = 0);
+    bool drawImage(const String path, int x, int y, bool dither = 1, bool invert = 0);
+    bool drawImage(const uint8_t *buf, int x, int y, int16_t w, int16_t h, uint8_t c = BLACK, uint8_t bg = 0xFF);
+
+
+* **Arguments and return value**:
+    | const char ***path** - Path to file.
+    | int **x** - x coordinate to draw the image at
+    | int **y** - y coordinate to draw the image at
+    | bool **dither** - to dither the image or not (currently 24 or 8 bit only)
+    | bool **invert** - invert all colors, defaults to false
+    |
+    | const String **path** - Path to file.
+    | int **x** - x coordinate to draw the image at
+    | int **y** - y coordinate to draw the image at
+    | bool **dither** - to dither the image or not (currently 24 or 8 bit only)
+    | bool **invert** - invert all colors, defaults to false
+    |
+    | const uint8_t ***p** - Buffer to draw from.
+    | int **x** - x coordinate to draw the image at
+    | int **y** - y coordinate to draw the image at
+    | int16_t **w** - x coordinate to draw the image at
+    | int16_t **h** - y coordinate to draw the image at
+    | bool **dither** - to dither the image or not (currently 24 or 8 bit only)
+    | bool **invert** - invert all colors, defaults to false
+    | uint8_t **c** - color to draw 1 pixels if in BW mode
+    | uint8_t **bg** - color to draw all 0 pixels if in BW mode.
+
+    Returns 0 if error occured, else returns 1.
+
+* **Description**:
+    | Should always have Inkplate::sdCardInit() called before if file is from SD.
+    | Can draw all kinds of images, but they should have a file extensions in them.
+    | Can draw from web if path starts with http:// or https:// or if not from SD.
+    | Draws bmp, png and jpeg images.
+    | Automaticly adjusts for current display mode.
 
 Inkplate::drawBitmapFromSD();
 #############################

@@ -14,7 +14,7 @@ Follow these steps:
     - To do that you need to login in to Spotify developers
     - Create an app
     - Copy your app credentials to refresh token example and run it
-    - Whitelist your ESPs ip that was written to serial monitor
+    - Whitelist your ESPs ip that was written to serial monitor on the Spotify app 
     - Go to your ESPs ip and click login 
     - If it all worked well you should see the token
     - Copy that token alongside your app credentials and WiFi AP info and upload to Inkplate
