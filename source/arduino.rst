@@ -502,13 +502,13 @@ Inkplate::drawImage();
     | const char ***path** - Path to file.
     | int **x** - x coordinate to draw the image at
     | int **y** - y coordinate to draw the image at
-    | bool **dither** - to dither the image or not (currently 24 or 8 bit only)
+    | bool **dither** - to dither the image or not 
     | bool **invert** - invert all colors, defaults to false
     |
     | const String **path** - Path to file.
     | int **x** - x coordinate to draw the image at
     | int **y** - y coordinate to draw the image at
-    | bool **dither** - to dither the image or not (currently 24 or 8 bit only)
+    | bool **dither** - to dither the image or not 
     | bool **invert** - invert all colors, defaults to false
     |
     | const uint8_t ***p** - Buffer to draw from.
@@ -516,7 +516,7 @@ Inkplate::drawImage();
     | int **y** - y coordinate to draw the image at
     | int16_t **w** - x coordinate to draw the image at
     | int16_t **h** - y coordinate to draw the image at
-    | bool **dither** - to dither the image or not (currently 24 or 8 bit only)
+    | bool **dither** - to dither the image or not 
     | bool **invert** - invert all colors, defaults to false
     | uint8_t **c** - color to draw 1 pixels if in BW mode
     | uint8_t **bg** - color to draw all 0 pixels if in BW mode.
@@ -544,13 +544,13 @@ Inkplate::drawBitmapFromSD();
     | SdFile ***p** - SdFile pointer to draw to screen
     | int **x** - x coordinate to draw the image at
     | int **y** - y coordinate to draw the image at
-    | bool **dither** - to dither the image or not (currently 24 or 8 bit only)
+    | bool **dither** - to dither the image or not 
     | bool **invert** - invert all colors, defaults to false
     |
     | char ***fileName** - filename of the bmp on the sd card
     | int **x** - x coordinate to draw the image at
     | int **y** - y coordinate to draw the image at
-    | bool **dither** - to dither the image or not (currently 24 or 8 bit only)
+    | bool **dither** - to dither the image or not 
     | bool **invert** - invert all colors, defaults to false
 
     Returns 0 if error occured, else returns 1.
