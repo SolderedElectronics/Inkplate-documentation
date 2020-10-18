@@ -4,7 +4,7 @@ Inkplate API Refrence
 .. toctree::
     :titlesonly:
 
-    /slave-mode
+    /peripheral-mode
     /arduino
     /micropython
     /esp-idf

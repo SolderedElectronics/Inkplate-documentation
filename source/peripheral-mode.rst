@@ -1,7 +1,7 @@
-Inkplate Slave Mode
-===================
-    | Slave mode for Inkplate 6 by e-radionica.com
-    | Slave mode is uploaded to each Inkplate 6. It enables you to use the board
+Inkplate Peripheral Mode
+========================
+    | Peripheral mode for Inkplate 6 by e-radionica.com
+    | Peripheral mode is uploaded to each Inkplate 6. It enables you to use the board
     | without reprogramming. You just need to send commands via UART and it will
     | show contents on its screen. 
     | You can send commands via USB port or by directly connecting to ESP32 TX and RX pins.

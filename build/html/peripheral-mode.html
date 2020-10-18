@@ -1,0 +1,670 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3.1. Inkplate Peripheral Mode &mdash; Inkplate docs  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3.2. Inkplate Arduino" href="arduino.html" />
+    <link rel="prev" title="3. Inkplate API Refrence" href="api-refrence.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Inkplate docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="get-started.html">1. Inkplate Get Started Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">2. Inkplate Features</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="api-refrence.html">3. Inkplate API Refrence</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.1. Inkplate Peripheral Mode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#echo">3.1.1. echo: #?*</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drawpixel-0-xxx-yyy-cc">3.1.2. drawPixel: #0(XXX,YYY,CC)*</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drawline-1-xxx-yyy-iii-jjj-cc">3.1.3. drawLine: #1(XXX,YYY,III,JJJ,CC)*</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drawfastvline-2-xxx-yyy-lll-cc">3.1.4. drawFastVLine: #2(XXX,YYY,LLL,CC)*</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drawfasthline-3-xxx-yyy-lll-cc">3.1.5. drawFastHLine: #3(XXX,YYY,LLL,CC)*</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drawrect-4-xxx-yyy-www-hhh-cc">3.1.6. drawRect: #4(XXX,YYY,WWW,HHH,CC)*</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drawcircle-5-xxx-yyy-rrr-cc">3.1.7. drawCircle: #5(XXX,YYY,RRR,CC)*</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drawtriangle-6-xx1-yy1-xx2-yy2-xx3-yy3-cc">3.1.8. drawTriangle: #6(XX1,YY1,XX2,YY2,XX3,YY3,CC)*</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drawroudrect-7-xxx-yyy-www-hhh-rrr-cc">3.1.9. drawRoudRect: #7(XXX,YYY,WWW,HHH,RRR,CC)*</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fillrect-8-xxx-yyy-www-hhh-cc">3.1.10. fillRect: #8(XXX,YYY,WWW,HHH,CC)*</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fillcircle-9-xxx-yyy-rrr-cc">3.1.11. fillCircle: #9(XXX,YYY,RRR,CC)*</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#filltriangle-a-xx1-yy1-xx2-yy2-xx3-yy3-cc">3.1.12. fillTriangle: #A(XX1,YY1,XX2,YY2,XX3,YY3,CC)*</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fillroudrect-b-xxx-yyy-www-hhh-rrr-cc">3.1.13. fillRoudRect: #B(XXX,YYY,WWW,HHH,RRR,CC)*</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#print-c-string">3.1.14. print: #C(“STRING”)*</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#settextsize-d-nn">3.1.15. setTextSize: #D(NN)*</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setcursor-e-xxx-yyy">3.1.16. setCursor: #E(XXX,YYY)*</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#settextwrap-f-t-f">3.1.17. setTextWrap: #F(T/F)*</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setrotation-g-rrr">3.1.18. setRotation: #G(RRR)*</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drawbitmap-h-xxx-yyy-path">3.1.19. drawBitmap: #H(XXX,YYY,”PATH”)*</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setdisplaymode-i-d">3.1.20. setDisplayMode: #I(D)*</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getdisplaymode-j">3.1.21. getDisplayMode: #J(?)*</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cleardisplay-k-1">3.1.22. clearDisplay: #K(1)*</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#display-l-1">3.1.23. display: #L(1)*</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#partialupdate-m-yy1-xx2-yy2">3.1.24. partialUpdate: #M(YY1, XX2, YY2)*</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#readtemperature-n">3.1.25. readTemperature: #N(?)*</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#readtouchpad-o-p">3.1.26. readTouchpad: #O(P)*</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#readbattery-p">3.1.27. readBattery: #P(?)*</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#panelsupply-einkoff-on-q-s">3.1.28. panelSupply(einkOff/on):#Q(S)*</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getpanelstate-r">3.1.29. getPanelState: #R(?)*</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arduino.html">3.2. Inkplate Arduino</a></li>
+<li class="toctree-l2"><a class="reference internal" href="micropython.html">3.3. Inkplate MicroPython</a></li>
+<li class="toctree-l2"><a class="reference internal" href="esp-idf.html">3.4. Inkplate esp-idf</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware-refrence.html">5. Inkplate Hardware Refrence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui-designer.html">6. Inkplate GUI designer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">7. Inkplate Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">8. Inkplate Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="open-source.html">9. Inkplate is Open Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">10. Inkplate is an E-radionica product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="downloads.html">11. Inkplate Github</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Inkplate docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="api-refrence.html"><span class="section-number">3. </span>Inkplate API Refrence</a> &raquo;</li>
+        
+      <li><span class="section-number">3.1. </span>Inkplate Peripheral Mode</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/peripheral-mode.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="inkplate-peripheral-mode">
+<h1><span class="section-number">3.1. </span>Inkplate Peripheral Mode<a class="headerlink" href="#inkplate-peripheral-mode" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Peripheral mode for Inkplate 6 by e-radionica.com</div>
+<div class="line">Peripheral mode is uploaded to each Inkplate 6. It enables you to use the board</div>
+<div class="line">without reprogramming. You just need to send commands via UART and it will</div>
+<div class="line">show contents on its screen.</div>
+<div class="line">You can send commands via USB port or by directly connecting to ESP32 TX and RX pins.</div>
+<div class="line"><br /></div>
+<div class="line">Don’t forget you need to send #L(1)* after each command to show it on the display (equal to display.display()).</div>
+<div class="line"><br /></div>
+<div class="line">Settings are:</div>
+<div class="line">115200 baud, standard parity, ending with nr</div>
+</div>
+</div></blockquote>
+<div class="section" id="echo">
+<h2><span class="section-number">3.1.1. </span>echo: #?*<a class="headerlink" href="#echo" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Check if the Inkplate receives commands on UART</div>
+<div class="line">Response:  OK</div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="drawpixel-0-xxx-yyy-cc">
+<h2><span class="section-number">3.1.2. </span>drawPixel: #0(XXX,YYY,CC)*<a class="headerlink" href="#drawpixel-0-xxx-yyy-cc" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">XXX - X coordinate (with leading zeros)</div>
+<div class="line">YYY - Y coordinate (with leading zeros)</div>
+<div class="line">CC - Color (with leading zeros)</div>
+<div class="line">example:</div>
+</div>
+</div></blockquote>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#0(001,005,04)*</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="drawline-1-xxx-yyy-iii-jjj-cc">
+<h2><span class="section-number">3.1.3. </span>drawLine: #1(XXX,YYY,III,JJJ,CC)*<a class="headerlink" href="#drawline-1-xxx-yyy-iii-jjj-cc" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">XXX - Start x coordinate (with leading zeros)</div>
+<div class="line">YYY - Start y coordinate (with leading zeros)</div>
+<div class="line">III - End x coordinate (with leading zeros)</div>
+<div class="line">JJJ - End y coordinate (with leading zeros)</div>
+<div class="line">CC - Color (with leading zeros)</div>
+<div class="line">example:</div>
+</div>
+</div></blockquote>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#1(001,004,010,123,01)*</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="drawfastvline-2-xxx-yyy-lll-cc">
+<h2><span class="section-number">3.1.4. </span>drawFastVLine: #2(XXX,YYY,LLL,CC)*<a class="headerlink" href="#drawfastvline-2-xxx-yyy-lll-cc" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">XXX - Start x coordinate (with leading zeros)</div>
+<div class="line">YYY - Start y coordinate (with leading zeros)</div>
+<div class="line">LLL - Length of line (with leading zeros)</div>
+<div class="line">CC - Solor (with leading zeros)</div>
+<div class="line">example:</div>
+</div>
+</div></blockquote>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#2(142,425,040,05)*</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="drawfasthline-3-xxx-yyy-lll-cc">
+<h2><span class="section-number">3.1.5. </span>drawFastHLine: #3(XXX,YYY,LLL,CC)*<a class="headerlink" href="#drawfasthline-3-xxx-yyy-lll-cc" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">XXX - Start x coordinate (with leading zeros)</div>
+<div class="line">YYY - Start y coordinate (with leading zeros)</div>
+<div class="line">LLL - Length of line (with leading zeros)</div>
+<div class="line">CC - Color (with leading zeros)</div>
+<div class="line">example:</div>
+</div>
+</div></blockquote>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#3(123,014,100,03)*</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="drawrect-4-xxx-yyy-www-hhh-cc">
+<h2><span class="section-number">3.1.6. </span>drawRect: #4(XXX,YYY,WWW,HHH,CC)*<a class="headerlink" href="#drawrect-4-xxx-yyy-www-hhh-cc" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">XXX - Start x coordinate (with leading zeros)</div>
+<div class="line">YYY - Start y coordinate (with leading zeros)</div>
+<div class="line">WWW - Width of rect. (with leading zeros)</div>
+<div class="line">HHH - Height of rect. (with leading zeros)</div>
+<div class="line">CC - Color (with leading zeros)</div>
+<div class="line">example:</div>
+</div>
+</div></blockquote>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#4(123,014,050,010,01)*</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="drawcircle-5-xxx-yyy-rrr-cc">
+<h2><span class="section-number">3.1.7. </span>drawCircle: #5(XXX,YYY,RRR,CC)*<a class="headerlink" href="#drawcircle-5-xxx-yyy-rrr-cc" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">XXX - Start x coordinate (with leading zeros)</div>
+<div class="line">YYY - Start y coordinate (with leading zeros)</div>
+<div class="line">RRR - Radius of circle (with leading zeros)</div>
+<div class="line">CC - Color (with leading zeros)</div>
+<div class="line">example:</div>
+</div>
+</div></blockquote>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#5(050,100,040,01)*</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="drawtriangle-6-xx1-yy1-xx2-yy2-xx3-yy3-cc">
+<h2><span class="section-number">3.1.8. </span>drawTriangle: #6(XX1,YY1,XX2,YY2,XX3,YY3,CC)*<a class="headerlink" href="#drawtriangle-6-xx1-yy1-xx2-yy2-xx3-yy3-cc" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">XX1 - X coordinate of first corner (with leading zeros)</div>
+<div class="line">YY1 - Y coordinate of first corner (with leading zeros)</div>
+<div class="line">XX2 - X coordinate of second corner (with leading zeros)</div>
+<div class="line">YY2 - Y coordinate of second corner (with leading zeros)</div>
+<div class="line">XX3 - X coordinate of third corner (with leading zeros)</div>
+<div class="line">YY3 - Y coordinate of third corner (with leading zeros)</div>
+<div class="line">CC - Color (with leading zeros)</div>
+<div class="line">example:</div>
+</div>
+</div></blockquote>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#6(250,250,100,400,375,450,04)*</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="drawroudrect-7-xxx-yyy-www-hhh-rrr-cc">
+<h2><span class="section-number">3.1.9. </span>drawRoudRect: #7(XXX,YYY,WWW,HHH,RRR,CC)*<a class="headerlink" href="#drawroudrect-7-xxx-yyy-www-hhh-rrr-cc" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">XXX - Start x coordinate (with leading zeros)</div>
+<div class="line">YYY - Start y coordinate (with leading zeros)</div>
+<div class="line">WWW - Width of rect. (with leading zeros)</div>
+<div class="line">HHH - Height of rect. (with leading zeros)</div>
+<div class="line">RRR - Radius (with leading zeros)</div>
+<div class="line">CC - Color (with leading zeros)</div>
+<div class="line">example:</div>
+</div>
+</div></blockquote>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#7(123,014,050,010,005,00)*</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="fillrect-8-xxx-yyy-www-hhh-cc">
+<h2><span class="section-number">3.1.10. </span>fillRect: #8(XXX,YYY,WWW,HHH,CC)*<a class="headerlink" href="#fillrect-8-xxx-yyy-www-hhh-cc" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">XXX - Start x coordinate (with leading zeros)</div>
+<div class="line">YYY - Start y coordinate (with leading zeros)</div>
+<div class="line">WWW - Width of rect. (with leading zeros)</div>
+<div class="line">HHH - Height of rect. (with leading zeros)</div>
+<div class="line">CC - Color (with leading zeros)</div>
+<div class="line">example:</div>
+</div>
+</div></blockquote>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#8(123,014,050,010,01)*</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="fillcircle-9-xxx-yyy-rrr-cc">
+<h2><span class="section-number">3.1.11. </span>fillCircle: #9(XXX,YYY,RRR,CC)*<a class="headerlink" href="#fillcircle-9-xxx-yyy-rrr-cc" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">XXX - Start x coordinate (with leading zeros)</div>
+<div class="line">YYY - Start y coordinate (with leading zeros)</div>
+<div class="line">RRR - Radius of circle (with leading zeros)</div>
+<div class="line">CC - Color (with leading zeros)</div>
+<div class="line">example:</div>
+</div>
+</div></blockquote>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#9(050,100,040,01)*</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="filltriangle-a-xx1-yy1-xx2-yy2-xx3-yy3-cc">
+<h2><span class="section-number">3.1.12. </span>fillTriangle: #A(XX1,YY1,XX2,YY2,XX3,YY3,CC)*<a class="headerlink" href="#filltriangle-a-xx1-yy1-xx2-yy2-xx3-yy3-cc" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">XX1 - X coordinate of first corner (with leading zeros)</div>
+<div class="line">YY1 - Y coordinate of first corner (with leading zeros)</div>
+<div class="line">XX2 - X coordinate of second corner (with leading zeros)</div>
+<div class="line">YY2 - Y coordinate of second corner (with leading zeros)</div>
+<div class="line">XX3 - X coordinate of third corner (with leading zeros)</div>
+<div class="line">YY3 - Y coordinate of third corner (with leading zeros)</div>
+<div class="line">CC - Color (with leading zeros)</div>
+<div class="line">example:</div>
+</div>
+</div></blockquote>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#A(250,250,100,400,375,450,04)*</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="fillroudrect-b-xxx-yyy-www-hhh-rrr-cc">
+<h2><span class="section-number">3.1.13. </span>fillRoudRect: #B(XXX,YYY,WWW,HHH,RRR,CC)*<a class="headerlink" href="#fillroudrect-b-xxx-yyy-www-hhh-rrr-cc" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">XXX - Start x coordinate (with leading zeros)</div>
+<div class="line">YYY - Start y coordinate (with leading zeros)</div>
+<div class="line">WWW - Width of rect. (with leading zeros)</div>
+<div class="line">HHH - Height of rect. (with leading zeros)</div>
+<div class="line">RRR - Radius (with leading zeros)</div>
+<div class="line">CC - Color (with leading zeros)</div>
+<div class="line">example:</div>
+</div>
+</div></blockquote>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#B(123,014,050,010,005,00)*</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="print-c-string">
+<h2><span class="section-number">3.1.14. </span>print: #C(“STRING”)*<a class="headerlink" href="#print-c-string" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">STRING - Text/Strig coded in HEX Char (example: HELLO WORLD would be coded like 48454c4c4f20574f524c44, where 48 means 0x48 which is H in ASCII table)</div>
+<div class="line">example: for HELLO WORLD:</div>
+</div>
+</div></blockquote>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#C(&quot;48454c4c4f20574f524c44&quot;)*</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="settextsize-d-nn">
+<h2><span class="section-number">3.1.15. </span>setTextSize: #D(NN)*<a class="headerlink" href="#settextsize-d-nn" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">NNN - Text scaling (with leading zeros)</div>
+<div class="line">example:</div>
+</div>
+</div></blockquote>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#D(02)*</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="setcursor-e-xxx-yyy">
+<h2><span class="section-number">3.1.16. </span>setCursor: #E(XXX,YYY)*<a class="headerlink" href="#setcursor-e-xxx-yyy" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">XXX - X position of text cursor (with leading zeros)</div>
+<div class="line">YYY - Y position of text cursor (with leading zeros)</div>
+<div class="line">example:</div>
+</div>
+</div></blockquote>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#E(002,010)*</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="settextwrap-f-t-f">
+<h2><span class="section-number">3.1.17. </span>setTextWrap: #F(T/F)*<a class="headerlink" href="#settextwrap-f-t-f" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">T - True if enable text wraping</div>
+<div class="line">F - False if disable text wraping</div>
+<div class="line">example:</div>
+</div>
+</div></blockquote>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#F(T)* or #F(F)*</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="setrotation-g-rrr">
+<h2><span class="section-number">3.1.18. </span>setRotation: #G(RRR)*<a class="headerlink" href="#setrotation-g-rrr" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">RRR - Sets rotation (0-3, where each increment rotates whole screen by 90 deg)</div>
+<div class="line">example:</div>
+</div>
+</div></blockquote>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#G(003)*</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="drawbitmap-h-xxx-yyy-path">
+<h2><span class="section-number">3.1.19. </span>drawBitmap: #H(XXX,YYY,”PATH”)*<a class="headerlink" href="#drawbitmap-h-xxx-yyy-path" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">XXX - X position of bitmap on display</div>
+<div class="line">YYY - Y position of bitmap on display</div>
+<div class="line">PATH - path to bitmap image on SD card, where path should be sent as HEX Char (same as for print command). Example: /image1.bmp should be sent as 2f696d616765312e626d70</div>
+<div class="line">example:  (2f696d616765312e626d70 means /image1.bmp)</div>
+</div>
+</div></blockquote>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#H(000,000,&quot;2f696d616765312e626d70&quot;)*</span>
+
+<span class="o">|</span> <span class="nl">Response</span><span class="p">:</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#H(1)* - Image loaded succesfully</span>
+<span class="cp">#H(0)* - Image load failed</span>
+<span class="cp">#H(-1)* - SD Card Init Error</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="setdisplaymode-i-d">
+<h2><span class="section-number">3.1.20. </span>setDisplayMode: #I(D)*<a class="headerlink" href="#setdisplaymode-i-d" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">D - Display Mode (D = 3 -&gt; 3 bit mode, D = 1 -&gt; 1 bit mode)</div>
+<div class="line">example:</div>
+</div>
+</div></blockquote>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#I(3)* or #I(1)*</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="getdisplaymode-j">
+<h2><span class="section-number">3.1.21. </span>getDisplayMode: #J(?)*<a class="headerlink" href="#getdisplaymode-j" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Response:</div>
+</div>
+</div></blockquote>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#J(1)* - 3 bit mode</span>
+<span class="cp">#J(0)* - 1 bit mode</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cleardisplay-k-1">
+<h2><span class="section-number">3.1.22. </span>clearDisplay: #K(1)*<a class="headerlink" href="#cleardisplay-k-1" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Clears display.</div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="display-l-1">
+<h2><span class="section-number">3.1.23. </span>display: #L(1)*<a class="headerlink" href="#display-l-1" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Displays image buffer data to screen.</div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="partialupdate-m-yy1-xx2-yy2">
+<h2><span class="section-number">3.1.24. </span>partialUpdate: #M(YY1, XX2, YY2)*<a class="headerlink" href="#partialupdate-m-yy1-xx2-yy2" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">YY1 - Start Y position of part of the screen that will be updated</div>
+<div class="line">XX2 - End X position of part of the screen that will be updated</div>
+<div class="line">YY2 - End Y position of part of the screen that will be updated</div>
+<div class="line">example:</div>
+</div>
+</div></blockquote>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#M(005,400,040)*</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="readtemperature-n">
+<h2><span class="section-number">3.1.25. </span>readTemperature: #N(?)*<a class="headerlink" href="#readtemperature-n" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Response:</div>
+</div>
+</div></blockquote>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#N(23)* - 23 Celsius degrees</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="readtouchpad-o-p">
+<h2><span class="section-number">3.1.26. </span>readTouchpad: #O(P)*<a class="headerlink" href="#readtouchpad-o-p" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">P - Name of pad that needs to be read (1, 2 or 3)</div>
+<div class="line">Response:</div>
+</div>
+</div></blockquote>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#O(1)* for high state of pad</span>
+<span class="n">or</span>
+<span class="cp">#O(0)* for low state of pad</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="readbattery-p">
+<h2><span class="section-number">3.1.27. </span>readBattery: #P(?)*<a class="headerlink" href="#readbattery-p" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Response:</div>
+</div>
+</div></blockquote>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#P(3.65)* - Measured voltage on battery is 3.65VDC</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="panelsupply-einkoff-on-q-s">
+<h2><span class="section-number">3.1.28. </span>panelSupply(einkOff/on):#Q(S)*<a class="headerlink" href="#panelsupply-einkoff-on-q-s" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">S - State of panel power supply (S = 1 -&gt; panel has power supply, S = 0 -&gt; panel power supply has benn turned off)</div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="getpanelstate-r">
+<h2><span class="section-number">3.1.29. </span>getPanelState: #R(?)*<a class="headerlink" href="#getpanelstate-r" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Response:</div>
+</div>
+</div></blockquote>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#R(1)* - panel has power supply or #R(0)* - panel supply has been turned off</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="arduino.html" class="btn btn-neutral float-right" title="3.2. Inkplate Arduino" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="api-refrence.html" class="btn btn-neutral float-left" title="3. Inkplate API Refrence" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, e-radionica.com
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
