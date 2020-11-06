@@ -313,3 +313,54 @@ getPanelState: #R(?)*
 .. code-block:: c
     
     #R(1)* - panel has power supply or #R(0)* - panel supply has been turned off
+
+drawImage: #S(XXX,YYY,"PATH")*
+------------------------------
+    | XXX - X position of bitmap on display
+    | YYY - Y position of bitmap on display
+    | PATH - path to bitmap image on SD card, where path should be sent as HEX Char (same as for print command). Example: /image1.bmp should be sent as 2f696d616765312e626d70
+    | example:  (2f696d616765312e626d70 means /image1.bmp)
+
+.. code-block:: c
+
+    #S(000,000,"2f696d616765312e626d70")* 
+
+    | Response:
+
+drawThickLine: #T(XXX,YYY,III,JJJ,TT,CC)*
+    | XXX - Start x coordinate (with leading zeros)
+    | YYY - Start y coordinate (with leading zeros)
+    | III - End x coordinate (with leading zeros)
+    | JJJ - End y coordinate (with leading zeros)
+    | TT - Line thickness
+    | CC - Color (with leading zeros)
+    | example:
+
+.. code-block:: C
+
+    #T(001,004,010,123,05,01)*
+
+drawElipse: #U(XXX,YYY,RRX,RRY,CC)*
+    | XXX - Start x coordinate (with leading zeros)
+    | YYY - Start y coordinate (with leading zeros)
+    | RRX - X radius (with leading zeros)
+    | RRY - Y radius (with leading zeros)
+    | CC - Color (with leading zeros)
+    | example:
+
+.. code-block:: c
+
+    #U(050,100,040,070,01)*
+
+
+fillElipse: #V(XXX,YYY,RRX,RRY,CC)*
+    | XXX - Start x coordinate (with leading zeros)
+    | YYY - Start y coordinate (with leading zeros)
+    | RRX - X radius (with leading zeros)
+    | RRY - Y radius (with leading zeros)
+    | CC - Color (with leading zeros)
+    | example:
+
+.. code-block:: c
+
+    #V(050,100,040,070,01)*
