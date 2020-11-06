@@ -1,0 +1,1446 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3.3. Inkplate MicroPython &mdash; Inkplate docs  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3.4. Inkplate esp-idf" href="esp-idf.html" />
+    <link rel="prev" title="3.2. Inkplate Arduino" href="arduino.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Inkplate docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="get-started.html">1. Inkplate Get Started Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">2. Inkplate Features</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="api-refrence.html">3. Inkplate API Refrence</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="peripheral-mode.html">3.1. Inkplate Peripheral Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arduino.html">3.2. Inkplate Arduino</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.3. Inkplate MicroPython</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#begin-method">3.3.1. .begin() method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drawpixel">3.3.2. .drawPixel()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cleardisplay">3.3.3. .clearDisplay()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#display">3.3.4. .display()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#partialupdate">3.3.5. .partialUpdate()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setrotation">3.3.6. .setRotation()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#selectdisplaymode">3.3.7. .selectDisplayMode()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getdisplaymode">3.3.8. .getDisplayMode()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clean">3.3.9. .clean()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drawfastvline">3.3.10. .drawFastVLine()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drawfasthline">3.3.11. .drawFastHLine()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fillrect">3.3.12. .fillRect()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fillscreen">3.3.13. .fillScreen()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drawline">3.3.14. .drawLine()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drawrect">3.3.15. .drawRect()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drawcircle">3.3.16. .drawCircle()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fillcircle">3.3.17. .fillCircle()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drawtriangle">3.3.18. .drawTriangle()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#filltriangle">3.3.19. .fillTriangle()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drawroundrect">3.3.20. .drawRoundRect()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fillroundrect">3.3.21. .fillRoundRect()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drawbitmap">3.3.22. .drawBitmap()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drawimagefile">3.3.23. .drawImageFile()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#settextsize">3.3.24. .setTextSize()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setfont">3.3.25. .setFont()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#printtext">3.3.26. .printText()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#width">3.3.27. .width()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#height">3.3.28. .height()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getrotation">3.3.29. .getRotation()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="esp-idf.html">3.4. Inkplate esp-idf</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware-refrence.html">5. Inkplate Hardware Refrence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui-designer.html">6. Inkplate GUI designer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">7. Inkplate Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">8. Inkplate Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="open-source.html">9. Inkplate is Open Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">10. Inkplate is an E-radionica product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="downloads.html">11. Inkplate Github</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Inkplate docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="api-refrence.html"><span class="section-number">3. </span>Inkplate API Refrence</a> &raquo;</li>
+        
+      <li><span class="section-number">3.3. </span>Inkplate MicroPython</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/micropython.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="inkplate-micropython">
+<h1><span class="section-number">3.3. </span>Inkplate MicroPython<a class="headerlink" href="#inkplate-micropython" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="begin-method">
+<h2><span class="section-number">3.3.1. </span>.begin() method<a class="headerlink" href="#begin-method" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Before calling any display method you <strong>must</strong> call .begin() like this:</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul>
+<li><p><strong>Description</strong>:</p>
+<blockquote>
+<div><p>If you forget to do this most method calls will result in core panick and esp32 resetting.
+After you’ve called this you can proceed calling all other methods described below.</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="drawpixel">
+<h2><span class="section-number">3.3.2. </span>.drawPixel()<a class="headerlink" href="#drawpixel" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line"><strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
+<div class="line"><strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
+<div class="line"><strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Most basic drawing command in the library is .drawPixel()</div>
+<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+<div class="line">Requires .display() to be called afterwards to update the screen,</div>
+<div class="line">See below.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">display</span><span class="o">.</span><span class="n">BLACK</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces:</div>
+<div class="line">Quite small, isn’t it.</div>
+</div>
+<a class="reference internal image-reference" href="_images/IMG_4345.jpg"><img alt="_images/IMG_4345.jpg" src="_images/IMG_4345.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="cleardisplay">
+<h2><span class="section-number">3.3.3. </span>.clearDisplay()<a class="headerlink" href="#cleardisplay" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">clearDisplay</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">No Arguments</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Clears all data in buffer.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">clearDisplay</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="display">
+<h2><span class="section-number">3.3.4. </span>.display()<a class="headerlink" href="#display" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">No Arguments</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Displays all data in frame buffer to screen.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Any drawing code</span>
+<span class="n">display</span><span class="o">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">display</span><span class="o">.</span><span class="n">BLACK</span><span class="p">)</span>
+
+<span class="n">display</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="partialupdate">
+<h2><span class="section-number">3.3.5. </span>.partialUpdate()<a class="headerlink" href="#partialupdate" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">partialUpdate</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">No Arguments</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Updates only the changed parts of the screen.</div>
+<div class="line">After a few updates creates blurry parts of the screen.</div>
+<div class="line">Fixed by calling .clean()</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">display</span><span class="o">.</span><span class="n">BLACK</span><span class="p">)</span>
+
+<span class="n">display</span><span class="o">.</span><span class="n">partialUpdate</span><span class="p">()</span>
+
+<span class="n">display</span><span class="o">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">display</span><span class="o">.</span><span class="n">BLACK</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="setrotation">
+<h2><span class="section-number">3.3.6. </span>.setRotation()<a class="headerlink" href="#setrotation" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">setRotation</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line"><strong>r</strong> - screen rotation.</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Rotates the screen to be used in different orientations.</div>
+<div class="line">Default is 2, to fip 180 input 4</div>
+<div class="line">1 and 3 are for portait mode.</div>
+<div class="line">Once flipped coordinate space remains to have the origin in the top left corner.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">setRotation</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="n">display</span><span class="o">.</span><span class="n">setCursor</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">display</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;INKPLATE6&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces:</div>
+</div>
+<a class="reference internal image-reference" href="_images/IMG_4347.jpg"><img alt="_images/IMG_4347.jpg" src="_images/IMG_4347.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="selectdisplaymode">
+<h2><span class="section-number">3.3.7. </span>.selectDisplayMode()<a class="headerlink" href="#selectdisplaymode" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">selectDisplayMode</span><span class="p">(</span><span class="n">_mode</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line"><strong>_mode</strong> - New display mode, display.INKPLATE_1BIT or display.INKPLATE_3BIT.</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Changes the screen mode to from monochrome to 3 bit grayscale or vice versa.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">selectDisplayMode</span><span class="p">(</span><span class="n">INKPLATE_3BIT</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="getdisplaymode">
+<h2><span class="section-number">3.3.8. </span>.getDisplayMode()<a class="headerlink" href="#getdisplaymode" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">getDisplayMode</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">No arguments.</div>
+</div>
+<p>Returns currently set display mode.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Used to determine which display mode is currently used.</div>
+<div class="line">Returns INKPLATE_1BIT or INKPLATE_3BIT.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">display</span><span class="o">.</span><span class="n">getDisplayMode</span><span class="p">()</span> <span class="o">==</span> <span class="n">INKPLATE_3BIT</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m in grayscale mode!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="clean">
+<h2><span class="section-number">3.3.9. </span>.clean()<a class="headerlink" href="#clean" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">clean</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">No arguments.</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Cleans the actual screen of any possible burn in.</div>
+<div class="line">Should not be used in intervals less than 5 seconds.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="drawfastvline">
+<h2><span class="section-number">3.3.10. </span>.drawFastVLine()<a class="headerlink" href="#drawfastvline" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Method prototype</strong>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">drawFastVLine</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line"><strong>x</strong> - x coordinate of the line start point</div>
+<div class="line"><strong>y</strong> - y coordinate of the line start point</div>
+<div class="line"><strong>h</strong> - line height</div>
+<div class="line"><strong>color</strong> - line color</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Draw a perfectly vertical line.</div>
+<div class="line">Garantees to be faster than regular line draw.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">drawFastVLine</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces:</div>
+</div>
+<a class="reference internal image-reference" href="_images/IMG_4354.jpg"><img alt="_images/IMG_4354.jpg" src="_images/IMG_4354.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="drawfasthline">
+<h2><span class="section-number">3.3.11. </span>.drawFastHLine()<a class="headerlink" href="#drawfasthline" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Method prototype</strong>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">drawFastHLine</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line"><strong>x</strong> - x coordinate of the line start point</div>
+<div class="line"><strong>y</strong> - y coordinate of the line start point</div>
+<div class="line"><strong>w</strong> - line width</div>
+<div class="line"><strong>color</strong> - line color</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Draw a perfectly horizontal line.</div>
+<div class="line">Garantees to be faster than regular line draw.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">drawFastHLine</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces:</div>
+</div>
+<a class="reference internal image-reference" href="_images/IMG_4355.jpg"><img alt="_images/IMG_4355.jpg" src="_images/IMG_4355.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="fillrect">
+<h2><span class="section-number">3.3.12. </span>.fillRect()<a class="headerlink" href="#fillrect" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Method prototype</strong>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fillRect</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line"><strong>x</strong> - x coordinate of the rectangle</div>
+<div class="line"><strong>y</strong> - y coordinate of the rectangle</div>
+<div class="line"><strong>w</strong> - rectangle width</div>
+<div class="line"><strong>h</strong> - rectangle height</div>
+<div class="line"><strong>color</strong> - rectanle color, in range [0, 6]</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Draws a filled rectangle on the screen.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">fillRect</span><span class="p">(</span><span class="n">random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">799</span><span class="p">),</span> <span class="n">random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">599</span><span class="p">),</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces:</div>
+</div>
+<a class="reference internal image-reference" href="_images/IMG_4356.jpg"><img alt="_images/IMG_4356.jpg" src="_images/IMG_4356.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="fillscreen">
+<h2><span class="section-number">3.3.13. </span>.fillScreen()<a class="headerlink" href="#fillscreen" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Method prototype</strong>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fillScreen</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line"><strong>color</strong> - color of the screen after filling.</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Fills the whole screen to a solid color.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">fillScreen</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces:</div>
+</div>
+<a class="reference internal image-reference" href="_images/IMG_4357.jpg"><img alt="_images/IMG_4357.jpg" src="_images/IMG_4357.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="drawline">
+<h2><span class="section-number">3.3.14. </span>.drawLine()<a class="headerlink" href="#drawline" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Method prototype</strong>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">drawLine</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line"><strong>x0</strong> - Start point x coordinate.</div>
+<div class="line"><strong>y0</strong> - Start point y coordinate.</div>
+<div class="line"><strong>x1</strong> - End point x coordinate.</div>
+<div class="line"><strong>y1</strong> - End point y coordinate.</div>
+<div class="line"><strong>color</strong> - Line color.</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">General purpose line drawing function.</div>
+<div class="line">If the line is vertical or horizontal it is recommended to use drawFastHLine or drawFastVLine,</div>
+<div class="line">although drawLine automatically checks and uses faster drawing function if needed.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Diagonal lines</span>
+<span class="n">display</span><span class="o">.</span><span class="n">drawLine</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">799</span><span class="p">,</span> <span class="mi">599</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">display</span><span class="o">.</span><span class="n">drawLine</span><span class="p">(</span><span class="mi">799</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">599</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces:</div>
+</div>
+<a class="reference internal image-reference" href="_images/IMG_4358.jpg"><img alt="_images/IMG_4358.jpg" src="_images/IMG_4358.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="drawrect">
+<h2><span class="section-number">3.3.15. </span>.drawRect()<a class="headerlink" href="#drawrect" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Method prototype</strong>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">drawRect</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line"><strong>x</strong> - Rectangle x coordinate.</div>
+<div class="line"><strong>y</strong> - Rectangle y coordinate.</div>
+<div class="line"><strong>w</strong> - Rectangle width.</div>
+<div class="line"><strong>h</strong> - Rectangle height.</div>
+<div class="line"><strong>color</strong> - Rectangle color (edges only, see fillRect for fully filled one).</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Draws and empty (not filled) rectangle.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">drawRect</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces:</div>
+</div>
+<a class="reference internal image-reference" href="_images/IMG_4359.jpg"><img alt="_images/IMG_4359.jpg" src="_images/IMG_4359.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="drawcircle">
+<h2><span class="section-number">3.3.16. </span>.drawCircle()<a class="headerlink" href="#drawcircle" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Method prototype</strong>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">drawCircle</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line"><strong>x0</strong> - Circle center x coordinte.</div>
+<div class="line"><strong>y0</strong> - Circle center y coordinate.</div>
+<div class="line"><strong>r</strong> - Circle radius.</div>
+<div class="line"><strong>color</strong> - Circle color (just the edge, see fillCircle for fully filled).</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Draws an empty(not filled) circle.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">drawCircle</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces:</div>
+</div>
+<a class="reference internal image-reference" href="_images/IMG_4360.jpg"><img alt="_images/IMG_4360.jpg" src="_images/IMG_4360.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="fillcircle">
+<h2><span class="section-number">3.3.17. </span>.fillCircle()<a class="headerlink" href="#fillcircle" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Method prototype</strong>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fillCircle</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line"><strong>x0</strong> - Circle center x coordinte.</div>
+<div class="line"><strong>y0</strong> - Circle center y coordinate.</div>
+<div class="line"><strong>r</strong> - Circle radius.</div>
+<div class="line"><strong>color</strong> - Circle color (fully filled).</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Draws a filled circle to screen in a supplied color.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">fillCircle</span><span class="p">(</span><span class="n">random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">799</span><span class="p">),</span> <span class="n">random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">599</span><span class="p">),</span> <span class="mi">15</span><span class="p">,</span> <span class="n">random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces:</div>
+</div>
+<a class="reference internal image-reference" href="_images/IMG_4361.jpg"><img alt="_images/IMG_4361.jpg" src="_images/IMG_4361.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="drawtriangle">
+<h2><span class="section-number">3.3.18. </span>.drawTriangle()<a class="headerlink" href="#drawtriangle" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Method prototype</strong>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">drawTriangle</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span>
+  <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line"><strong>x0</strong> - First point x coordinate.</div>
+<div class="line"><strong>y0</strong> - First point y coordinate.</div>
+<div class="line"><strong>x1</strong> - Second point x coordinate.</div>
+<div class="line"><strong>y1</strong> - Second point y coordinate.</div>
+<div class="line"><strong>x2</strong> - Third point x coordinate.</div>
+<div class="line"><strong>y2</strong> - Third point y coordinate.</div>
+<div class="line"><strong>color</strong> - Triangle edge color(see fillTriangle for a fully filled one).</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Draw an empty rectangle to screen.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">drawTriangle</span><span class="p">(</span><span class="mi">250</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">550</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces:</div>
+</div>
+<a class="reference internal image-reference" href="_images/IMG_4362.jpg"><img alt="_images/IMG_4362.jpg" src="_images/IMG_4362.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="filltriangle">
+<h2><span class="section-number">3.3.19. </span>.fillTriangle()<a class="headerlink" href="#filltriangle" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Method prototype</strong>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fillTriangle</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span>
+  <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line"><strong>x0</strong> - First point x coordinate.</div>
+<div class="line"><strong>y0</strong> - First point y coordinate.</div>
+<div class="line"><strong>x1</strong> - Second point x coordinate.</div>
+<div class="line"><strong>y1</strong> - Second point y coordinate.</div>
+<div class="line"><strong>x2</strong> - Third point x coordinate.</div>
+<div class="line"><strong>y2</strong> - Third point y coordinate.</div>
+<div class="line"><strong>color</strong> - Triangle fill color.</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Draw a rectangle filled with a certain color.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">fillTriangle</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces:</div>
+</div>
+<a class="reference internal image-reference" href="_images/IMG_4363.jpg"><img alt="_images/IMG_4363.jpg" src="_images/IMG_4363.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="drawroundrect">
+<h2><span class="section-number">3.3.20. </span>.drawRoundRect()<a class="headerlink" href="#drawroundrect" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Method prototype</strong>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">drawRoundRect</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span>
+  <span class="n">radius</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line"><strong>x0</strong> - Rectangle x coordinate.</div>
+<div class="line"><strong>y0</strong> - Rectangle y coordinate.</div>
+<div class="line"><strong>w</strong> - Rectangle width.</div>
+<div class="line"><strong>h</strong> - Rectangle height.</div>
+<div class="line"><strong>radius</strong> - Curvature radius of the edges.</div>
+<div class="line"><strong>color</strong> - Rectangle edges color (for a fully filled one see fillRoundRect).</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Draws an empty (not filled) rectangle with round edges to screen.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">drawRoundRect</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces:</div>
+</div>
+<a class="reference internal image-reference" href="_images/IMG_4364.jpg"><img alt="_images/IMG_4364.jpg" src="_images/IMG_4364.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="fillroundrect">
+<h2><span class="section-number">3.3.21. </span>.fillRoundRect()<a class="headerlink" href="#fillroundrect" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Method prototype</strong>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fillRoundRect</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span>
+  <span class="n">radius</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line"><strong>x0</strong> - Rectangle x coordinate.</div>
+<div class="line"><strong>y0</strong> - Rectangle y coordinate.</div>
+<div class="line"><strong>w</strong> - Rectangle width.</div>
+<div class="line"><strong>h</strong> - Rectangle height.</div>
+<div class="line"><strong>radius</strong> - Curvature radius of the edges.</div>
+<div class="line"><strong>color</strong> - Rectangle fill color.</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Draws a fully filled rectangle with rounded corners to screen.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">fillRoundRect</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces:</div>
+</div>
+<a class="reference internal image-reference" href="_images/IMG_4365.jpg"><img alt="_images/IMG_4365.jpg" src="_images/IMG_4365.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="drawbitmap">
+<h2><span class="section-number">3.3.22. </span>.drawBitmap()<a class="headerlink" href="#drawbitmap" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Method prototype</strong>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">drawBitmap</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line"><strong>x</strong> - Bitmap x coordinate.</div>
+<div class="line"><strong>y</strong> - Bitmap y coordinate.</div>
+<div class="line"><strong>b</strong> - Bytearray to draw from.</div>
+<div class="line"><strong>w</strong> - Bitmap width.</div>
+<div class="line"><strong>h</strong> - Bitmap height.</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Draws a monochrome bitmap to screen.</div>
+<div class="line">To get image data, use LCD image Converter.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">drawBitmap</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="n">logo</span><span class="p">,</span> <span class="mi">576</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces:</div>
+</div>
+<a class="reference internal image-reference" href="_images/IMG_4366.jpg"><img alt="_images/IMG_4366.jpg" src="_images/IMG_4366.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="drawimagefile">
+<h2><span class="section-number">3.3.23. </span>.drawImageFile()<a class="headerlink" href="#drawimagefile" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Method prototype</strong>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">drawBitmap</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">invert</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line"><strong>x</strong> - Bitmap x coordinate.</div>
+<div class="line"><strong>y</strong> - Bitmap y coordinate.</div>
+<div class="line"><strong>path</strong> - File path e.g. “sd/file.bmp”</div>
+<div class="line"><strong>w</strong> - Bitmap width.</div>
+<div class="line"><strong>h</strong> - Bitmap height.</div>
+<div class="line"><strong>invert</strong> - Inverts color.</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Draws a bitmap file to screen.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">drawBitmap</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="s2">&quot;sd/file.bmp&quot;</span><span class="p">,</span> <span class="mi">576</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces:</div>
+</div>
+<a class="reference internal image-reference" href="_images/IMG_4366.jpg"><img alt="_images/IMG_4366.jpg" src="_images/IMG_4366.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="settextsize">
+<h2><span class="section-number">3.3.24. </span>.setTextSize()<a class="headerlink" href="#settextsize" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Method prototype</strong>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">setTextSize</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line"><strong>s</strong> - font scale</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Scales the font to some value.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">setTextSize</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="setfont">
+<h2><span class="section-number">3.3.25. </span>.setFont()<a class="headerlink" href="#setfont" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Method prototype</strong>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">setFont</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line"><strong>f</strong> - font dictionary</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Used to change the text font.</div>
+<div class="line">Fonts can be found in the supplied Fonts folder or made using tools.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Font has to be included</span>
+<span class="n">display</span><span class="o">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+<span class="n">display</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Inkplate 6&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces:</div>
+</div>
+<a class="reference internal image-reference" href="_images/IMG_4371.jpg"><img alt="_images/IMG_4371.jpg" src="_images/IMG_4371.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="printtext">
+<h2><span class="section-number">3.3.26. </span>.printText()<a class="headerlink" href="#printtext" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Method prototype</strong>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line"><strong>x</strong> - x coordinate to write text</div>
+<div class="line"><strong>y</strong> - y coordinate to write text</div>
+<div class="line"><strong>s</strong> - String to be printed.</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Puts the text on screen.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">printText</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;Some text&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces:</div>
+</div>
+<a class="reference internal image-reference" href="_images/IMG_4373.jpg"><img alt="_images/IMG_4373.jpg" src="_images/IMG_4373.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="width">
+<h2><span class="section-number">3.3.27. </span>.width()<a class="headerlink" href="#width" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Method prototype</strong>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">width</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">No arguments.</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Returns screen width.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">width</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="height">
+<h2><span class="section-number">3.3.28. </span>.height()<a class="headerlink" href="#height" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Method prototype</strong>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">height</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">No arguments.</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Returns screen height.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">height</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="getrotation">
+<h2><span class="section-number">3.3.29. </span>.getRotation()<a class="headerlink" href="#getrotation" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Method prototype</strong>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">getRotation</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">No arguments.</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Returns screen rotation, in range [0,3], 2 is default.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">display</span><span class="o">.</span><span class="n">getRotation</span><span class="p">()</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m upside down!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="esp-idf.html" class="btn btn-neutral float-right" title="3.4. Inkplate esp-idf" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="arduino.html" class="btn btn-neutral float-left" title="3.2. Inkplate Arduino" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, e-radionica.com
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
