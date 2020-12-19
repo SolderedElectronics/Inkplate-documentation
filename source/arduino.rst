@@ -387,7 +387,7 @@ Inkplate::partialUpdate();
     Returns nothing.
 
 * **Description**:
-    | Updates only the changed parts of the screen.
+    | Updates only the changed parts of the screen. (monochrome/INKPLATE_1BIT mode only!)
     | After a few updates creates blurry parts of the screen.
     | Fixed by calling Inkplate::clean();
 
