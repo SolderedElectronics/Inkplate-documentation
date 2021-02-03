@@ -434,7 +434,7 @@ After you’ve called this you can proceed calling all other methods described b
 <ul>
 <li><dl>
 <dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
-<div class="line"><strong>_mode</strong> - New display mode, display.INKPLATE_1BIT or display.INKPLATE_3BIT.</div>
+<div class="line"><strong>_mode</strong> - New display mode, display.Inkplate.INKPLATE_1BIT or display.Inkplate.INKPLATE_2BIT.</div>
 </div>
 <p>Returns nothing.</p>
 </dd>
@@ -448,7 +448,7 @@ After you’ve called this you can proceed calling all other methods described b
 </dl>
 </li>
 <li><dl>
-<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">selectDisplayMode</span><span class="p">(</span><span class="n">INKPLATE_3BIT</span><span class="p">)</span>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">selectDisplayMode</span><span class="p">(</span><span class="n">Inkplate</span><span class="o">.</span><span class="n">INKPLATE_2BIT</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd>
@@ -476,13 +476,13 @@ After you’ve called this you can proceed calling all other methods described b
 <li><dl>
 <dt><strong>Description</strong>:</dt><dd><div class="line-block">
 <div class="line">Used to determine which display mode is currently used.</div>
-<div class="line">Returns INKPLATE_1BIT or INKPLATE_3BIT.</div>
+<div class="line">Returns Inkplate.INKPLATE_1BIT or Inkplate.INKPLATE_2BIT.</div>
 </div>
 </dd>
 </dl>
 </li>
 <li><dl>
-<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">display</span><span class="o">.</span><span class="n">getDisplayMode</span><span class="p">()</span> <span class="o">==</span> <span class="n">INKPLATE_3BIT</span><span class="p">)</span>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">display</span><span class="o">.</span><span class="n">getDisplayMode</span><span class="p">()</span> <span class="o">==</span> <span class="n">Inkplate</span><span class="o">.</span><span class="n">INKPLATE_2BIT</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m in grayscale mode!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1376,7 +1376,7 @@ After you’ve called this you can proceed calling all other methods described b
 </dl>
 </li>
 <li><dl>
-<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">display</span><span class="o">.</span><span class="n">getRotation</span><span class="p">()</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">display</span><span class="o">.</span><span class="n">getRotation</span><span class="p">()</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m upside down!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>

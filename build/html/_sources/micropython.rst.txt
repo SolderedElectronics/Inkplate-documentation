@@ -176,7 +176,7 @@ Inkplate MicroPython
     .selectDisplayMode(_mode)
 
 * **Arguments and return value**:
-    | **_mode** - New display mode, display.INKPLATE_1BIT or display.INKPLATE_3BIT.
+    | **_mode** - New display mode, display.Inkplate.INKPLATE_1BIT or display.Inkplate.INKPLATE_2BIT.
 
     Returns nothing.
 
@@ -186,7 +186,7 @@ Inkplate MicroPython
 * **Example**:
     .. code-block:: python
 
-        display.selectDisplayMode(INKPLATE_3BIT)
+        display.selectDisplayMode(Inkplate.INKPLATE_2BIT)
 
 
 .getDisplayMode()
@@ -205,12 +205,12 @@ Inkplate MicroPython
 
 * **Description**:
     | Used to determine which display mode is currently used.
-    | Returns INKPLATE_1BIT or INKPLATE_3BIT.
+    | Returns Inkplate.INKPLATE_1BIT or Inkplate.INKPLATE_2BIT.
 
 * **Example**:
     .. code-block:: python
 
-        if(display.getDisplayMode() == INKPLATE_3BIT)
+        if display.getDisplayMode() == Inkplate.INKPLATE_2BIT:
             print("I'm in grayscale mode!")
 
 
@@ -865,5 +865,5 @@ Inkplate MicroPython
 * **Example**:
     .. code-block:: python
 
-        if(display.getRotation() == 4)
+        if display.getRotation() == 4:
             print("I'm upside down!")
