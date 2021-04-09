@@ -17,11 +17,9 @@ Welcome to Inkplate's documentation!
    /examples
    /hardware-refrence
    /gui-designer
-   /contribute
    /resources
    /open-source
    /about
-   /downloads
 
 
 

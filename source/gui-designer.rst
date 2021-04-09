@@ -37,7 +37,7 @@ Modifiers
 Exporting code
 ##############
     | After you're done with editing, simlpy click on "Export C Code" in the upper left corner.
-    | A download prompt will show and upon accepitng it a header file will be downloaded.
+    | A download prompt will show and upon accepting it a header file will be downloaded.
     | Simply put the file in the same folder as your sketch, include it by putting:
 
     .. code-block:: C
@@ -81,7 +81,7 @@ Editing widgets
 
 Making widgets
 ##############
-    | We strongly incourage those familiar with JavaScript to try their luck making widgets.
+    | We strongly encourage those familiar with JavaScript to try their luck making widgets.
     | Take a look in our source, under widgets/clock.js or graph.js.
     | Basicaly all there needs to be is name, type (widget), id initialized to 0, 
     | variables shown to user, draw function (here used as a helper to _draw method),

@@ -24,49 +24,6 @@ Inkplate object initialization
     In here given examples, Inkplate object will always be named display, if not said otherwise.
     After calling this below your "#include" lines, you have access to all Inkplate functionality as display object methods.
 
-
-WiFi connectivity
-#################
-    | For some functionalities of the Inkplate to work you must be connected to WiFi.
-    | For more information see our examples.
-
-    .. code-block:: c
-
-        #include <WiFi.h>
-        #include <WiFiMulti.h>
-
-        #include <HTTPClient.h>
-
-        //Below includes
-        WiFiMulti wifiMulti;
-
-        ...
-
-        //In setup or loop
-        wifiMulti.addAP("SSID", "PASSWORD");
-
-        if((wifiMulti.run() == WL_CONNECTED)) {
-            HTTPClient http;
-
-            http.begin("http://example.com/index.html");
-
-            int httpCode = http.GET();
-
-            if(httpCode > 0) {
-                if(httpCode == HTTP_CODE_OK) {
-                    String payload = http.getString();
-
-                    ...
-                }       
-        }
-
-
-
-* **Description**:
-
-    
-
-
 begin() method
 ##############
     | Before calling any display method you **must** call .begin() like this: 
@@ -86,7 +43,7 @@ begin() method
 Inkplate::sdCardInit();
 #######################
 
-* **Method prototype (as seen in Inkplate.h)**:
+* **Method prototype (as seen in System.h)**:
 
 .. code-block:: c
 
@@ -95,7 +52,7 @@ Inkplate::sdCardInit();
 * **Arguments and return value**:
     | No Arguments
 
-    Returns 0 if card initializaion unsuccessful, else some number which casts to true.
+    Returns 0 if card initialization unsuccessful, else some number which casts to true.
 
 * **Description**:
     | Used to initialize SD card interface.
@@ -106,7 +63,7 @@ Inkplate::sdCardInit();
 Inkplate::getSdFat();
 #####################
 
-* **Method prototype (as seen in Inkplate.h)**:
+* **Method prototype (as seen in System.h)**:
 
 .. code-block:: c
 
@@ -124,7 +81,7 @@ Inkplate::getSdFat();
 Inkplate::getSPI();
 ###################
 
-* **Method prototype (as seen in Inkplate.h)**:
+* **Method prototype (as seen in System.h)**:
 
 .. code-block:: c
 
@@ -139,7 +96,7 @@ Inkplate::getSPI();
 Inkplate::getPanelState();
 ##########################
 
-* **Method prototype (as seen in Inkplate.h)**:
+* **Method prototype (as seen in System.h)**:
 
 .. code-block:: c
 
@@ -162,7 +119,7 @@ Inkplate::getPanelState();
 Inkplate::readTouchpad();
 #########################
 
-* **Method prototype (as seen in Inkplate.h)**:
+* **Method prototype (as seen in System.h)**:
 
 .. code-block:: c
 
@@ -189,7 +146,7 @@ Inkplate::readTouchpad();
 Inkplate::readTemperature();
 ############################
 
-* **Method prototype (as seen in Inkplate.h)**:
+* **Method prototype (as seen in System.h)**:
 
 .. code-block:: c
 
@@ -214,7 +171,7 @@ Inkplate::readTemperature();
 Inkplate::readBattery();
 #########################
 
-* **Method prototype (as seen in Inkplate.h)**:
+* **Method prototype (as seen in System.h)**:
 
 .. code-block:: c
 
@@ -290,7 +247,7 @@ Drawing Functions
 Inkplate::drawPixel();
 ######################
 
-* **Method prototype (as seen in Inkplate.h)**:
+* **Method prototype (as seen in Graphics.h)**:
 
 .. code-block:: c
 
@@ -322,30 +279,6 @@ Inkplate::drawPixel();
         :width: 600
 
 
-
-Inkplate::clearDisplay();
-#########################
-
-* **Method prototype (as seen in Inkplate.h)**:
-
-.. code-block:: c
-
-    void clearDisplay();
-
-* **Arguments and return value**:
-    | No Arguments
-
-    Returns nothing.
-
-* **Description**:
-    | Clears all data in buffer.
-
-* **Example**:
-    .. code-block:: c
-
-        display.clearDisplay();
-
-
 Inkplate::display();
 ####################
 
@@ -370,6 +303,31 @@ Inkplate::display();
         display.drawPixel(10, 100, BLACK);
 
         display.display();
+
+
+Inkplate::clearDisplay();
+#########################
+
+* **Method prototype (as seen in Inkplate.h)**:
+
+.. code-block:: c
+
+    void clearDisplay();
+
+* **Arguments and return value**:
+    | No Arguments
+
+    Returns nothing.
+
+* **Description**:
+    | Clears all data in buffer. Call display() after this to update/clear display.
+
+* **Example**:
+    .. code-block:: c
+
+        display.clearDisplay();
+        display.display();
+
 
 
 Inkplate::partialUpdate();
@@ -405,7 +363,7 @@ Inkplate::partialUpdate();
 Inkplate::setRotation();
 ########################
 
-* **Method prototype (as seen in Inkplate.h)**:
+* **Method prototype (as seen in Graphics.h)**:
 
 .. code-block:: c
 
@@ -418,7 +376,7 @@ Inkplate::setRotation();
 
 * **Description**:
     | Rotates the screen to be used in different orientations.
-    | Default is 2, to fip 180 input 4
+    | Default is 2, to flip 180 input 4
     | 1 and 3 are for portait mode.
     | Once flipped coordinate space remains to have the origin in the top left corner.
 
@@ -441,7 +399,7 @@ Inkplate::setRotation();
 Inkplate::selectDisplayMode();
 ##############################
 
-* **Method prototype (as seen in Inkplate.h)**:
+* **Method prototype (as seen in Graphics.h)**:
 
 .. code-block:: c
 
@@ -464,7 +422,7 @@ Inkplate::selectDisplayMode();
 Inkplate::getDisplayMode();
 ###########################
 
-* **Method prototype (as seen in Inkplate.h)**:
+* **Method prototype (as seen in Graphics.h)**:
 
 .. code-block:: c
 
@@ -489,13 +447,16 @@ Inkplate::getDisplayMode();
 Inkplate::drawImage();
 #############################
 
-* **Method prototype (as seen in Inkplate.h)**:
+* **Method prototype (as seen in Image.h)**:
 
 .. code-block:: c
 
     bool drawImage(const char *path, int x, int y, bool dither = 1, bool invert = 0);
     bool drawImage(const String path, int x, int y, bool dither = 1, bool invert = 0);
     bool drawImage(const uint8_t *buf, int x, int y, int16_t w, int16_t h, uint8_t c = BLACK, uint8_t bg = 0xFF);
+    bool drawImage(const char *path, const Format &format, const int x, const int y, const bool dither = 1, const bool invert = 0);
+    bool drawImage(const String path, const Format &format, const int x, const int y, const bool dither = 1, const bool invert = 0);
+    bool drawImage(const char *path, const Format &format, const Position &position, const bool dither = 1, const bool invert = 0);
 
 
 * **Arguments and return value**:
@@ -521,6 +482,26 @@ Inkplate::drawImage();
     | uint8_t **c** - color to draw 1 pixels if in BW mode
     | uint8_t **bg** - color to draw all 0 pixels if in BW mode.
 
+    | const char ***path** - Path to file.
+    | const Format **&format** - image format (bmp, jpeg, png).
+    | int **x** - x coordinate to draw the image at
+    | int **y** - y coordinate to draw the image at
+    | bool **dither** - to dither the image or not 
+    | bool **invert** - invert all colors, defaults to false
+
+    | const String ***path** - Path to file.
+    | const Format **&format** - image format (bmp, jpeg, png).
+    | int **x** - x coordinate to draw the image at
+    | int **y** - y coordinate to draw the image at
+    | bool **dither** - to dither the image or not 
+    | bool **invert** - invert all colors, defaults to false
+
+    | const char ***path** - Path to file.
+    | const Format **&format** - image format (bmp, jpeg, png).
+    | const Position **&position** - image position (Center, TopLeft, BottomLeft, TopRight, BottomRight, _npos)
+    | bool **dither** - to dither the image or not 
+    | bool **invert** - invert all colors, defaults to false
+
     Returns 0 if error occured, else returns 1.
 
 * **Description**:
@@ -528,15 +509,17 @@ Inkplate::drawImage();
     | Can draw all kinds of images, but they should have a file extensions in them.
     | Can draw from web if path starts with http:// or https:// or if not from SD.
     | Draws bmp, png and jpeg images.
-    | Automaticly adjusts for current display mode.
+    | Automatically adjusts for current display mode.
+
 
 Inkplate::drawBitmapFromSD();
 #############################
 
-* **Method prototype (as seen in Inkplate.h)**:
+* **Method prototype (as seen in Image.h)**:
 
 .. code-block:: c
 
+    [[deprecated("Use drawImage, as this will soon become a private method.")]]
     int drawBitmapFromSD(SdFile *p, int x, int y, bool dither = false, bool invert = false);
     int drawBitmapFromSD(char *fileName, int x, int y, bool dither = false, bool invert = false);
 
@@ -585,10 +568,11 @@ Inkplate::drawBitmapFromSD();
 Inkplate::drawBitmapFromWeb();
 ##############################
 
-* **Method prototype (as seen in Inkplate.h)**:
+* **Method prototype (as seen in Image.h)**:
 
 .. code-block:: c
 
+    [[deprecated("Use drawImage, as this will soon become a private method.")]]
     int drawBitmapFromWeb(WiFiClient *s, int x, int y, int len, bool dither = false, bool invert = false);
     int drawBitmapFromWeb(char *url, int x, int y, bool dither = false, bool invert = false);
 
@@ -609,7 +593,7 @@ Inkplate::drawBitmapFromWeb();
     Returns 0 if failed and 1 if successful.
 
 * **Description**:
-    | Draws an image frmo the web.
+    | Draws an image from the web.
     | Make sure WiFi is setup beforehand as in examples (10-Inkplate_download_and_show).
 
 * **Example**:
@@ -630,7 +614,7 @@ Inkplate::drawBitmapFromWeb();
 Inkplate::drawThickLine();
 ##########################
 
-* **Method prototype (as seen in Inkplate.h)**:
+* **Method prototype (as seen in Shapes.h)**:
 
 .. code-block:: c
 
@@ -642,7 +626,7 @@ Inkplate::drawThickLine();
     | int **x2** - x coordinate of line end, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3
     | int **y2** - y coordinate of line end, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3 
     | int **color** - line color, in 3 bit mode in range [0, 7]
-    | float **thickness** - line thickness
+    | float **thickness** - line thickness in pixels
 
     Returns nothing.
 
@@ -665,7 +649,7 @@ Inkplate::drawThickLine();
 Inkplate::drawGradientLine();
 #############################
 
-* **Method prototype (as seen in Inkplate.h)**:
+* **Method prototype (as seen in Shapes.h)**:
 
 .. code-block:: c
 
@@ -730,7 +714,7 @@ Inkplate::clean();
 Inkplate::drawFastVLine();
 ##########################
 
-* **Method prototype (as seen in Adafruit_GFX.h)**:
+* **Method prototype (as seen in Graphics.h)**:
 
 .. code-block:: c
 
@@ -764,7 +748,7 @@ Inkplate::drawFastVLine();
 Inkplate::drawFastHLine();
 ##########################
 
-* **Method prototype (as seen in Adafruit_GFX.h)**:
+* **Method prototype (as seen in Graphics.h)**:
 
 .. code-block:: c
 
@@ -798,7 +782,7 @@ Inkplate::drawFastHLine();
 Inkplate::fillRect();
 #####################
 
-* **Method prototype (as seen in Adafruit_GFX.h)**:
+* **Method prototype (as seen in Graphics.h)**:
 
 .. code-block:: c
 
@@ -933,7 +917,7 @@ Inkplate::drawRect();
 Inkplate::drawElipse();
 #######################
 
-* **Method prototype (as seen in Adafruit_GFX.h)**:
+* **Method prototype (as seen in Shapes.h)**:
 
 .. code-block:: c
 
@@ -959,7 +943,7 @@ Inkplate::drawElipse();
 Inkplate::fillElipse();
 #######################
 
-* **Method prototype (as seen in Adafruit_GFX.h)**:
+* **Method prototype (as seen in Shapes.h)**:
 
 .. code-block:: c
 
@@ -986,7 +970,7 @@ Inkplate::fillElipse();
 Inkplate::drawPolygon();
 ########################
 
-* **Method prototype (as seen in Adafruit_GFX.h)**:
+* **Method prototype (as seen in Shapes.h)**:
 
 .. code-block:: c
 
@@ -1008,14 +992,14 @@ Inkplate::drawPolygon();
 
        display.drawPolygon(xt, yt, n, 0);
 
-Inkplate::drawPolygon();
+Inkplate::fillPolygon();
 ########################
 
-* **Method prototype (as seen in Adafruit_GFX.h)**:
+* **Method prototype (as seen in Shapes.h)**:
 
 .. code-block:: c
 
-    void drawPolygon(int *x, int *y, int n, int color);
+    void fillPolygon(int *x, int *y, int n, int color);
 
 * **Arguments and return value**:
     | int ***x** - Polygon points X coordinates.
@@ -1319,7 +1303,7 @@ Inkplate::drawBitmap();
 Inkplate::drawBitmap3Bit();
 ###########################
 
-* **Method prototype (as seen in Inkplate.h)**:
+* **Method prototype (as seen in Image.h)**:
 
 .. code-block:: c
 
@@ -1369,8 +1353,7 @@ Inkplate::drawChar();
     Returns nothing.
 
 * **Description**:
-    | Cleans the actual screen of any possible burn in.
-    | Should not be used in intervals less than 5 seconds.
+    | Draws characters to the screen
 
 * **Example**:
     .. code-block:: c
@@ -1622,7 +1605,7 @@ Inkplate::setTextWrap();
 Inkplate::width();
 ##################
 
-* **Method prototype (as seen in Adafruit_GFX.h)**:
+* **Method prototype (as seen in Graphics.h)**:
 
 .. code-block:: c
 
@@ -1630,8 +1613,6 @@ Inkplate::width();
 
 * **Arguments and return value**:
     | No arguments.
-
-    Returns nothing.
 
 * **Description**:
     | Returns screen width.
@@ -1648,7 +1629,7 @@ Inkplate::width();
 Inkplate::height();
 ###################
 
-* **Method prototype (as seen in Adafruit_GFX.h)**:
+* **Method prototype (as seen in Graphics.h)**:
 
 .. code-block:: c
 
@@ -1671,7 +1652,7 @@ Inkplate::height();
 Inkplate::getRotation();
 ########################
 
-* **Method prototype (as seen in Adafruit_GFX.h)**:
+* **Method prototype (as seen in Graphics.h)**:
 
 .. code-block:: c
 
@@ -1741,4 +1722,389 @@ Inkplate::getCursorY();
 
         if(display.getCursorY() > 300)
             Serial.println("Were in the bottom half of the screen!");
+
+
+MCP Functions
+----------------
+| MCP23017 Expander PORTB pins from GPB1-GPB7 can be used.
+| DO NOT USE GPA0-GPA7 and GPB0. In code those are pins from 0-8.
+| Using those, you might permanently damage the screen.
+| You should only use pins from 9-15.
+
+| Port A is used for epaper panel and TPS65186 PMIC. GPB0 is used for ESP32 GPIO0 so you can't use it either.
+| GPB1 is used for enabling battery reading (if Batt solder bridge is bridged between second and third pad)
+| GPB2, GPB3 and GPB4 are used for reading touchpad (if Touchpad solder bridges are bridged between second pad and third pad). 
+
+| MCP is started inside Inkplate.begin() function so you need only to call that and everything is set for MCP.
+
+.. code-block:: c 
+
+    Inkplate display(INKPLATE_1BIT);//or INKPLATE_3BIT
+    display.begin();
+
+Inkplate::pinModeMCP();
+#######################
+
+* **Method prototype (as seen in Mcp.h)**:
+
+.. code-block:: c 
+
+    void pinModeMCP(uint8_t _pin, uint8_t _mode);
+
+* **Arguments and return value**:
+    | uint8_t _pin - pin number.
+    | uint8_t _mode - mode to be set (INPUT, OUTPUT or INPUT_PULLUP).
+    | Returns nothing.
+
+* **Description**:
+    | Sets internal pin mode.
+
+* **Example**:
+    .. code-block:: c
+
+        display.pinModeMCP(LED_PIN, OUTPUT);
+
+Inkplate::digitalWriteMCP();
+############################
+
+* **Method prototype (as seen in Mcp.h)**:
+
+.. code-block:: c 
+
+    void digitalWriteMCP(uint8_t _pin, uint8_t _state);
+
+* **Arguments and return value**:
+    | uint8_t _pin - pin number.
+    | uint8_t _state - pin state (HIGH or LOW).
+    | Returns nothing.
+
+* **Description**:
+    | Sets internal output pin state.
+
+* **Example**:
+    .. code-block:: c
+
+        display.digitalWriteMCP(LED_PIN, HIGH);
+
+Inkplate::digitalReadMCP();
+###########################
+
+* **Method prototype (as seen in Mcp.h)**:
+
+.. code-block:: c 
+
+    uint8_t digitalReadMCP(uint8_t _pin);
+
+* **Arguments and return value**:
+    | uint8_t _pin - pin number.
+    | Returns HIGH or LOW value (1 or 0).
+
+* **Description**:
+    | Reads pin INPUT state.
+
+* **Example**:
+    .. code-block:: c
+
+        display.digitalReadMCP(LED_PIN);
+
+Inkplate::setIntOutput();
+##########################
+
+* **Method prototype (as seen in Mcp.h)**:
+
+.. code-block:: c 
+
+    void setIntOutput(uint8_t intPort, uint8_t mirroring, uint8_t openDrain, uint8_t polarity);
+
+* **Arguments and return value**:
+    | uint8_t intPort - intPort portA or portB.
+    | uint8_t mirroring - mirroring set 1 to make ports mirror each other so that any interrupt will cause both to go HIGH.
+    | uint8_t openDrain - openDrain set 1 to set interupt port as open drain, this will override port polarity.
+    | uint8_t polarity - sets port interrupt polarity, 1 active high, 0 active low.
+    | Returns nothing.
+
+* **Description**:
+    | Sets port interrupt state
+
+* **Example**:
+    .. code-block:: c
+
+        display.setIntOutput(1, false, false, HIGH);// 1 means portB, 0 portA
+
+Inkplate::setIntPin();
+#######################
+
+* **Method prototype (as seen in Mcp.h)**:
+
+.. code-block:: c 
+
+    void setIntPin(uint8_t _pin, uint8_t _mode);
+
+* **Arguments and return value**:
+    | uint8_t _pin - pin number.
+    | uint8_t mode - interurpt mode (CHANGE, FALLING, RISING)
+    | Returns nothing.
+
+* **Description**:
+    | Sets pin interrupt state
+
+* **Example**:
+    .. code-block:: c
+
+        display.setIntPin(touchPadPin, RISING);
+
+Inkplate::removeIntPin();
+##########################
+
+* **Method prototype (as seen in Mcp.h)**:
+
+.. code-block:: c 
+
+    void removeIntPin(uint8_t _pin);
+
+* **Arguments and return value**:
+    | uint8_t _pin - pin number.
+    | Returns nothing.
+
+* **Description**:
+    | Removes interrupt from pin
+
+* **Example**:
+    .. code-block:: c
+
+        display.removeIntPin(touchPadPin);
+
+Inkplate::getINT();
+#######################
+
+* **Method prototype (as seen in Mcp.h)**:
+
+.. code-block:: c 
+
+    uint16_t getINT();
+
+* **Arguments and return value**:
+    | No argument.
+    | Returns interupt registers state.
+
+* **Description**:
+    | Returns interrupt registers state for portA and portB. 
+    | Every bit represents interrupt pin, MSB is  PORTB PIN7, LSB is PORTA PIN1.
+
+* **Example**:
+    .. code-block:: c
+
+        display.getINT();
+
+
+Inkplate::getINTstate();
+#########################
+
+* **Method prototype (as seen in Mcp.h)**:
+
+.. code-block:: c 
+
+    uint16_t getINTstate();
+
+* **Arguments and return value**:
+    | No argument.
+    | Returns interupt registers state at the time interrupt occured.
+
+* **Description**:
+    | Returns interrupt registers state for portA and portB. 
+    | Every bit represents interrupt pin, MSB is  PORTB PIN7, LSB is PORTA PIN1.
+
+* **Example**:
+    .. code-block:: c
+
+        display.getINTstate();
+
+
+Inkplate::setPorts();
+#######################
+
+* **Method prototype (as seen in Mcp.h)**:
+
+.. code-block:: c 
+
+    void setPorts(uint16_t _d);
+
+* **Arguments and return value**:
+    | uint16_t _d - value to be writen to port A and port B registers.
+    | Returns nothing.
+
+* **Description**:
+    | sets internal state of PORTA and PORTB registers.
+    | MSB byte is for PORTB, LSB byte for PORTA
+
+* **Example**:
+    .. code-block:: c
+
+        uint16_t data = 0xFFFF;//to make all bits ones
+        display.setPorts(data);
+
+Inkplate::getPorts();
+#######################
+
+* **Method prototype (as seen in Mcp.h)**:
+
+.. code-block:: c 
+
+    uint16_t getPorts();
+
+* **Arguments and return value**:
+    | No arguments.
+    | Returns register state of PORTA and PORTB.
+
+* **Description**:
+    | returns internal state of PORTA and PORTB registers.
+    | MSB byte is for PORTB, LSB is for PORTA.
+
+* **Example**:
+    .. code-block:: c
+
+        display.getPorts();
+
+
+NetworkClient Functions
+------------------------
+
+WiFi connectivity
+#################
+    | For some functionalities of the Inkplate to work you must be connected to WiFi.
+    | For more information see our examples.
+
+    .. code-block:: c
+
+        #include "Inkplate.h"
+        #include <WiFi.h>
+        #include <HTTPClient.h>
+
+        const char ssid = "Wifi_name"
+        const char pass = "password"
+
+        ...
+
+        //In setup
+        while(!display.joinAP(ssid, pass))
+        {
+            Serial.println("Connecting to wifi");
+        }
+
+        //after you can check if connection active
+        if((display.isConnected)) 
+        {
+            HTTPClient http;
+
+            http.begin("http://example.com/index.html");
+
+            int httpCode = http.GET();
+
+            if(httpCode > 0) 
+            {
+                if(httpCode == HTTP_CODE_OK) 
+                {
+                    String payload = http.getString();
+
+                    ...
+                }       
+            }
+        }
+
+Inkplate::joinAP();
+#######################
+
+* **Method prototype (as seen in NetworkClient.h)**:
+
+.. code-block:: c 
+
+    bool joinAP(const char *ssid, const char *pass);
+
+* **Arguments and return value**:
+    | const char \*ssid - name of the wifi network.
+    | const xhar \*pass - network password.
+    | Returns 1 if successfuly connected, 0 if not.
+
+* **Description**:
+    | Sets and connects inkplate to on wifi network.
+
+* **Example**:
+    .. code-block:: c
+
+        //In setup
+        while(!display.joinAP(ssid, pass))
+        {
+            Serial.println("Connecting to wifi");
+        }
+
+Inkplate::disconnect();
+#######################
+
+* **Method prototype (as seen in NetworkClient.h)**:
+
+.. code-block:: c 
+
+    void disconnect();
+
+* **Arguments and return value**:
+    | No arguments.
+    | Returns nothing.
+
+* **Description**:
+    | Disconnects Inkplate from wifi network (shuts network).
+
+* **Example**:
+    .. code-block:: c
+
+        display.disconnect();
+
+Inkplate::isConnected();
+########################
+
+* **Method prototype (as seen in NetworkClient.h)**:
+
+.. code-block:: c 
+
+    bool isConnected();
+
+* **Arguments and return value**:
+    | No arguments.
+    | Returns 1 if connected to wifi, 0 if not.
+
+* **Description**:
+    | Checks if inkplate is connected to wifi.
+
+* **Example**:
+    .. code-block:: c
+
+        Serial.println(display.isConnected());
+
+Inkplate::downloadFile();
+#########################
+
+* **Method prototype (as seen in NetworkClient.h)**:
+
+.. code-block:: c 
+
+    uint8_t *downloadFile(const char *url, int32_t *defaultLen);
+    uint8_t *downloadFile(WiFiClient *url, int32_t len);
+
+* **Arguments and return value**:
+    | const char \*url - link to file.
+    | int32_t \*defaultLen - expected lenght (only matters if real length cant be checked).
+    | Returns file as byte buffer, NULL if failed to get file.
+
+    | WiFiClient \*url - link to file
+    | int32_t \*len - expected lenght (only matters if real length cant be checked).
+    | Returns file as byte buffer, NULL if failed to get file.
+
+* **Description**:
+    | Downloads file from given url.
+
+* **Example**:
+    .. code-block:: c
+
+        char url = "https//:www.somepic.com/pic.jpg"
+        int32_t len = 54373;
+        jpeg file = display.downloadFile(url, len);
 

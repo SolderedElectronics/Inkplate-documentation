@@ -4,17 +4,19 @@ Inkplate Get Started Page
 Arduino
 -------
 
-In order to get started with Inkplate 6 using Arduino IDE, follow the steps below:
+In order to get started with Inkplate using Arduino IDE, follow the steps below:
 
-#. Install the Inkplate 6 board definition to add Inkplate 6 as a board in Arduino IDE
-#. Install the CH340 drivers (if you don't have them already)
-#. Install the Inkplate 6 Arduino library from our GitHub repository (if you're not sure how, take a look at our tutorial)
-#. Install this custom SdFat library to your Arduino IDE.
-#. Your Inkplate 6 is now ready to go! Just select Tools -> Board -> Inkplate 6, choose the correct COM port, and upload your code!
+#. Install the `Inkplate board definition <https://github.com/e-radionicacom/Croduino-Board-Definitions-for-Arduino-IDE>`_ to add Inkplate as a board in Arduino IDE
+#. Install the `CH340 drivers <https://e-radionica.com/en/blog/ch340-driver-installation-croduino-basic3-nova2/>`_ (if you don't have them already)
+#. Install the `Inkplate Arduino library <https://github.com/e-radionicacom/Inkplate-Arduino-library>`_ from our GitHub repository (if you're not sure how, take a look at our `tutorial <https://e-radionica.com/en/blog/arduino-library/#Kako%20instaliraty%20library?>`_)
+#. Your Inkplate is now ready to go! Just select Tools -> Board -> Inkplate x, choose the correct COM port, and upload your code!
 
-Take a look at our examples in the library and the API refrence to see what you can code.
+.. image:: images/BoardSelection.jpg
+    :width: 500
 
-To use Peripheral Mode, connect your Inkplate 6 to the "Controller" board with a USB cable or via the ESP32 RX and TX pins. 
+Take a look at our `examples <examples.html>`_ in the library and the `API refrence <api-refrence.html>`_ to see what you can code.
+
+To use Peripheral Mode, connect your Inkplate to the "Controller" board with a USB cable or via the ESP32 RX and TX pins. 
 Using standard UART at 115200 baud, you can send commands to change the screen contents. 
 For example, send #H(000,000,"/img.bmp") to display an img.bmp image file stored on the SD card. 
 For detailed refrence see peripheral mode docs.
@@ -22,7 +24,7 @@ For detailed refrence see peripheral mode docs.
 MicroPython
 -----------
 
-In order to get started with Inkplate 6 using MicroPython, follow the steps below:
+In order to get started with Inkplate using MicroPython, follow the steps below:
 
 #. Clone our repo at https://github.com/e-radionicacom/Inkplate-6-micropython and get your terminal inside the repo folder.
 #. Flash MicroPython firmware supplied, or from http://micropython.org/download/esp32/ 
@@ -47,7 +49,7 @@ In order to get started with Inkplate 6 using MicroPython, follow the steps belo
 
         python3 pyboard.py --device /dev/ttyUSB0 -f cp mcp23017.py sdcard.py inkplate.py image.py gfx.py gfx_standard_font_01.py :
 
-    Replace /dev/ttyUSB0 with the port to which Inkplate is connected. Easiest way to find that our is to open Arduino IDE and see it under ports menu.
+    Replace /dev/ttyUSB0 with the port to which Inkplate is connected. Easiest way to find that out is to open Arduino IDE and see it under ports menu.
     
     (You can find pyboard.py in the MicroPython tools directory or just download it from GitHub: https://raw.githubusercontent.com/micropython/micropython/master/tools/pyboard.py)
 #. Run example.py:
@@ -61,3 +63,16 @@ In order to get started with Inkplate 6 using MicroPython, follow the steps belo
     You can run our other 2 examples, showing how to use the Sd card and network class.
 
     In the same manner as running our examples you can run your own code and even set it to run on boot or similiar by following other MicroPython tutorials.
+    
+ESP-IDF
+-------
+
+In order to get started with Inkplate using ESP-IDF, follow the steps below:
+
+#. Clone repo from https://github.com/turgu1/ESP-IDF-InkPlate.git.
+
+#. Setup ESP-IDF tools from https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/.
+
+#. Connect Inkplate device and follow instructions https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/.
+
+#. You can run few examples from examples folder in repository.

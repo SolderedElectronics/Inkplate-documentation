@@ -1,20 +1,23 @@
 Inkplate Features
 =================
 
+Inkplate 6:
+-----------
+
 Front-Mounted Components:
--------------------------
+#########################
 
 .. image:: images/features1.jpg
     :width: 500
 
 Rear-Mounted Components:
-------------------------
+########################
 
-.. image:: images/features1.jpg
+.. image:: images/features2.jpg
     :width: 500
 
 Other Technical Specifications
-------------------------------
+##############################
     | Physical Interface:
     |     * Three capacitive touch pads
     |     * Hardware power switch
