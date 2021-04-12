@@ -9,17 +9,14 @@ In order to get started with Inkplate using Arduino IDE, follow the steps below:
 #. Install the `Inkplate board definition <https://github.com/e-radionicacom/Croduino-Board-Definitions-for-Arduino-IDE>`_ to add Inkplate as a board in Arduino IDE
 #. Install the `CH340 drivers <https://e-radionica.com/en/blog/ch340-driver-installation-croduino-basic3-nova2/>`_ (if you don't have them already)
 #. Install the `Inkplate Arduino library <https://github.com/e-radionicacom/Inkplate-Arduino-library>`_ from our GitHub repository (if you're not sure how, take a look at our `tutorial <https://e-radionica.com/en/blog/arduino-library/#Kako%20instaliraty%20library?>`_)
-#. Your Inkplate is now ready to go! Just select Tools -> Board -> Inkplate x, choose the correct COM port, and upload your code!
+#. Your Inkplate is now ready to go! Just select Tools -> Board -> Inkplate x, choose the correct COM port, and upload your code! To tweak your upload speed, you can set Upload speed to 921600. 
 
 .. image:: images/BoardSelection.jpg
     :width: 500
 
-Take a look at our `examples <examples.html>`_ in the library and the `API refrence <api-refrence.html>`_ to see what you can code.
+Take a look at our `examples <examples.html>`_ in the library and the `API reference <api-refrence.html>`_ to see what you can code.
 
-To use Peripheral Mode, connect your Inkplate to the "Controller" board with a USB cable or via the ESP32 RX and TX pins. 
-Using standard UART at 115200 baud, you can send commands to change the screen contents. 
-For example, send #H(000,000,"/img.bmp") to display an img.bmp image file stored on the SD card. 
-For detailed refrence see peripheral mode docs.
+To use `Peripheral Mode <peripheral-mode.html>`_, connect your Inkplate to the "Controller" board or computer with a USB cable or via the ESP32 RX and TX pins. For detailed reference see `Peripheral Mode <peripheral-mode.html>`_ docs.
 
 MicroPython
 -----------
