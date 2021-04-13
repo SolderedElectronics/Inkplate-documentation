@@ -39,7 +39,7 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="5. Inkplate Hardware Refrence" href="hardware-refrence.html" />
+    <link rel="next" title="5. Inkplate Hardware Reference" href="hardware-reference.html" />
     <link rel="prev" title="3.4. Inkplate esp-idf" href="esp-idf.html" /> 
 </head>
 
@@ -89,16 +89,54 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="get-started.html">1. Inkplate Get Started Page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="features.html">2. Inkplate Features</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api-refrence.html">3. Inkplate API Refrence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-reference.html">3. Inkplate API Reference</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">4. Examples</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#basic-inkplate-functionality">4.1. Basic Inkplate Functionality</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#advanced-inkplate-features">4.2. Advanced Inkplate Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#community-contributions">4.3. Community contributions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#others">4.4. Others</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#projects">4.5. Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basic-inkplate-functionality">4.1. Basic Inkplate Functionality</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#inkplate-basic-bw">4.1.1. Inkplate_Basic_BW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inkplate-basic-gray">4.1.2. Inkplate_Basic_Gray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inkplate-basic-partial-update">4.1.3. Inkplate_Basic_Partial_Update</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="hardware-refrence.html">5. Inkplate Hardware Refrence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#advanced-inkplate-features">4.2. Advanced Inkplate Features</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#inkplate-battery-voltage-temperature">4.2.1. Inkplate_Battery_Voltage_Temperature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inkplate-easyc">4.2.2. Inkplate_EasyC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inkplate-low-power">4.2.3. Inkplate_Low_Power</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inkplate-mcp23017-expander">4.2.4. Inkplate_MCP23017_Expander</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inkplate-partial-update-with-deep-sleep">4.2.5. Inkplate_Partial_Update_With_Deep_Sleep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inkplate-sd-pictures">4.2.6. Inkplate_SD_Pictures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inkplate-sd-txt-file">4.2.7. Inkplate_SD_TXT_File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inkplate-touchpads">4.2.8. Inkplate_Touchpads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inkplate-wake-up-on-touchpads">4.2.9. Inkplate_Wake_Up_On_Touchpads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#web-bmp-pictures">4.2.10. Web_BMP_Pictures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inkplate-web-server">4.2.11. Inkplate_Web_Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inkplate-wifi-http">4.2.12. Inkplate_WiFi_HTTP</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#community-contributions">4.3. Community contributions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#game-of-life-by-claud9999">4.3.1. Game_Of_Life_By_Claud9999</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#others">4.4. Others</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#inkplate-factory-programming-vcom">4.4.1. Inkplate_Factory_Programming_VCOM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inkplate-mandelbrot-set">4.4.2. Inkplate_Mandelbrot_Set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inkplate-maze-generator">4.4.3. Inkplate_Maze_Generator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inkplate-peripheral-mode">4.4.4. Inkplate_Peripheral_Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inkplate-varipass-graphs">4.4.5. Inkplate_VariPass_Graphs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#projects">4.5. Projects</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#campaing-tracker">4.5.1. Campaing_Tracker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cryptocurrency-tracker">4.5.2. Cryptocurrency_Tracker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#daily-weather-station">4.5.3. Daily_Weather_Station</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#google-calendar">4.5.4. Google_Calendar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hourly-weather-station">4.5.5. Hourly_Weather_Station</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#image-frame">4.5.6. Image_Frame</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#open-weather-station">4.5.7. Open_weather_station</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hardware-reference.html">5. Inkplate Hardware Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gui-designer.html">6. Inkplate GUI designer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="resources.html">7. Inkplate Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="open-source.html">8. Inkplate is Open Source</a></li>
@@ -174,140 +212,240 @@
 <h1><span class="section-number">4. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
 <div class="line">All examples included in our library can be found here:</div>
-<div class="line"><a class="reference external" href="https://github.com/e-radionicacom/Inkplate-Arduino-library/tree/master/examples">https://github.com/e-radionicacom/Inkplate-Arduino-library/tree/master/examples</a></div>
+<div class="line"><a class="reference external" href="https://github.com/e-radionicacom/Inkplate-Arduino-library/tree/master/examples">Examples for Inkplate</a></div>
 </div>
 <div class="line-block">
-<div class="line">After you download inkplate arduino library you will have all examples inside arduino IDE.</div>
+<div class="line">After you download inkplate Arduino library you will have all examples inside Arduino IDE.</div>
 <div class="line">There are comments in all examples that describe how it works and what hardware you need.</div>
 </div>
 <div class="section" id="basic-inkplate-functionality">
 <h2><span class="section-number">4.1. </span>Basic Inkplate Functionality<a class="headerlink" href="#basic-inkplate-functionality" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic">
-<li><p><strong>Inkplate_basic_BW</strong> - example for Inkplate. For this example you will need only USB cable and Inkplate.</p></li>
-<li><p><strong>Inkplate_basic_gray</strong> - example for Inkplate. For this example you will need only USB cable and Inkplate.</p></li>
-<li><p><strong>Inkplate_basic_partial_update</strong> - example for Inkplate. For this example you will need only USB cable and Inkplate.</p>
+<div class="section" id="inkplate-basic-bw">
+<h3><span class="section-number">4.1.1. </span>Inkplate_Basic_BW<a class="headerlink" href="#inkplate-basic-bw" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><a class="reference internal image-reference" href="_images/example1.jpg"><img alt="_images/example1.jpg" src="_images/example1.jpg" style="width: 500px;" /></a>
+<div><p>This example shows basic Inkplate functionalities in black and white mode (writing text, drawing shapes and images).</p>
 </div></blockquote>
-</li>
-</ol>
+</div>
+<div class="section" id="inkplate-basic-gray">
+<h3><span class="section-number">4.1.2. </span>Inkplate_Basic_Gray<a class="headerlink" href="#inkplate-basic-gray" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>This example shows basic Inkplate functionalities in gray mode (writing text, drawing shapes and images).</p>
+</div></blockquote>
+</div>
+<div class="section" id="inkplate-basic-partial-update">
+<h3><span class="section-number">4.1.3. </span>Inkplate_Basic_Partial_Update<a class="headerlink" href="#inkplate-basic-partial-update" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>This example shows how to properly use partial update on Inkplate.</p>
+<a class="reference internal image-reference" href="_images/example1.jpg"><img alt="_images/example1.jpg" src="_images/example1.jpg" style="width: 500px;" /></a>
+</div></blockquote>
+</div>
 </div>
 <div class="section" id="advanced-inkplate-features">
 <h2><span class="section-number">4.2. </span>Advanced Inkplate Features<a class="headerlink" href="#advanced-inkplate-features" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic">
-<li><p><strong>Inkplate_battery_voltage_temperature</strong> - example for Inkplate. For this example you will need USB cable, Inkplate and a Lithium battery (3.6V) with two pin JST connector.</p>
+<div class="section" id="inkplate-battery-voltage-temperature">
+<h3><span class="section-number">4.2.1. </span>Inkplate_Battery_Voltage_Temperature<a class="headerlink" href="#inkplate-battery-voltage-temperature" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><a class="reference internal image-reference" href="_images/example2.jpg"><img alt="_images/example2.jpg" src="_images/example2.jpg" style="width: 500px;" /></a>
+<div><p>For this example you will need a Lithium battery (3.6V) with two pin JST connector. This example will show you how to read voltage of the battery and read temperature from on-board
+temperature sensor which is part of TPS65186 e-paper PMIC.
+NOTE: In order to read temperature, e-paper has to be refreshed at least one time</p>
+<a class="reference internal image-reference" href="_images/example2.jpg"><img alt="_images/example2.jpg" src="_images/example2.jpg" style="width: 500px;" /></a>
 </div></blockquote>
-</li>
-<li><p><strong>Inkplate_easyC</strong> - example for Inkplate. For this example you will need a micro USB cable, Inkplate, BME680 sensor with easyC connector on it.</p>
+</div>
+<div class="section" id="inkplate-easyc">
+<h3><span class="section-number">4.2.2. </span>Inkplate_EasyC<a class="headerlink" href="#inkplate-easyc" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><a class="reference internal image-reference" href="_images/example18.jpg"><img alt="_images/example18.jpg" src="_images/example18.jpg" style="width: 500px;" /></a>
+<div><p>For this example you will need a micro USB cable, Inkplate, BME680 sensor with easyC connector on it.
+This example will show you how you can read temperature, humidity, air pressure and gas data from BME680.</p>
+<a class="reference internal image-reference" href="_images/example18.jpg"><img alt="_images/example18.jpg" src="_images/example18.jpg" style="width: 500px;" /></a>
 </div></blockquote>
-</li>
-<li><p><strong>Inkplate_low_power</strong> - example for Inkplate. For this example you will need USB cable and Inkplate.</p>
+</div>
+<div class="section" id="inkplate-low-power">
+<h3><span class="section-number">4.2.3. </span>Inkplate_Low_Power<a class="headerlink" href="#inkplate-low-power" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><a class="reference internal image-reference" href="_images/example3.jpg"><img alt="_images/example3.jpg" src="_images/example3.jpg" style="width: 500px;" /></a>
+<div><p>For this example you will need USB cable and Inkplate.
+This example will show you how you can use low power functionality of Inkplate board.
+In deep sleep, whole board will consume about 25uA from battery.
+Inkplate will wake every 20 seconds change content on screen.</p>
+<a class="reference internal image-reference" href="_images/example3.jpg"><img alt="_images/example3.jpg" src="_images/example3.jpg" style="width: 500px;" /></a>
 </div></blockquote>
-</li>
-<li><p><strong>Inkplate_MCP23017_expander</strong> - example for Inkplate. For this example you will need only a micro USB cable, Inkplate, 330 Ohm resistor and LED diode.</p>
+</div>
+<div class="section" id="inkplate-mcp23017-expander">
+<h3><span class="section-number">4.2.4. </span>Inkplate_MCP23017_Expander<a class="headerlink" href="#inkplate-mcp23017-expander" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><a class="reference internal image-reference" href="_images/example19.jpg"><img alt="_images/example19.jpg" src="_images/example19.jpg" style="width: 500px;" /></a>
+<div><p>For this example you will need only a micro USB cable, Inkplate, 330 Ohm resistor and LED diode.
+This example will show you how you can manipulate with I/Os of MCP23017 Expander.
+You can only manipulate with Port B of MCP23017 (GPB1-GPB7). Port A is used for epaper panel and TPS65186 PMIC.
+GPB0 is used for ESP32 GPIO0 so you can’t use it either.</p>
+<a class="reference internal image-reference" href="_images/example19.jpg"><img alt="_images/example19.jpg" src="_images/example19.jpg" style="width: 500px;" /></a>
 </div></blockquote>
-</li>
-<li><p><strong>Inkplate_Partial_Update_With_Deep_Sleep</strong> - example for Inkplate. For this example you will need only USB cable and Inkplate.</p>
+</div>
+<div class="section" id="inkplate-partial-update-with-deep-sleep">
+<h3><span class="section-number">4.2.5. </span>Inkplate_Partial_Update_With_Deep_Sleep<a class="headerlink" href="#inkplate-partial-update-with-deep-sleep" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><a class="reference internal image-reference" href="_images/example4.jpg"><img alt="_images/example4.jpg" src="_images/example4.jpg" style="width: 500px;" /></a>
+<div><p>In this example we will show how to use partial update of epaper screen with deep sleep functionality of ESP32.</p>
+<a class="reference internal image-reference" href="_images/example4.jpg"><img alt="_images/example4.jpg" src="_images/example4.jpg" style="width: 500px;" /></a>
 </div></blockquote>
-</li>
-<li><p><strong>Inkplate_SD_BMP</strong> - example for Inkplate. For this example you will need a micro USB cable, Inkplate and a SD card loaded with image1.bmp and image2.bmp file that can be found inside folder of this example.</p></li>
-<li><p><strong>Inkplate_SD_TXT</strong> - example for Inkplate. For this example you will need only a micro USB cable, Inkplate and a SD card loaded with text.txt file that can be found inside folder of this example.</p></li>
-<li><p><strong>Inkplate_Touchpads</strong> - example for Inkplate. For this example you will need only a micro USB cable and Inkplate.</p>
+</div>
+<div class="section" id="inkplate-sd-pictures">
+<h3><span class="section-number">4.2.6. </span>Inkplate_SD_Pictures<a class="headerlink" href="#inkplate-sd-pictures" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><a class="reference internal image-reference" href="_images/example5.jpg"><img alt="_images/example5.jpg" src="_images/example5.jpg" style="width: 500px;" /></a>
+<div><p>For this example you will need a micro USB cable, Inkplate and a SD card loaded with image1.bmp and image2.bmp file that can be found inside folder of this example.
+This example will show you how you can read .bmp and .jpeg files (pictures) from SD card and
+display that image on e-paper display.</p>
 </div></blockquote>
-</li>
-<li><p><strong>Inkplate_Wake_up_on_touchpads</strong> - example for Inkplate. For this example you will need USB cable and an Inkplate.</p>
+</div>
+<div class="section" id="inkplate-sd-txt-file">
+<h3><span class="section-number">4.2.7. </span>Inkplate_SD_TXT_File<a class="headerlink" href="#inkplate-sd-txt-file" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><a class="reference internal image-reference" href="_images/example6.jpg"><img alt="_images/example6.jpg" src="_images/example6.jpg" style="width: 500px;" /></a>
+<div><p>For this example you will need only a micro USB cable, Inkplate and a SD card loaded with text.txt file that can be found inside folder of this example.
+This example will show you how to open .txt files and display the content of that file on Inkplate epaper display.</p>
 </div></blockquote>
-</li>
-<li><p><strong>Web_BMP_pictures</strong> - example for Inkplate. For this example you will need a micro USB cable, Inkplate, and an available WiFi connection.</p>
+</div>
+<div class="section" id="inkplate-touchpads">
+<h3><span class="section-number">4.2.8. </span>Inkplate_Touchpads<a class="headerlink" href="#inkplate-touchpads" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><a class="reference internal image-reference" href="_images/example7.jpg"><img alt="_images/example7.jpg" src="_images/example7.jpg" style="width: 500px;" /></a>
+<div><p>For this example you will need only a micro USB cable and Inkplate.
+This example will show you how you can use built-in touchpads (on PCB marked with numbers 1, 2 and 3).
+They are basically touch sensitive switches.</p>
+<a class="reference internal image-reference" href="_images/example5.jpg"><img alt="_images/example5.jpg" src="_images/example5.jpg" style="width: 500px;" /></a>
 </div></blockquote>
-</li>
-<li><p><strong>Inkplate_Web_Server</strong> - example for Inkplate. For this example you will need a micro USB cable, Inkplate and a device with WiFi and Internet brower (PC, Laptop, Smartphone etc).</p>
+</div>
+<div class="section" id="inkplate-wake-up-on-touchpads">
+<h3><span class="section-number">4.2.9. </span>Inkplate_Wake_Up_On_Touchpads<a class="headerlink" href="#inkplate-wake-up-on-touchpads" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><a class="reference internal image-reference" href="_images/example8.jpg"><img alt="_images/example8.jpg" src="_images/example8.jpg" style="width: 500px;" /></a>
+<div><p>This example will shown how to use MCP and ESP interrupts to wake up the MCU from deepsleep when touchpad is pressed.</p>
+<a class="reference internal image-reference" href="_images/example6.jpg"><img alt="_images/example6.jpg" src="_images/example6.jpg" style="width: 500px;" /></a>
 </div></blockquote>
-</li>
-<li><p><strong>Inkplate_WiFi_HTTP</strong> - example for Inkplate. For this example you will need USB cable, Inkplate and stable WiFi Internet connection.</p>
+</div>
+<div class="section" id="web-bmp-pictures">
+<h3><span class="section-number">4.2.10. </span>Web_BMP_Pictures<a class="headerlink" href="#web-bmp-pictures" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><a class="reference internal image-reference" href="_images/example9.jpg"><img alt="_images/example9.jpg" src="_images/example9.jpg" style="width: 500px;" /></a>
+<div><p>For this example you will need a micro USB cable, Inkplate, and an available WiFi connection.
+This example will show you how you can download a .bmp file (picture) from the web and
+display that image on e-paper display.</p>
+<a class="reference internal image-reference" href="_images/example7.jpg"><img alt="_images/example7.jpg" src="_images/example7.jpg" style="width: 500px;" /></a>
 </div></blockquote>
-</li>
-</ol>
+</div>
+<div class="section" id="inkplate-web-server">
+<h3><span class="section-number">4.2.11. </span>Inkplate_Web_Server<a class="headerlink" href="#inkplate-web-server" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>For this example you will need a micro USB cable, Inkplate and a device with WiFi and Internet brower (PC, Laptop, Smartphone etc).
+This example will show you how you can use Inkplate as a small and simple standlone Web Server.
+You need to connect to Inkplate with WiFi and open IP address shown on Inkplate display.</p>
+<a class="reference internal image-reference" href="_images/example8.jpg"><img alt="_images/example8.jpg" src="_images/example8.jpg" style="width: 500px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="inkplate-wifi-http">
+<h3><span class="section-number">4.2.12. </span>Inkplate_WiFi_HTTP<a class="headerlink" href="#inkplate-wifi-http" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>For this example you will need USB cable, Inkplate and stable WiFi Internet connection.
+This example will show you how to connect to WiFi network, get data from Internet and display that data on epaper.
+This example is NOT on to how to parse HTML data from Internet - it will just print HTML on the screen.</p>
+<a class="reference internal image-reference" href="_images/example9.jpg"><img alt="_images/example9.jpg" src="_images/example9.jpg" style="width: 500px;" /></a>
+</div></blockquote>
+</div>
 </div>
 <div class="section" id="community-contributions">
 <h2><span class="section-number">4.3. </span>Community contributions<a class="headerlink" href="#community-contributions" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic">
-<li><p><strong>Game_Of_Life_by_claud9999</strong> - example for Inkplate. For this example you will need only USB cable and Inkplate.</p>
+<div class="section" id="game-of-life-by-claud9999">
+<h3><span class="section-number">4.3.1. </span>Game_Of_Life_By_Claud9999<a class="headerlink" href="#game-of-life-by-claud9999" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><a class="reference internal image-reference" href="_images/example10.jpg"><img alt="_images/example10.jpg" src="_images/example10.jpg" style="width: 500px;" /></a>
+<div><p>To run it, jut upload the code and watch Conways game of life animation!</p>
+<a class="reference internal image-reference" href="_images/example10.jpg"><img alt="_images/example10.jpg" src="_images/example10.jpg" style="width: 500px;" /></a>
 </div></blockquote>
-</li>
-</ol>
+</div>
 </div>
 <div class="section" id="others">
 <h2><span class="section-number">4.4. </span>Others<a class="headerlink" href="#others" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic">
-<li><p><strong>Inkplate_factory_programming_VCOM</strong> - example for inkplate. This example should not be used if you dont know what VCOM is and what exactly you are doing as it can damage panel.</p></li>
-<li><p><strong>Inkplate_Mandelbrot_set</strong> - sketch for Inkplate. This example renders the mandelbrot set to coordiantes to Inkplate. Due to the nature of Mandelbrot set, it is quite slow on low powered MCUs, so please be patient.</p>
+<div class="section" id="inkplate-factory-programming-vcom">
+<h3><span class="section-number">4.4.1. </span>Inkplate_Factory_Programming_VCOM<a class="headerlink" href="#inkplate-factory-programming-vcom" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><a class="reference internal image-reference" href="_images/example11.jpg"><img alt="_images/example11.jpg" src="_images/example11.jpg" style="width: 500px;" /></a>
+<div><p>This example should not be used if you dont know what VCOM is and what exactly you are doing as it can damage panel.</p>
 </div></blockquote>
-</li>
-<li><p><strong>Inkplate_Maze_Generator</strong> - sketch for Inkplate. This example renders a random maze every time. You can write on it with a whiteboard marker or a graphite pen to solve it, just be sure not to use pernament markers.</p>
+</div>
+<div class="section" id="inkplate-mandelbrot-set">
+<h3><span class="section-number">4.4.2. </span>Inkplate_Mandelbrot_Set<a class="headerlink" href="#inkplate-mandelbrot-set" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><a class="reference internal image-reference" href="_images/example12.jpg"><img alt="_images/example12.jpg" src="_images/example12.jpg" style="width: 500px;" /></a>
+<div><p>This example renders the mandelbrot set to coordiantes to Inkplate. Due to the nature of Mandelbrot set, it is quite slow on low powered MCUs, so please be patient.</p>
+<a class="reference internal image-reference" href="_images/example11.jpg"><img alt="_images/example11.jpg" src="_images/example11.jpg" style="width: 500px;" /></a>
 </div></blockquote>
-</li>
-<li><p><strong>Inkplate_Peripheral_Mode</strong> - sketch for Inkplate. Using this sketch, you don’t have to program and control e-paper using Arduino code. Instead, you can send UART command. This give you flexibility that you can use this Inkplate on any platform.</p></li>
-<li><p><strong>Inkplate_VariPass_Graphs</strong> - example for Inkplate. For this example you will need a micro USB cable, Inkplate, and an available WiFi connection.</p>
+</div>
+<div class="section" id="inkplate-maze-generator">
+<h3><span class="section-number">4.4.3. </span>Inkplate_Maze_Generator<a class="headerlink" href="#inkplate-maze-generator" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><a class="reference internal image-reference" href="_images/example13.jpg"><img alt="_images/example13.jpg" src="_images/example13.jpg" style="width: 500px;" /></a>
+<div><p>This example renders a random maze every time.
+You can write on it with a whiteboard marker or a graphite pen to solve it, just be sure not to use pernament markers.</p>
+<a class="reference internal image-reference" href="_images/example12.jpg"><img alt="_images/example12.jpg" src="_images/example12.jpg" style="width: 500px;" /></a>
 </div></blockquote>
-</li>
-</ol>
+</div>
+<div class="section" id="inkplate-peripheral-mode">
+<h3><span class="section-number">4.4.4. </span>Inkplate_Peripheral_Mode<a class="headerlink" href="#inkplate-peripheral-mode" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Using this sketch, you don’t have to program and control e-paper using Arduino code.
+Instead, you can send UART command. This give you flexibility that you can use this Inkplate on any platform.</p>
+</div></blockquote>
+</div>
+<div class="section" id="inkplate-varipass-graphs">
+<h3><span class="section-number">4.4.5. </span>Inkplate_VariPass_Graphs<a class="headerlink" href="#inkplate-varipass-graphs" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>This example will show you how you can use the API on the VariPass website to download and display
+a sensor graph on the e-paper display.</p>
+<a class="reference internal image-reference" href="_images/example13.jpg"><img alt="_images/example13.jpg" src="_images/example13.jpg" style="width: 500px;" /></a>
+</div></blockquote>
+</div>
 </div>
 <div class="section" id="projects">
 <h2><span class="section-number">4.5. </span>Projects<a class="headerlink" href="#projects" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic">
-<li><p><strong>Campaing_tracker</strong> - example for Inkplate. For this example you will need only USB cable and Inkplate. This example will show you how you can use Inkplate to display html data. This example gets html data from crowdsource campaing and displays them on Inkplate screen.</p>
+<div class="section" id="campaing-tracker">
+<h3><span class="section-number">4.5.1. </span>Campaing_Tracker<a class="headerlink" href="#campaing-tracker" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><a class="reference internal image-reference" href="_images/example14.jpg"><img alt="_images/example14.jpg" src="_images/example14.jpg" style="width: 500px;" /></a>
+<div><p>This example will show you how you can use Inkplate to display html data.
+It gets html data from crowdsource campaing and displays them on Inkplate screen.</p>
+<a class="reference internal image-reference" href="_images/example14.jpg"><img alt="_images/example14.jpg" src="_images/example14.jpg" style="width: 500px;" /></a>
 </div></blockquote>
-</li>
-<li><p><strong>Cryptocurrency_tracker</strong> - example for Inkplate. For this example you will need only USB cable and Inkplate. This example will show you how you can use Inkplate to display API data. Here we use Coingecko API to get latest cryptocurrency prices and display them on the Inkplate screen. If you wish to change the currecny, you can edit it below.</p>
+</div>
+<div class="section" id="cryptocurrency-tracker">
+<h3><span class="section-number">4.5.2. </span>Cryptocurrency_Tracker<a class="headerlink" href="#cryptocurrency-tracker" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><a class="reference internal image-reference" href="_images/example15.jpg"><img alt="_images/example15.jpg" src="_images/example15.jpg" style="width: 500px;" /></a>
+<div><p>This example will show you how you can use Inkplate to display API data.
+Here we use Coingecko API to get last 90 days prices and display them on the Inkplate screen.</p>
+<a class="reference internal image-reference" href="_images/example15.jpg"><img alt="_images/example15.jpg" src="_images/example15.jpg" style="width: 500px;" /></a>
 </div></blockquote>
-</li>
-<li><p><strong>daily_weather_station</strong> - example for Inkplate. For this example you will need only USB cable and Inkplate. This example will show you how you can use Inkplate to display API data, e.g. Metaweather public weather API.</p>
+</div>
+<div class="section" id="daily-weather-station">
+<h3><span class="section-number">4.5.3. </span>Daily_Weather_Station<a class="headerlink" href="#daily-weather-station" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><a class="reference internal image-reference" href="_images/example16.jpg"><img alt="_images/example16.jpg" src="_images/example16.jpg" style="width: 500px;" /></a>
+<div><p>This example will show you how you can use Inkplate to display API data, e.g. Metaweather public weather API.</p>
+<a class="reference internal image-reference" href="_images/example16.jpg"><img alt="_images/example16.jpg" src="_images/example16.jpg" style="width: 500px;" /></a>
 </div></blockquote>
-</li>
-<li><p><strong>Google_calendar</strong> - example for Inkplate. For this example you will need only USB cable and Inkplate. This project shows you how Inkplate 6 can be used to display events in your Google Calendar using their provided API.</p>
+</div>
+<div class="section" id="google-calendar">
+<h3><span class="section-number">4.5.4. </span>Google_Calendar<a class="headerlink" href="#google-calendar" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><a class="reference internal image-reference" href="_images/example17.jpg"><img alt="_images/example17.jpg" src="_images/example17.jpg" style="width: 500px;" /></a>
+<div><p>This project shows you how Inkplate can be used to display events in your Google Calendar using their provided API.</p>
+<a class="reference internal image-reference" href="_images/example17.jpg"><img alt="_images/example17.jpg" src="_images/example17.jpg" style="width: 500px;" /></a>
 </div></blockquote>
-</li>
-<li><p><strong>Hourly_weather_station</strong> - example for Inkplate. For this example you will need only USB cable and Inkplate. This example will show you how you can use Inkplate to display API data, e.g. Metaweather public weather API, and weatherstack for real time data.</p></li>
-<li><p><strong>Image_frame</strong> example for Inkplate. For this example you will need only USB cable and Inkplate.</p></li>
-<li><p><strong>Open_weather_station</strong> example for Inkplate. For this example you will need only USB cable and Inkplate. This example will show you how you can use Inkplate to display API data, e.g. Metaweather public weather API.</p></li>
-</ol>
+</div>
+<div class="section" id="hourly-weather-station">
+<h3><span class="section-number">4.5.5. </span>Hourly_Weather_Station<a class="headerlink" href="#hourly-weather-station" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>This example will show you how you can use Inkplate to display API data, e.g. Metaweather public weather API, and weatherstack for real time data.</p>
+<a class="reference internal image-reference" href="_images/example21.jpg"><img alt="_images/example21.jpg" src="_images/example21.jpg" style="width: 500px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="image-frame">
+<h3><span class="section-number">4.5.6. </span>Image_Frame<a class="headerlink" href="#image-frame" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>This example shows how you can set inkplate to show random pictures from web.</p>
+</div></blockquote>
+</div>
+<div class="section" id="open-weather-station">
+<h3><span class="section-number">4.5.7. </span>Open_weather_station<a class="headerlink" href="#open-weather-station" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>This example will show you how you can use Inkplate to display API data, e.g. Metaweather public weather API.</p>
+<a class="reference internal image-reference" href="_images/example20.jpg"><img alt="_images/example20.jpg" src="_images/example20.jpg" style="width: 500px;" /></a>
+</div></blockquote>
+</div>
 </div>
 </div>
 
@@ -317,7 +455,7 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="hardware-refrence.html" class="btn btn-neutral float-right" title="5. Inkplate Hardware Refrence" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="hardware-reference.html" class="btn btn-neutral float-right" title="5. Inkplate Hardware Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="esp-idf.html" class="btn btn-neutral float-left" title="3.4. Inkplate esp-idf" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

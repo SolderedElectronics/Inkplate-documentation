@@ -14,7 +14,7 @@ In order to get started with Inkplate using Arduino IDE, follow the steps below:
 .. image:: images/BoardSelection.jpg
     :width: 500
 
-Take a look at our `examples <examples.html>`_ in the library and the `API reference <api-refrence.html>`_ to see what you can code.
+Take a look at our `examples <examples.html>`_ in the library and the `API reference <api-reference.html>`_ to see what you can code.
 
 To use `Peripheral Mode <peripheral-mode.html>`_, connect your Inkplate to the "Controller" board or computer with a USB cable or via the ESP32 RX and TX pins. For detailed reference see `Peripheral Mode <peripheral-mode.html>`_ docs.
 
@@ -23,8 +23,8 @@ MicroPython
 
 In order to get started with Inkplate using MicroPython, follow the steps below:
 
-#. Clone our repo at https://github.com/e-radionicacom/Inkplate-6-micropython and get your terminal inside the repo folder.
-#. Flash MicroPython firmware supplied, or from http://micropython.org/download/esp32/ 
+#. Clone our repo for `micropython <https://github.com/e-radionicacom/Inkplate-6-micropython>`_ and get your terminal inside the repo folder.
+#. Flash MicroPython firmware supplied, or from `official page <http://micropython.org/download/esp32/>`_
     To do so, run
 
     .. code-block:: 
@@ -39,7 +39,7 @@ In order to get started with Inkplate using MicroPython, follow the steps below:
 
     to flash supplied firmware.
 
-    If you don't have esptool.py installed, install it from here: https://github.com/espressif/esptool.
+    If you don't have esptool.py installed, install it from here: `esptool <https://github.com/espressif/esptool>`_.
 #. Copy library files to your board, something like:
 
     .. code-block:: 
@@ -48,7 +48,7 @@ In order to get started with Inkplate using MicroPython, follow the steps below:
 
     Replace /dev/ttyUSB0 with the port to which Inkplate is connected. Easiest way to find that out is to open Arduino IDE and see it under ports menu.
     
-    (You can find pyboard.py in the MicroPython tools directory or just download it from GitHub: https://raw.githubusercontent.com/micropython/micropython/master/tools/pyboard.py)
+    (You can find pyboard.py in the MicroPython tools directory or just download it from GitHub: `pyboard <https://raw.githubusercontent.com/micropython/micropython/master/tools/pyboard.py>`_)
 #. Run example.py:
 
     .. code-block:: 
@@ -66,10 +66,10 @@ ESP-IDF
 
 In order to get started with Inkplate using ESP-IDF, follow the steps below:
 
-#. Clone repo from https://github.com/turgu1/ESP-IDF-InkPlate.git.
+#. Clone `repo <https://github.com/turgu1/ESP-IDF-InkPlate.git>`_.
 
-#. Setup ESP-IDF tools from https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/.
+#. Setup ESP-IDF `tools <https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/>`_.
 
-#. Connect Inkplate device and follow instructions https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/.
+#. Connect Inkplate device and follow `instructions <https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/>`_.
 
-#. You can run few examples from examples folder in repository.
+#. You can run few examples from examples `folder <https://github.com/turgu1/ESP-IDF-InkPlate/tree/master/examples>`_ in repository.

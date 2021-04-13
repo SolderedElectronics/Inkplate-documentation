@@ -1,6 +1,11 @@
 Inkplate Arduino
 ==================
 
+To get started with Inkplate in Arduino IDE first select `right board <get-started.html>`_ and include Inkplate.h
+    .. code-block:: c
+
+        #include "Inkplate.h"
+        
 System Functions
 ----------------
 
@@ -543,7 +548,7 @@ Inkplate::drawBitmapFromSD();
     | Draws a bitmap image from sd card to screen.
     | Image can currently have 1, 4, 8 or 24 bit color depth.
     | 24 or 8 bit ones can be dithered, else the argument is ignored.
-    | Info on dithering: https://en.wikipedia.org/wiki/Floyd%E2%80%93Steinberg_dithering
+    | Info on dithering: `dithering <https://en.wikipedia.org/wiki/Floyd%E2%80%93Steinberg_dithering>`_
 
 * **Example**:
     .. code-block:: c
@@ -1399,7 +1404,7 @@ Inkplate::getTextBounds();
     | uint16_t ***w** - Pointer showing where to put text width.
     | uint16_t ***h** -Pointer showing where to put text height.
     |
-    | String &**string** - Text string from a String object refrence (should be avoided).
+    | String &**string** - Text string from a String object reference (should be avoided).
     | int16_t **x** - Starting x coordinate.
     | int16_t **y** - Starting y coordinate.
     | int16_t ***x1** - Pointer showing where to put end x coordinate.
@@ -1472,7 +1477,7 @@ Inkplate::setFont();
 * **Description**:
     | Used to change the text font.
     | Fonts can be found in the supplied Fonts folder or made using tools.
-    | Example tool: https://oleddisplay.squix.ch/#/home (select Library version -> gfx font)
+    | Example tool: `font converter <https://oleddisplay.squix.ch/#/home>`_ (select Library version -> gfx font)
 
 * **Example**:
     .. code-block:: c

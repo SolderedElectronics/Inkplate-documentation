@@ -89,7 +89,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="get-started.html">1. Inkplate Get Started Page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="features.html">2. Inkplate Features</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="api-refrence.html">3. Inkplate API Refrence</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="api-reference.html">3. Inkplate API Reference</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="peripheral-mode.html">3.1. Inkplate Peripheral Mode</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">3.2. Inkplate Arduino</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#system-functions">3.2.1. System Functions</a><ul>
@@ -181,7 +181,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hardware-refrence.html">5. Inkplate Hardware Refrence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware-reference.html">5. Inkplate Hardware Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gui-designer.html">6. Inkplate GUI designer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="resources.html">7. Inkplate Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="open-source.html">8. Inkplate is Open Source</a></li>
@@ -234,7 +234,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="api-refrence.html"><span class="section-number">3. </span>Inkplate API Refrence</a> &raquo;</li>
+          <li><a href="api-reference.html"><span class="section-number">3. </span>Inkplate API Reference</a> &raquo;</li>
         
       <li><span class="section-number">3.2. </span>Inkplate Arduino</li>
     
@@ -257,6 +257,12 @@
             
   <div class="section" id="inkplate-arduino">
 <h1><span class="section-number">3.2. </span>Inkplate Arduino<a class="headerlink" href="#inkplate-arduino" title="Permalink to this headline">¶</a></h1>
+<dl>
+<dt>To get started with Inkplate in Arduino IDE first select <a class="reference external" href="get-started.html">right board</a> and include Inkplate.h</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;Inkplate.h&quot;</span><span class="cp"></span>
+</pre></div>
+</div>
+</dd>
+</dl>
 <div class="section" id="system-functions">
 <h2><span class="section-number">3.2.1. </span>System Functions<a class="headerlink" href="#system-functions" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="inkplate-object-initialization">
@@ -960,7 +966,7 @@ After you’ve done this you can proceed calling all other methods described bel
 <div class="line">Draws a bitmap image from sd card to screen.</div>
 <div class="line">Image can currently have 1, 4, 8 or 24 bit color depth.</div>
 <div class="line">24 or 8 bit ones can be dithered, else the argument is ignored.</div>
-<div class="line">Info on dithering: <a class="reference external" href="https://en.wikipedia.org/wiki/Floyd%E2%80%93Steinberg_dithering">https://en.wikipedia.org/wiki/Floyd%E2%80%93Steinberg_dithering</a></div>
+<div class="line">Info on dithering: <a class="reference external" href="https://en.wikipedia.org/wiki/Floyd%E2%80%93Steinberg_dithering">dithering</a></div>
 </div>
 </dd>
 </dl>
@@ -2076,7 +2082,7 @@ After you’ve done this you can proceed calling all other methods described bel
 <div class="line">uint16_t <strong>*w</strong> - Pointer showing where to put text width.</div>
 <div class="line">uint16_t <strong>*h</strong> -Pointer showing where to put text height.</div>
 <div class="line"><br /></div>
-<div class="line">String &amp;**string** - Text string from a String object refrence (should be avoided).</div>
+<div class="line">String &amp;**string** - Text string from a String object reference (should be avoided).</div>
 <div class="line">int16_t <strong>x</strong> - Starting x coordinate.</div>
 <div class="line">int16_t <strong>y</strong> - Starting y coordinate.</div>
 <div class="line">int16_t <strong>*x1</strong> - Pointer showing where to put end x coordinate.</div>
@@ -2168,7 +2174,7 @@ After you’ve done this you can proceed calling all other methods described bel
 <dt><strong>Description</strong>:</dt><dd><div class="line-block">
 <div class="line">Used to change the text font.</div>
 <div class="line">Fonts can be found in the supplied Fonts folder or made using tools.</div>
-<div class="line">Example tool: <a class="reference external" href="https://oleddisplay.squix.ch/#/home">https://oleddisplay.squix.ch/#/home</a> (select Library version -&gt; gfx font)</div>
+<div class="line">Example tool: <a class="reference external" href="https://oleddisplay.squix.ch/#/home">font converter</a> (select Library version -&gt; gfx font)</div>
 </div>
 </dd>
 </dl>

@@ -221,6 +221,13 @@ Inkplate::setRotation();
         display.setCursor(100, 100);
         display.print("INKPLATE6");
 
+* **Result**:
+    | Here is what the code above produces:
+
+    .. image:: images/IMG_4347.jpg
+        :width: 600
+
+
 Inkplate::getRotation();
 ########################
 
@@ -270,6 +277,14 @@ Inkplate::drawPixel();
     .. code-block:: c
 
         display.drawPixel(100, 50, BLACK);
+
+* **Result**:
+    | Here is what the code above produces:
+    | Quite small, isn't it.
+
+    .. image:: images/IMG_4345.jpg
+        :width: 600
+
 
 Inkplate::selectDisplayMode();
 ##############################
@@ -635,6 +650,13 @@ Inkplate::drawThickLine();
 
         display.drawThickLine(random(0, 799), random(0, 599), random(0, 799), random(0, 599), BLACK, (float)random(1, 20));
 
+* **Result**:
+    | Here is what the code above produces:
+
+    .. image:: images/IMG_4350.jpg
+        :width: 600
+
+
 Inkplate::drawGradientLine();
 #############################
 
@@ -665,6 +687,13 @@ Inkplate::drawGradientLine();
         int startColor = random(0, 7);
         int endColor = random(startColor, 7);
         display.drawGradientLine(random(0, 799), random(0, 599), random(0, 799), random(0, 599), startColor, endColor, (float)random(1, 20));
+
+* **Result**:
+    | Here is what the code above produces:
+
+    .. image:: images/IMG_4353.jpg
+        :width: 600
+
 
 Network Client
 --------------

@@ -1,6 +1,10 @@
 Inkplate is Open Source
 =========================
 
+| `Inkplate open source certificate <https://certification.oshwa.org/hr000003.html>`_
+
+.. image:: images/OSHWA_logo.png
+    :width: 500
 
 What is Open Source?
 --------------------

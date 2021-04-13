@@ -4,8 +4,11 @@ Inkplate GUI designer
 Introduction
 ############
     | GUI designer is intended to be a used as a tool for rapid design of user interfaces for 
-    | Inkplate devices. It offers standard library primitives, but has support for more advaced usage examples,
-    | by allowing advaced users to create JS and C code to be run in editor and on Inkplate device (see Widgets).
+    | Inkplate devices. It offers standard library primitives, but has support for more advaced usage examples, by allowing advaced users to create JS and C code to be run in editor and on Inkplate device (see Widgets).
+    | You can check it out `here <https://inkplate.io/home/gui-editor/>`_ and in our `git repository <https://github.com/e-radionicacom/Inkplate-GUI-Designer>`_
+
+    .. image:: images/gui_designer.jpg
+        :width: 500
 
 Nomenclature
 ############
@@ -97,7 +100,7 @@ Making widgets
 Using fonts
 ###########
     | Our editor does not include fonts, that needs to be done locally.
-    | Easiest way is to use fonts already included in library, see https://learn.adafruit.com/adafruit-gfx-graphics-library/using-fonts
+    | Easiest way is to use fonts already included in library, see `tutorial <https://learn.adafruit.com/adafruit-gfx-graphics-library/using-fonts>`_ draw
     | for list.
     | 
     | User specifies font size in pixels, for rendering in editor, using default Arial font, while

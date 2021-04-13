@@ -7,7 +7,7 @@ Inkplate Peripheral Mode
     | You can send commands via USB port or by directly connecting to ESP32 TX and RX pins.
     | 
     | Don't forget you need to send #L(1)* after each command to show it on the display (equal to display.display()). 
-    | Peripheral mode arduino code for all inkplates can be found under examples/other if needed to be installed again.
+    | Peripheral mode Arduino code for all inkplates can be found under examples/other if needed to be installed again.
     | 
     | Settings are:
     | 115200 baud, standard parity, ending with \\n\\r
