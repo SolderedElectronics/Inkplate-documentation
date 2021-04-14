@@ -6,8 +6,8 @@ System Functions
 
 Inkplate object initialization
 ##############################
-    | To use any of Inkplates functionalities you need to include Inkplate header, as mentioned on the Index and Get Started pages.
-    | After you've done that you can create a new instance of the Inkplate object, like this:
+    To use any of Inkplates functionalities you need to include Inkplate header, as mentioned on the Index and Get Started pages.
+    After you've done that you can create a new instance of the Inkplate object, like this:
 
     .. code-block:: c
 
@@ -219,7 +219,7 @@ Inkplate::setRotation();
         display.setRotation(3);
 
         display.setCursor(100, 100);
-        display.print("INKPLATE6");
+        display.print("INKPLATE");
 
 * **Result**:
     | Here is what the code above produces:

@@ -1,11 +1,8 @@
 Examples
 ========
 
-| All examples included in our library can be found here:
-| `Examples for Inkplate <https://github.com/e-radionicacom/Inkplate-Arduino-library/tree/master/examples>`_
-
-| After you download inkplate Arduino library you will have all examples inside Arduino IDE.
-| There are comments in all examples that describe how it works and what hardware you need.
+All examples included in our library can be found here: `Examples for Inkplate <https://github.com/e-radionicacom/Inkplate-Arduino-library/tree/master/examples>`_
+After you download inkplate Arduino library you will have all examples inside Arduino IDE. There are comments in all examples that describe how it works and what hardware you need.
 
 Basic Inkplate Functionality
 ----------------------------

@@ -3,9 +3,9 @@ Inkplate GUI designer
 
 Introduction
 ############
-    | GUI designer is intended to be a used as a tool for rapid design of user interfaces for 
-    | Inkplate devices. It offers standard library primitives, but has support for more advaced usage examples, by allowing advaced users to create JS and C code to be run in editor and on Inkplate device (see Widgets).
-    | You can check it out `here <https://inkplate.io/home/gui-editor/>`_ and in our `git repository <https://github.com/e-radionicacom/Inkplate-GUI-Designer>`_
+    GUI designer is intended to be a used as a tool for rapid design of user interfaces for 
+    Inkplate devices. It offers standard library primitives, but has support for more advaced usage examples, by allowing advaced users to create JS and C code to be run in editor and on Inkplate device (see Widgets).
+    You can check it out `here <https://inkplate.io/home/gui-editor/>`_ and in our `git repository <https://github.com/e-radionicacom/Inkplate-GUI-Designer>`_
 
     .. image:: images/gui_designer.jpg
         :width: 500
