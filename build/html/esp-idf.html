@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>3.4. Inkplate esp-idf &mdash; Inkplate docs  documentation</title>
   
@@ -16,7 +16,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -29,7 +32,6 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -52,7 +54,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Inkplate docs
+            <a href="index.html" class="icon icon-home"> Inkplate docs
           
 
           
@@ -87,24 +89,91 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="get-started.html">1. Inkplate Get Started Page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="features.html">2. Inkplate Features</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="api-refrence.html">3. Inkplate API Refrence</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="api-reference.html">3. Inkplate API Reference</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="peripheral-mode.html">3.1. Inkplate Peripheral Mode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arduino.html">3.2. Inkplate Arduino</a></li>
 <li class="toctree-l2"><a class="reference internal" href="micropython.html">3.3. Inkplate MicroPython</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">3.4. Inkplate esp-idf</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#esp-idf">3.4.1. esp-idf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#system-functions">3.4.1. System Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-object-initialization">3.4.1.1. Inkplate object initialization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#begin-method">3.4.1.2. begin() method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-einkoff">3.4.1.3. Inkplate::einkOff();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-einkon">3.4.1.4. Inkplate::einkOn();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-getpanelstate">3.4.1.5. Inkplate::getPanelState();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-readbattery">3.4.1.6. Inkplate::readBattery();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-readtemperature">3.4.1.7. Inkplate::readTemperature();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-readtouchpad">3.4.1.8. Inkplate::readTouchpad();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-sdcardinit">3.4.1.9. Inkplate::sdCardInit();</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#graphics-functions">3.4.2. Graphics Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-setrotation">3.4.2.1. Inkplate::setRotation();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-getrotation">3.4.2.2. Inkplate::getRotation();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawpixel">3.4.2.3. Inkplate::drawPixel();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-selectdisplaymode">3.4.2.4. Inkplate::selectDisplayMode();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-getdisplaymode">3.4.2.5. Inkplate::getDisplayMode();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-cleardisplay">3.4.2.6. Inkplate::clearDisplay();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-display">3.4.2.7. Inkplate::display();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-partialupdate">3.4.2.8. Inkplate::partialUpdate();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-width">3.4.2.9. Inkplate::width();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-height">3.4.2.10. Inkplate::height();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawimage">3.4.2.11. Inkplate::drawImage();</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#shapes-functions">3.4.3. Shapes Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawelipse">3.4.3.1. Inkplate::drawElipse();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-fillelipse">3.4.3.2. Inkplate::fillElipse();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawpolygon">3.4.3.3. Inkplate::drawPolygon();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-fillpolygon">3.4.3.4. Inkplate::fillPolygon();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawthickline">3.4.3.5. Inkplate::drawThickLine();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-drawgradientline">3.4.3.6. Inkplate::drawGradientLine();</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#network-client">3.4.4. Network Client</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-disconnect">3.4.4.1. Inkplate::disconnect();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-isconnected">3.4.4.2. Inkplate::isConnected();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-joinap">3.4.4.3. Inkplate::joinAP();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-downloadfile">3.4.4.4. Inkplate::downloadFile();</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#esp-functions">3.4.5. ESP Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-millis">3.4.5.1. Inkplate::millis();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-delay-microseconds">3.4.5.2. Inkplate::delay_microseconds();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-delay">3.4.5.3. Inkplate::delay();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-analog-read">3.4.5.4. Inkplate::analog_read();</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#wire-functions">3.4.6. Wire Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-begin-transmission">3.4.6.1. Inkplate::begin_transmission();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-end-transmission">3.4.6.2. Inkplate::end_transmission();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-write">3.4.6.3. Inkplate::write();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-read">3.4.6.4. Inkplate::read();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-request-from">3.4.6.5. Inkplate::request_from();</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#mcp-functions">3.4.7. MCP Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-set-direction">3.4.7.1. Inkplate::set_direction();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-digital-write">3.4.7.2. Inkplate::digital_write();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-digital-read">3.4.7.3. Inkplate::digital_read();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-set-int-output">3.4.7.4. Inkplate::set_int_output();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-set-int-pin">3.4.7.5. Inkplate::set_int_pin();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-remove-int-pin">3.4.7.6. Inkplate::remove_int_pin();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-get-int">3.4.7.7. Inkplate::get_int();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-get-int-state">3.4.7.8. Inkplate::get_int_state();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-set-ports">3.4.7.9. Inkplate::set_ports();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-getports">3.4.7.10. Inkplate::getPorts();</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hardware-refrence.html">5. Inkplate Hardware Refrence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware-reference.html">5. Inkplate Hardware Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gui-designer.html">6. Inkplate GUI designer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contribute.html">7. Inkplate Contribute</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resources.html">8. Inkplate Resources</a></li>
-<li class="toctree-l1"><a class="reference internal" href="open-source.html">9. Inkplate is Open Source</a></li>
-<li class="toctree-l1"><a class="reference internal" href="about.html">10. Inkplate is an E-radionica product</a></li>
-<li class="toctree-l1"><a class="reference internal" href="downloads.html">11. Inkplate Github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">7. Inkplate Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="open-source.html">8. Inkplate is Open Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">9. About e-radionica</a></li>
 </ul>
 
             
@@ -145,20 +214,22 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="api-refrence.html"><span class="section-number">3. </span>Inkplate API Refrence</a> &raquo;</li>
+          <li><a href="api-reference.html"><span class="section-number">3. </span>Inkplate API Reference</a> &raquo;</li>
         
       <li><span class="section-number">3.4. </span>Inkplate esp-idf</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="_sources/esp-idf.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -174,9 +245,1773 @@
             
   <div class="section" id="inkplate-esp-idf">
 <h1><span class="section-number">3.4. </span>Inkplate esp-idf<a class="headerlink" href="#inkplate-esp-idf" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="esp-idf">
-<h2><span class="section-number">3.4.1. </span>esp-idf<a class="headerlink" href="#esp-idf" title="Permalink to this headline">¶</a></h2>
-<p>neki tekst</p>
+<div class="section" id="system-functions">
+<h2><span class="section-number">3.4.1. </span>System Functions<a class="headerlink" href="#system-functions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="inkplate-object-initialization">
+<h3><span class="section-number">3.4.1.1. </span>Inkplate object initialization<a class="headerlink" href="#inkplate-object-initialization" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>To use any of Inkplates functionalities you need to include Inkplate header, as mentioned on the Index and Get Started pages.
+After you’ve done that you can create a new instance of the Inkplate object, like this:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">Inkplate</span> <span class="nf">display</span><span class="p">(</span><span class="n">DisplayMode</span><span class="o">::</span><span class="n">INKPLATE_1BIT</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">Inkplate</span> <span class="nf">display</span><span class="p">(</span><span class="n">DisplayMode</span><span class="o">::</span><span class="n">INKPLATE_3BIT</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>depending on what you need, monochrome (INKPLATE_1BIT) of grayscale (INKPLATE_3BIT) functionality.</p>
+<p>In here given examples, Inkplate object will always be named display, if not said otherwise.
+After calling this below your “#include” lines, you have access to all Inkplate functionality as display object methods.</p>
+</div></blockquote>
+</div>
+<div class="section" id="begin-method">
+<h3><span class="section-number">3.4.1.2. </span>begin() method<a class="headerlink" href="#begin-method" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Before calling any display method you <strong>must</strong> call .begin() like this:</div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul>
+<li><p><strong>Description</strong>:</p>
+<blockquote>
+<div><p>If you forget to do this most method calls will result in core panick and esp32 resetting.
+For most use cases this function is called in Arduino’s setup function.
+After you’ve done this you can proceed calling all other methods described below.</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-einkoff">
+<h3><span class="section-number">3.4.1.3. </span>Inkplate::einkOff();<a class="headerlink" href="#inkplate-einkoff" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in inkplate.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kr">inline</span> <span class="kt">void</span> <span class="n">einkOff</span><span class="p">();</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">No Arguments.</div>
+<div class="line">Returns nothing.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Turns the panel off to save energy.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">einkOff</span><span class="p">();</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-einkon">
+<h3><span class="section-number">3.4.1.4. </span>Inkplate::einkOn();<a class="headerlink" href="#inkplate-einkon" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in inkplate.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">einkOn</span><span class="p">();</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">No Arguments.</div>
+<div class="line">Returns nothing.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Turns the panel back on.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">einkOn</span><span class="p">();</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-getpanelstate">
+<h3><span class="section-number">3.4.1.5. </span>Inkplate::getPanelState();<a class="headerlink" href="#inkplate-getpanelstate" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in inkplate.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">uint8_t</span> <span class="nf">getPanelState</span><span class="p">();</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">No Arguments.</div>
+<div class="line">Returns 1 if eink panel is on, and 0 if it’s off.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Used to see if the panel is on.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">display</span><span class="p">.</span><span class="n">getPanelState</span><span class="p">(),</span> <span class="n">DEC</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-readbattery">
+<h3><span class="section-number">3.4.1.6. </span>Inkplate::readBattery();<a class="headerlink" href="#inkplate-readbattery" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in inkplate.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="nf">readBattery</span><span class="p">();</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">No Arguments.</div>
+<div class="line">Returns battery voltage as a double.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Function used to determine battery voltage.</div>
+<div class="line">Can be used to display how much more time will the device be on.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">voltage</span> <span class="o">=</span> <span class="n">display</span><span class="p">.</span><span class="n">readBattery</span><span class="p">();</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-readtemperature">
+<h3><span class="section-number">3.4.1.7. </span>Inkplate::readTemperature();<a class="headerlink" href="#inkplate-readtemperature" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in inkplate.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int8_t</span> <span class="nf">readTemperature</span><span class="p">();</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">No arguments.</div>
+<div class="line">Returns panel temperature at the last refresh.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Can be used to determine temperature roughly.</div>
+<div class="line">Keep in mind that the returned value was measured at the time of the last screen refresh.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span>  <span class="n">temp</span> <span class="o">=</span> <span class="n">display</span><span class="p">.</span><span class="n">readTemperature</span><span class="p">();</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-readtouchpad">
+<h3><span class="section-number">3.4.1.8. </span>Inkplate::readTouchpad();<a class="headerlink" href="#inkplate-readtouchpad" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in inkplate.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">uint8_t</span> <span class="nf">readTouchpad</span><span class="p">(</span><span class="kt">int</span> <span class="n">c</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">int <strong>c</strong> - pass in PAD1, PAD2 or PAD3</div>
+</div>
+<div class="line-block">
+<div class="line">Returns state of the desired pad.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Reads the state of each of three pads.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">display</span><span class="p">.</span><span class="n">readTouchpad</span><span class="p">(</span><span class="n">PAD1</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="c1">//Do something</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-sdcardinit">
+<h3><span class="section-number">3.4.1.9. </span>Inkplate::sdCardInit();<a class="headerlink" href="#inkplate-sdcardinit" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in inkplate.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="nf">sdCardInit</span><span class="p">();</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">No Arguments</div>
+<div class="line">Returns 0 if card initialization unsuccessful, else some number which casts to true.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Used to initialize SD card interface.</div>
+<div class="line">Must be called before using SD card functionality like SdFile::read();</div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="graphics-functions">
+<h2><span class="section-number">3.4.2. </span>Graphics Functions<a class="headerlink" href="#graphics-functions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="inkplate-setrotation">
+<h3><span class="section-number">3.4.2.1. </span>Inkplate::setRotation();<a class="headerlink" href="#inkplate-setrotation" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in graphics.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">setRotation</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">r</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">uint8_t <strong>r</strong> - screen rotation.</div>
+<div class="line">Returns nothing.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Rotates the screen to be used in different orientations.</div>
+<div class="line">Default is 2, to flip 180 input 4</div>
+<div class="line">1 and 3 are for portait mode.</div>
+<div class="line">Once flipped coordinate space remains to have the origin in the top left corner.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">setRotation</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+
+<span class="n">display</span><span class="p">.</span><span class="n">setCursor</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+<span class="n">display</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;INKPLATE&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces:</div>
+</div>
+<a class="reference internal image-reference" href="_images/IMG_4347.jpg"><img alt="_images/IMG_4347.jpg" src="_images/IMG_4347.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-getrotation">
+<h3><span class="section-number">3.4.2.2. </span>Inkplate::getRotation();<a class="headerlink" href="#inkplate-getrotation" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in graphics.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">uint8_t</span> <span class="nf">getRotation</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">No arguments.</div>
+<div class="line">Returns nothing.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Returns screen rotation, in range [0,3], 2 is default.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">display</span><span class="p">.</span><span class="n">getRotation</span><span class="p">()</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;I&#39;m upside down!&quot;</span><span class="p">);</span>
+    <span class="n">display</span><span class="p">.</span><span class="n">display</span><span class="p">();</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-drawpixel">
+<h3><span class="section-number">3.4.2.3. </span>Inkplate::drawPixel();<a class="headerlink" href="#inkplate-drawpixel" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in graphics.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPixel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x0</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y0</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">color</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">int16_t <strong>x0</strong> - x coordinate of pixel, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
+<div class="line">int16_t <strong>y0</strong> - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
+<div class="line">uint16_t <strong>color</strong> - pixel color, in 3 bit mode in range [0, 7]</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Most basic drawing command in the library is .drawPixel();</div>
+<div class="line">Draws one pixel at x0, y0 in desired color.</div>
+<div class="line">Requires Inkplate::display() to be called afterwards to update the screen,</div>
+<div class="line">See below.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">BLACK</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces:</div>
+<div class="line">Quite small, isn’t it.</div>
+</div>
+<a class="reference internal image-reference" href="_images/IMG_4345.jpg"><img alt="_images/IMG_4345.jpg" src="_images/IMG_4345.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-selectdisplaymode">
+<h3><span class="section-number">3.4.2.4. </span>Inkplate::selectDisplayMode();<a class="headerlink" href="#inkplate-selectdisplaymode" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in graphics.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">selectDisplayMode</span><span class="p">(</span><span class="n">DisplayMode</span> <span class="n">mode</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">DisplayMode mode <strong>mode</strong> - New display mode, INKPLATE_1BIT or INKPLATE_3BIT.</div>
+<div class="line">Returns nothing.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Changes the screen mode to from monochrome to 3 bit grayscale or vice versa.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">selectDisplayMode</span><span class="p">(</span><span class="n">DisplayMode</span><span class="o">::</span><span class="n">INKPLATE_3BIT</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-getdisplaymode">
+<h3><span class="section-number">3.4.2.5. </span>Inkplate::getDisplayMode();<a class="headerlink" href="#inkplate-getdisplaymode" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in graphics.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">DisplayMode</span> <span class="nf">getDisplayMode</span><span class="p">();</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">No arguments.</div>
+<div class="line">Returns currently set display mode.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Used to determine which display mode is currently used.</div>
+<div class="line">Returns DisplayMode::INKPLATE_1BIT or DisplayMode::INKPLATE_3BIT.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">display</span><span class="p">.</span><span class="n">getDisplayMode</span><span class="p">()</span> <span class="o">==</span> <span class="n">DisplayMode</span><span class="o">::</span><span class="n">INKPLATE_3BIT</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">display</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;I&#39;m in grayscale mode!&quot;</span><span class="p">);</span>
+    <span class="n">display</span><span class="p">.</span><span class="n">display</span><span class="p">()</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-cleardisplay">
+<h3><span class="section-number">3.4.2.6. </span>Inkplate::clearDisplay();<a class="headerlink" href="#inkplate-cleardisplay" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in graphics.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">clearDisplay</span><span class="p">();</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">No Arguments</div>
+<div class="line">Returns nothing.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Clears all data in buffer. Call display() after this to update/clear display.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">clearDisplay</span><span class="p">();</span>
+<span class="n">display</span><span class="p">.</span><span class="n">display</span><span class="p">();</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-display">
+<h3><span class="section-number">3.4.2.7. </span>Inkplate::display();<a class="headerlink" href="#inkplate-display" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in graphics.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">display</span><span class="p">();</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">No Arguments</div>
+<div class="line">Returns nothing.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Displays all data in frame buffer to screen.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">//Any drawing code</span>
+<span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">BLACK</span><span class="p">);</span>
+
+<span class="n">display</span><span class="p">.</span><span class="n">display</span><span class="p">();</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-partialupdate">
+<h3><span class="section-number">3.4.2.8. </span>Inkplate::partialUpdate();<a class="headerlink" href="#inkplate-partialupdate" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in graphics.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">partialUpdate</span><span class="p">();</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">No Arguments</div>
+<div class="line">Returns nothing.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Updates only the changed parts of the screen. (monochrome/INKPLATE_1BIT mode only!)</div>
+<div class="line">After a few updates creates blurry parts of the screen.</div>
+<div class="line">Fixed by calling Inkplate::clean();</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">BLACK</span><span class="p">);</span>
+
+<span class="n">display</span><span class="p">.</span><span class="n">partialUpdate</span><span class="p">();</span>
+
+<span class="n">display</span><span class="p">.</span><span class="n">drawPixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">BLACK</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-width">
+<h3><span class="section-number">3.4.2.9. </span>Inkplate::width();<a class="headerlink" href="#inkplate-width" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in graphics.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int16_t</span> <span class="nf">width</span><span class="p">();</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">No arguments.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Returns screen width.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">width</span><span class="p">();</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-height">
+<h3><span class="section-number">3.4.2.10. </span>Inkplate::height();<a class="headerlink" href="#inkplate-height" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in graphics.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int16_t</span> <span class="nf">height</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">No arguments.</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Returns screen height.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">height</span><span class="p">();</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-drawimage">
+<h3><span class="section-number">3.4.2.11. </span>Inkplate::drawImage();<a class="headerlink" href="#inkplate-drawimage" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in Image.h)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="nf">drawImage</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">path</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">dither</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">invert</span> <span class="o">=</span> <span class="mi">0</span><span class="p">);</span>
+<span class="kt">bool</span> <span class="nf">drawImage</span><span class="p">(</span><span class="k">const</span> <span class="n">String</span> <span class="n">path</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">dither</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">invert</span> <span class="o">=</span> <span class="mi">0</span><span class="p">);</span>
+<span class="kt">bool</span> <span class="nf">drawImage</span><span class="p">(</span><span class="k">const</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">buf</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">w</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">h</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">c</span> <span class="o">=</span> <span class="n">BLACK</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">bg</span> <span class="o">=</span> <span class="mh">0xFF</span><span class="p">);</span>
+<span class="kt">bool</span> <span class="nf">drawImage</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">path</span><span class="p">,</span> <span class="k">const</span> <span class="n">Format</span> <span class="o">&amp;</span><span class="n">format</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="k">const</span> <span class="kt">bool</span> <span class="n">dither</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="k">const</span> <span class="kt">bool</span> <span class="n">invert</span> <span class="o">=</span> <span class="mi">0</span><span class="p">);</span>
+<span class="kt">bool</span> <span class="nf">drawImage</span><span class="p">(</span><span class="k">const</span> <span class="n">String</span> <span class="n">path</span><span class="p">,</span> <span class="k">const</span> <span class="n">Format</span> <span class="o">&amp;</span><span class="n">format</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="k">const</span> <span class="kt">bool</span> <span class="n">dither</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="k">const</span> <span class="kt">bool</span> <span class="n">invert</span> <span class="o">=</span> <span class="mi">0</span><span class="p">);</span>
+<span class="kt">bool</span> <span class="nf">drawImage</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">path</span><span class="p">,</span> <span class="k">const</span> <span class="n">Format</span> <span class="o">&amp;</span><span class="n">format</span><span class="p">,</span> <span class="k">const</span> <span class="n">Position</span> <span class="o">&amp;</span><span class="n">position</span><span class="p">,</span> <span class="k">const</span> <span class="kt">bool</span> <span class="n">dither</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="k">const</span> <span class="kt">bool</span> <span class="n">invert</span> <span class="o">=</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">const char <strong>*path</strong> - Path to file.</div>
+<div class="line">int <strong>x</strong> - x coordinate to draw the image at</div>
+<div class="line">int <strong>y</strong> - y coordinate to draw the image at</div>
+<div class="line">bool <strong>dither</strong> - to dither the image or not</div>
+<div class="line">bool <strong>invert</strong> - invert all colors, defaults to false</div>
+<div class="line"><br /></div>
+<div class="line">const String <strong>path</strong> - Path to file.</div>
+<div class="line">int <strong>x</strong> - x coordinate to draw the image at</div>
+<div class="line">int <strong>y</strong> - y coordinate to draw the image at</div>
+<div class="line">bool <strong>dither</strong> - to dither the image or not</div>
+<div class="line">bool <strong>invert</strong> - invert all colors, defaults to false</div>
+<div class="line"><br /></div>
+<div class="line">const uint8_t <strong>*p</strong> - Buffer to draw from.</div>
+<div class="line">int <strong>x</strong> - x coordinate to draw the image at</div>
+<div class="line">int <strong>y</strong> - y coordinate to draw the image at</div>
+<div class="line">int16_t <strong>w</strong> - x coordinate to draw the image at</div>
+<div class="line">int16_t <strong>h</strong> - y coordinate to draw the image at</div>
+<div class="line">bool <strong>dither</strong> - to dither the image or not</div>
+<div class="line">bool <strong>invert</strong> - invert all colors, defaults to false</div>
+<div class="line">uint8_t <strong>c</strong> - color to draw 1 pixels if in BW mode</div>
+<div class="line">uint8_t <strong>bg</strong> - color to draw all 0 pixels if in BW mode.</div>
+</div>
+<div class="line-block">
+<div class="line">const char <strong>*path</strong> - Path to file.</div>
+<div class="line">const Format <strong>&amp;format</strong> - image format (bmp, jpeg, png).</div>
+<div class="line">int <strong>x</strong> - x coordinate to draw the image at</div>
+<div class="line">int <strong>y</strong> - y coordinate to draw the image at</div>
+<div class="line">bool <strong>dither</strong> - to dither the image or not</div>
+<div class="line">bool <strong>invert</strong> - invert all colors, defaults to false</div>
+</div>
+<div class="line-block">
+<div class="line">const String <strong>*path</strong> - Path to file.</div>
+<div class="line">const Format <strong>&amp;format</strong> - image format (bmp, jpeg, png).</div>
+<div class="line">int <strong>x</strong> - x coordinate to draw the image at</div>
+<div class="line">int <strong>y</strong> - y coordinate to draw the image at</div>
+<div class="line">bool <strong>dither</strong> - to dither the image or not</div>
+<div class="line">bool <strong>invert</strong> - invert all colors, defaults to false</div>
+</div>
+<div class="line-block">
+<div class="line">const char <strong>*path</strong> - Path to file.</div>
+<div class="line">const Format <strong>&amp;format</strong> - image format (bmp, jpeg, png).</div>
+<div class="line">const Position <strong>&amp;position</strong> - image position (Center, TopLeft, BottomLeft, TopRight, BottomRight, _npos)</div>
+<div class="line">bool <strong>dither</strong> - to dither the image or not</div>
+<div class="line">bool <strong>invert</strong> - invert all colors, defaults to false</div>
+</div>
+<p>Returns 0 if error occured, else returns 1.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Should always have Inkplate::sdCardInit() called before if file is from SD.</div>
+<div class="line">Can draw all kinds of images, but they should have a file extensions in them.</div>
+<div class="line">Can draw from web if path starts with <a class="reference external" href="http://">http://</a> or <a class="reference external" href="https://">https://</a> or if not from SD.</div>
+<div class="line">Draws bmp, png and jpeg images.</div>
+<div class="line">Automatically adjusts for current display mode.</div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="shapes-functions">
+<h2><span class="section-number">3.4.3. </span>Shapes Functions<a class="headerlink" href="#shapes-functions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="inkplate-drawelipse">
+<h3><span class="section-number">3.4.3.1. </span>Inkplate::drawElipse();<a class="headerlink" href="#inkplate-drawelipse" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in shapes.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawElipse</span><span class="p">(</span><span class="kt">int</span> <span class="n">rx</span><span class="p">,</span> <span class="kt">int</span> <span class="n">ry</span><span class="p">,</span> <span class="kt">int</span> <span class="n">xc</span><span class="p">,</span> <span class="kt">int</span> <span class="n">yc</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">int <strong>rx</strong> - Elipse X radius.</div>
+<div class="line">int <strong>ry</strong> - Elipse Y radius.</div>
+<div class="line">int <strong>xc</strong> - Elipse center x.</div>
+<div class="line">int <strong>yc</strong> - Elipse center y.</div>
+<div class="line">int <strong>color</strong> - Elipse color (just the edge, see fillElipse for fully filled).</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Draws an empty(not filled) elipse.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawElipse</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-fillelipse">
+<h3><span class="section-number">3.4.3.2. </span>Inkplate::fillElipse();<a class="headerlink" href="#inkplate-fillelipse" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in shapes.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">fillElipse</span><span class="p">(</span><span class="kt">int</span> <span class="n">rx</span><span class="p">,</span> <span class="kt">int</span> <span class="n">ry</span><span class="p">,</span> <span class="kt">int</span> <span class="n">xc</span><span class="p">,</span> <span class="kt">int</span> <span class="n">yc</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">int <strong>rx</strong> - Elipse X radius.</div>
+<div class="line">int <strong>ry</strong> - Elipse Y radius.</div>
+<div class="line">int <strong>xc</strong> - Elipse center x.</div>
+<div class="line">int <strong>yc</strong> - Elipse center y.</div>
+<div class="line">int <strong>color</strong> - Elipse color.</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Draws an filled elipse.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">fillElipse</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-drawpolygon">
+<h3><span class="section-number">3.4.3.3. </span>Inkplate::drawPolygon();<a class="headerlink" href="#inkplate-drawpolygon" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in shapes.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawPolygon</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">color</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">int <strong>*x</strong> - Polygon points X coordinates.</div>
+<div class="line">int <strong>*y</strong> - Polygon points Y coordinates.</div>
+<div class="line">int <strong>n</strong> - Number of points.</div>
+<div class="line">int <strong>color</strong> - Elipse color (just the edge, see fillElipse for fully filled).</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Draws an empty(not filled) polygon.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawPolygon</span><span class="p">(</span><span class="n">xt</span><span class="p">,</span> <span class="n">yt</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-fillpolygon">
+<h3><span class="section-number">3.4.3.4. </span>Inkplate::fillPolygon();<a class="headerlink" href="#inkplate-fillpolygon" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in shapes.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">fillPolygon</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">color</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">int <strong>*x</strong> - Polygon points X coordinates.</div>
+<div class="line">int <strong>*y</strong> - Polygon points Y coordinates.</div>
+<div class="line">int <strong>n</strong> - Number of points.</div>
+<div class="line">int <strong>color</strong> - Elipse color (just the edge, see fillElipse for fully filled).</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Draws a filled polygon.</div>
+<div class="line">Can be quite slow.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">fillPolygon</span><span class="p">(</span><span class="n">xt</span><span class="p">,</span> <span class="n">yt</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-drawthickline">
+<h3><span class="section-number">3.4.3.5. </span>Inkplate::drawThickLine();<a class="headerlink" href="#inkplate-drawthickline" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in shapes.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawThickLine</span><span class="p">(</span><span class="kt">int</span> <span class="n">x1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x2</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y2</span><span class="p">,</span> <span class="kt">int</span> <span class="n">color</span><span class="p">,</span> <span class="kt">float</span> <span class="n">thickness</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">int <strong>x1</strong> - x coordinate of line start, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
+<div class="line">int <strong>y1</strong> - y coordinate of line start, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
+<div class="line">int <strong>x2</strong> - x coordinate of line end, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
+<div class="line">int <strong>y2</strong> - y coordinate of line end, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
+<div class="line">int <strong>color</strong> - line color, in 3 bit mode in range [0, 7]</div>
+<div class="line">float <strong>thickness</strong> - line thickness in pixels</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">For drawing thick lines.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">drawThickLine</span><span class="p">(</span><span class="n">random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">799</span><span class="p">),</span> <span class="n">random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">599</span><span class="p">),</span> <span class="n">random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">799</span><span class="p">),</span> <span class="n">random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">599</span><span class="p">),</span> <span class="n">BLACK</span><span class="p">,</span> <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">random</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">));</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces:</div>
+</div>
+<a class="reference internal image-reference" href="_images/IMG_4350.jpg"><img alt="_images/IMG_4350.jpg" src="_images/IMG_4350.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-drawgradientline">
+<h3><span class="section-number">3.4.3.6. </span>Inkplate::drawGradientLine();<a class="headerlink" href="#inkplate-drawgradientline" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in shapes.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">drawGradientLine</span><span class="p">(</span><span class="kt">int</span> <span class="n">x1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x2</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y2</span><span class="p">,</span> <span class="kt">int</span> <span class="n">color1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">color2</span><span class="p">,</span> <span class="kt">float</span> <span class="n">thickness</span> <span class="o">=</span> <span class="mi">-1</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">int <strong>x1</strong> - x coordinate of line start, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
+<div class="line">int <strong>y1</strong> - y coordinate of line start, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
+<div class="line">int <strong>x2</strong> - x coordinate of line end, [0, 799] in rotations 2, 4 and [0, 599] in 1, 3</div>
+<div class="line">int <strong>y2</strong> - y coordinate of line end, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3</div>
+<div class="line">int <strong>color1</strong> - start line color, in 3 bit mode in range [0, 7]</div>
+<div class="line">int <strong>color2</strong> - start line color, in 3 bit mode in range [0, 7]</div>
+<div class="line">float <strong>thickness</strong> - line thickness, defaults to -1 meaning use normal, non thick, line.</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">For drawing color gradient lines.</div>
+<div class="line">color1 should always be less than color2.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">startColor</span> <span class="o">=</span> <span class="n">random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span>
+<span class="kt">int</span> <span class="n">endColor</span> <span class="o">=</span> <span class="n">random</span><span class="p">(</span><span class="n">startColor</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span>
+<span class="n">display</span><span class="p">.</span><span class="n">drawGradientLine</span><span class="p">(</span><span class="n">random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">799</span><span class="p">),</span> <span class="n">random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">599</span><span class="p">),</span> <span class="n">random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">799</span><span class="p">),</span> <span class="n">random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">599</span><span class="p">),</span> <span class="n">startColor</span><span class="p">,</span> <span class="n">endColor</span><span class="p">,</span> <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">random</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">));</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Result</strong>:</dt><dd><div class="line-block">
+<div class="line">Here is what the code above produces:</div>
+</div>
+<a class="reference internal image-reference" href="_images/IMG_4353.jpg"><img alt="_images/IMG_4353.jpg" src="_images/IMG_4353.jpg" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="network-client">
+<h2><span class="section-number">3.4.4. </span>Network Client<a class="headerlink" href="#network-client" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="inkplate-disconnect">
+<h3><span class="section-number">3.4.4.1. </span>Inkplate::disconnect();<a class="headerlink" href="#inkplate-disconnect" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in inkplate.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">disconnect</span><span class="p">();</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">No arguments.</div>
+<div class="line">Returns nothing.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Disconnects Inkplate from wifi network (shuts network).</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">disconnect</span><span class="p">();</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-isconnected">
+<h3><span class="section-number">3.4.4.2. </span>Inkplate::isConnected();<a class="headerlink" href="#inkplate-isconnected" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in inkplate.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="nf">isConnected</span><span class="p">();</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">No arguments.</div>
+<div class="line">Returns 1 if connected to wifi, 0 if not.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Checks if inkplate is connected to wifi.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">display</span><span class="p">.</span><span class="n">isConnected</span><span class="p">())</span>
+<span class="p">{</span>
+    <span class="c1">//Do something</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-joinap">
+<h3><span class="section-number">3.4.4.3. </span>Inkplate::joinAP();<a class="headerlink" href="#inkplate-joinap" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in inkplate.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="nf">joinAP</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">ssid</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">pass</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">const char *ssid - name of the wifi network.</div>
+<div class="line">const xhar *pass - network password.</div>
+<div class="line">Returns 1 if successfuly connected, 0 if not.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Sets and connects inkplate to wifi network.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">//In setup</span>
+<span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">display</span><span class="p">.</span><span class="n">joinAP</span><span class="p">(</span><span class="n">ssid</span><span class="p">,</span> <span class="n">pass</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Connecting to wifi&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-downloadfile">
+<h3><span class="section-number">3.4.4.4. </span>Inkplate::downloadFile();<a class="headerlink" href="#inkplate-downloadfile" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in network_client.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">uint8_t</span> <span class="o">*</span><span class="nf">downloadFile</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">url</span><span class="p">,</span> <span class="kt">int32_t</span> <span class="o">*</span><span class="n">defaultLen</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">const char *url - link to file.</div>
+<div class="line">int32_t *defaultLen - expected lenght (only matters if real length cant be checked).</div>
+<div class="line">Returns file as byte buffer, NULL if failed to get file.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Downloads file from given url.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="n">url</span> <span class="o">=</span> <span class="s">&quot;https//:www.somepic.com/pic.jpg&quot;</span>
+<span class="kt">int32_t</span> <span class="n">len</span> <span class="o">=</span> <span class="mi">54373</span><span class="p">;</span>
+<span class="n">jpeg</span> <span class="n">file</span> <span class="o">=</span> <span class="n">display</span><span class="p">.</span><span class="n">downloadFile</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">len</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="esp-functions">
+<h2><span class="section-number">3.4.5. </span>ESP Functions<a class="headerlink" href="#esp-functions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="inkplate-millis">
+<h3><span class="section-number">3.4.5.1. </span>Inkplate::millis();<a class="headerlink" href="#inkplate-millis" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in esp.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">long</span> <span class="nf">millis</span><span class="p">();</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">No arguments.</div>
+<div class="line">Returns time in milliseconds since boot.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Returns time in milliseconds since boot.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">long</span> <span class="n">time</span> <span class="o">=</span> <span class="n">millis</span><span class="p">();</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-delay-microseconds">
+<h3><span class="section-number">3.4.5.2. </span>Inkplate::delay_microseconds();<a class="headerlink" href="#inkplate-delay-microseconds" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in esp.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">delay_microseconds</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">micro_seconds</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">uint32_t <strong>micro_seconds</strong>.</div>
+<div class="line">Returns nothing.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Stops program for given micro_seconds.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">delay_microseconds</span><span class="p">(</span><span class="mi">2000000</span><span class="p">)</span><span class="c1">//waits for 2 seconds</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-delay">
+<h3><span class="section-number">3.4.5.3. </span>Inkplate::delay();<a class="headerlink" href="#inkplate-delay" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in esp.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">delay</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">milliseconds</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">uint32_t <strong>milliseconds</strong>.</div>
+<div class="line">Returns nothing.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Stops program for given milliseconds.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span><span class="c1">//waits for 2 seconds</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-analog-read">
+<h3><span class="section-number">3.4.5.4. </span>Inkplate::analog_read();<a class="headerlink" href="#inkplate-analog-read" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in esp.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int16_t</span> <span class="nf">analog_read</span><span class="p">(</span><span class="n">adc1_channel_t</span> <span class="n">channel</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">adc1_channel_t <strong>channel</strong> to read from.</div>
+<div class="line">Returns read value.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Returns read value from channel/pin.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">float</span> <span class="n">val</span> <span class="o">=</span> <span class="n">analog_read</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="wire-functions">
+<h2><span class="section-number">3.4.6. </span>Wire Functions<a class="headerlink" href="#wire-functions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="inkplate-begin-transmission">
+<h3><span class="section-number">3.4.6.1. </span>Inkplate::begin_transmission();<a class="headerlink" href="#inkplate-begin-transmission" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in wire.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">begin_transmission</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">addr</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">uint8_t <strong>addr</strong> device address we will establish communication with.</div>
+<div class="line">Returns nothing.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Starts communication with device.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">begin_transmission</span><span class="p">(</span><span class="mi">0</span><span class="n">xH3</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-end-transmission">
+<h3><span class="section-number">3.4.6.2. </span>Inkplate::end_transmission();<a class="headerlink" href="#inkplate-end-transmission" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in wire.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">end_transmission</span><span class="p">();</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">No Arguments.</div>
+<div class="line">Returns nothing.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Ends communication with device.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">end_transmission</span><span class="p">();</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-write">
+<h3><span class="section-number">3.4.6.3. </span>Inkplate::write();<a class="headerlink" href="#inkplate-write" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in wire.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">write</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">val</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">uint8_t <strong>val</strong> data that will be sent to device.</div>
+<div class="line">Returns nothing.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Sends data to device.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">uint8_t</span> <span class="n">data</span> <span class="o">=</span> <span class="mh">0x21</span><span class="p">;</span>
+<span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-read">
+<h3><span class="section-number">3.4.6.4. </span>Inkplate::read();<a class="headerlink" href="#inkplate-read" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in wire.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">read</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">val</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">No Arguments.</div>
+<div class="line">Returns data from device.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Reads data from device.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">uint8_t</span> <span class="n">data</span> <span class="o">=</span> <span class="n">read</span><span class="p">();</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-request-from">
+<h3><span class="section-number">3.4.6.5. </span>Inkplate::request_from();<a class="headerlink" href="#inkplate-request-from" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in wire.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">esp_err_t</span> <span class="nf">request_from</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">addr</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">size</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">uint8_t <strong>addr</strong> device address to request data from.</div>
+<div class="line">uint8_t <strong>size</strong> number of bytes we are requesting.</div>
+<div class="line">Returns esp_err_t value that indicates successful or failed connection.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Requests data from device.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">esp_err_t</span> <span class="n">error</span> <span class="o">=</span> <span class="n">request_from</span><span class="p">(</span><span class="mi">0</span><span class="n">xH3</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="mcp-functions">
+<h2><span class="section-number">3.4.7. </span>MCP Functions<a class="headerlink" href="#mcp-functions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="inkplate-set-direction">
+<h3><span class="section-number">3.4.7.1. </span>Inkplate::set_direction();<a class="headerlink" href="#inkplate-set-direction" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in mcp.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">set_direction</span><span class="p">(</span><span class="n">Pin</span> <span class="n">pin</span><span class="p">,</span> <span class="n">PinMode</span> <span class="n">mode</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">Pin <strong>pin</strong> pin number.</div>
+<div class="line">PinMode <strong>mode</strong> pin mode.</div>
+<div class="line">Returns nothing.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Sets device pin mode (INPUT, INPUT_PULLUP OUTPUT).</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">set_direction</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-digital-write">
+<h3><span class="section-number">3.4.7.2. </span>Inkplate::digital_write();<a class="headerlink" href="#inkplate-digital-write" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in mcp.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">digital_write</span><span class="p">(</span><span class="n">Pin</span> <span class="n">pin</span><span class="p">,</span> <span class="n">SignalLevel</span> <span class="n">state</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">Pin <strong>pin</strong> pin number.</div>
+<div class="line">SignalLevel <strong>state</strong> HIGH or LOW signal.</div>
+<div class="line">Returns nothing.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Sets device output state (HIGH or LOW).</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">digital_write</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="n">SignalLevel</span><span class="o">::</span><span class="n">HIGH</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-digital-read">
+<h3><span class="section-number">3.4.7.3. </span>Inkplate::digital_read();<a class="headerlink" href="#inkplate-digital-read" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in mcp.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">SignalLevel</span> <span class="nf">digital_read</span><span class="p">(</span><span class="n">Pin</span> <span class="n">pin</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">Pin <strong>pin</strong> pin number.</div>
+<div class="line">Returns pin INPUT state (HIGH or LOW).</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Gets pin input state (HIGH or LOW).</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">uint8_t</span> <span class="n">pin_state</span> <span class="o">=</span> <span class="n">display</span><span class="p">.</span><span class="n">digital_read</span><span class="p">(</span><span class="mi">11</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-set-int-output">
+<h3><span class="section-number">3.4.7.4. </span>Inkplate::set_int_output();<a class="headerlink" href="#inkplate-set-int-output" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in mcp.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">set_int_output</span><span class="p">(</span><span class="n">IntPort</span> <span class="n">intPort</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">mirroring</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">openDrain</span><span class="p">,</span> <span class="n">SignalLevel</span> <span class="n">polarity</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">IntPort intPort - intPort portA or portB.</div>
+<div class="line">bool mirroring - mirroring set 1 to make ports mirror each other so that any interrupt will cause both to go HIGH.</div>
+<div class="line">bool openDrain - openDrain set 1 to set interupt port as open drain, this will override port polarity.</div>
+<div class="line">SignalLevel polarity - sets port interrupt polarity, 1 active high, 0 active low.</div>
+<div class="line">Returns nothing.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Sets port interupt state.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">set_int_output</span><span class="p">(</span><span class="n">IntPort</span><span class="o">::</span><span class="n">INTPORTA</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">SignalLevel</span><span class="o">::</span><span class="n">LOW</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-set-int-pin">
+<h3><span class="section-number">3.4.7.5. </span>Inkplate::set_int_pin();<a class="headerlink" href="#inkplate-set-int-pin" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in mcp.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">set_int_pin</span><span class="p">(</span><span class="n">Pin</span> <span class="n">pin</span><span class="p">,</span> <span class="n">IntMode</span> <span class="n">mode</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">Pin pin - pin number.</div>
+<div class="line">IntMode mode - interrupt mode (CHANGE, FALLING, RISING).</div>
+<div class="line">Returns nothing.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Sets pin interupt state.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">set_int_pin</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="n">IntMode</span><span class="o">::</span><span class="n">CHANGE</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-remove-int-pin">
+<h3><span class="section-number">3.4.7.6. </span>Inkplate::remove_int_pin();<a class="headerlink" href="#inkplate-remove-int-pin" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in mcp.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">remove_int_pin</span><span class="p">(</span><span class="n">Pin</span> <span class="n">pin</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">Pin pin - pin number.</div>
+<div class="line">Returns nothing.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Removes interupt from pin.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">remove_int_pin</span><span class="p">(</span><span class="mi">11</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-get-int">
+<h3><span class="section-number">3.4.7.7. </span>Inkplate::get_int();<a class="headerlink" href="#inkplate-get-int" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in mcp.hpp)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">get_int</span><span class="p">();</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">No Arguments.</div>
+<div class="line">Returns interupt registers state.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Returns interrupt registers state for portA and portB.</div>
+<div class="line">Every bit represents interrupt pin, MSB is  PORTB PIN7, LSB is PORTA PIN1.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">get_int</span><span class="p">();</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-get-int-state">
+<h3><span class="section-number">3.4.7.8. </span>Inkplate::get_int_state();<a class="headerlink" href="#inkplate-get-int-state" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in Mcp.h)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">uint16_t</span> <span class="nf">get_int_state</span><span class="p">();</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">No argument.</div>
+<div class="line">Returns interupt registers state at the time interrupt occured.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Returns interrupt registers state for portA and portB.</div>
+<div class="line">Every bit represents interrupt pin, MSB is  PORTB PIN7, LSB is PORTA PIN1.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">uint16_t</span> <span class="n">intrrupts</span> <span class="o">=</span> <span class="n">display</span><span class="p">.</span><span class="n">get_int_state</span><span class="p">();</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-set-ports">
+<h3><span class="section-number">3.4.7.9. </span>Inkplate::set_ports();<a class="headerlink" href="#inkplate-set-ports" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in Mcp.h)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">set_ports</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">values</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">uint16_t values - values to be writen to port A and port B registers.</div>
+<div class="line">Returns nothing.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">sets internal state of PORTA and PORTB registers.</div>
+<div class="line">MSB byte is for PORTB, LSB byte for PORTA</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">uint16_t</span> <span class="n">data</span> <span class="o">=</span> <span class="mh">0xFFFF</span><span class="p">;</span><span class="c1">//to make all bits ones</span>
+<span class="n">display</span><span class="p">.</span><span class="n">set_ports</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="inkplate-getports">
+<h3><span class="section-number">3.4.7.10. </span>Inkplate::getPorts();<a class="headerlink" href="#inkplate-getports" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method prototype (as seen in Mcp.h)</strong>:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">uint16_t</span> <span class="nf">getPorts</span><span class="p">();</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">No arguments.</div>
+<div class="line">Returns register states of PORTA and PORTB.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">returns internal states of PORTA and PORTB registers.</div>
+<div class="line">MSB byte is for PORTB, LSB is for PORTA.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">.</span><span class="n">getPorts</span><span class="p">();</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
 </div>
 </div>
 
@@ -185,37 +2020,29 @@
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="examples.html" class="btn btn-neutral float-right" title="4. Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="micropython.html" class="btn btn-neutral float-left" title="3.3. Inkplate MicroPython" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="examples.html" class="btn btn-neutral float-right" title="4. Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="micropython.html" class="btn btn-neutral float-left" title="3.3. Inkplate MicroPython" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2020, e-radionica.com
+        &#169; Copyright 2020, e-radionica.com.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

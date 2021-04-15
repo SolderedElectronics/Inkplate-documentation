@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>1. Inkplate Get Started Page &mdash; Inkplate docs  documentation</title>
   
@@ -16,7 +16,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -29,7 +32,6 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -52,7 +54,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Inkplate docs
+            <a href="index.html" class="icon icon-home"> Inkplate docs
           
 
           
@@ -88,18 +90,17 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">1. Inkplate Get Started Page</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#arduino">1.1. Arduino</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#micropython">1.2. MicroPython</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#esp-idf">1.3. ESP-IDF</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="features.html">2. Inkplate Features</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api-refrence.html">3. Inkplate API Refrence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-reference.html">3. Inkplate API Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hardware-refrence.html">5. Inkplate Hardware Refrence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware-reference.html">5. Inkplate Hardware Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gui-designer.html">6. Inkplate GUI designer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contribute.html">7. Inkplate Contribute</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resources.html">8. Inkplate Resources</a></li>
-<li class="toctree-l1"><a class="reference internal" href="open-source.html">9. Inkplate is Open Source</a></li>
-<li class="toctree-l1"><a class="reference internal" href="about.html">10. Inkplate is an E-radionica product</a></li>
-<li class="toctree-l1"><a class="reference internal" href="downloads.html">11. Inkplate Github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">7. Inkplate Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="open-source.html">8. Inkplate is Open Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">9. About e-radionica</a></li>
 </ul>
 
             
@@ -140,6 +141,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -151,7 +154,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="_sources/get-started.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -169,27 +172,24 @@
 <h1><span class="section-number">1. </span>Inkplate Get Started Page<a class="headerlink" href="#inkplate-get-started-page" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="arduino">
 <h2><span class="section-number">1.1. </span>Arduino<a class="headerlink" href="#arduino" title="Permalink to this headline">¶</a></h2>
-<p>In order to get started with Inkplate 6 using Arduino IDE, follow the steps below:</p>
+<p>In order to get started with Inkplate using Arduino IDE, follow the steps below:</p>
 <ol class="arabic simple">
-<li><p>Install the Inkplate 6 board definition to add Inkplate 6 as a board in Arduino IDE</p></li>
-<li><p>Install the CH340 drivers (if you don’t have them already)</p></li>
-<li><p>Install the Inkplate 6 Arduino library from our GitHub repository (if you’re not sure how, take a look at our tutorial)</p></li>
-<li><p>Install this custom SdFat library to your Arduino IDE.</p></li>
-<li><p>Your Inkplate 6 is now ready to go! Just select Tools -&gt; Board -&gt; Inkplate 6, choose the correct COM port, and upload your code!</p></li>
+<li><p>Install the <a class="reference external" href="https://github.com/e-radionicacom/Croduino-Board-Definitions-for-Arduino-IDE">Inkplate board definition</a> to add Inkplate as a board in Arduino IDE</p></li>
+<li><p>Install the <a class="reference external" href="https://e-radionica.com/en/blog/ch340-driver-installation-croduino-basic3-nova2/">CH340 drivers</a> (if you don’t have them already)</p></li>
+<li><p>Install the <a class="reference external" href="https://github.com/e-radionicacom/Inkplate-Arduino-library">Inkplate Arduino library</a> from our GitHub repository (if you’re not sure how, take a look at our <a class="reference external" href="https://e-radionica.com/en/blog/arduino-library/#Kako%20instaliraty%20library?">tutorial</a>)</p></li>
+<li><p>Your Inkplate is now ready to go! Just select Tools -&gt; Board -&gt; Inkplate x, choose the correct COM port, and upload your code! To tweak your upload speed, you can set Upload speed to 921600.</p></li>
 </ol>
-<p>Take a look at our examples in the library and the API refrence to see what you can code.</p>
-<p>To use Peripheral Mode, connect your Inkplate 6 to the “Controller” board with a USB cable or via the ESP32 RX and TX pins.
-Using standard UART at 115200 baud, you can send commands to change the screen contents.
-For example, send #H(000,000,”/img.bmp”) to display an img.bmp image file stored on the SD card.
-For detailed refrence see peripheral mode docs.</p>
+<a class="reference internal image-reference" href="_images/BoardSelection.jpg"><img alt="_images/BoardSelection.jpg" src="_images/BoardSelection.jpg" style="width: 500px;" /></a>
+<p>Take a look at our <a class="reference external" href="examples.html">examples</a> in the library and the <a class="reference external" href="api-reference.html">API reference</a> to see what you can code.
+To use <a class="reference external" href="peripheral-mode.html">Peripheral Mode</a>, connect your Inkplate to the “Controller” board or computer with a USB cable or via the ESP32 RX and TX pins. For detailed reference see <a class="reference external" href="peripheral-mode.html">Peripheral Mode</a> docs.</p>
 </div>
 <div class="section" id="micropython">
 <h2><span class="section-number">1.2. </span>MicroPython<a class="headerlink" href="#micropython" title="Permalink to this headline">¶</a></h2>
-<p>In order to get started with Inkplate 6 using MicroPython, follow the steps below:</p>
+<p>In order to get started with Inkplate using MicroPython, follow the steps below:</p>
 <ol class="arabic">
-<li><p>Clone our repo at <a class="reference external" href="https://github.com/e-radionicacom/Inkplate-6-micropython">https://github.com/e-radionicacom/Inkplate-6-micropython</a> and get your terminal inside the repo folder.</p></li>
+<li><p>Clone our repo for <a class="reference external" href="https://github.com/e-radionicacom/Inkplate-6-micropython">micropython</a> and get your terminal inside the repo folder.</p></li>
 <li><dl>
-<dt>Flash MicroPython firmware supplied, or from <a class="reference external" href="http://micropython.org/download/esp32/">http://micropython.org/download/esp32/</a></dt><dd><p>To do so, run</p>
+<dt>Flash MicroPython firmware supplied, or from <a class="reference external" href="http://micropython.org/download/esp32/">official page</a></dt><dd><p>To do so, run</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">esptool</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">port</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">cu</span><span class="o">.</span><span class="n">usbserial</span><span class="o">-</span><span class="mi">1420</span> <span class="n">erase_flash</span>
 </pre></div>
 </div>
@@ -197,8 +197,8 @@ For detailed refrence see peripheral mode docs.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">esptool</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">chip</span> <span class="n">esp32</span> <span class="o">--</span><span class="n">port</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">cu</span><span class="o">.</span><span class="n">usbserial</span><span class="o">-</span><span class="mi">1420</span> <span class="n">write_flash</span> <span class="o">-</span><span class="n">z</span> <span class="mh">0x1000</span> <span class="n">esp32spiram</span><span class="o">-</span><span class="n">idf4</span><span class="o">-</span><span class="mi">20191220</span><span class="o">-</span><span class="n">v1</span><span class="o">.</span><span class="mf">12.</span><span class="n">bin</span>
 </pre></div>
 </div>
-<p>to flash supplied firmware.</p>
-<p>If you don’t have esptool.py installed, install it from here: <a class="reference external" href="https://github.com/espressif/esptool">https://github.com/espressif/esptool</a>.</p>
+<p>to flash supplied firmware.
+If you don’t have esptool.py installed, install it from here: <a class="reference external" href="https://github.com/espressif/esptool">esptool</a>.</p>
 </dd>
 </dl>
 </li>
@@ -207,8 +207,8 @@ For detailed refrence see peripheral mode docs.</p>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">pyboard</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">device</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ttyUSB0</span> <span class="o">-</span><span class="n">f</span> <span class="n">cp</span> <span class="n">mcp23017</span><span class="o">.</span><span class="n">py</span> <span class="n">sdcard</span><span class="o">.</span><span class="n">py</span> <span class="n">inkplate</span><span class="o">.</span><span class="n">py</span> <span class="n">image</span><span class="o">.</span><span class="n">py</span> <span class="n">gfx</span><span class="o">.</span><span class="n">py</span> <span class="n">gfx_standard_font_01</span><span class="o">.</span><span class="n">py</span> <span class="p">:</span>
 </pre></div>
 </div>
-<p>Replace /dev/ttyUSB0 with the port to which Inkplate is connected. Easiest way to find that our is to open Arduino IDE and see it under ports menu.</p>
-<p>(You can find pyboard.py in the MicroPython tools directory or just download it from GitHub: <a class="reference external" href="https://raw.githubusercontent.com/micropython/micropython/master/tools/pyboard.py">https://raw.githubusercontent.com/micropython/micropython/master/tools/pyboard.py</a>)</p>
+<p>Replace /dev/ttyUSB0 with the port to which Inkplate is connected. Easiest way to find that out is to open Arduino IDE and see it under ports menu.
+(You can find pyboard.py in the MicroPython tools directory or just download it from GitHub: <a class="reference external" href="https://raw.githubusercontent.com/micropython/micropython/master/tools/pyboard.py">pyboard</a>)</p>
 </div></blockquote>
 </li>
 <li><p>Run example.py:</p>
@@ -216,11 +216,21 @@ For detailed refrence see peripheral mode docs.</p>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">pyboard</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">device</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ttyUSB0</span> <span class="n">example</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
-<p>Again replacing /dev/ttyUSB0 with the correct port.</p>
-<p>You can run our other 2 examples, showing how to use the Sd card and network class.</p>
-<p>In the same manner as running our examples you can run your own code and even set it to run on boot or similiar by following other MicroPython tutorials.</p>
+<p>Again replacing /dev/ttyUSB0 with the correct port.
+You can run our other 2 examples, showing how to use the Sd card and network class.
+In the same manner as running our examples you can run your own code and even set it to run on boot or similiar by following other MicroPython tutorials.</p>
 </div></blockquote>
 </li>
+</ol>
+</div>
+<div class="section" id="esp-idf">
+<h2><span class="section-number">1.3. </span>ESP-IDF<a class="headerlink" href="#esp-idf" title="Permalink to this headline">¶</a></h2>
+<p>In order to get started with Inkplate using ESP-IDF, follow the steps below:</p>
+<ol class="arabic simple">
+<li><p>Clone <a class="reference external" href="https://github.com/turgu1/ESP-IDF-InkPlate.git">repo</a>.</p></li>
+<li><p>Setup ESP-IDF <a class="reference external" href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/">tools</a>.</p></li>
+<li><p>Connect Inkplate device and follow <a class="reference external" href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/">instructions</a>.</p></li>
+<li><p>You can run few examples from examples <a class="reference external" href="https://github.com/turgu1/ESP-IDF-InkPlate/tree/master/examples">folder</a> in repository.</p></li>
 </ol>
 </div>
 </div>
@@ -230,37 +240,29 @@ For detailed refrence see peripheral mode docs.</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="features.html" class="btn btn-neutral float-right" title="2. Inkplate Features" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Inkplate’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="features.html" class="btn btn-neutral float-right" title="2. Inkplate Features" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Inkplate’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2020, e-radionica.com
+        &#169; Copyright 2020, e-radionica.com.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
