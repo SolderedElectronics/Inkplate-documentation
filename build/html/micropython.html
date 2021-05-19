@@ -498,13 +498,14 @@ After you’ve called this you can proceed calling all other methods described b
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">clean</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">clean</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">rep</span><span class="p">)</span>
 </pre></div>
 </div>
 <ul>
 <li><dl>
 <dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
-<div class="line">No arguments.</div>
+<div class="line">uint8_t <strong>c</strong> - one of four posible pixel states (0 will light screen, 1 will darken screen, 2 will discharge screen and 3 will skip).</div>
+<div class="line">uint8_t <strong>rep</strong> - number of repetitions.</div>
 </div>
 <p>Returns nothing.</p>
 </dd>

@@ -190,34 +190,51 @@ To use <a class="reference external" href="peripheral-mode.html">Peripheral Mode
 <li><p>Clone our repo for <a class="reference external" href="https://github.com/e-radionicacom/Inkplate-6-micropython">micropython</a> and get your terminal inside the repo folder.</p></li>
 <li><dl>
 <dt>Flash MicroPython firmware supplied, or from <a class="reference external" href="http://micropython.org/download/esp32/">official page</a></dt><dd><p>To do so, run</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">esptool</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">port</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">cu</span><span class="o">.</span><span class="n">usbserial</span><span class="o">-</span><span class="mi">1420</span> <span class="n">erase_flash</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">Linux</span><span class="o">/</span><span class="n">Mac</span>
+<span class="n">esptool</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">port</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">cu</span><span class="o">.</span><span class="n">usbserial</span><span class="o">-</span><span class="mi">1420</span> <span class="n">erase_flash</span>
+
+<span class="o">//</span><span class="n">Windows</span>
+<span class="n">esptool</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">port</span> <span class="n">COM5</span> <span class="n">erase_flash</span>
 </pre></div>
 </div>
 <p>to erase esp32 flash and then</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">esptool</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">chip</span> <span class="n">esp32</span> <span class="o">--</span><span class="n">port</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">cu</span><span class="o">.</span><span class="n">usbserial</span><span class="o">-</span><span class="mi">1420</span> <span class="n">write_flash</span> <span class="o">-</span><span class="n">z</span> <span class="mh">0x1000</span> <span class="n">esp32spiram</span><span class="o">-</span><span class="n">idf4</span><span class="o">-</span><span class="mi">20191220</span><span class="o">-</span><span class="n">v1</span><span class="o">.</span><span class="mf">12.</span><span class="n">bin</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">Linux</span><span class="o">/</span><span class="n">Mac</span>
+<span class="n">esptool</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">chip</span> <span class="n">esp32</span> <span class="o">--</span><span class="n">port</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">cu</span><span class="o">.</span><span class="n">usbserial</span><span class="o">-</span><span class="mi">1420</span> <span class="n">write_flash</span> <span class="o">-</span><span class="n">z</span> <span class="mh">0x1000</span> <span class="n">esp32spiram</span><span class="o">-</span><span class="mi">20210418</span><span class="o">-</span><span class="n">v1</span><span class="o">.</span><span class="mf">15.</span><span class="n">bin</span>
+
+<span class="o">//</span><span class="n">Windows</span>
+<span class="n">esptool</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">chip</span> <span class="n">esp32</span> <span class="o">--</span><span class="n">port</span> <span class="n">COM5</span> <span class="n">write_flash</span> <span class="o">-</span><span class="n">z</span> <span class="mh">0x1000</span> <span class="n">esp32spiram</span><span class="o">-</span><span class="mi">20210418</span><span class="o">-</span><span class="n">v1</span><span class="o">.</span><span class="mf">15.</span><span class="n">bin</span>
 </pre></div>
 </div>
 <p>to flash supplied firmware.
-If you don’t have esptool.py installed, install it from here: <a class="reference external" href="https://github.com/espressif/esptool">esptool</a>.</p>
+If you don’t have esptool.py installed, install it from here: <a class="reference external" href="https://github.com/espressif/esptool">esptool</a> at minimum use version 1.15..</p>
 </dd>
 </dl>
 </li>
-<li><p>Copy library files to your board, something like:</p>
+<li><p>Copy library files to your board, use inkplate6.py or inkplate10.py for respective versions, something like this:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">pyboard</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">device</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ttyUSB0</span> <span class="o">-</span><span class="n">f</span> <span class="n">cp</span> <span class="n">mcp23017</span><span class="o">.</span><span class="n">py</span> <span class="n">sdcard</span><span class="o">.</span><span class="n">py</span> <span class="n">inkplate</span><span class="o">.</span><span class="n">py</span> <span class="n">image</span><span class="o">.</span><span class="n">py</span> <span class="n">gfx</span><span class="o">.</span><span class="n">py</span> <span class="n">gfx_standard_font_01</span><span class="o">.</span><span class="n">py</span> <span class="p">:</span>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">Linux</span><span class="o">/</span><span class="n">Mac</span>
+<span class="n">python3</span> <span class="n">pyboard</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">device</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ttyUSB0</span> <span class="o">-</span><span class="n">f</span> <span class="n">cp</span> <span class="n">mcp23017</span><span class="o">.</span><span class="n">py</span> <span class="n">sdcard</span><span class="o">.</span><span class="n">py</span> <span class="n">inkplate6</span><span class="o">.</span><span class="n">py</span> <span class="n">image</span><span class="o">.</span><span class="n">py</span> <span class="n">gfx</span><span class="o">.</span><span class="n">py</span> <span class="n">gfx_standard_font_01</span><span class="o">.</span><span class="n">py</span> <span class="p">:</span>
+
+<span class="o">//</span><span class="n">Windows</span>
+<span class="o">//</span><span class="n">This</span> <span class="n">one</span> <span class="n">might</span> <span class="n">need</span> <span class="n">to</span> <span class="n">be</span> <span class="n">started</span> <span class="n">twice</span>
+<span class="n">python</span> <span class="n">pyboard</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">device</span> <span class="n">COM5</span> <span class="o">-</span><span class="n">f</span> <span class="n">cp</span> <span class="n">inkplate6</span><span class="o">.</span><span class="n">py</span> <span class="n">gfx</span><span class="o">.</span><span class="n">py</span> <span class="n">gfx_standard_font_01</span><span class="o">.</span><span class="n">py</span> <span class="n">mcp23017</span><span class="o">.</span><span class="n">py</span> <span class="n">image</span><span class="o">.</span><span class="n">py</span> <span class="n">shapes</span><span class="o">.</span><span class="n">py</span> <span class="n">sdcard</span><span class="o">.</span><span class="n">py</span> <span class="p">:</span>
 </pre></div>
 </div>
-<p>Replace /dev/ttyUSB0 with the port to which Inkplate is connected. Easiest way to find that out is to open Arduino IDE and see it under ports menu.
+<p>Replace /dev/ttyUSB0 or COM5 with the port to which Inkplate is connected. Easiest way to find that out is to open Arduino IDE and see it under ports menu.
 (You can find pyboard.py in the MicroPython tools directory or just download it from GitHub: <a class="reference external" href="https://raw.githubusercontent.com/micropython/micropython/master/tools/pyboard.py">pyboard</a>)</p>
 </div></blockquote>
 </li>
 <li><p>Run example.py:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">pyboard</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">device</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ttyUSB0</span> <span class="n">example</span><span class="o">.</span><span class="n">py</span>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">Linux</span><span class="o">/</span><span class="n">Mac</span>
+<span class="n">python3</span> <span class="n">pyboard</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">device</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ttyUSB0</span> <span class="s2">&quot;Examples/Inkplate6/basicBW.py</span>
+
+<span class="o">//</span><span class="n">Windows</span>
+<span class="n">python</span> <span class="n">pyboard</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">device</span> <span class="n">COM5</span> <span class="s2">&quot;Examples/Inkplate6/basicBW.py&quot;</span>
 </pre></div>
 </div>
-<p>Again replacing /dev/ttyUSB0 with the correct port.
-You can run our other 2 examples, showing how to use the Sd card and network class.
+<p>Again replacing /dev/ttyUSB0 or COM5 with the correct port.
+You can run our othe examples, showing how to use the rest of inkplate functionality.
 In the same manner as running our examples you can run your own code and even set it to run on boot or similiar by following other MicroPython tutorials.</p>
 </div></blockquote>
 </li>

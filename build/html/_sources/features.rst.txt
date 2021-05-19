@@ -5,17 +5,17 @@ Inkplate Comparison
 -------------------
 
 =============== =========== ========== ==============
-feature         inkplate 10 Inkplate 6 inkplate 6Plus
+feature         Inkplate 10 Inkplate 6 Inkplate 6PLUS
 --------------- ----------- ---------- --------------
 Screen size         9.7"        6"          6"
 Resolution        1200x825   800x600     758x1024
 Pixels             990,000   480.000      776.192
-All in one           Yes       Yes          Yes
-Low power            Yes       Yes          Yes
+All-in-one           Yes       Yes          Yes
+Low-power            Yes       Yes          Yes
 Wi-Fi                Yes       Yes          Yes
-touchpads            Yes       Yes          No
-touchscreen          No        No           Yes
-MicroSd              Yes       Yes          Yes
+Touchpads            Yes       Yes          No
+Touchscreen          No        No           Yes
+MicroSD              Yes       Yes          Yes
 Grayscale            Yes       Yes          Yes
 Partial update       Yes       Yes          Yes
 Refresh time       1.61s     1.26s          n/a
@@ -49,7 +49,7 @@ Other Technical Specifications
     | **Temperature Sensor**: Internal TPS65186
 
 
-Inkplate 6Plus
+Inkplate 6PLUS
 ----------------
 
 Front-Mounted Components:
