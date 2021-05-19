@@ -27,6 +27,7 @@ In order to get started with Inkplate using MicroPython, follow the steps below:
     To do so, run
 
     .. code-block:: python
+
         //Linux/Mac
         esptool.py --port /dev/cu.usbserial-1420 erase_flash
 
@@ -37,6 +38,7 @@ In order to get started with Inkplate using MicroPython, follow the steps below:
     to erase esp32 flash and then
 
     .. code-block:: python
+
         //Linux/Mac
         esptool.py --chip esp32 --port /dev/cu.usbserial-1420 write_flash -z 0x1000 esp32spiram-20210418-v1.15.bin
 
@@ -49,6 +51,7 @@ In order to get started with Inkplate using MicroPython, follow the steps below:
 #. Copy library files to your board, use inkplate6.py or inkplate10.py for respective versions, something like this:
 
     .. code-block:: python
+    
         //Linux/Mac
         python3 pyboard.py --device /dev/ttyUSB0 -f cp mcp23017.py sdcard.py inkplate6.py image.py gfx.py gfx_standard_font_01.py :
 
