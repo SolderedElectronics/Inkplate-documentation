@@ -221,10 +221,11 @@ Inkplate MicroPython
 
 .. code-block:: python
 
-    clean()
+    clean(c, rep)
 
 * **Arguments and return value**:
-    | No arguments.
+    | uint8_t **c** - one of four posible pixel states (0 will light screen, 1 will darken screen, 2 will discharge screen and 3 will skip).
+    | uint8_t **rep** - number of repetitions.
 
     Returns nothing.
 
