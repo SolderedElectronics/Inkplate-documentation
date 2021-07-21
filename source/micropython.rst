@@ -835,8 +835,6 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | No arguments.
 
-    Returns nothing.
-
 * **Description**:
     | Returns screen height.
 
@@ -868,3 +866,123 @@ Inkplate MicroPython
 
         if display.getRotation() == 4:
             print("I'm upside down!")
+
+.frontlight()
+########################
+
+* **Method prototype**:
+
+.. code-block:: python
+
+    frontlight(self, enable)
+
+* **Arguments and return value**:
+    | **value** - 1 or 0 to enable or disable frontlight
+
+    Returns nothing.
+
+* **Description**:
+    | Controls frontlight enable or disable functionality.
+
+* **Example**:
+    .. code-block:: python
+
+        display.frontlight(1)#Turns frontlight on
+        display.frontlight(0)#Turns frontlight off
+
+.setFrontlight()
+########################
+
+* **Method prototype**:
+
+.. code-block:: python
+
+    setFrontlight(self, valeu)
+
+* **Arguments and return value**:
+    | **value** - sets frontlight intensity
+
+    Returns nothing.
+
+* **Description**:
+    | Controls frontlight intensity, accepted values are from 0-63.
+
+* **Example**:
+    .. code-block:: python
+
+        display.setFrontlight(10)#Values accepted are in range 0-63
+
+
+.touchInArea()
+########################
+
+* **Method prototype**:
+
+.. code-block:: python
+
+    touchInArea(self, x, y, width, height)
+
+* **Arguments and return value**:
+    | **x** - start for the x coordinate
+    | **y** - start for the y coordinate
+    | **width** - width of the area that is checked for touch
+    | **height** - height of the area that is checked for touch
+    | Returns boolean True or False depending if touch occured in given area.
+
+* **Description**:
+    | Used to check if touch occured in given area (Button for example).
+
+* **Example**:
+    .. code-block:: python
+
+        if display.touchInArea(50, 50, 100, 100):
+            print("Touched area")
+
+
+.tsInit()
+########################
+
+* **Method prototype**:
+
+.. code-block:: python
+
+    tsInit(self, pwrState)
+
+* **Arguments and return value**:
+    | **pwrState** - turns power for touch on or off (1 for on) 
+
+    Returns True or False if power turned succesfully or not.
+
+* **Description**:
+    | Turns touchScreen on or off.
+
+* **Example**:
+    .. code-block:: python
+
+        if display.tsInit(1):
+            print("Im on!")
+        else:
+            print("Cant turn ts on")
+
+
+.tsShutdown()
+########################
+
+* **Method prototype**:
+
+.. code-block:: python
+
+    tsShutdown()
+
+* **Arguments and return value**:
+    | No arguments.
+
+    Returns nothing.
+
+* **Description**:
+    | Turns off power for touchscreen.
+
+* **Example**:
+    .. code-block:: python
+
+        display.tsShutdown()
