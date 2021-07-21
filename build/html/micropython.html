@@ -122,6 +122,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#width">3.3.27. .width()</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#height">3.3.28. .height()</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#getrotation">3.3.29. .getRotation()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#frontlight">3.3.30. .frontlight()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setfrontlight">3.3.31. .setFrontlight()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#touchinarea">3.3.32. .touchInArea()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tsinit">3.3.33. .tsInit()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tsshutdown">3.3.34. .tsShutdown()</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="esp-idf.html">3.4. Inkplate esp-idf</a></li>
@@ -1334,7 +1339,6 @@ After you’ve called this you can proceed calling all other methods described b
 <dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
 <div class="line">No arguments.</div>
 </div>
-<p>Returns nothing.</p>
 </dd>
 </dl>
 </li>
@@ -1381,6 +1385,179 @@ After you’ve called this you can proceed calling all other methods described b
 <li><dl>
 <dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">display</span><span class="o">.</span><span class="n">getRotation</span><span class="p">()</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m upside down!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="frontlight">
+<h2><span class="section-number">3.3.30. </span>.frontlight()<a class="headerlink" href="#frontlight" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Method prototype</strong>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">frontlight</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">enable</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line"><strong>value</strong> - 1 or 0 to enable or disable frontlight</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Controls frontlight enable or disable functionality.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">frontlight</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="c1">#Turns frontlight on</span>
+<span class="n">display</span><span class="o">.</span><span class="n">frontlight</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="c1">#Turns frontlight off</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="setfrontlight">
+<h2><span class="section-number">3.3.31. </span>.setFrontlight()<a class="headerlink" href="#setfrontlight" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Method prototype</strong>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">setFrontlight</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valeu</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line"><strong>value</strong> - sets frontlight intensity</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Controls frontlight intensity, accepted values are from 0-63.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">setFrontlight</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="c1">#Values accepted are in range 0-63</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="touchinarea">
+<h2><span class="section-number">3.3.32. </span>.touchInArea()<a class="headerlink" href="#touchinarea" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Method prototype</strong>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">touchInArea</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line"><strong>x</strong> - start for the x coordinate</div>
+<div class="line"><strong>y</strong> - start for the y coordinate</div>
+<div class="line"><strong>width</strong> - width of the area that is checked for touch</div>
+<div class="line"><strong>height</strong> - height of the area that is checked for touch</div>
+<div class="line">Returns boolean True or False depending if touch occured in given area.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Used to check if touch occured in given area (Button for example).</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">display</span><span class="o">.</span><span class="n">touchInArea</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Touched area&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="tsinit">
+<h2><span class="section-number">3.3.33. </span>.tsInit()<a class="headerlink" href="#tsinit" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Method prototype</strong>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tsInit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pwrState</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line"><strong>pwrState</strong> - turns power for touch on or off (1 for on)</div>
+</div>
+<p>Returns True or False if power turned succesfully or not.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Turns touchScreen on or off.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">display</span><span class="o">.</span><span class="n">tsInit</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Im on!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cant turn ts on&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="tsshutdown">
+<h2><span class="section-number">3.3.34. </span>.tsShutdown()<a class="headerlink" href="#tsshutdown" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Method prototype</strong>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tsShutdown</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">No arguments.</div>
+</div>
+<p>Returns nothing.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Description</strong>:</dt><dd><div class="line-block">
+<div class="line">Turns off power for touchscreen.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Example</strong>:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">tsShutdown</span><span class="p">()</span>
 </pre></div>
 </div>
 </dd>

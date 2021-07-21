@@ -210,7 +210,7 @@ If you don’t have esptool.py installed, install it from here: <a class="refere
 </dd>
 </dl>
 </li>
-<li><p>Copy library files to your board, use inkplate6.py or inkplate10.py for respective versions, something like this:</p>
+<li><p>Copy library files to your board, use inkplate6.py, inkplate10.py or inkplate6_PLUS.py for respective versions, something like this:</p>
 <blockquote>
 <div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">Linux</span><span class="o">/</span><span class="n">Mac</span>
 <span class="n">python3</span> <span class="n">pyboard</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">device</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ttyUSB0</span> <span class="o">-</span><span class="n">f</span> <span class="n">cp</span> <span class="n">mcp23017</span><span class="o">.</span><span class="n">py</span> <span class="n">sdcard</span><span class="o">.</span><span class="n">py</span> <span class="n">inkplate6</span><span class="o">.</span><span class="n">py</span> <span class="n">image</span><span class="o">.</span><span class="n">py</span> <span class="n">gfx</span><span class="o">.</span><span class="n">py</span> <span class="n">gfx_standard_font_01</span><span class="o">.</span><span class="n">py</span> <span class="p">:</span>
@@ -234,7 +234,7 @@ If you don’t have esptool.py installed, install it from here: <a class="refere
 </pre></div>
 </div>
 <p>Again replacing /dev/ttyUSB0 or COM5 with the correct port.
-You can run our othe examples, showing how to use the rest of inkplate functionality.
+You can run our other examples, showing how to use the rest of inkplate functionality.
 In the same manner as running our examples you can run your own code and even set it to run on boot or similiar by following other MicroPython tutorials.</p>
 </div></blockquote>
 </li>

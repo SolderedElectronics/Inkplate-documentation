@@ -1,10 +1,19 @@
 Inkplate is Open Source
 =========================
 
-| `Inkplate 6 open source certificate <https://certification.oshwa.org/hr000003.html>`_
+Inkplate family of e-paper displays is fully open-source and its full hardware design can be found in corresponding GitHub repositories:
+    | `Inkplate 6 hardware <https://github.com/e-radionicacom/Inkplate-6-hardware>`_
+    | `Inkplate 10 hardware <https://github.com/e-radionicacom/Inkplate-10-hardware>`_
+    | `Inkplate 6PLUS hardware <https://github.com/e-radionicacom/Inkplate-6PLUS-Hardware>`_
 
 .. image:: images/OSHWA_logo.png
     :width: 500
+
+Additionally, all active Inkplate boards are OSHWA certified:
+    | `Inkplate 6 OSHWA <https://certification.oshwa.org/hr000003.html>`_
+    | `Inkplate 10 OSHWA <https://certification.oshwa.org/hr000006.html>`_
+
+Even this documentation page is open source: `Inkplate documentation repo <https://github.com/e-radionicacom/Inkplate-documentation>`_, as well as `GUI designer <https://github.com/e-radionicacom/Inkplate-GUI-Designer>`_ and `Image converter <https://github.com/e-radionicacom/Inkplate-image-converter>`_.
 
 What is Open Source?
 --------------------
