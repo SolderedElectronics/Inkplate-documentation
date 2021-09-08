@@ -53,7 +53,7 @@ In order to get started with Inkplate using MicroPython, follow the steps below:
     .. code-block:: python
     
         //Linux/Mac
-        python3 pyboard.py --device /dev/ttyUSB0 -f cp mcp23017.py sdcard.py inkplate6.py image.py gfx.py gfx_standard_font_01.py :
+        python3 pyboard.py --device /dev/ttyUSB0 -f cp mcp23017.py sdcard.py inkplate6.py image.py gfx.py gfx_standard_font_01.py shapes.py :
 
         //Windows
         //This one might need to be started twice
