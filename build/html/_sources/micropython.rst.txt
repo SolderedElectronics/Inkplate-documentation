@@ -1,6 +1,496 @@
 Inkplate MicroPython
 ====================
 
+.__init__() method
+###############
+
+* **Method prototype (as seen in gfx.py)**:
+
+    .. code-block:: python
+
+        display.__init__(
+        self,
+        width,
+        height,
+        pixel,
+        hline=None,
+        vline=None,
+        fill_rect=None,
+        text=None,
+        font=None,
+    )
+
+* **Arguments and return value**:
+    | **self** - This object
+    | **width** - The width of the drawing area in pixels.
+    | **height** -  The height of the drawing area in pixels.
+    | **pixel** - A function to call when a pixel is drawn on the display. This function
+                  should take at least an x and y position and then any number of optional
+                  color or other parameters.
+    | **hline** - A function to quickly draw a horizontal line on the display.
+                  This should take at least an x, y, and width parameter and
+                  any number of optional color or other parameters.
+    | **vline** - A function to quickly draw a vertical line on the display.
+                  This should take at least an x, y, and height paraemter and
+                  any number of optional color or other parameters.
+    | **fill_rect** - A funtion to quickly draw a solid rectangle with four
+                  input parameters: x,y, width, and height. Any number of other
+                  parameters for color or screen specific data.
+    | **text** - A function to quickly place text on the screen. The inputs include:
+                  x, y data(top left as starting point).
+    | **font** - An optional input to augment the default text method with a new font.
+                  The input shoudl be a properly formatted dict.
+
+    Returns nothing.
+
+* **Description**:
+
+    Method used to initialize display.
+
+
+
+.pixel() method
+###############
+
+* **Method prototype (as seen in gfx.py)**:
+
+    .. code-block:: python
+
+        display.pixel(self, x0, y0, *args, **kwargs)
+
+* **Arguments and return value**:
+    | **self** - This object
+    | **x0** - x coordinate of pixel.
+    | **y0** - y coordinate of pixel.
+    | ***args** - Additional arguments.
+    | ****kwargs** - Keywords.
+
+    Returns nothing.
+
+* **Description**:
+
+    A function to pass through in input pixel functionality.
+
+
+
+._slow_hline() method
+###############
+
+* **Method prototype (as seen in gfx.py)**:
+
+    .. code-block:: python
+
+        display._slow_hline(self, x0, y0, width, *args, **kwargs)
+
+* **Arguments and return value**:
+    | **self** - This object
+    | **x0** - x coordinate of line.
+    | **y0** - y coordinate of line.
+    | **width** - length of line.
+    | ***args** - Additional arguments.
+    | ****kwargs** - Keywords.
+
+    Returns nothing.
+
+* **Description**:
+
+    Slow implementation of a horizontal line using pixel drawing.
+        This is used as the default horizontal line if no faster override
+        is provided.
+
+
+
+._slow_vline() method
+###############
+
+* **Method prototype (as seen in gfx.py)**:
+
+    .. code-block:: python
+
+        display._slow_vline(self, x0, y0, height, *args, **kwargs)
+
+* **Arguments and return value**:
+    | **self** - This object
+    | **x0** - x coordinate of Line.
+    | **y0** - y coordinate of line.
+    | **height** - height of line.
+    | ***args** - Additional arguments.
+    | ****kwargs** - Keywords.
+
+    Returns nothing.
+
+* **Description**:
+
+    Slow implementation of a vertical line using pixel drawing.
+        This is used as the default vertical line if no faster override
+        is provided.
+
+
+
+
+.rect() method
+###############
+
+* **Method prototype (as seen in gfx.py)**:
+
+    .. code-block:: python
+
+        display._rect(self, x0, y0, width, height, *args, **kwargs)
+
+* **Arguments and return value**:
+    | **self** - This object
+    | **x0** - x coordinate of rectangle.
+    | **y0** - y coordinate of rectangle.
+    | **height** - height of rectangle.
+    | **width** - width of rectangle.
+    | ***args** - Additional arguments.
+    | ****kwargs** - Keywords.
+
+    Returns nothing.
+
+* **Description**:
+
+    Rectangle drawing function.  Will draw a single pixel wide rectangle
+        starting in the upper left x0, y0 position and width, height pixels in
+        size.
+
+
+
+._fill_rect() method
+###############
+
+* **Method prototype (as seen in gfx.py)**:
+
+    .. code-block:: python
+
+        display._fill_rect(self, x0, y0, width, height, *args, **kwargs)
+
+* **Arguments and return value**:
+    | **self** - This object
+    | **x0** - x coordinate of rectangle.
+    | **y0** - y coordinate of rectangle.
+    | **height** - height of rectangle.
+    | **width** - width of rectangle.
+    | ***args** - Additional arguments.
+    | ****kwargs** - Keywords.
+
+    Returns nothing.
+
+* **Description**:
+
+    Filled rectangle drawing function.  Will draw a single pixel wide
+        rectangle starting in the upper left x0, y0 position and width, height
+        pixels in size.
+
+
+
+.line() method
+###############
+
+* **Method prototype (as seen in gfx.py)**:
+
+    .. code-block:: python
+
+        display.line(self, x0, y0, x1, y1, *args, **kwargs)
+
+* **Arguments and return value**:
+    | **self** - This object
+    | **x0** - x coordinate of start .
+    | **y0** - y coordinate of start.
+    | **x1** - x coordinate of end.
+    | **y1** - y coordinate of end.
+    | ***args** - Additional arguments.
+    | ****kwargs** - Keywords.
+
+    Returns nothing.
+
+* **Description**:
+
+    Line drawing function.  Will draw a single pixel wide line starting at
+        x0, y0 and ending at x1, y1.
+
+
+
+.line() method
+###############
+
+* **Method prototype (as seen in gfx.py)**:
+
+    .. code-block:: python
+
+        display.line(self, x0, y0, x1, y1, *args, **kwargs)
+
+* **Arguments and return value**:
+    | **self** - This object
+    | **x0** - x coordinate of start .
+    | **y0** - y coordinate of start.
+    | **x1** - x coordinate of end.
+    | **y1** - y coordinate of end.
+    | ***args** - Additional arguments.
+    | ****kwargs** - Keywords.
+
+    Returns nothing.
+
+* **Description**:
+
+    Line drawing function.  Will draw a single pixel wide line starting at
+        x0, y0 and ending at x1, y1.
+
+
+
+.circle() method
+###############
+
+* **Method prototype (as seen in gfx.py)**:
+
+    .. code-block:: python
+
+        display.circle(self, x0, y0, radius, *args, **kwargs)
+
+* **Arguments and return value**:
+    | **self** - This object
+    | **x0** - x coordinate of center.
+    | **y0** - y coordinate of center.
+    | **circle** - Radius of circle.
+    | ***args** - Additional arguments.
+    | ****kwargs** - Keywords.
+
+    Returns nothing.
+
+* **Description**:
+
+    Circle drawing function.  Will draw a single pixel wide circle with
+        center at x0, y0 and the specified radius.
+
+
+
+.fill_circle() method
+###############
+
+* **Method prototype (as seen in gfx.py)**:
+
+    .. code-block:: python
+
+        display.fill_circle(self, x0, y0, radius, *args, **kwargs)
+
+* **Arguments and return value**:
+    | **self** - This object
+    | **x0** - x coordinate of center.
+    | **y0** - y coordinate of center.
+    | **circle** - Radius of circle.
+    | ***args** - Additional arguments.
+    | ****kwargs** - Keywords.
+
+    Returns nothing.
+
+* **Description**:
+
+    Filled circle drawing function.  Will draw a filled circule with
+        center at x0, y0 and the specified radius.
+
+
+
+.triangle() method
+###############
+
+* **Method prototype (as seen in gfx.py)**:
+
+    .. code-block:: python
+
+        display.triangle(self, x0, y0, x1, y1, x2, y2, *args, **kwargs)
+
+* **Arguments and return value**:
+    | **self** - This object
+    | **x0** - x coordinate of first point.
+    | **y0** - y coordinate of first point.
+    | **x1** - x coordinate of second point.
+    | **y1** - y coordinate of second point.
+    | **x2** - x coordinate of third point.
+    | **y2** - y coordinate of third point.
+    | ***args** - Additional arguments.
+    | ****kwargs** - Keywords.
+
+    Returns nothing.
+
+* **Description**:
+
+    Triangle drawing function.  Will draw a single pixel wide triangle
+        around the points (x0, y0), (x1, y1), and (x2, y2).
+
+
+
+.fill_triangle() method
+###############
+
+* **Method prototype (as seen in gfx.py)**:
+
+    .. code-block:: python
+
+        display.fill_triangle(self, x0, y0, x1, y1, x2, y2, *args, **kwargs)
+
+* **Arguments and return value**:
+    | **self** - This object
+    | **x0** - x coordinate of first point.
+    | **y0** - y coordinate of first point.
+    | **x1** - x coordinate of second point.
+    | **y1** - y coordinate of second point.
+    | **x2** - x coordinate of third point.
+    | **y2** - y coordinate of third point.
+    | ***args** - Additional arguments.
+    | ****kwargs** - Keywords.
+
+    Returns nothing.
+
+* **Description**:
+
+   Filled triangle drawing function.  Will draw a filled triangle around
+        the points (x0, y0), (x1, y1), and (x2, y2).
+
+
+
+.round_rect() method
+###############
+
+* **Method prototype (as seen in gfx.py)**:
+
+    .. code-block:: python
+
+        display.round_rect(self, x0, y0, width, height, radius, *args, **kwargs)
+
+* **Arguments and return value**:
+    | **self** - This object
+    | **x0** - x coordinate of first point.
+    | **y0** - y coordinate of first point.
+    | **width** - width of rectangle.
+    | **height** - height of rectangle.
+    | **radius** - radius of rounded corners.
+    | ***args** - Additional arguments.
+    | ****kwargs** - Keywords.
+
+    Returns nothing.
+
+* **Description**:
+
+   Rectangle with rounded corners drawing function.
+        This works like a regular rect though! if radius = 0
+        Will draw the outline of a rextabgle with rounded corners with (x0,y0) at the top left
+
+
+
+
+.fill_round_rect() method
+###############
+
+* **Method prototype (as seen in gfx.py)**:
+
+    .. code-block:: python
+
+        display.fill_round_rect(self, x0, y0, width, height, radius, *args, **kwargs)
+
+* **Arguments and return value**:
+    | **self** - This object
+    | **x0** - x coordinate of first point.
+    | **y0** - y coordinate of first point.
+    | **width** - width of rectangle.
+    | **height** - height of rectangle.
+    | **radius** - radius of rounded corners.
+    | ***args** - Additional arguments.
+    | ****kwargs** - Keywords.
+
+    Returns nothing.
+
+* **Description**:
+
+   Filled circle drawing function.  Will draw a filled circule with
+        center at x0, y0 and the specified radius.
+
+
+
+._place_char() method
+###############
+
+* **Method prototype (as seen in gfx.py)**:
+
+    .. code-block:: python
+
+        display._place_char(self, x0, y0, char, size, *args, **kwargs)
+
+* **Arguments and return value**:
+    | **self** - This object
+    | **x0** - x coordinate of first point.
+    | **y0** - y coordinate of first point.
+    | **char** - Char to put.
+    | **size** - Size of char.
+    | ***args** - Additional arguments.
+    | ****kwargs** - Keywords.
+
+    Returns nothing.
+
+* **Description**:
+
+   A sub class used for placing a single character on the screen
+
+
+
+._very_slow_text method
+###############
+
+* **Method prototype (as seen in gfx.py)**:
+
+    .. code-block:: python
+
+        display._place_char(self, x0, y0, string, size, *args, **kwargs)
+
+* **Arguments and return value**:
+    | **self** - This object
+    | **x0** - x coordinate of first point.
+    | **y0** - y coordinate of first point.
+    | **string** - string to write on display.
+    | **size** - Size of string.
+    | ***args** - Additional arguments.
+    | ****kwargs** - Keywords.
+
+    Returns nothing.
+
+* **Description**:
+
+   A function to place text on the display.(temporary)
+        to use special characters put "__" on either side of the desired characters.
+        letter format:
+        {'character_here' : bytearray(b',WIDTH,HEIGHT,right-most-data,
+                                            more-bytes-here,left-most-data') ,}
+        (replace the "," with backslashes!!)
+        each byte:
+                        | lower most bit(lowest on display)
+                        V
+                 x0110100
+                  ^c
+                  | top most bit (highest on display)
+
+
+
+.set_text_background method
+###############
+
+* **Method prototype (as seen in gfx.py)**:
+
+    .. code-block:: python
+
+        display._place_char(self, *args, **kwargs)
+
+* **Arguments and return value**:
+    | **self** - This object
+    | ***args** - Additional arguments.
+    | ****kwargs** - Keywords.
+
+    Returns nothing.
+
+* **Description**:
+
+    A method to change the background color of text, input any and all color paramsself.
+        run without any inputs to return to "clear" background.
+
+
 .begin() method
 ###############
     | Before calling any display method you **must** call .begin() like this: 
@@ -15,10 +505,32 @@ Inkplate MicroPython
     After you've called this you can proceed calling all other methods described below.
 
 
+
+.init()
+######################
+
+* **Method prototype (as seen in Inkplate.py)**:
+
+.. code-block:: python
+
+    .drawPixel(x, y, color)
+
+* **Arguments and return value**:
+    | No arguments.
+
+    Returns nothing.
+
+* **Description**:
+    |   Method to initialize all perihperals.
+
+
+
+
+
 .drawPixel()
 ######################
 
-* **Method prototype (as seen in Inkplate.h)**:
+* **Method prototype (as seen in Inkplate.py)**:
 
 .. code-block:: python
 
@@ -54,7 +566,7 @@ Inkplate MicroPython
 .clearDisplay()
 ###############
 
-* **Method prototype (as seen in Inkplate.h)**:
+* **Method prototype (as seen in Inkplate.py)**:
 
 .. code-block:: python
 
@@ -77,7 +589,7 @@ Inkplate MicroPython
 .display()
 ##########
 
-* **Method prototype (as seen in Inkplate.h)**:
+* **Method prototype (as seen in Inkplate.py)**:
 
 .. code-block:: python
 
@@ -103,7 +615,7 @@ Inkplate MicroPython
 .partialUpdate()
 ################
 
-* **Method prototype (as seen in Inkplate.h)**:
+* **Method prototype (as seen in Inkplate.py)**:
 
 .. code-block:: python
 
@@ -130,10 +642,430 @@ Inkplate MicroPython
 
 
 
+.read_battery()
+################
+
+* **Method prototype (as seen in Inkplate.py)**:
+
+.. code-block:: python
+
+    .read_battery(cls)
+
+* **Arguments and return value**:
+    | **cls** - Instance
+
+    |Returns battery voltage.
+
+* **Description**:
+    | Read the battery voltage. Note that the
+    | result depends on the ADC calibration, and be a bit off.
+
+
+
+.readBattery()
+################
+
+* **Method prototype (as seen in Inkplate.py)**:
+
+.. code-block:: python
+
+    .readBattery(self)
+
+* **Arguments and return value**:
+    | **self** - Instance
+
+    |Returns battery voltage.
+
+* **Description**:
+    | Read the battery voltage. Note that the
+    | result depends on the ADC calibration, and be a bit off.
+
+
+
+.read_temperature()
+################
+
+* **Method prototype (as seen in Inkplate.py)**:
+
+.. code-block:: python
+
+    .read_temperature(cls)
+
+* **Arguments and return value**:
+    | **cls** - Instance
+
+    |Returns panel temperature.
+
+* **Description**:
+    | Read panel temperature. It varies +- 2 degree
+
+
+
+.readTemperature()
+################
+
+* **Method prototype (as seen in Inkplate.py)**:
+
+.. code-block:: python
+
+    .readTemperature(self)
+
+* **Arguments and return value**:
+    | **self** - Instance
+
+    |Returns panel temperature.
+
+* **Description**:
+    | Read panel temperature. It varies +- 2 degree
+
+
+
+._tps65186_write()
+################
+
+* **Method prototype (as seen in Inkplate.py)**:
+
+.. code-block:: python
+
+    ._tps65186_write(cls, reg, v)
+
+* **Arguments and return value**:
+    | **cls** - Instance
+    | **reg** - Address of register to write
+    | **v** - Data to write
+
+    |Returns nothing.
+
+* **Description**:
+    | _tps65186_write writes an 8-bit value to a register
+
+
+
+._tps65186_read()
+################
+
+* **Method prototype (as seen in Inkplate.py)**:
+
+.. code-block:: python
+
+    ._tps65186_write(cls, reg)
+
+* **Arguments and return value**:
+    | **cls** - Instance
+    | **reg** - Address of register to read
+
+    |Returns nothing.
+
+* **Description**:
+    | _tps65186_read reads an 8-bit value from a register
+
+
+
+.power_on()
+################
+
+* **Method prototype (as seen in Inkplate.py)**:
+
+.. code-block:: python
+
+    .power_on(cls)
+
+* **Arguments and return value**:
+    | **cls** - Instance
+
+    |Returns nothing.
+
+* **Description**:
+    | power_on turns the voltage regulator on and wakes up the display (GMODE and OE)
+
+
+
+.power_off()
+################
+
+* **Method prototype (as seen in Inkplate.py)**:
+
+.. code-block:: python
+
+    .power_off(cls)
+
+* **Arguments and return value**:
+    | **cls** - Instance
+
+    |Returns nothing.
+
+* **Description**:
+    |  power_off puts the display to sleep and cuts the power
+
+
+
+.vscan_start()
+################
+
+* **Method prototype (as seen in Inkplate.py)**:
+
+.. code-block:: python
+
+    .vscan_start(cls)
+
+* **Arguments and return value**:
+    | **cls** - Instance
+
+    |Returns nothing.
+
+* **Description**:
+    |  vscan_start begins a vertical scan by toggling CKV and SPV
+    | sleep_us calls are commented out 'cause MP is slow enough...
+
+
+
+.vscan_write()
+################
+
+* **Method prototype (as seen in Inkplate.py)**:
+
+.. code-block:: python
+
+    .vscan_start()
+
+* **Arguments and return value**:
+    | No arguments.
+
+    |Returns nothing.
+
+* **Description**:
+    |  vscan_write latches the row into the display pixels and moves to the next row
+
+
+
+.gen_byte2gpio()
+################
+
+* **Method prototype (as seen in Inkplate.py)**:
+
+.. code-block:: python
+
+    .gen_byte2gpio(cls)
+
+* **Arguments and return value**:
+    | **cls** - Instance
+
+    |Returns nothing.
+
+* **Description**:
+    |  gen_byte2gpio converts a byte of data for the screen to 32 bits of gpio0..31
+
+
+
+.fill_screen()
+################
+
+* **Method prototype (as seen in Inkplate.py)**:
+
+.. code-block:: python
+
+    .fill_screen(data)
+
+* **Arguments and return value**:
+    | **data** - Value to write to display
+
+    |Returns nothing.
+
+* **Description**:
+    |  fill_screen writes the same value to all bytes of the screen, it is used for cleaning
+
+
+
+._gen_luts()
+################
+
+* **Method prototype (as seen in Inkplate.py)**:
+
+.. code-block:: python
+
+    ._gen_luts(cls)
+
+* **Arguments and return value**:
+    | **cls** - Instance
+
+    |Returns nothing.
+
+* **Description**:
+    |  gen_luts generates the look-up tables to convert a nibble (4 bits) of pixels to the
+    | 32-bits that need to be pushed into the gpio port.
+    | The LUTs used here were copied from the e-Radionica Inkplate-6-Arduino-library.
+
+
+
+._send_row()
+################
+
+* **Method prototype (as seen in Inkplate.py)**:
+
+.. code-block:: python
+
+    ._send_row(lut_in, framebuf, row: int)
+
+* **Arguments and return value**:
+    | **lut_in** - Lookup table
+    | **framebuf** - Buffer
+    | **row** - Row number
+
+    |Returns nothing.
+
+* **Description**:
+    | _send_row writes a row of data to the display
+
+
+
+._send_row()
+################
+
+* **Method prototype (as seen in Inkplate.py)**:
+
+.. code-block:: python
+
+    ._send_row(lut_in, old_framebuf, new_framebuf, row: int)
+
+* **Arguments and return value**:
+    | **lut_in** - Lookup table
+    | **old_framebuf** - Old content of display
+    | **new_framebuf** - New content of display
+    | **row** - Row number
+
+    |Returns nothing.
+
+* **Description**:
+    | _send_row writes a row of data to the display
+
+
+
+._gen_wave()
+################
+
+* **Method prototype (as seen in Inkplate.py)**:
+
+.. code-block:: python
+
+    ._gen_wave(cls)
+
+* **Arguments and return value**:
+    | **cls** - Instance
+
+    |Returns nothing.
+
+* **Description**:
+    | _gen_wave generates the waveform table. The table consists of N phases or steps during
+    | each of which the entire display gets written. The array in each phase gets indexed with
+    | a nibble of data and contains the 32-bits that need to be pushed into the gpio port.
+    | The waveform used here was adapted from the e-Radionica Inkplate-6-Arduino-library
+    | by taking colors 0 (black), 3, 5, and 7 (white) from "waveform3Bit[8][7]".
+
+
+
+.start()
+################
+
+* **Method prototype (as seen in Inkplate.py)**:
+
+.. code-block:: python
+
+    .start(cls)
+
+* **Arguments and return value**:
+    | **self** - Instance
+
+    |Returns nothing.
+
+* **Description**:
+    | start makes a reference copy of the current framebuffer
+
+
+
+._gen_lut_mono()
+################
+
+* **Method prototype (as seen in Inkplate.py)**:
+
+.. code-block:: python
+
+    ._gen_lut_mono(cls)
+
+* **Arguments and return value**:
+    | **cls** - Instance
+
+    |Returns nothing.
+
+* **Description**:
+    |  gen_lut_mono generates a look-up tables to change the display from a nibble of old
+    | pixels (4 bits = 4 pixels) to a nibble of new pixels. The LUT contains the
+    | 32-bits that need to be pushed into the gpio port to effect the change.
+
+
+
+._skip_rows()
+################
+
+* **Method prototype (as seen in Inkplate.py)**:
+
+.. code-block:: python
+
+    ._skip_rows(rows)
+
+* **Arguments and return value**:
+    | **rows** - Number of rows to skip
+
+    |Returns nothing.
+
+* **Description**:
+    |  _skip_rows skips N rows
+
+
+
+.einkOn()
+################
+
+* **Method prototype (as seen in Inkplate.py)**:
+
+.. code-block:: python
+
+    .einkOn(self)
+
+* **Arguments and return value**:
+    | **self** - Instance
+
+    |Returns nothing.
+
+* **Description**:
+    |  einkOn turns on epapers supply on and enables IO pins
+
+
+
+
+.einkOff()
+################
+
+* **Method prototype (as seen in Inkplate.py)**:
+
+.. code-block:: python
+
+    .einkOff(self)
+
+* **Arguments and return value**:
+    | **self** - Instance
+
+    |Returns nothing.
+
+* **Description**:
+    |  einkOff turns off epapers supply on and puts  IO pins in Z state
+
+
+
+
 .setRotation()
 ##############
 
-* **Method prototype (as seen in Inkplate.h)**:
+* **Method prototype (as seen in Inkplate.py)**:
 
 .. code-block:: python
 
@@ -166,10 +1098,188 @@ Inkplate MicroPython
 
 
 
+._rotateCoordinates()
+##############
+
+* **Method prototype (as seen in Inkplate.py)**:
+
+.. code-block:: python
+
+    .setRotation(self,x,y)
+
+* **Arguments and return value**:
+    | **self** - Instance.
+    | **x** - x coordinate to rotate.
+    | **y** - y coordinate to rotate.
+
+    Returns nothing.
+
+* **Description**:
+    | Rotates one pixel for new orientation.
+
+
+.writePixel()
+##############
+
+* **Method prototype (as seen in Inkplate.py)**:
+
+.. code-block:: python
+
+    .writePixel(self, x, y, c)
+
+* **Arguments and return value**:
+    | **self** - Instance.
+    | **x** - x coordinate to rotate.
+    | **y** - y coordinate to rotate.
+    | **c** - color (3 bit mode).
+
+    Returns nothing.
+
+* **Description**:
+    | Writes one pixel to display.
+
+
+
+.writeFillRect()
+##############
+
+* **Method prototype (as seen in Inkplate.py)**:
+
+.. code-block:: python
+
+    .writeFillRect(self, x, y, w, h, c)
+
+* **Arguments and return value**:
+    | **self** - Instance.
+    | **x** - x coordinate of rectangle.
+    | **y** - y coordinate of rectangle.
+    | **w** - width.
+    | **h** - height.
+    | **c** - color (3 bit mode).
+
+    Returns nothing.
+
+* **Description**:
+    | Writes rectangle to display.
+
+
+
+
+.writeFastVLine()
+##############
+
+* **Method prototype (as seen in Inkplate.py)**:
+
+.. code-block:: python
+
+    .writeFastVLine(self, x, y, h, c)
+
+* **Arguments and return value**:
+    | **self** - Instance.
+    | **x** - x coordinate of start.
+    | **y** - y coordinate of start.
+    | **h** - length of line.
+    | **c** - color (3 bit mode).
+
+    Returns nothing.
+
+* **Description**:
+    | Method to fast write vertical line on display.
+
+
+
+    
+.writeFastHLine()
+##############
+
+* **Method prototype (as seen in Inkplate.py)**:
+
+.. code-block:: python
+
+    .writeFastHLine(self, x, y, w, c)
+
+* **Arguments and return value**:
+    | **self** - Instance.
+    | **x** - x coordinate of start.
+    | **y** - y coordinate of start.
+    | **w** - length of line.
+    | **c** - color (3 bit mode).
+
+    Returns nothing.
+
+* **Description**:
+    | Method to fast write horizontal line on display.
+
+
+
+.writeLine()
+##############
+
+* **Method prototype (as seen in Inkplate.py)**:
+
+.. code-block:: python
+
+    .writeLine(self, x, y, x1, y1, c)
+
+* **Arguments and return value**:
+    | **self** - Instance.
+    | **x0** - x coordinate of start.
+    | **y0** - y coordinate of start.
+    | **x1** - x coordinate of end.
+    | **y1** - y coordinate of end.
+    | **c** - color (3 bit mode).
+
+    Returns nothing.
+
+* **Description**:
+    | Method to write line on display.
+
+
+.writeLine()
+##############
+
+* **Method prototype (as seen in Inkplate.py)**:
+
+.. code-block:: python
+
+    .writeLine(self, x, y, x1, y1, c)
+
+* **Arguments and return value**:
+    | **self** - Instance.
+    | **x0** - x coordinate of start.
+    | **y0** - y coordinate of start.
+    | **x1** - x coordinate of end.
+    | **y1** - y coordinate of end.
+    | **c** - color (3 bit mode).
+
+    Returns nothing.
+
+* **Description**:
+    | Method to write line on display.
+
+
+
+.setDisplayMode()
+####################
+
+* **Method prototype (as seen in Inkplate.py)**:
+
+.. code-block:: python
+
+    .setDisplayMode(self, mode)
+
+* **Arguments and return value**:
+    | **self** - Instance
+    | **mode** - New display mode, display.Inkplate.INKPLATE_1BIT or display.Inkplate.INKPLATE_2BIT.
+
+    Returns nothing.
+
+
+
 .selectDisplayMode()
 ####################
 
-* **Method prototype (as seen in Inkplate.h)**:
+* **Method prototype (as seen in Inkplate.py)**:
 
 .. code-block:: python
 
@@ -655,9 +1765,10 @@ Inkplate MicroPython
 
 .. code-block:: python
 
-    drawBitmap(x, y, b, w, h)
+    drawBitmap(self, x, y, b, w, h)
 
 * **Arguments and return value**:
+    | **self** - font dictionary
     | **x** - Bitmap x coordinate.
     | **y** - Bitmap y coordinate.
     | **b** - Bytearray to draw from.
@@ -689,9 +1800,10 @@ Inkplate MicroPython
 
 .. code-block:: python
 
-    drawBitmap(x, y, path, invert=False)
+    drawBitmap(self, x, y, path, invert=False)
 
 * **Arguments and return value**:
+    | **self** - font dictionary
     | **x** - Bitmap x coordinate.
     | **y** - Bitmap y coordinate.
     | **path** - File path e.g. "sd/file.bmp"
@@ -723,9 +1835,10 @@ Inkplate MicroPython
 
 .. code-block:: python
 
-    setTextSize(s)
+    setTextSize(self, s)
 
 * **Arguments and return value**:
+    | **self** - Instance
     | **s** - font scale
 
     Returns nothing.
@@ -745,9 +1858,10 @@ Inkplate MicroPython
 
 .. code-block:: python
 
-    setFont(f)
+    setFont(self , f)
 
 * **Arguments and return value**:
+    | **self** - font dictionary
     | **f** - font dictionary
 
     Returns nothing.
@@ -777,9 +1891,10 @@ Inkplate MicroPython
 
 .. code-block:: python
 
-    print(x, y, s)
+    print(self, x, y, s)
 
 * **Arguments and return value**:
+    | **self** - font dictionary
     | **x** - x coordinate to write text
     | **y** - y coordinate to write text
     | **s** - String to be printed.
@@ -835,6 +1950,8 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | No arguments.
 
+    Returns nothing.
+
 * **Description**:
     | Returns screen height.
 
@@ -867,122 +1984,880 @@ Inkplate MicroPython
         if display.getRotation() == 4:
             print("I'm upside down!")
 
-.frontlight()
+
+
+
+.__mix_me_in()
 ########################
 
-* **Method prototype**:
+* **Method prototype (as seen in shapes.py)**:
 
 .. code-block:: python
 
-    frontlight(self, enable)
+    __mix_me_in(cls, target)
 
 * **Arguments and return value**:
-    | **value** - 1 or 0 to enable or disable frontlight
+    | **cls** - Instance
+    | **target** - Target class to add functions from this class
 
     Returns nothing.
 
 * **Description**:
-    | Controls frontlight enable or disable functionality.
+    | __mix_me_in adds the methods of this class to another class.  Typical usage is to put
+    | something like Shapes.__mix_me_in(MyClass) after the class definition.
 
-* **Example**:
-    .. code-block:: python
 
-        display.frontlight(1)#Turns frontlight on
-        display.frontlight(0)#Turns frontlight off
 
-.setFrontlight()
+.circle()
 ########################
 
-* **Method prototype**:
+* **Method prototype (as seen in shapes.py)**:
 
 .. code-block:: python
 
-    setFrontlight(self, valeu)
+    circle(self, x0, y0, r, color)
 
 * **Arguments and return value**:
-    | **value** - sets frontlight intensity
+    | **self** - Instance
+    | **x0** - x coordinate of center
+    | **y0** - y coordinate of center
+    | **r** - radius
+    | **color** - color in 3 bit mode
 
     Returns nothing.
 
 * **Description**:
-    | Controls frontlight intensity, accepted values are from 0-63.
-
-* **Example**:
-    .. code-block:: python
-
-        display.setFrontlight(10)#Values accepted are in range 0-63
+    | Single pixel circle
 
 
-.touchInArea()
+
+
+.fill_circle()
 ########################
 
-* **Method prototype**:
+* **Method prototype (as seen in shapes.py)**:
 
 .. code-block:: python
 
-    touchInArea(self, x, y, width, height)
+    fill_circle(self, x0, y0, r, color)
 
 * **Arguments and return value**:
-    | **x** - start for the x coordinate
-    | **y** - start for the y coordinate
-    | **width** - width of the area that is checked for touch
-    | **height** - height of the area that is checked for touch
-    | Returns boolean True or False depending if touch occured in given area.
-
-* **Description**:
-    | Used to check if touch occured in given area (Button for example).
-
-* **Example**:
-    .. code-block:: python
-
-        if display.touchInArea(50, 50, 100, 100):
-            print("Touched area")
-
-
-.tsInit()
-########################
-
-* **Method prototype**:
-
-.. code-block:: python
-
-    tsInit(self, pwrState)
-
-* **Arguments and return value**:
-    | **pwrState** - turns power for touch on or off (1 for on) 
-
-    Returns True or False if power turned succesfully or not.
-
-* **Description**:
-    | Turns touchScreen on or off.
-
-* **Example**:
-    .. code-block:: python
-
-        if display.tsInit(1):
-            print("Im on!")
-        else:
-            print("Cant turn ts on")
-
-
-.tsShutdown()
-########################
-
-* **Method prototype**:
-
-.. code-block:: python
-
-    tsShutdown()
-
-* **Arguments and return value**:
-    | No arguments.
+    | **self** - Instance
+    | **x0** - x coordinate of center
+    | **y0** - y coordinate of center
+    | **r** - radius
+    | **color** - color in 3 bit mode
 
     Returns nothing.
 
 * **Description**:
-    | Turns off power for touchscreen.
+    | Draw filled circle
 
-* **Example**:
+
+
+.triangle()
+########################
+
+* **Method prototype (as seen in shapes.py)**:
+
+.. code-block:: python
+
+    triangle(self, x0, y0, x1, y1, x2, y2, color)
+
+* **Arguments and return value**:
+    | **self** - Instance
+    | **x0** - x coordinate of first point
+    | **y0** - y coordinate of first point
+    | **x1** - x coordinate of second point
+    | **y1** - y coordinate of second point
+    | **x2** - x coordinate of third point
+    | **y2** - y coordinate of third point
+    | **color** - color in 3bit mode
+
+    Returns nothing.
+
+* **Description**:
+    | Triangle drawing function.  Will draw a single pixel wide triangle
+        around the points (x0, y0), (x1, y1), and (x2, y2).
+
+
+
+.fill_triangle()
+########################
+
+* **Method prototype (as seen in shapes.py)**:
+
+.. code-block:: python
+
+    fill_triangle(self, x0, y0, x1, y1, x2, y2, color)
+
+* **Arguments and return value**:
+    | **self** - Instance
+    | **x0** - x coordinate of first point
+    | **y0** - y coordinate of first point
+    | **x1** - x coordinate of second point
+    | **y1** - y coordinate of second point
+    | **x2** - x coordinate of third point
+    | **y2** - y coordinate of third point
+    | **color** - color in 3bit mode
+
+    Returns nothing.
+
+* **Description**:
+    | Filled triangle drawing function.  Will draw a filled triangle around
+        the points (x0, y0), (x1, y1), and (x2, y2).
+
+
+
+.round_rect() method
+###############
+
+* **Method prototype (as seen in shapes.py)**:
+
     .. code-block:: python
 
-        display.tsShutdown()
+        display.round_rect(self, x0, y0, width, height, radius, color)
+
+* **Arguments and return value**:
+    | **self** - This object
+    | **x0** - x coordinate of first point.
+    | **y0** - y coordinate of first point.
+    | **width** - width of rectangle.
+    | **height** - height of rectangle.
+    | **radius** - radius of rounded corners.
+    | **color** - color in 3 bit mode.
+
+    Returns nothing.
+
+* **Description**:
+
+   |Rectangle with rounded corners drawing function.
+    |    This works like a regular rect though! if radius = 0
+     |   Will draw the outline of a rextabgle with rounded corners with (x0,y0) at the top left
+
+
+
+.fill_round_rect() method
+###############
+
+* **Method prototype (as seen in shapes.py)**:
+
+    .. code-block:: python
+
+        display.fill_round_rect(self, x0, y0, width, height, radius, color)
+
+* **Arguments and return value**:
+    | **self** - This object
+    | **x0** - x coordinate of first point.
+    | **y0** - y coordinate of first point.
+    | **width** - width of rectangle.
+    | **height** - height of rectangle.
+    | **radius** - radius of rounded corners.
+    | **color** - color in 3 bit mode.
+
+    Returns nothing.
+
+* **Description**:
+
+   |Filled rectangle with rounded corners drawing function.
+    |    This works like a regular rect though! if radius = 0
+     |   Will draw the outline of a rextabgle with rounded corners with (x0,y0) at the top left    
+
+
+
+.__init__() method
+###############
+
+* **Method prototype (as seen in sdcard.py)**:
+
+    .. code-block:: python
+
+        display.__init__(self, spi, cs)
+
+* **Arguments and return value**:
+    | **self** - This object
+    | **spi** - SPI object.
+    | **cs** - chip select pin.
+
+    Returns nothing.
+
+* **Description**:
+
+   |Initializes SD card object
+
+
+
+.init_spi() method
+###############
+
+* **Method prototype (as seen in sdcard.py)**:
+
+    .. code-block:: python
+
+        display.init_spi(self, baudrate)
+
+* **Arguments and return value**:
+    | **self** - This object
+    | **baudrate** - Communication speed
+
+    Returns nothing.
+
+* **Description**:
+
+   |Initializes SPI communication.
+
+
+
+.init_card() method
+###############
+
+* **Method prototype (as seen in sdcard.py)**:
+
+    .. code-block:: python
+
+        display.init_card(self)
+
+* **Arguments and return value**:
+    | **self** - This object
+
+    Returns nothing.
+
+* **Description**:
+
+   |Initializes SD card.
+
+
+
+
+.init_card_v1() method
+###############
+
+* **Method prototype (as seen in sdcard.py)**:
+
+    .. code-block:: python
+
+        display.init_card_v1(self)
+
+* **Arguments and return value**:
+    | **self** - This object
+
+    Returns nothing.
+
+* **Description**:
+
+   |Initialize v1 SDCards which use byte addressing.
+
+
+
+.init_card_v2() method
+###############
+
+* **Method prototype (as seen in sdcard.py)**:
+
+    .. code-block:: python
+
+        display.init_card_v2(self)
+
+* **Arguments and return value**:
+    | **self** - This object
+
+    Returns nothing.
+
+* **Description**:
+
+   |Initialize v2 SDCards which use 512-byte block addressing.
+
+
+
+.cmd() method
+###############
+
+* **Method prototype (as seen in sdcard.py)**:
+
+    .. code-block:: python
+
+        display.init_card_v2(self, cmd, arg, crc, final=0, release=True, skip1=False)
+
+* **Arguments and return value**:
+    | **self** - This object
+    | **cmd** - Command address
+    | **arg** - Argument 
+    | **crc** - Cyclic redundant check code
+    | **final** - Final
+    | **release** - release
+    | **skip1** - skip1
+
+    Returns nothing.
+
+* **Description**:
+
+   | Issue a command to the card and read an optional data response.
+
+
+
+.readinto() method
+###############
+
+* **Method prototype (as seen in sdcard.py)**:
+
+    .. code-block:: python
+
+        display.readinto(self, buf)
+
+* **Arguments and return value**:
+    | **self** - This object.
+    | **buf** - Buffer to read.
+
+    Returns nothing.
+
+* **Description**:
+
+   | Read a data block into buf.
+
+
+
+.write() method
+###############
+
+* **Method prototype (as seen in sdcard.py)**:
+
+    .. code-block:: python
+
+        display.write(self, token, buf)
+
+* **Arguments and return value**:
+    | **self** - This object.
+    | **token** - The start token.
+    | **buf** - Buffer to write from.
+
+    Returns nothing.
+
+* **Description**:
+
+   | Write a data block to the card..
+
+
+.write_token() method
+###############
+
+* **Method prototype (as seen in sdcard.py)**:
+
+    .. code-block:: python
+
+        display.write_token(self, token)
+
+* **Arguments and return value**:
+    | **self** - This object.
+    | **token** - The start token.
+
+    Returns nothing.
+
+* **Description**:
+
+   | Write a token to the card..
+
+
+.readblocks() method
+###############
+
+* **Method prototype (as seen in sdcard.py)**:
+
+    .. code-block:: python
+
+        display.readblocks(self, block_num, buf)
+
+* **Arguments and return value**:
+    | **self** - This object.
+    | **block_num** - Start read from.
+    | **buf** - Buffer to read to.
+
+    Returns nothing.
+
+* **Description**:
+
+   | Read one or more blocks from the card.
+
+
+.writeblocks() method
+###############
+
+* **Method prototype (as seen in sdcard.py)**:
+
+    .. code-block:: python
+
+        display.writeblocks(self, block_num, buf)
+
+* **Arguments and return value**:
+    | **self** - This object.
+    | **block_num** - Start writing from block.
+    | **buf** - Buffer to write from.
+
+    Returns nothing.
+
+* **Description**:
+
+   |  Write blocks to the card.
+
+
+
+.__init__() method
+###############
+
+* **Method prototype (as seen in mcp23017.py)**:
+
+    .. code-block:: python
+
+        display.__init__(self, i2c, addr=0x20)
+
+* **Arguments and return value**:
+    | **self** - This object.
+    | **i2c** - I2C object type.
+    | **addr** - address of MCP23017, default is 0x20.
+
+    Returns nothing.
+
+* **Description**:
+
+   |  MCP23017 is a minimal driver for an 16-bit I2C I/O expander.
+
+
+
+.read() method
+###############
+
+* **Method prototype (as seen in mcp23017.py)**:
+
+    .. code-block:: python
+
+        display.read(self, reg)
+
+* **Arguments and return value**:
+    | **self** - This object.
+    | **reg** - register to read from.
+
+    Returns nothing.
+
+* **Description**:
+
+   |  read an 8-bit register, internal method
+
+
+.write() method
+###############
+
+* **Method prototype (as seen in mcp23017.py)**:
+
+    .. code-block:: python
+
+        display.write(self, reg, v)
+
+* **Arguments and return value**:
+    | **self** - This object.
+    | **reg** - register to write to.
+    | **v** - value to write to register.
+
+    Returns nothing.
+
+* **Description**:
+
+   | write an 8-bit register, internal method
+
+
+.write2() method
+###############
+
+* **Method prototype (as seen in mcp23017.py)**:
+
+    .. code-block:: python
+
+        display.write2(self, reg, v1,v2)
+
+* **Arguments and return value**:
+    | **self** - This object.
+    | **reg** - first register to write to.
+    | **v1** - value to write to first register.
+    | **v2** - value to write to second register.
+
+    Returns nothing.
+
+* **Description**:
+
+   | write two 8-bit registers, internal method
+
+
+
+.writebuf() method
+###############
+
+* **Method prototype (as seen in mcp23017.py)**:
+
+    .. code-block:: python
+
+        display.writebuf(self, reg, v)
+
+* **Arguments and return value**:
+    | **self** - This object.
+    | **reg** - register to write to.
+    | **v** - value to write to register.
+
+    Returns nothing.
+
+* **Description**:
+
+   | writebuf writes multiple bytes to the same register
+
+
+
+
+.bit() method
+###############
+
+* **Method prototype (as seen in mcp23017.py)**:
+
+    .. code-block:: python
+
+        display.bit(self, reg, num, v=None)
+
+* **Arguments and return value**:
+    | **self** - This object.
+    | **reg** - register to write to.
+    | **num** - index of bit in byte.
+    | **v** - value to write to byte.
+
+    Returns nothing.
+
+* **Description**:
+
+   | bit reads or sets a bit in a register, caching the gpio register for performance
+
+
+
+.value() method
+###############
+
+* **Method prototype (as seen in mcp23017.py)**:
+
+    .. code-block:: python
+
+        display.value(self, v=None)
+
+* **Arguments and return value**:
+    | **self** - This object.
+    | **v** - value to write or read.
+
+    Returns nothing.
+
+* **Description**:
+
+   | value reads or write a pin value (0 or 1)
+
+
+
+.setFrontlight() method
+###############
+
+* **Method prototype (as seen in inkplate6_PLUS.py)**:
+
+    .. code-block:: python
+
+        display.setFrontlight(cls, value)
+
+* **Arguments and return value**:
+    | **cls** - This object.
+    | **value** - frontlight intensity.
+
+    Returns nothing.
+
+* **Description**:
+
+   | Turns on or off frontlight
+
+
+
+.touchInArea() method
+###############
+
+* **Method prototype (as seen in inkplate6_PLUS.py)**:
+
+    .. code-block:: python
+
+        display.touchInArea(cls, x, y, width, height)
+
+* **Arguments and return value**:
+    | **cls** - This object.
+    | **x** - x coordinate of start of rectangle.
+    | **y** - y coordinate of start of rectangle.
+    | **width** - width of rectangle.
+    | **height** - height of rectangle.
+
+    Returns nothing.
+
+* **Description**:
+
+   | Checks if part of touchscreen is touched
+
+
+
+.tsInit() method
+###############
+
+* **Method prototype (as seen in inkplate6_PLUS.py)**:
+
+    .. code-block:: python
+
+        display.tsInit(self, pwrState)
+
+* **Arguments and return value**:
+    | **cls** - This object.
+    | **pwrState** - x coordinate of start of rectangle.
+
+    Returns nothing.
+
+* **Description**:
+
+   | Enables or disables touchscreen
+
+
+.tsShutdown() method
+###############
+
+* **Method prototype (as seen in inkplate6_PLUS.py)**:
+
+    .. code-block:: python
+
+        display.tsShutdown(self)
+
+* **Arguments and return value**:
+    | **cls** - This object.
+
+    Returns nothing.
+
+* **Description**:
+
+   | Disables touchscreen
+
+
+
+.tsWriteRegs() method
+###############
+
+* **Method prototype (as seen in inkplate6_PLUS.py)**:
+
+    .. code-block:: python
+
+        display.tsWriteRegs(cls, addr, buff)
+
+* **Arguments and return value**:
+    | **cls** - This object.
+    | **addr** - address of register to write.
+    | **buff** - buffer to wrte from.
+
+    Returns nothing.
+
+* **Description**:
+
+   | Writes to touchscreen registers
+
+
+
+.tsReadRegs() method
+###############
+
+* **Method prototype (as seen in inkplate6_PLUS.py)**:
+
+    .. code-block:: python
+
+        display.tsReadRegs(cls, address)
+
+* **Arguments and return value**:
+    | **cls** - This object.
+    | **address** - address of register to read from.
+
+    Returns nothing.
+
+* **Description**:
+
+   | Reads from touchscreen registers
+
+
+.tsHardwareReset() method
+###############
+
+* **Method prototype (as seen in inkplate6_PLUS.py)**:
+
+    .. code-block:: python
+
+        display.tsHardwareReset(cls)
+
+* **Arguments and return value**:
+    | **cls** - This object.
+
+    Returns nothing.
+
+* **Description**:
+
+   | Resets hardware of touchscreen
+
+
+.tsSoftwareReset() method
+###############
+
+* **Method prototype (as seen in inkplate6_PLUS.py)**:
+
+    .. code-block:: python
+
+        display.tsSoftwareReset(cls)
+
+* **Arguments and return value**:
+    | **cls** - This object.
+
+    Returns nothing.
+
+* **Description**:
+
+   | Resets settings of touchscreen
+
+
+
+.tsGetRawData() method
+###############
+
+* **Method prototype (as seen in inkplate6_PLUS.py)**:
+
+    .. code-block:: python
+
+        display.tsGetRawData(cls)
+
+* **Arguments and return value**:
+    | **cls** - This object.
+
+    Returns data from touchscreen registers.
+
+* **Description**:
+
+   | Returns raw data from touchscreen registers which needs to be converted to
+   | touch coordinates.
+
+
+.tsGetXY() method
+###############
+
+* **Method prototype (as seen in inkplate6_PLUS.py)**:
+
+    .. code-block:: python
+
+        display.tsGetXY(cls,data,i)
+
+* **Arguments and return value**:
+    | **cls** - This object.
+    | **data** - Data array to convert.
+    | **i** - Index of data.
+
+    Returns nothing.
+
+* **Description**:
+
+   | Converts raw data to X and Y coordinates of touched area
+
+
+
+.tsGetData() method
+###############
+
+* **Method prototype (as seen in inkplate6_PLUS.py)**:
+
+    .. code-block:: python
+
+        display.tsGetData(cls)
+
+* **Arguments and return value**:
+    | **cls** - This object.
+
+    Returns how many fingers are touching touchscreen.
+
+* **Description**:
+
+   | Returns how many fingers are touching touchscreen.
+
+
+
+.tsGetResolution() method
+###############
+
+* **Method prototype (as seen in inkplate6_PLUS.py)**:
+
+    .. code-block:: python
+
+        display.tsGetResolution(cls)
+
+* **Arguments and return value**:
+    | **cls** - This object.
+
+    Returns nothing.
+
+* **Description**:
+
+   | Calculates X and Y resolution of touchscreen and saves them into internal variables.
+
+
+
+.tsSetPowerState() method
+###############
+
+* **Method prototype (as seen in inkplate6_PLUS.py)**:
+
+    .. code-block:: python
+
+        display.tsSetPowerState(cls, state)
+
+* **Arguments and return value**:
+    | **cls** - This object.
+    | **state** - State to set to touchscreen.
+
+    Returns nothing.
+
+* **Description**:
+
+   | Sets power state of touchscreen.
+
+
+
+.tsGetPowerState() method
+###############
+
+* **Method prototype (as seen in inkplate6_PLUS.py)**:
+
+    .. code-block:: python
+
+        display.tsGetPowerState(cls)
+
+* **Arguments and return value**:
+    | **cls** - This object.
+
+    Returns touchscreen power state.
+
+* **Description**:
+
+   | Gets power state of touchscreen.
+
+
+
+.tsAvailable() method
+###############
+
+* **Method prototype (as seen in inkplate6_PLUS.py)**:
+
+    .. code-block:: python
+
+        display.tsAvailable(cls)
+
+* **Arguments and return value**:
+    | **cls** - This object.
+
+    Returns 1 if touchscreen is initialized and operating.
+
+* **Description**:
+
+   | Checks if touchscreen is operating.
+
+

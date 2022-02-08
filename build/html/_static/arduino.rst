@@ -36,6 +36,17 @@ begin() method
     .. code-block:: c
 
         display.begin();
+    
+    or
+
+    .. code-block:: c
+
+        display.begin(lightWaveform);
+
+* **Arguments and return value**:
+    uint8_t **lightWaveform** - used only with inkplate 10 to set light mode.
+
+    | Returns communication state
 
 * **Description**:
 
@@ -96,6 +107,30 @@ Inkplate::getSPI();
     | No Arguments
     
     Returns SPIClass object.
+
+
+Inkplate::setPanelState();
+##########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c
+
+    void setPanelState(s);
+
+* **Arguments and return value**:
+    | uint8_t **s** panel state ON or OFF (1 or 0)
+
+    No return value.
+
+* **Description**:
+    | Used to set if the panel on or off.
+
+* **Example**:
+    .. code-block:: c
+
+        display.setPanelState(0);
+
 
 
 Inkplate::getPanelState();
@@ -229,15 +264,15 @@ Inkplate::einkOn();
 
 .. code-block:: c
 
-    void einkOn(void);
+    int einkOn(void);
 
 * **Arguments and return value**:
     | No Arguments.
 
-    Returns nothing.
+    Returns 0 if failed, 1 if succeded.
 
 * **Description**:
-    | Turns the panel back on.
+    | einkOn turns on supply for epaper display (TPS65186) [+15 VDC, -15VDC, +22VDC, -20VDC, +3.3VDC, VCOM]
 
 * **Example**:
     .. code-block:: c
@@ -246,8 +281,293 @@ Inkplate::einkOn();
 
 
 
+Inkplate::readPowerGood();
+####################
+
+* **Method prototype (as seen in Inkplate.h)**:
+
+.. code-block:: c
+
+    int readPowerGood();
+
+* **Arguments and return value**:
+    | No Arguments.
+
+    Returns 0 if failed, 1 if succeded.
+
+* **Description**:
+    | Reads ok status for each rail
+
+* **Example**:
+    .. code-block:: c
+
+        int power = readPowerGood();
+
+
+
+Inkplate::vscan_start();
+####################
+
+* **Method prototype (as seen in Inkplate.h)**:
+
+.. code-block:: c
+
+    void vscan_start();
+
+* **Arguments and return value**:
+    | No Arguments.
+
+    No return.
+
+* **Description**:
+    | Starts writing new frame and skips first two lines that are invisible on screen
+
+
+
+Inkplate::hscan_start();
+####################
+
+* **Method prototype (as seen in Inkplate.h)**:
+
+.. code-block:: c
+
+    void hscan_start();
+
+* **Arguments and return value**:
+    |uint32_t **_d** - Data to be written into current row.
+
+    No return.
+
+* **Description**:
+    | Starts writing data into current row
+
+
+
+Inkplate::vscan_end();
+####################
+
+* **Method prototype (as seen in Inkplate.h)**:
+
+.. code-block:: c
+
+    void vscan_end();
+
+* **Arguments and return value**:
+    | No Arguments.
+
+    No return.
+
+* **Description**:
+    | Ends current row and prints data to screen
+
+
+
+Inkplate::pinsZstate();
+####################
+
+* **Method prototype (as seen in Inkplate.h)**:
+
+.. code-block:: c
+
+    void pinsZstate();
+
+* **Arguments and return value**:
+    | No Arguments.
+
+    No return.
+
+* **Description**:
+    | Sets all tps pins at high z state, is used only when turning off epaper
+
+
+
+Inkplate::pinsAsOutputs();
+####################
+
+* **Method prototype (as seen in Inkplate.h)**:
+
+.. code-block:: c
+
+    void pinsAsOutputs();
+
+* **Arguments and return value**:
+    | No Arguments.
+
+    No return.
+
+* **Description**:
+    | Sets all tps pins as outputs
+    
+
+Inkplate::setFrontlight();
+####################
+
+* **Method prototype (as seen in Inkplate.h)**:
+
+.. code-block:: c
+
+    void setFrontlight(uint8_t _v);
+
+* **Arguments and return value**:
+    | uint8_t **_v** - value to set frontlight to
+
+    | No return.
+
+* **Description**:
+    | setFrontlight function sets frontlight intensity for inkplate, only for inkplate 6 plus
+
+
+
+
+Inkplate::resetPanel();
+####################
+
+* **Method prototype (as seen in Inkplate.h)**:
+
+.. code-block:: c
+
+    void resetPanel();
+
+* **Arguments and return value**:
+    | No arguments
+    Returns nothing.
+
+* **Description**:
+    | resetPanel resets inkplate color.
+
+
+
+Inkplate::sendCommand();
+####################
+
+* **Method prototype (as seen in Inkplate.h)**:
+
+.. code-block:: c
+
+    void sendCommand(uint8_t _command);
+
+* **Arguments and return value**:
+    | uint8_t **command** - predefined command for epaper control
+    | Returns nothing.
+
+* **Description**:
+    | sendCommand sends SPI command to inkplate color.
+
+
+
+
+Inkplate::sendData();
+####################
+
+* **Method prototype (as seen in Inkplate.h)**:
+
+.. code-block:: c
+
+    void sendData(uint8_t *_data, int _n);
+
+.. code-block:: c
+
+    void sendData(uint8_t _data);
+
+* **Arguments and return value**:
+    | uint8_t* **data** - pointer to data buffer to be sent to epaper
+    | int **n** - number of data bytes
+    | uint8_t **data** - data buffer to be sent to epaper
+    | Returns nothing.
+
+* **Description**:
+    | sendData sends SPI data to inkplate color.
+
+
+
+Inkplate::setPanelDeepSleep();
+####################
+
+* **Method prototype (as seen in Inkplate.h)**:
+
+.. code-block:: c
+
+    void setPanelDeepSleep(bool _state);
+
+* **Arguments and return value**:
+    | bool **_state** - HIGH or LOW (1 or 0) 1 will start panel, 0 will put it into deep
+    | Returns nothing.
+
+* **Description**:
+    | setPanelDeepSleep puts color epaper in deep sleep, or starts epaper, depending on given arguments.
+
+
+
+Inkplate::getPanelDeepSleepState();
+####################
+
+* **Method prototype (as seen in Inkplate.h)**:
+
+.. code-block:: c
+
+    bool getPanelDeepSleepState();
+
+* **Arguments and return value**:
+    | No arguments.
+    | Returns state of panel.
+
+* **Description**:
+    | getPanelDeepSleepState returns current state of the panel
+
+
+
+
+Inkplate::setMCPForLowPower;
+####################
+
+* **Method prototype (as seen in Inkplate.h)**:
+
+.. code-block:: c
+
+    void setMCPForLowPower;
+
+* **Arguments and return value**:
+    | No arguments.
+    | No return.
+
+* **Description**:
+    | setMCPAForLowPower initiates MCP pins for low power, and puts
+    | them in OUTPUT LOW because they are using least amount of current in deep
+    | sleep that way
+    
+
+
+
 Drawing Functions
 -----------------
+
+
+Inkplate::writePixel();
+######################
+
+* **Method prototype (as seen in Graphics.h)**:
+
+.. code-block:: c
+
+    void writePixel(int16_t x0, int16_t y0, uint16_t _color);
+
+* **Arguments and return value**:
+    | int16_t **x0** - default position for x, will be changed depending on rotation
+    | int16_t **y0** - default position for y, will be changed depending on rotation
+    | uint16_t **color** - pixel color, in 3 bit mode in range [0, 7]
+
+    Returns nothing.
+
+* **Description**:
+    | writePixel funtion sets pixel data for (x, y) pixel position
+
+* **Example**:
+    .. code-block:: c
+
+        display.writePixel(100, 50, BLACK);
+
+
+
 
 Inkplate::drawPixel();
 ######################
@@ -291,10 +611,10 @@ Inkplate::display();
 
 .. code-block:: c
 
-    void display();
+    void display(bool leaveOn);
 
 * **Arguments and return value**:
-    | No Arguments
+    | bool **leaveOn** - if set to 1, it will disable turning supply for eink after display update in order to save some time needed for power supply to save some time at next display update or increase refreshing speed
 
     Returns nothing.
 
@@ -307,7 +627,80 @@ Inkplate::display();
         //Any drawing code
         display.drawPixel(10, 100, BLACK);
 
-        display.display();
+        display.display(1);
+
+
+
+Inkplate::display1b();
+####################
+
+* **Method prototype (as seen in Inkplate.h)**:
+
+.. code-block:: c
+
+    void display1b(bool leaveOn);
+
+* **Arguments and return value**:
+    | bool **_forced** - For advanced use with deep sleep. Can force partial update in deep sleep
+    Returns nothing.
+
+* **Description**:
+    | display1b function writes black and white data to display
+
+* **Example**:
+    .. code-block:: c
+
+        //Any drawing code
+        display.drawPixel(10, 100, BLACK);
+
+        display.display1b(1);
+
+
+
+
+Inkplate::display3b();
+####################
+
+* **Method prototype (as seen in Inkplate.h)**:
+
+.. code-block:: c
+
+    void display3b(bool leaveOn);
+
+* **Arguments and return value**:
+    | bool **_forced** - For advanced use with deep sleep. Can force partial update in deep sleep
+    Returns nothing.
+
+* **Description**:
+    | display3b function writes grayscale data to display
+
+* **Example**:
+    .. code-block:: c
+
+        //Any drawing code
+        display.drawPixel(10, 100, BLACK);
+
+        display.display3b(1);
+
+
+
+Inkplate::preloadScreen();
+####################
+
+* **Method prototype (as seen in Inkplate.h)**:
+
+.. code-block:: c
+
+    void preloadScreen();
+
+* **Arguments and return value**:
+    | No Arguments
+
+    Returns nothing.
+
+* **Description**:
+    | Copies data from partial to data buffer.
+
 
 
 Inkplate::clearDisplay();
@@ -344,9 +737,17 @@ Inkplate::partialUpdate();
 
     void partialUpdate();
 
-* **Arguments and return value**:
-    | No Arguments
+or
 
+.. code-block:: c
+
+    void partialUpdate(bool _forced, bool leaveOn);
+
+* **Arguments and return value**:
+    | bool **_forced** - For advanced use with deep sleep. Can force partial update in deep sleep
+    | bool **leaveOn** - if set to 1, it will disable turning supply for eink after
+    | display update in order to save some time needed for power supply
+    | to save some time at next display update or increase refreshing speed
     Returns nothing.
 
 * **Description**:
@@ -422,6 +823,26 @@ Inkplate::selectDisplayMode();
     .. code-block:: c
 
         display.selectDisplayMode(INKPLATE_3BIT);
+
+
+
+Inkplate::setDisplayMode();
+##############################
+
+* **Method prototype (as seen in Graphics.h)**:
+
+.. code-block:: c
+
+    void setDisplayMode(uint8_t _mode)
+
+* **Arguments and return value**:
+    | uint8_t **_mode** - Mode.
+
+    Returns nothing.
+
+* **Description**:
+    | Sets display mode, can't be used with color displays
+
 
 
 Inkplate::getDisplayMode();
@@ -717,14 +1138,15 @@ Inkplate::clean();
 
 
 
-Inkplate::drawFastVLine();
+
+Inkplate::writeFastVLine();
 ##########################
 
 * **Method prototype (as seen in Graphics.h)**:
 
 .. code-block:: c
 
-    void drawFastVLine(int16_t x, int16_t y, int16_t h, uint16_t color);
+    void writeFastVLine(int16_t x, int16_t y, int16_t h, uint16_t color);
 
 * **Arguments and return value**:
     | int16_t **x** - x coordinate of the line start point
@@ -741,7 +1163,7 @@ Inkplate::drawFastVLine();
 * **Example**:
     .. code-block:: c
 
-        display.drawFastVLine(100, 100, 400, 0);
+        display.writeFastVLine(100, 100, 400, 0);
 
 * **Result**:
     | Here is what the code above produces:
@@ -751,14 +1173,14 @@ Inkplate::drawFastVLine();
 
 
 
-Inkplate::drawFastHLine();
+Inkplate::writeFastHLine();
 ##########################
 
 * **Method prototype (as seen in Graphics.h)**:
 
 .. code-block:: c
 
-    void drawFastHLine(int16_t x, int16_t y, int16_t w, uint16_t color);
+    void writeFastHLine(int16_t x, int16_t y, int16_t w, uint16_t color);
 
 * **Arguments and return value**:
     | int16_t **x** - x coordinate of the line start point
@@ -775,7 +1197,7 @@ Inkplate::drawFastHLine();
 * **Example**:
     .. code-block:: c
 
-        display.drawFastHLine(100, 100, 600, 0);
+        display.writeFastHLine(100, 100, 600, 0);
 
 * **Result**:
     | Here is what the code above produces:
@@ -785,14 +1207,14 @@ Inkplate::drawFastHLine();
 
 
 
-Inkplate::fillRect();
+Inkplate::writeFillRect();
 #####################
 
 * **Method prototype (as seen in Graphics.h)**:
 
 .. code-block:: c
 
-    void fillRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t color);
+    void writeFillRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t color);
 
 * **Arguments and return value**:
     | int16_t **x** - x coordinate of the rectangle
@@ -809,7 +1231,7 @@ Inkplate::fillRect();
 * **Example**:
     .. code-block:: c
 
-        display.fillRect(random(0, 799), random(0, 599), 30, 30, random(0, 7));
+        display.writeFillRect(random(0, 799), random(0, 599), 30, 30, random(0, 7));
 
 * **Result**:
     | Here is what the code above produces:
@@ -850,14 +1272,14 @@ Inkplate::fillScreen();
 
 
 
-Inkplate::drawLine();
+Inkplate::writeLine();
 #####################
 
 * **Method prototype (as seen in Adafruit_GFX.h)**:
 
 .. code-block:: c
 
-    void drawLine(int16_t x0, int16_t y0, int16_t x1, int16_t y1, uint16_t color);
+    void writeLine(int16_t x0, int16_t y0, int16_t x1, int16_t y1, uint16_t color);
 
 * **Arguments and return value**:
     | int16_t **x0** - Start point x coordinate.
@@ -870,15 +1292,15 @@ Inkplate::drawLine();
 
 * **Description**:
     | General purpose line drawing function.
-    | If the line is vertical or horizontal it is recommended to use drawFastHLine or drawFastVLine,
-    | although drawLine automatically checks and uses faster drawing function if needed.
+    | If the line is vertical or horizontal it is recommended to use writeFastHLine or writeFastVLine,
+    | although writeLine automatically checks and uses faster drawing function if needed.
 
 * **Example**:
     .. code-block:: c
 
         //Diagonal lines
-        display.drawLine(0, 0, 799, 599, 0);
-        display.drawLine(799, 0, 0, 599, 0);
+        display.writeLine(0, 0, 799, 599, 0);
+        display.writeLine(799, 0, 0, 599, 0);
 
 * **Result**:
     | Here is what the code above produces:
@@ -976,7 +1398,7 @@ Inkplate::fillElipse();
 Inkplate::drawPolygon();
 ########################
 
-* **Method prototype (as seen in Shapes.h)**:
+* **Method prototype (as seen in ShapesPolygon.h)**:
 
 .. code-block:: c
 
@@ -1001,7 +1423,7 @@ Inkplate::drawPolygon();
 Inkplate::fillPolygon();
 ########################
 
-* **Method prototype (as seen in Shapes.h)**:
+* **Method prototype (as seen in ShapesPolygon.h)**:
 
 .. code-block:: c
 
@@ -1023,6 +1445,140 @@ Inkplate::fillPolygon();
     .. code-block:: c
 
        display.fillPolygon(xt, yt, n, 0);
+
+
+
+Inkplate::initedgeTable();
+########################
+
+* **Method prototype (as seen in ShapesPolygon.h)**:
+
+.. code-block:: c
+
+    void initedgeTable();
+
+* **Arguments and return value**:
+    | No arguments.
+    | Returns nothing
+
+* **Description**:
+    | initedgeTable initiates edge table and sets all values inside struct to 0
+
+
+
+Inkplate::insertionSort();
+########################
+
+* **Method prototype (as seen in ShapesPolygon.h)**:
+
+.. code-block:: c
+
+    void insertionSort(edgeTableTuple *ett);
+
+* **Arguments and return value**:
+    | edgeTableTuple *ett - pointer to edgeTableTuple to be sorted.
+    | Returns nothing
+
+* **Description**:
+    | insertionSort sorts buckets inside edgeTableTuple
+
+
+
+Inkplate::storeEdgeInTuple();
+########################
+
+* **Method prototype (as seen in ShapesPolygon.h)**:
+
+.. code-block:: c
+
+    void storeEdgeInTuple(edgeTableTuple *receiver, int ym, int xm, float slopInv);
+
+* **Arguments and return value**:
+    | edgeTableTuple *receiver - pointer to edgeTableTuple structure.
+    | int ym - edgeTableTuple->ymax value.
+    | int xm - edgeTableTuple->xofymin value.
+    | float slopInv - edgeTableTuple->slopeInverse value.
+    | Returns nothing
+
+* **Description**:
+    | storeEdgeInTuple stores values in tuple structure
+
+
+
+Inkplate::storeEdgeInTable();
+########################
+
+* **Method prototype (as seen in ShapesPolygon.h)**:
+
+.. code-block:: c
+
+    void storeEdgeInTable(int x1, int y1, int x2, int y2);
+
+* **Arguments and return value**:
+    | int x1 - x plane starting position.
+    | int y1 - y plane starting position.
+    | int x2 - x plane ending position.
+    | int y2 - y plane ending position.
+    | Returns nothing
+
+* **Description**:
+    | storeEdgeInTable calculates edge values of edgeTableTuple and stores them
+
+
+
+Inkplate::removeEdgeByYmax();
+########################
+
+* **Method prototype (as seen in ShapesPolygon.h)**:
+
+.. code-block:: c
+
+    void removeEdgeByYmax(edgeTableTuple *tup, int yy);
+
+* **Arguments and return value**:
+    | edgeTableTuple *tup - pointer to edgeTableTuple to work on.
+    | int yy - value to remove from edgeTableTuple.
+    | Returns nothing
+
+* **Description**:
+    | removeEdgeByYmax removes edge by given yy
+
+
+
+Inkplate::updatexbyslopeinv();
+########################
+
+* **Method prototype (as seen in ShapesPolygon.h)**:
+
+.. code-block:: c
+
+    void updatexbyslopeinv(edgeTableTuple *tup);
+
+* **Arguments and return value**:
+    | edgeTableTuple *tup - pointer to edgeTableTuple to work on.
+    | Returns nothing
+
+* **Description**:
+    | updatexbyslopeinv updates all xofymin by adding slopeinverse
+
+
+
+Inkplate::scanlineFill();
+########################
+
+* **Method prototype (as seen in ShapesPolygon.h)**:
+
+.. code-block:: c
+
+    void scanlineFill(uint8_t c);
+
+* **Arguments and return value**:
+    | uint8_t c - color.
+    | Returns nothing
+
+* **Description**:
+    | scanlineFill dravs horizontal line based on edge table
+
 
 
 Inkplate::drawCircle();
@@ -1748,6 +2304,26 @@ MCP Functions
     Inkplate display(INKPLATE_1BIT);//or INKPLATE_3BIT
     display.begin();
 
+
+Inkplate::mcpBegin();
+#######################
+
+* **Method prototype (as seen in Mcp.h)**:
+
+.. code-block:: c 
+
+    bool mcpBegin(uint8_t _addr, uint8_t *_r);
+
+* **Arguments and return value**:
+    | uint8_t _pin - mcp i2c address.
+    | uint8_t *_mode - pointer to array to be writen in registers.
+    | Returns true if successful, false otherwise.
+
+* **Description**:
+    | mcpBegin function starts mcp expander and sets registers values.
+
+
+
 Inkplate::pinModeMCP();
 #######################
 
@@ -1769,6 +2345,51 @@ Inkplate::pinModeMCP();
     .. code-block:: c
 
         display.pinModeMCP(LED_PIN, OUTPUT);
+
+
+
+Inkplate::pinModeInternal();
+#######################
+
+* **Method prototype (as seen in Mcp.h)**:
+
+.. code-block:: c 
+
+    void pinModeInternal(uint8_t _addr, uint8_t *_r, uint8_t _pin, uint8_t _mode);
+
+* **Arguments and return value**:
+    | uint8_t _addr - mcp i2c address.
+    | uint8_t *_r - pointer to array that holds mcp registers.
+    | uint8_t _pin - pin to set mode.
+    | uint8_t _mode - mode for pi to be set (INPUT=0x01, OUTPUT=0x02, INPUT_PULLUP=0x05).
+    | Returns nothing.
+
+* **Description**:
+    | pinModeInternal sets mcp internal pin mode
+
+
+
+Inkplate::digitalWriteInternal();
+#######################
+
+* **Method prototype (as seen in Mcp.h)**:
+
+.. code-block:: c 
+
+    void digitalWriteInternal(uint8_t _addr, uint8_t *_r, uint8_t _pin, uint8_t _state);
+
+* **Arguments and return value**:
+    | uint8_t _addr - mcp i2c address.
+    | uint8_t *_r - pointer to array that holds mcp registers.
+    | uint8_t _pin - pin to set mode.
+    | uint8_t _state -  output pin state (0 or 1).
+    | Returns nothing.
+
+* **Description**:
+    | digitalWriteInternal sets internal output pin state (1 or 0)
+
+
+
 
 Inkplate::digitalWriteMCP();
 ############################
@@ -1792,6 +2413,58 @@ Inkplate::digitalWriteMCP();
 
         display.digitalWriteMCP(LED_PIN, HIGH);
 
+
+
+Inkplate::digitalReadInternal();
+#######################
+
+* **Method prototype (as seen in Mcp.h)**:
+
+.. code-block:: c 
+
+    void digitalReadInternal(uint8_t _addr, uint8_t *_r, uint8_t _pin);
+
+* **Arguments and return value**:
+    | uint8_t _addr - mcp i2c address.
+    | uint8_t *_r - pointer to array that holds mcp registers.
+    | uint8_t _pin - pin to set mode.
+    | Returns nothing.
+
+* **Description**:
+    | digitalReadInternal reads mcp internal pin state
+
+
+
+
+Inkplate::readMCPRegisters();
+############################
+
+* **Method prototype (as seen in Mcp.h)**:
+
+.. code-block:: c 
+
+    void readMCPRegisters(uint8_t _addr, uint8_t *k);
+
+or
+
+.. code-block:: c 
+
+    void readMCPRegisters(uint8_t _addr, uint8_t _regName, uint8_t *k, uint8_t _n);
+
+* **Arguments and return value**:
+    | uint8_t _addr - mcp i2c address.
+    | uint8_t *_k - pointer to array to be writen in registers.
+    | uint8_t _regName - name of register where read will start.
+    | uint8_t _n - name of register where read will start.
+    | Returns nothing.
+
+* **Description**:
+    | readMCPRegisters function uses i2c to read all mcp registers.
+
+
+
+
+
 Inkplate::digitalReadMCP();
 ###########################
 
@@ -1806,12 +2479,84 @@ Inkplate::digitalReadMCP();
     | Returns HIGH or LOW value (1 or 0).
 
 * **Description**:
-    | Reads pin INPUT state.
+    | readMCPRegisters function uses i2c to read all mcp registers.
 
 * **Example**:
     .. code-block:: c
 
         display.digitalReadMCP(LED_PIN);
+
+
+Inkplate::digitalReadMCP();
+###########################
+
+* **Method prototype (as seen in Mcp.h)**:
+
+.. code-block:: c 
+
+    uint8_t digitalReadMCP(uint8_t _pin);
+
+* **Arguments and return value**:
+    | uint8_t _pin - pin number.
+    | Returns HIGH or LOW value (1 or 0).
+
+* **Description**:
+    | readMCPRegisters function uses i2c to read all mcp registers.
+
+* **Example**:
+    .. code-block:: c
+
+        display.digitalReadMCP(LED_PIN);
+
+
+
+Inkplate::updateRegister();
+###########################
+
+* **Method prototype (as seen in Mcp.h)**:
+
+.. code-block:: c 
+
+    void updateRegister(uint8_t _addr, uint8_t _regName, uint8_t _d);
+
+or
+
+.. code-block:: c 
+
+    void updateRegister(uint8_t _addr, uint8_t _regName, uint8_t *k, uint8_t _n);
+
+* **Arguments and return value**:
+    | uint8_t _addr - mcp i2c address.
+    | uint8_t _regName - name of register where update will start.
+    | uint8_t _d - data to be uploaded.
+    | uint8_t *k - pointer to array that holds new data.
+    | uint8_t n - number of bites/registers to write to.
+    | Returns nothing.
+
+* **Description**:
+    | updateRegister function uses i2c to update selected mcp register.
+
+
+
+Inkplate::updateAllRegister();
+###########################
+
+* **Method prototype (as seen in Mcp.h)**:
+
+.. code-block:: c 
+
+    void updateAllRegister(uint8_t _addr, uint8_t *k);
+
+* **Arguments and return value**:
+    | uint8_t _addr - mcp i2c address.
+    | uint8_t *k - pointer to array that holds new data.
+    | Returns nothing.
+
+* **Description**:
+    | updateRegister function uses i2c to update selected mcp register.
+
+
+
 
 Inkplate::setIntOutput();
 ##########################
@@ -1837,6 +2582,31 @@ Inkplate::setIntOutput();
 
         display.setIntOutput(1, false, false, HIGH);// 1 means portB, 0 portA
 
+
+
+Inkplate::setIntOutputInternal();
+##########################
+
+* **Method prototype (as seen in Mcp.h)**:
+
+.. code-block:: c 
+
+    void setIntOutputInternal(uint8_t _addr, uint8_t *_r, uint8_t intPort, uint8_t mirroring, uint8_t openDrain, uint8_t polarity);
+
+* **Arguments and return value**:
+    | uint8_t _addr - mcp i2c address.
+    | uint8_t *_r - pointer to array that holds mcp registers.
+    | uint8_t intPort - portA or portB.
+    | uint8_t mirroring - set 1 to make ports mirror each other so that any interrupt will.
+    | uint8_t openDrain - set 1 to set interupt port as open drain, this will override.
+    | uint8_t polarity - sets port interrupt polarity, 1 active high, 0 active low.
+    | Returns nothing.
+
+* **Description**:
+    | setIntOutputInternal sets mcp interrupt port state
+
+
+
 Inkplate::setIntPin();
 #######################
 
@@ -1859,6 +2629,28 @@ Inkplate::setIntPin();
 
         display.setIntPin(touchPadPin, RISING);
 
+
+
+Inkplate::setIntPinInternal();
+#######################
+
+* **Method prototype (as seen in Mcp.h)**:
+
+.. code-block:: c 
+
+    void setIntPinInternal(uint8_t _addr, uint8_t *_r, uint8_t _pin, uint8_t _mode);
+
+* **Arguments and return value**:
+    | uint8_t _pin - pin number.
+    | uint8_t mode - interurpt mode (CHANGE, FALLING, RISING)
+    | uint8_t _addr - mcp i2c address
+    | uint8_t *_r - pointer to array that holds mcp registers
+    | Returns nothing.
+
+* **Description**:
+    | setIntPinInternal function sets mcp interupt internal mode
+
+
 Inkplate::removeIntPin();
 ##########################
 
@@ -1879,6 +2671,28 @@ Inkplate::removeIntPin();
     .. code-block:: c
 
         display.removeIntPin(touchPadPin);
+
+
+
+Inkplate::removeIntPinInternal();
+##########################
+
+* **Method prototype (as seen in Mcp.h)**:
+
+.. code-block:: c 
+
+    void removeIntPinInternal(uint8_t _addr, uint8_t *_r, uint8_t _pin);
+
+* **Arguments and return value**:
+    | uint8_t _addr - mcp i2c address.
+    | uint8_t *_r - pointer to array that holds mcp registers.
+    | uint8_t _pin - pin number.
+    | Returns nothing.
+
+* **Description**:
+    | Removes interrupt from pin
+
+
 
 Inkplate::getINT();
 #######################
@@ -1926,6 +2740,29 @@ Inkplate::getINTstate();
         display.getINTstate();
 
 
+
+
+Inkplate::getINTstateInternal();
+#########################
+
+* **Method prototype (as seen in Mcp.h)**:
+
+.. code-block:: c 
+
+    uint16_t getINTstateInternal(uint8_t _addr, uint8_t *_r);
+
+* **Arguments and return value**:
+    | uint8_t _addr - mcp i2c address.
+    | uint8_t *_r - pointer to array that holds mcp registers.
+    | Returns interupt registers state at the time interrupt occured.
+
+* **Description**:
+    | Returns interrupt registers state for portA and portB. 
+    | Every bit represents interrupt pin, MSB is  PORTB PIN7, LSB is PORTA PIN1.
+
+
+
+
 Inkplate::setPorts();
 #######################
 
@@ -1948,6 +2785,27 @@ Inkplate::setPorts();
 
         uint16_t data = 0xFFFF;//to make all bits ones
         display.setPorts(data);
+
+
+
+Inkplate::setPortsInternal();
+#######################
+
+* **Method prototype (as seen in Mcp.h)**:
+
+.. code-block:: c 
+
+    void setPorts(uint8_t _addr, uint8_t *_r, uint16_t _d);
+
+* **Arguments and return value**:
+    | uint8_t _addr - mcp i2c address.
+    | uint8_t *_r - pointer to array that holds mcp registers.
+    | uint16_t _d - value to be writen to port A and port B registers.
+    | Returns nothing.
+
+* **Description**:
+    | setPortsInternal sets internal state of PORTAB registers
+
 
 Inkplate::getPorts();
 #######################
@@ -2113,4 +2971,855 @@ Inkplate::downloadFile();
         char url = "https//:www.somepic.com/pic.jpg"
         int32_t len = 54373;
         jpeg file = display.downloadFile(url, len);
+
+
+Real-Time clock Functions
+------------------------
+
+Inkplate::rtcSetTime();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    void rtcSetTime(uint8_t rtcHour, uint8_t rtcMinute, uint8_t rtcSecond);
+
+* **Arguments and return value**:
+    | uint8_t **rtcHour** - Set the rtcHour.
+    | uint8_t **rtcMinute** - Set the minutes.
+    | uint8_t **rtcSeconds** - Set the seconds.
+    | No return.
+
+* **Description**:
+    | Method to set time.
+
+
+
+Inkplate::rtcSetDate();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    void rtcSetDate(uint8_t rtcWeekday, uint8_t rtcDay, uint8_t rtcMonth, uint16_t yr);
+
+* **Arguments and return value**:
+    | uint8_t **rtcWeekday** - Set the day of the week.
+    | uint8_t **rtcDay** - Set the day.
+    | uint8_t **rtcMonth** - Set the month.
+    | uint8_t **yr** - Set the year.
+    | No return.
+
+* **Description**:
+    | Method to set date.
+
+
+
+Inkplate::rtcSetEpoch();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    void rtcSetEpoch(uint32_t _epoch);
+
+* **Arguments and return value**:
+    | uint32_t **_epoch** - RTC epoch.
+    | No return.
+
+* **Description**:
+    | Method to set time and date using epoch
+
+
+
+Inkplate::rtcGetEpoch();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    uint32_t rtcGetEpoch();
+
+* **Arguments and return value**:
+    | No arguments.
+    | Returns the current epoch
+
+* **Description**:
+    | Method to get time and date using epoch
+
+
+
+Inkplate::rtcGetRtcData();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    void rtcGetRtcData();
+
+* **Arguments and return value**:
+    | No arguments.
+    | No return.
+
+* **Description**:
+    | Reads time and date from the RTC.    
+
+
+Inkplate::rtcGetSecond();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    uint8_t rtcGetSecond();
+
+* **Arguments and return value**:
+    | No arguments.
+    | Returns the current seconds.
+
+* **Description**:
+    | Reads seconds from the RTC.    
+
+
+
+Inkplate::rtcGetMinute();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    uint8_t rtcGetMinute();
+
+* **Arguments and return value**:
+    | No arguments.
+    | Returns the current minutes.
+
+* **Description**:
+    | Reads minutes from the RTC.    
+
+
+
+Inkplate::rtcGetHour();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    uint8_t rtcGetHour();
+
+* **Arguments and return value**:
+    | No arguments.
+    | Returns the current hours.
+
+* **Description**:
+    | Reads hours from the RTC.    
+
+
+
+Inkplate::rtcGetDay();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    uint8_t rtcGetDay();
+
+* **Arguments and return value**:
+    | No arguments.
+    | Returns the current day.
+
+* **Description**:
+    | Reads day from the RTC.    
+
+
+
+Inkplate::rtcGetWeekday();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    uint8_t rtcGetWeekday();
+
+* **Arguments and return value**:
+    | No arguments.
+    | Returns the current weekday.
+
+* **Description**:
+    | Reads weekday from the RTC.    
+
+
+
+
+Inkplate::rtcGetMonth();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    uint8_t rtcGetMonth();
+
+* **Arguments and return value**:
+    | No arguments.
+    | Returns the current month.
+
+* **Description**:
+    | Reads month from the RTC.    
+
+
+
+
+Inkplate::rtcGetYear();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    uint8_t rtcGetYear();
+
+* **Arguments and return value**:
+    | No arguments.
+    | Returns the current year.
+
+* **Description**:
+    | Reads year from the RTC.    
+
+
+
+Inkplate::rtcEnableAlarm();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    void rtcEnableAlarm();
+
+* **Arguments and return value**:
+    | No arguments.
+    | No return.
+
+* **Description**:
+    | Enables the alarm of the RTC.    
+
+
+
+Inkplate::rtcSetAlarm();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    void rtcSetAlarm(uint8_t rtcAlarmSecond, uint8_t rtcAlarmMinute, uint8_t rtcAlarmHour, uint8_t rtcAlarmDay, uint8_t rtcAlarmWeekday);
+
+* **Arguments and return value**:
+    | uint8_t **rtcAlarmSecond** - Set the alarm seconds
+    | uint8_t **rtcAlarmMinute** - Set the alarm minutes
+    | uint8_t **rtcAlarmHour** - Set the alarm hours
+    | uint8_t **rtcAlarmDay** - Set the alarm day
+    | uint8_t **rtcAlarmWeekday** - Set the alarm weekday
+    | No return.
+
+* **Description**:
+    | Sets the alarm to all the params.    
+
+
+
+Inkplate::rtcSetAlarmEpoch();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    void rtcSetAlarmEpoch(uint32_t _epoch, uint8_t _match);
+
+* **Arguments and return value**:
+    | uint32_t **_epoch** - RTC Epoch alarm
+    | uint8_t **_match** - RTC Match
+    | No return.
+
+* **Description**:
+    | Set alarm using epoch.
+
+
+
+
+Inkplate::rtcReadAlarm();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    void rtcReadAlarm();
+
+* **Arguments and return value**:
+    | No arguments
+    | No return.
+
+* **Description**:
+    |  Reads the alarm of the RTC.
+
+
+
+Inkplate::rtcGetAlarmSecond();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    uint8_t rtcGetAlarmSecond();
+
+* **Arguments and return value**:
+    | No arguments.
+    | Returns current alarm seconds.
+
+* **Description**:
+    | Get seconds alarm is set to.
+
+
+
+Inkplate::rtcGetAlarmMinute();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    uint8_t rtcGetAlarmMinute();
+
+* **Arguments and return value**:
+    | No arguments.
+    | Returns current alarm minutes.
+
+* **Description**:
+    | Get minutes alarm is set to.
+
+
+Inkplate::rtcGetAlarmHour();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    uint8_t rtcGetAlarmHour();
+
+* **Arguments and return value**:
+    | No arguments.
+    | Returns current alarm hours.
+
+* **Description**:
+    | Get hours alarm is set to.
+
+
+
+Inkplate::rtcGetAlarmDay();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    uint8_t rtcGetAlarmDay();
+
+* **Arguments and return value**:
+    | No arguments.
+    | Returns current alarm day.
+
+* **Description**:
+    | Get day alarm is set to.
+
+
+
+
+Inkplate::rtcGetAlarmWeekday();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    uint8_t rtcGetAlarmWeekday();
+
+* **Arguments and return value**:
+    | No arguments.
+    | Returns current alarm weekday.
+
+* **Description**:
+    | Get weekday alarm is set to.
+
+
+
+
+Inkplate::rtcTimerSet();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    void rtcTimerSet(rtcCountdownSrcClock source_clock, uint8_t value, bool int_enable, bool int_pulse)
+;
+
+* **Arguments and return value**:
+    | rtcCountdownSrcClock **source_clock** - timer clock frequency
+    | bool **int_enable** - timer interrupt enable, 0 means no interrupt generated from timer, 1 means interrupt is generated from timer
+    | bool **int_pulse** - timer interrupt mode, 0 means interrupt follows timer flag, 1 means interrupt generates a pulse
+    | No return.
+
+* **Description**:
+    | Sets the timer countdown.
+
+
+
+Inkplate::rtcCheckTimerFlag();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    bool rtcCheckTimerFlag();
+
+* **Arguments and return value**:
+    | No arguments.
+    | Returns true if the timer flag is on.
+
+* **Description**:
+    |  Returns timer flag .
+
+
+
+
+Inkplate::rtcCheckAlarmFlag();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    bool rtcCheckAlarmFlag();
+
+* **Arguments and return value**:
+    | No arguments.
+    | Returns true if the alarm flag is on.
+
+* **Description**:
+    |  Returns is the alarm flag on.
+
+
+
+
+Inkplate::rtcClearAlarmFlag();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    void rtcClearAlarmFlag();
+
+* **Arguments and return value**:
+    | No arguments.
+    | No return.
+
+* **Description**:
+    |  Clears alarm flag.
+
+
+
+Inkplate::rtcClearTimerFlag();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    void rtcClearTimerFlag();
+
+* **Arguments and return value**:
+    | No arguments.
+    | No return.
+
+* **Description**:
+    |  Clears timer flag.
+
+
+
+Inkplate::rtcDisableTimer();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    void rtcDisableTimer();
+
+* **Arguments and return value**:
+    | No arguments.
+    | No return.
+
+* **Description**:
+    |  Disables the timer.
+
+
+
+Inkplate::rtcIsSet();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    bool rtcIsSet();
+
+* **Arguments and return value**:
+    | No arguments.
+    | Returns true if RTC is set, false if it's not
+
+* **Description**:
+    | Check if the RTC is already set.
+
+
+
+
+Inkplate::rtcReset();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    void rtcReset();
+
+* **Arguments and return value**:
+    | No arguments.
+    | No return.
+
+* **Description**:
+    | Resets the timer.
+
+
+
+Inkplate::rtcDecToBcd();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    uint8_t rtcDecToBcd(uint8_t val);
+
+* **Arguments and return value**:
+    | uint8_t **val** - number which needs to be converted from decimal to Bcd value
+    | Returns converted number.
+
+* **Description**:
+    | Converts decimal to BCD.
+
+
+
+Inkplate::rtcBcdToDec();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    uint8_t rtcrtcBcdToDec(uint8_t val);
+
+* **Arguments and return value**:
+    | uint8_t **val** - number which needs to be converted from Vcd to decimal value
+    | Returns converted number
+
+* **Description**:
+    | Converts BCD to decimal
+
+
+
+
+Touchscreen (Inkplate 6 plus) Functions
+------------------------
+
+
+Inkplate::touchInArea();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    bool touchInArea(int16_t x1, int16_t y1, int16_t w, int16_t h);
+
+* **Arguments and return value**:
+    | int16_t **x1** - rectangle top left corner x plane.
+    | int16_t **y1** - rectangle top left corner y plane.
+    | int16_t **w** - rectangle width.
+    | int16_t **h** - rectangle height.
+    | Returns true if successful, false if failed.
+
+* **Description**:
+    | touchInArea checks if touch occured in given rectangle area
+
+
+
+Inkplate::tsWriteRegs();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    uint8_t tsWriteRegs(uint8_t _addr, const uint8_t *_buff, uint8_t _size);
+
+* **Arguments and return value**:
+    | int16_t **_addr** - touchscreen register address.
+    | int16_t* **_buff** - buffer to write into touchscreen registers.
+    | int16_t **_size** -  number of bytes to write.
+    | Returns 1 on successful write, 0 on fail.
+
+* **Description**:
+    | tsWriteRegs writes data to touchscreen registers
+
+
+
+Inkplate::tsReadRegs();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    void tsWriteRegs(uint8_t _addr, const uint8_t *_buff, uint8_t _size);
+
+* **Arguments and return value**:
+    | int16_t **_addr** - touchscreen register address.
+    | int16_t* **_buff** - buffer to read touchscreen register content from.
+    | int16_t **_size** -  number of bytes to write.
+    | No return.
+
+* **Description**:
+    | tsReadRegs returns touchscreen registers content
+
+
+
+Inkplate::tsHardwareReset();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    void tsHardwareReset();
+
+* **Arguments and return value**:
+    | No arguments.
+    | No return.
+
+* **Description**:
+    | tsHardwareReset resets ts hardware
+
+
+
+
+Inkplate::tsSoftwareReset();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    bool tsSoftwareReset();
+
+* **Arguments and return value**:
+    | No arguments.
+    | Returns true if successful, false if failed.
+
+* **Description**:
+    | tsSoftwareReset resets toucscreen software
+
+
+
+Inkplate::tsInit();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    bool tsInit(uint8_t _pwrState);
+
+* **Arguments and return value**:
+    | uint8_t **_pwrState** - power state for touchScreen.
+    | Returns true if successful, false if failed.
+
+* **Description**:
+    | tsInit starts touchscreen and sets ts registers
+
+
+
+
+Inkplate::tsShutdown();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    void tsShutdown();
+
+* **Arguments and return value**:
+    | No arguments.
+    | No return.
+
+* **Description**:
+    | tsShutdown turns off touchscreen power.
+
+
+
+Inkplate::tsGetRawData();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    void tsGetRawData(uint8_t *b);
+
+* **Arguments and return value**:
+    | uint8_t* **b** - pointer to store register content
+    | No return.
+
+* **Description**:
+    | tsGetRawData gets touchscreen register content.
+
+
+
+Inkplate::tsGetXY();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    void tsGetXY(uint8_t *_d, uint16_t *x, uint16_t *y);
+
+* **Arguments and return value**:
+    | uint8_t* **b** - pointer to register content of touchscreen register (data must be adapted, cant use raw data)
+    | uint16_t* **x** - pointer to store x plane data
+    | uint16_t* **y** - pointer to store y plane data
+    | No return.
+
+* **Description**:
+    | sGetXY gets x and y plane values.
+
+
+
+Inkplate::tsGetData();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    uint8_t tsGetData(uint16_t *xPos, uint16_t *yPos);
+
+* **Arguments and return value**:
+    | uint16_t* **xPos** - pointer to store x position of finger
+    | uint16_t* **yPos** - pointer to store y position of finger
+    | Returns number of fingers currently on screen.
+
+* **Description**:
+    | tsGetData checks x, y position and returns number of fingers on screen.
+
+
+
+Inkplate::tsGetResolution();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    void tsGetResolution(uint16_t *xRes, uint16_t *yRes);
+
+* **Arguments and return value**:
+    | uint16_t* **xRes** - pointer to store x position of finger
+    | uint16_t* **yRes** - pointer to store y position of finger
+    | Returns number of fingers currently on screen.
+
+* **Description**:
+    | tsGetResolution gets touchscreen resolution for x and y.
+
+
+
+Inkplate::tsSetPowerState();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    void tsSetPowerState(uint8_t _s);
+
+* **Arguments and return value**:
+    | uint8_t* **_s** - pointer to store x position of finger
+    | No return.
+
+* **Description**:
+    | tsSetPowerState sets power state of touchscreen.
+
+
+
+Inkplate::tsGetPowerState();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    uint8_t tsGetPowerState();
+
+* **Arguments and return value**:
+    | uint8_t* **_s** - pointer to store x position of finger
+    | Returns  touchscreen power state, 1 if powered, 0 if not.
+
+* **Description**:
+    | tsGetPowerState checks if touchscreen is powered up.
+
+
+
+
+Inkplate::tsAvailable();
+#########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c 
+
+    uint8_t tsAvailable();
+
+* **Arguments and return value**:
+    | uint8_t* **_s** - pointer to store x position of finger
+    | Returns  tsflag, 1 for available touchscreen, 0 if not.
+
+* **Description**:
+    | tsAvailable checks for touch screen functionality.
+
 
