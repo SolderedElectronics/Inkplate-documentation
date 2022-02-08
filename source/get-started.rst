@@ -48,12 +48,12 @@ In order to get started with Inkplate using MicroPython, follow the steps below:
     to flash supplied firmware.
     If you don't have esptool.py installed, install it from here: `esptool <https://github.com/espressif/esptool>`_ at minimum use version 1.15..
     
-#. Copy library files to your board, use inkplate6.py, inkplate10.py or inkplate6_PLUS.py for respective versions, something like this:
+#. Copy library files to your board, use inkplate6.py or inkplate10.py for respective versions, something like this:
 
     .. code-block:: python
     
         //Linux/Mac
-        python3 pyboard.py --device /dev/ttyUSB0 -f cp mcp23017.py sdcard.py inkplate6.py image.py gfx.py gfx_standard_font_01.py shapes.py :
+        python3 pyboard.py --device /dev/ttyUSB0 -f cp mcp23017.py sdcard.py inkplate6.py image.py gfx.py gfx_standard_font_01.py :
 
         //Windows
         //This one might need to be started twice
@@ -73,7 +73,7 @@ In order to get started with Inkplate using MicroPython, follow the steps below:
         python pyboard.py --device COM5 "Examples/Inkplate6/basicBW.py"
 
     Again replacing /dev/ttyUSB0 or COM5 with the correct port.
-    You can run our other examples, showing how to use the rest of inkplate functionality.
+    You can run our othe examples, showing how to use the rest of inkplate functionality.
     In the same manner as running our examples you can run your own code and even set it to run on boot or similiar by following other MicroPython tutorials.
     
 ESP-IDF

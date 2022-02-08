@@ -9,16 +9,16 @@ Inkplate MicroPython
     .. code-block:: python
 
         display.__init__(
-        self,
-        width,
-        height,
-        pixel,
-        hline=None,
-        vline=None,
-        fill_rect=None,
-        text=None,
-        font=None,
-    )
+            self,
+            width,
+            height,
+            pixel,
+            hline=None,
+            vline=None,
+            fill_rect=None,
+            text=None,
+            font=None,
+        )
 
 * **Arguments and return value**:
     | **self** - This object
