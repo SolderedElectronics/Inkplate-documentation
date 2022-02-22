@@ -2,10 +2,9 @@ Inkplate MicroPython
 ====================
 
 .__init__() method
-###############
+##################
 
 * **Method prototype (as seen in gfx.py)**:
-
     .. code-block:: python
 
         display.__init__(
@@ -44,7 +43,6 @@ Inkplate MicroPython
     Returns nothing.
 
 * **Description**:
-
     Method used to initialize display.
 
 
@@ -53,10 +51,9 @@ Inkplate MicroPython
 ###############
 
 * **Method prototype (as seen in gfx.py)**:
-
     .. code-block:: python
 
-        display.pixel(self, x0, y0, *args, **kwargs)
+        display.pixel(x0, y0, *args, **kwargs)
 
 * **Arguments and return value**:
     | **self** - This object
@@ -74,13 +71,13 @@ Inkplate MicroPython
 
 
 ._slow_hline() method
-###############
+#####################
 
 * **Method prototype (as seen in gfx.py)**:
 
     .. code-block:: python
 
-        display._slow_hline(self, x0, y0, width, *args, **kwargs)
+        display._slow_hline(x0, y0, width, *args, **kwargs)
 
 * **Arguments and return value**:
     | **self** - This object
@@ -101,13 +98,13 @@ Inkplate MicroPython
 
 
 ._slow_vline() method
-###############
+#####################
 
 * **Method prototype (as seen in gfx.py)**:
 
     .. code-block:: python
 
-        display._slow_vline(self, x0, y0, height, *args, **kwargs)
+        display._slow_vline(x0, y0, height, *args, **kwargs)
 
 * **Arguments and return value**:
     | **self** - This object
@@ -135,7 +132,7 @@ Inkplate MicroPython
 
     .. code-block:: python
 
-        display._rect(self, x0, y0, width, height, *args, **kwargs)
+        display._rect(x0, y0, width, height, *args, **kwargs)
 
 * **Arguments and return value**:
     | **self** - This object
@@ -157,13 +154,13 @@ Inkplate MicroPython
 
 
 ._fill_rect() method
-###############
+####################
 
 * **Method prototype (as seen in gfx.py)**:
 
     .. code-block:: python
 
-        display._fill_rect(self, x0, y0, width, height, *args, **kwargs)
+        display._fill_rect(x0, y0, width, height, *args, **kwargs)
 
 * **Arguments and return value**:
     | **self** - This object
@@ -191,7 +188,7 @@ Inkplate MicroPython
 
     .. code-block:: python
 
-        display.line(self, x0, y0, x1, y1, *args, **kwargs)
+        display.line(x0, y0, x1, y1, *args, **kwargs)
 
 * **Arguments and return value**:
     | **self** - This object
@@ -218,7 +215,7 @@ Inkplate MicroPython
 
     .. code-block:: python
 
-        display.line(self, x0, y0, x1, y1, *args, **kwargs)
+        display.line(x0, y0, x1, y1, *args, **kwargs)
 
 * **Arguments and return value**:
     | **self** - This object
@@ -239,13 +236,13 @@ Inkplate MicroPython
 
 
 .circle() method
-###############
+################
 
 * **Method prototype (as seen in gfx.py)**:
 
     .. code-block:: python
 
-        display.circle(self, x0, y0, radius, *args, **kwargs)
+        display.circle(x0, y0, radius, *args, **kwargs)
 
 * **Arguments and return value**:
     | **self** - This object
@@ -263,41 +260,14 @@ Inkplate MicroPython
         center at x0, y0 and the specified radius.
 
 
-
-.fill_circle() method
-###############
-
-* **Method prototype (as seen in gfx.py)**:
-
-    .. code-block:: python
-
-        display.fill_circle(self, x0, y0, radius, *args, **kwargs)
-
-* **Arguments and return value**:
-    | **self** - This object
-    | **x0** - x coordinate of center.
-    | **y0** - y coordinate of center.
-    | **circle** - Radius of circle.
-    | ***args** - Additional arguments.
-    | ****kwargs** - Keywords.
-
-    Returns nothing.
-
-* **Description**:
-
-    Filled circle drawing function.  Will draw a filled circule with
-        center at x0, y0 and the specified radius.
-
-
-
 .triangle() method
-###############
+##################
 
 * **Method prototype (as seen in gfx.py)**:
 
     .. code-block:: python
 
-        display.triangle(self, x0, y0, x1, y1, x2, y2, *args, **kwargs)
+        display.triangle(x0, y0, x1, y1, x2, y2, *args, **kwargs)
 
 * **Arguments and return value**:
     | **self** - This object
@@ -320,13 +290,13 @@ Inkplate MicroPython
 
 
 .fill_triangle() method
-###############
+#######################
 
 * **Method prototype (as seen in gfx.py)**:
 
     .. code-block:: python
 
-        display.fill_triangle(self, x0, y0, x1, y1, x2, y2, *args, **kwargs)
+        display.fill_triangle(x0, y0, x1, y1, x2, y2, *args, **kwargs)
 
 * **Arguments and return value**:
     | **self** - This object
@@ -349,13 +319,13 @@ Inkplate MicroPython
 
 
 .round_rect() method
-###############
+####################
 
 * **Method prototype (as seen in gfx.py)**:
 
     .. code-block:: python
 
-        display.round_rect(self, x0, y0, width, height, radius, *args, **kwargs)
+        display.round_rect(x0, y0, width, height, radius, *args, **kwargs)
 
 * **Arguments and return value**:
     | **self** - This object
@@ -377,43 +347,14 @@ Inkplate MicroPython
 
 
 
-
-.fill_round_rect() method
-###############
-
-* **Method prototype (as seen in gfx.py)**:
-
-    .. code-block:: python
-
-        display.fill_round_rect(self, x0, y0, width, height, radius, *args, **kwargs)
-
-* **Arguments and return value**:
-    | **self** - This object
-    | **x0** - x coordinate of first point.
-    | **y0** - y coordinate of first point.
-    | **width** - width of rectangle.
-    | **height** - height of rectangle.
-    | **radius** - radius of rounded corners.
-    | ***args** - Additional arguments.
-    | ****kwargs** - Keywords.
-
-    Returns nothing.
-
-* **Description**:
-
-   Filled circle drawing function.  Will draw a filled circule with
-        center at x0, y0 and the specified radius.
-
-
-
 ._place_char() method
-###############
+#####################
 
 * **Method prototype (as seen in gfx.py)**:
 
     .. code-block:: python
 
-        display._place_char(self, x0, y0, char, size, *args, **kwargs)
+        display._place_char(x0, y0, char, size, *args, **kwargs)
 
 * **Arguments and return value**:
     | **self** - This object
@@ -433,13 +374,13 @@ Inkplate MicroPython
 
 
 ._very_slow_text method
-###############
+#######################
 
 * **Method prototype (as seen in gfx.py)**:
 
     .. code-block:: python
 
-        display._place_char(self, x0, y0, string, size, *args, **kwargs)
+        display._place_char(x0, y0, string, size, *args, **kwargs)
 
 * **Arguments and return value**:
     | **self** - This object
@@ -457,8 +398,7 @@ Inkplate MicroPython
    A function to place text on the display.(temporary)
         to use special characters put "__" on either side of the desired characters.
         letter format:
-        {'character_here' : bytearray(b',WIDTH,HEIGHT,right-most-data,
-                                            more-bytes-here,left-most-data') ,}
+        {'character_here' : bytearray(b',WIDTH,HEIGHT,right-most-data, more-bytes-here,left-most-data') ,}
         (replace the "," with backslashes!!)
         each byte:
                         | lower most bit(lowest on display)
@@ -470,13 +410,13 @@ Inkplate MicroPython
 
 
 .set_text_background method
-###############
+###########################
 
 * **Method prototype (as seen in gfx.py)**:
 
     .. code-block:: python
 
-        display._place_char(self, *args, **kwargs)
+        display._place_char(*args, **kwargs)
 
 * **Arguments and return value**:
     | **self** - This object
@@ -513,7 +453,7 @@ Inkplate MicroPython
 
 .. code-block:: python
 
-    .drawPixel(x, y, color)
+    .init(x, y, color)
 
 * **Arguments and return value**:
     | No arguments.
@@ -683,7 +623,7 @@ Inkplate MicroPython
 
 
 .read_temperature()
-################
+###################
 
 * **Method prototype (as seen in Inkplate.py)**:
 
@@ -702,7 +642,7 @@ Inkplate MicroPython
 
 
 .readTemperature()
-################
+##################
 
 * **Method prototype (as seen in Inkplate.py)**:
 
@@ -717,48 +657,6 @@ Inkplate MicroPython
 
 * **Description**:
     | Read panel temperature. It varies +- 2 degree
-
-
-
-._tps65186_write()
-################
-
-* **Method prototype (as seen in Inkplate.py)**:
-
-.. code-block:: python
-
-    ._tps65186_write(cls, reg, v)
-
-* **Arguments and return value**:
-    | **cls** - Instance
-    | **reg** - Address of register to write
-    | **v** - Data to write
-
-    |Returns nothing.
-
-* **Description**:
-    | _tps65186_write writes an 8-bit value to a register
-
-
-
-._tps65186_read()
-################
-
-* **Method prototype (as seen in Inkplate.py)**:
-
-.. code-block:: python
-
-    ._tps65186_write(cls, reg)
-
-* **Arguments and return value**:
-    | **cls** - Instance
-    | **reg** - Address of register to read
-
-    |Returns nothing.
-
-* **Description**:
-    | _tps65186_read reads an 8-bit value from a register
-
 
 
 .power_on()
@@ -1099,7 +997,7 @@ Inkplate MicroPython
 
 
 ._rotateCoordinates()
-##############
+#####################
 
 * **Method prototype (as seen in Inkplate.py)**:
 
@@ -1125,7 +1023,7 @@ Inkplate MicroPython
 
 .. code-block:: python
 
-    .writePixel(self, x, y, c)
+    .writePixel(x, y, c)
 
 * **Arguments and return value**:
     | **self** - Instance.
@@ -1141,13 +1039,13 @@ Inkplate MicroPython
 
 
 .writeFillRect()
-##############
+################
 
 * **Method prototype (as seen in Inkplate.py)**:
 
 .. code-block:: python
 
-    .writeFillRect(self, x, y, w, h, c)
+    .writeFillRect(x, y, w, h, c)
 
 * **Arguments and return value**:
     | **self** - Instance.
@@ -1166,13 +1064,13 @@ Inkplate MicroPython
 
 
 .writeFastVLine()
-##############
+#################
 
 * **Method prototype (as seen in Inkplate.py)**:
 
 .. code-block:: python
 
-    .writeFastVLine(self, x, y, h, c)
+    .writeFastVLine(x, y, h, c)
 
 * **Arguments and return value**:
     | **self** - Instance.
@@ -1190,13 +1088,13 @@ Inkplate MicroPython
 
     
 .writeFastHLine()
-##############
+#################
 
 * **Method prototype (as seen in Inkplate.py)**:
 
 .. code-block:: python
 
-    .writeFastHLine(self, x, y, w, c)
+    .writeFastHLine(x, y, w, c)
 
 * **Arguments and return value**:
     | **self** - Instance.
@@ -1219,7 +1117,7 @@ Inkplate MicroPython
 
 .. code-block:: python
 
-    .writeLine(self, x, y, x1, y1, c)
+    .writeLine(x, y, x1, y1, c)
 
 * **Arguments and return value**:
     | **self** - Instance.
@@ -1242,7 +1140,7 @@ Inkplate MicroPython
 
 .. code-block:: python
 
-    .writeLine(self, x, y, x1, y1, c)
+    .writeLine(x, y, x1, y1, c)
 
 * **Arguments and return value**:
     | **self** - Instance.
@@ -1266,7 +1164,7 @@ Inkplate MicroPython
 
 .. code-block:: python
 
-    .setDisplayMode(self, mode)
+    .setDisplayMode(mode)
 
 * **Arguments and return value**:
     | **self** - Instance
@@ -1302,7 +1200,7 @@ Inkplate MicroPython
 .getDisplayMode()
 #################
 
-* **Method prototype (as seen in Inkplate.h)**:
+* **Method prototype**:
 
 .. code-block:: python
 
@@ -1327,7 +1225,7 @@ Inkplate MicroPython
 .clean()
 ########
 
-* **Method prototype (as seen in Inkplate.h)**:
+* **Method prototype:
 
 .. code-block:: python
 
@@ -1765,7 +1663,7 @@ Inkplate MicroPython
 
 .. code-block:: python
 
-    drawBitmap(self, x, y, b, w, h)
+    drawBitmap(x, y, b, w, h)
 
 * **Arguments and return value**:
     | **self** - font dictionary
@@ -1800,7 +1698,7 @@ Inkplate MicroPython
 
 .. code-block:: python
 
-    drawBitmap(self, x, y, path, invert=False)
+    drawBitmap(x, y, path, invert=False)
 
 * **Arguments and return value**:
     | **self** - font dictionary
@@ -1823,19 +1721,20 @@ Inkplate MicroPython
 
 * **Result**:
     | Here is what the code above produces:
+    | Doesn't work on Inkplate 6COLOR
 
     .. image:: images/IMG_4366.jpg
         :width: 600
 
 
 .setTextSize()
-########################
+##############
 
 * **Method prototype**:
 
 .. code-block:: python
 
-    setTextSize(self, s)
+    setTextSize(s)
 
 * **Arguments and return value**:
     | **self** - Instance
@@ -1852,7 +1751,7 @@ Inkplate MicroPython
         display.setTextSize(4)
 
 .setFont()
-####################
+##########
 
 * **Method prototype**:
 
@@ -1885,13 +1784,13 @@ Inkplate MicroPython
 
 
 .printText()
-######################
+############
 
 * **Method prototype**:
 
 .. code-block:: python
 
-    print(self, x, y, s)
+    print(x, y, s)
 
 * **Arguments and return value**:
     | **self** - font dictionary
@@ -1916,7 +1815,7 @@ Inkplate MicroPython
         :width: 600
 
 .width()
-##################
+########
 
 * **Method prototype**:
 
@@ -1939,7 +1838,7 @@ Inkplate MicroPython
 
 
 .height()
-###################
+#########
 
 * **Method prototype**:
 
@@ -1962,7 +1861,7 @@ Inkplate MicroPython
 
 
 .getRotation()
-########################
+##############
 
 * **Method prototype**:
 
@@ -1986,36 +1885,14 @@ Inkplate MicroPython
 
 
 
-
-.__mix_me_in()
-########################
-
-* **Method prototype (as seen in shapes.py)**:
-
-.. code-block:: python
-
-    __mix_me_in(cls, target)
-
-* **Arguments and return value**:
-    | **cls** - Instance
-    | **target** - Target class to add functions from this class
-
-    Returns nothing.
-
-* **Description**:
-    | __mix_me_in adds the methods of this class to another class.  Typical usage is to put
-    | something like Shapes.__mix_me_in(MyClass) after the class definition.
-
-
-
 .circle()
-########################
+#########
 
 * **Method prototype (as seen in shapes.py)**:
 
 .. code-block:: python
 
-    circle(self, x0, y0, r, color)
+    circle(x0, y0, r, color)
 
 * **Arguments and return value**:
     | **self** - Instance
@@ -2033,13 +1910,13 @@ Inkplate MicroPython
 
 
 .fill_circle()
-########################
+##############
 
 * **Method prototype (as seen in shapes.py)**:
 
 .. code-block:: python
 
-    fill_circle(self, x0, y0, r, color)
+    fill_circle(x0, y0, r, color)
 
 * **Arguments and return value**:
     | **self** - Instance
@@ -2056,13 +1933,13 @@ Inkplate MicroPython
 
 
 .triangle()
-########################
+###########
 
 * **Method prototype (as seen in shapes.py)**:
 
 .. code-block:: python
 
-    triangle(self, x0, y0, x1, y1, x2, y2, color)
+    triangle(x0, y0, x1, y1, x2, y2, color)
 
 * **Arguments and return value**:
     | **self** - Instance
@@ -2081,42 +1958,14 @@ Inkplate MicroPython
         around the points (x0, y0), (x1, y1), and (x2, y2).
 
 
-
-.fill_triangle()
-########################
-
-* **Method prototype (as seen in shapes.py)**:
-
-.. code-block:: python
-
-    fill_triangle(self, x0, y0, x1, y1, x2, y2, color)
-
-* **Arguments and return value**:
-    | **self** - Instance
-    | **x0** - x coordinate of first point
-    | **y0** - y coordinate of first point
-    | **x1** - x coordinate of second point
-    | **y1** - y coordinate of second point
-    | **x2** - x coordinate of third point
-    | **y2** - y coordinate of third point
-    | **color** - color in 3bit mode
-
-    Returns nothing.
-
-* **Description**:
-    | Filled triangle drawing function.  Will draw a filled triangle around
-        the points (x0, y0), (x1, y1), and (x2, y2).
-
-
-
 .round_rect() method
-###############
+####################
 
-* **Method prototype (as seen in shapes.py)**:
+* **Example**:
 
     .. code-block:: python
 
-        display.round_rect(self, x0, y0, width, height, radius, color)
+        display.round_rect(x0, y0, width, height, radius, color)
 
 * **Arguments and return value**:
     | **self** - This object
@@ -2138,13 +1987,13 @@ Inkplate MicroPython
 
 
 .fill_round_rect() method
-###############
+#########################
 
-* **Method prototype (as seen in shapes.py)**:
+* **Example**:
 
     .. code-block:: python
 
-        display.fill_round_rect(self, x0, y0, width, height, radius, color)
+        display.fill_round_rect(x0, y0, width, height, radius, color)
 
 * **Arguments and return value**:
     | **self** - This object
@@ -2165,36 +2014,14 @@ Inkplate MicroPython
 
 
 
-.__init__() method
-###############
-
-* **Method prototype (as seen in sdcard.py)**:
-
-    .. code-block:: python
-
-        display.__init__(self, spi, cs)
-
-* **Arguments and return value**:
-    | **self** - This object
-    | **spi** - SPI object.
-    | **cs** - chip select pin.
-
-    Returns nothing.
-
-* **Description**:
-
-   |Initializes SD card object
-
-
-
 .init_spi() method
-###############
+##################
 
-* **Method prototype (as seen in sdcard.py)**:
+* **Example**:
 
     .. code-block:: python
 
-        display.init_spi(self, baudrate)
+        display.init_spi(baudrate)
 
 * **Arguments and return value**:
     | **self** - This object
@@ -2204,18 +2031,18 @@ Inkplate MicroPython
 
 * **Description**:
 
-   |Initializes SPI communication.
+   | Initializes SPI communication.
 
 
 
 .init_card() method
-###############
+###################
 
-* **Method prototype (as seen in sdcard.py)**:
+* **Example**:
 
     .. code-block:: python
 
-        display.init_card(self)
+        display.init_card()
 
 * **Arguments and return value**:
     | **self** - This object
@@ -2224,343 +2051,17 @@ Inkplate MicroPython
 
 * **Description**:
 
-   |Initializes SD card.
-
-
-
-
-.init_card_v1() method
-###############
-
-* **Method prototype (as seen in sdcard.py)**:
-
-    .. code-block:: python
-
-        display.init_card_v1(self)
-
-* **Arguments and return value**:
-    | **self** - This object
-
-    Returns nothing.
-
-* **Description**:
-
-   |Initialize v1 SDCards which use byte addressing.
-
-
-
-.init_card_v2() method
-###############
-
-* **Method prototype (as seen in sdcard.py)**:
-
-    .. code-block:: python
-
-        display.init_card_v2(self)
-
-* **Arguments and return value**:
-    | **self** - This object
-
-    Returns nothing.
-
-* **Description**:
-
-   |Initialize v2 SDCards which use 512-byte block addressing.
-
-
-
-.cmd() method
-###############
-
-* **Method prototype (as seen in sdcard.py)**:
-
-    .. code-block:: python
-
-        display.init_card_v2(self, cmd, arg, crc, final=0, release=True, skip1=False)
-
-* **Arguments and return value**:
-    | **self** - This object
-    | **cmd** - Command address
-    | **arg** - Argument 
-    | **crc** - Cyclic redundant check code
-    | **final** - Final
-    | **release** - release
-    | **skip1** - skip1
-
-    Returns nothing.
-
-* **Description**:
-
-   | Issue a command to the card and read an optional data response.
-
-
-
-.readinto() method
-###############
-
-* **Method prototype (as seen in sdcard.py)**:
-
-    .. code-block:: python
-
-        display.readinto(self, buf)
-
-* **Arguments and return value**:
-    | **self** - This object.
-    | **buf** - Buffer to read.
-
-    Returns nothing.
-
-* **Description**:
-
-   | Read a data block into buf.
-
-
-
-.write() method
-###############
-
-* **Method prototype (as seen in sdcard.py)**:
-
-    .. code-block:: python
-
-        display.write(self, token, buf)
-
-* **Arguments and return value**:
-    | **self** - This object.
-    | **token** - The start token.
-    | **buf** - Buffer to write from.
-
-    Returns nothing.
-
-* **Description**:
-
-   | Write a data block to the card..
-
-
-.write_token() method
-###############
-
-* **Method prototype (as seen in sdcard.py)**:
-
-    .. code-block:: python
-
-        display.write_token(self, token)
-
-* **Arguments and return value**:
-    | **self** - This object.
-    | **token** - The start token.
-
-    Returns nothing.
-
-* **Description**:
-
-   | Write a token to the card..
-
-
-.readblocks() method
-###############
-
-* **Method prototype (as seen in sdcard.py)**:
-
-    .. code-block:: python
-
-        display.readblocks(self, block_num, buf)
-
-* **Arguments and return value**:
-    | **self** - This object.
-    | **block_num** - Start read from.
-    | **buf** - Buffer to read to.
-
-    Returns nothing.
-
-* **Description**:
-
-   | Read one or more blocks from the card.
-
-
-.writeblocks() method
-###############
-
-* **Method prototype (as seen in sdcard.py)**:
-
-    .. code-block:: python
-
-        display.writeblocks(self, block_num, buf)
-
-* **Arguments and return value**:
-    | **self** - This object.
-    | **block_num** - Start writing from block.
-    | **buf** - Buffer to write from.
-
-    Returns nothing.
-
-* **Description**:
-
-   |  Write blocks to the card.
-
-
-
-.__init__() method
-###############
-
-* **Method prototype (as seen in mcp23017.py)**:
-
-    .. code-block:: python
-
-        display.__init__(self, i2c, addr=0x20)
-
-* **Arguments and return value**:
-    | **self** - This object.
-    | **i2c** - I2C object type.
-    | **addr** - address of MCP23017, default is 0x20.
-
-    Returns nothing.
-
-* **Description**:
-
-   |  MCP23017 is a minimal driver for an 16-bit I2C I/O expander.
-
-
-
-.read() method
-###############
-
-* **Method prototype (as seen in mcp23017.py)**:
-
-    .. code-block:: python
-
-        display.read(self, reg)
-
-* **Arguments and return value**:
-    | **self** - This object.
-    | **reg** - register to read from.
-
-    Returns nothing.
-
-* **Description**:
-
-   |  read an 8-bit register, internal method
-
-
-.write() method
-###############
-
-* **Method prototype (as seen in mcp23017.py)**:
-
-    .. code-block:: python
-
-        display.write(self, reg, v)
-
-* **Arguments and return value**:
-    | **self** - This object.
-    | **reg** - register to write to.
-    | **v** - value to write to register.
-
-    Returns nothing.
-
-* **Description**:
-
-   | write an 8-bit register, internal method
-
-
-.write2() method
-###############
-
-* **Method prototype (as seen in mcp23017.py)**:
-
-    .. code-block:: python
-
-        display.write2(self, reg, v1,v2)
-
-* **Arguments and return value**:
-    | **self** - This object.
-    | **reg** - first register to write to.
-    | **v1** - value to write to first register.
-    | **v2** - value to write to second register.
-
-    Returns nothing.
-
-* **Description**:
-
-   | write two 8-bit registers, internal method
-
-
-
-.writebuf() method
-###############
-
-* **Method prototype (as seen in mcp23017.py)**:
-
-    .. code-block:: python
-
-        display.writebuf(self, reg, v)
-
-* **Arguments and return value**:
-    | **self** - This object.
-    | **reg** - register to write to.
-    | **v** - value to write to register.
-
-    Returns nothing.
-
-* **Description**:
-
-   | writebuf writes multiple bytes to the same register
-
-
-
-
-.bit() method
-###############
-
-* **Method prototype (as seen in mcp23017.py)**:
-
-    .. code-block:: python
-
-        display.bit(self, reg, num, v=None)
-
-* **Arguments and return value**:
-    | **self** - This object.
-    | **reg** - register to write to.
-    | **num** - index of bit in byte.
-    | **v** - value to write to byte.
-
-    Returns nothing.
-
-* **Description**:
-
-   | bit reads or sets a bit in a register, caching the gpio register for performance
-
-
-
-.value() method
-###############
-
-* **Method prototype (as seen in mcp23017.py)**:
-
-    .. code-block:: python
-
-        display.value(self, v=None)
-
-* **Arguments and return value**:
-    | **self** - This object.
-    | **v** - value to write or read.
-
-    Returns nothing.
-
-* **Description**:
-
-   | value reads or write a pin value (0 or 1)
-
+   | Initializes SD card.
 
 
 .setFrontlight() method
-###############
+#######################
 
-* **Method prototype (as seen in inkplate6_PLUS.py)**:
+* **Example**:
 
     .. code-block:: python
 
-        display.setFrontlight(cls, value)
+        display.setFrontlight(value)
 
 * **Arguments and return value**:
     | **cls** - This object.
@@ -2571,17 +2072,18 @@ Inkplate MicroPython
 * **Description**:
 
    | Turns on or off frontlight
+   | Used on Inkplate 6PLUS
 
 
 
 .touchInArea() method
-###############
+#####################
 
-* **Method prototype (as seen in inkplate6_PLUS.py)**:
+* **Example**:
 
     .. code-block:: python
 
-        display.touchInArea(cls, x, y, width, height)
+        display.touchInArea(x, y, width, height)
 
 * **Arguments and return value**:
     | **cls** - This object.
@@ -2599,13 +2101,13 @@ Inkplate MicroPython
 
 
 .tsInit() method
-###############
+################
 
-* **Method prototype (as seen in inkplate6_PLUS.py)**:
+* **Example**:
 
     .. code-block:: python
 
-        display.tsInit(self, pwrState)
+        display.tsInit(pwrState)
 
 * **Arguments and return value**:
     | **cls** - This object.
@@ -2619,13 +2121,13 @@ Inkplate MicroPython
 
 
 .tsShutdown() method
-###############
+####################
 
-* **Method prototype (as seen in inkplate6_PLUS.py)**:
+* **Example**:
 
     .. code-block:: python
 
-        display.tsShutdown(self)
+        display.tsShutdown()
 
 * **Arguments and return value**:
     | **cls** - This object.
@@ -2638,56 +2140,14 @@ Inkplate MicroPython
 
 
 
-.tsWriteRegs() method
-###############
-
-* **Method prototype (as seen in inkplate6_PLUS.py)**:
-
-    .. code-block:: python
-
-        display.tsWriteRegs(cls, addr, buff)
-
-* **Arguments and return value**:
-    | **cls** - This object.
-    | **addr** - address of register to write.
-    | **buff** - buffer to wrte from.
-
-    Returns nothing.
-
-* **Description**:
-
-   | Writes to touchscreen registers
-
-
-
-.tsReadRegs() method
-###############
-
-* **Method prototype (as seen in inkplate6_PLUS.py)**:
-
-    .. code-block:: python
-
-        display.tsReadRegs(cls, address)
-
-* **Arguments and return value**:
-    | **cls** - This object.
-    | **address** - address of register to read from.
-
-    Returns nothing.
-
-* **Description**:
-
-   | Reads from touchscreen registers
-
-
 .tsHardwareReset() method
-###############
+#########################
 
-* **Method prototype (as seen in inkplate6_PLUS.py)**:
+* **Example**:
 
     .. code-block:: python
 
-        display.tsHardwareReset(cls)
+        display.tsHardwareReset()
 
 * **Arguments and return value**:
     | **cls** - This object.
@@ -2700,13 +2160,13 @@ Inkplate MicroPython
 
 
 .tsSoftwareReset() method
-###############
+#########################
 
-* **Method prototype (as seen in inkplate6_PLUS.py)**:
+* **Example**:
 
     .. code-block:: python
 
-        display.tsSoftwareReset(cls)
+        display.tsSoftwareReset()
 
 * **Arguments and return value**:
     | **cls** - This object.
@@ -2720,13 +2180,13 @@ Inkplate MicroPython
 
 
 .tsGetRawData() method
-###############
+######################
 
-* **Method prototype (as seen in inkplate6_PLUS.py)**:
+* **Example**:
 
     .. code-block:: python
 
-        display.tsGetRawData(cls)
+        display.tsGetRawData()
 
 * **Arguments and return value**:
     | **cls** - This object.
@@ -2740,13 +2200,13 @@ Inkplate MicroPython
 
 
 .tsGetXY() method
-###############
+#################
 
-* **Method prototype (as seen in inkplate6_PLUS.py)**:
+* **Example**:
 
     .. code-block:: python
 
-        display.tsGetXY(cls,data,i)
+        display.tsGetXY(data,i)
 
 * **Arguments and return value**:
     | **cls** - This object.
@@ -2762,13 +2222,13 @@ Inkplate MicroPython
 
 
 .tsGetData() method
-###############
+###################
 
-* **Method prototype (as seen in inkplate6_PLUS.py)**:
+* **Example**:
 
     .. code-block:: python
 
-        display.tsGetData(cls)
+        display.tsGetData()
 
 * **Arguments and return value**:
     | **cls** - This object.
@@ -2782,13 +2242,13 @@ Inkplate MicroPython
 
 
 .tsGetResolution() method
-###############
+#########################
 
-* **Method prototype (as seen in inkplate6_PLUS.py)**:
+* **Example**:
 
     .. code-block:: python
 
-        display.tsGetResolution(cls)
+        display.tsGetResolution()
 
 * **Arguments and return value**:
     | **cls** - This object.
@@ -2802,13 +2262,13 @@ Inkplate MicroPython
 
 
 .tsSetPowerState() method
-###############
+#########################
 
-* **Method prototype (as seen in inkplate6_PLUS.py)**:
+* **Example**:
 
     .. code-block:: python
 
-        display.tsSetPowerState(cls, state)
+        display.tsSetPowerState(state)
 
 * **Arguments and return value**:
     | **cls** - This object.
@@ -2823,13 +2283,13 @@ Inkplate MicroPython
 
 
 .tsGetPowerState() method
-###############
+#########################
 
-* **Method prototype (as seen in inkplate6_PLUS.py)**:
+* **Example**:
 
     .. code-block:: python
 
-        display.tsGetPowerState(cls)
+        display.tsGetPowerState()
 
 * **Arguments and return value**:
     | **cls** - This object.
@@ -2843,13 +2303,13 @@ Inkplate MicroPython
 
 
 .tsAvailable() method
-###############
+#####################
 
-* **Method prototype (as seen in inkplate6_PLUS.py)**:
+* **Example**:
 
     .. code-block:: python
 
-        display.tsAvailable(cls)
+        display.tsAvailable()
 
 * **Arguments and return value**:
     | **cls** - This object.
@@ -2860,4 +2320,78 @@ Inkplate MicroPython
 
    | Checks if touchscreen is operating.
 
+
+
+.setMCPForLowPower() method
+###############################
+* **Example**:
+
+    .. code-block:: python
+
+        display.setMCPForLowPower(self)
+
+* **Arguments and return value**:
+    | **self** - This object.
+
+* **Description**:
+
+   | Sets MCP pinmodes for low power.
+
+
+
+.getPanelDeepSleepState() method
+################################
+* **Example**:
+
+    .. code-block:: python
+
+        display.getPanelDeepSleepState(self)
+
+* **Arguments and return value**:
+    | **self** - This object.
+
+    Returns True if panel is in deepsleep mode
+
+* **Description**:
+
+   | Used to check if panel is in deep sleep.
+
+
+
+
+.setPanelDeepSleepState() method
+################################
+* **Example**:
+
+    .. code-block:: python
+
+        display.setPanelDeepSleepState(state):
+
+* **Arguments and return value**:
+    | **self** - This object.
+    | **state** - What to set deep sleep.
+
+    Returns nothing.
+
+* **Description**:
+
+   | Used to set panel deep sleep, or turn it off.
+
+
+.resetPanel() method
+################################
+* **Example**:
+
+    .. code-block:: python
+
+        display.resetPanel(self):
+
+* **Arguments and return value**:
+    | **self** - This object.
+
+    Returns nothing.
+
+* **Description**:
+
+   | Used to reset Inkplates panel
 
