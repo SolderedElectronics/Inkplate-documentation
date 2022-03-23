@@ -4,23 +4,23 @@ Inkplate Features
 Inkplate Comparison
 -------------------
 
-=============== =========== ========== ==============
-feature         Inkplate 10 Inkplate 6 Inkplate 6PLUS
---------------- ----------- ---------- --------------
-Screen size         9.7"        6"          6"
-Resolution        1200x825   800x600     758x1024
-Pixels             990,000   480.000      776.192
-All-in-one           Yes       Yes          Yes
-Low-power            Yes       Yes          Yes
-Wi-Fi                Yes       Yes          Yes
-Touchpads            Yes       Yes          No
-Touchscreen          No        No           Yes
-MicroSD              Yes       Yes          Yes
-Grayscale            Yes       Yes          Yes
-Partial update       Yes       Yes          Yes
-Refresh time       1.61s     1.26s          n/a
-Refresh per px     1.62μs    2.63μs         n/a
-=============== =========== ========== ==============
+=============== =========== ========== ============== ===============
+feature         Inkplate 10 Inkplate 6 Inkplate 6PLUS Inkplate 6COLOR
+--------------- ----------- ---------- -------------- ---------------
+Screen size         9.7"        6"          6"              5.8"
+Resolution        1200x825   800x600     758x1024        600 x 448
+Pixels             990,000   480.000      776.192          268800
+All-in-one           Yes       Yes          Yes             Yes
+Low-power            Yes       Yes          Yes             Yes
+Wi-Fi                Yes       Yes          Yes             Yes
+Touchpads            Yes       Yes          No              Yes
+Touchscreen          No        No           Yes             No
+MicroSD              Yes       Yes          Yes             Yes
+Grayscale            Yes       Yes          Yes             No
+Partial update       Yes       Yes          Yes             No
+Refresh time       1.61s     1.26s          1.27s         25s/11s
+Refresh per px     1.62μs    2.63μs         1.63μs      93μs/41μs
+=============== =========== ========== ============== ===============
 
 
 Inkplate 6
@@ -99,3 +99,28 @@ Other Technical Specifications
     | **Storage**: MicroSD card reader
     | **Power Management**: based on Texas Instruments (TI) TPS65186, MCP73831 lithium battery charger with a standard JST connector
     | **Temperature Sensor**: Internal TPS65186
+
+Inkplate 6COLOR
+----------------
+
+Front-Mounted Components:
+#########################
+
+.. image:: images/inkplate6color_front.jpg
+    :width: 500
+
+Rear-Mounted Components:
+########################
+
+.. image:: images/inkplate6color_back.jpg
+    :width: 500
+
+Other Technical Specifications
+##############################
+    | **Physical Interface**: three capacitive touch pads, push button for power and additional user button, form factor that is optimized for custom enclosures.
+    | **Connectors**: USB type C, easyC, GPIO and battery.
+    | **Wired Connectivity**: USB, I²C, and SPI.
+    | **USB to UART converter**: CH340C.
+    | **Storage**: MicroSD card reader.
+    | **Power Management**: based on Texas Instruments (TI) TPS65186, MCP73831 lithium battery charger with a standard JST connector.
+    | **Temperature Sensor**: Internal TPS65186.

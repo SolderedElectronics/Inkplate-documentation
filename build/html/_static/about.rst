@@ -1,10 +1,10 @@
-About e-radionica
+About Soldered
 =================
 
 How we started?
 ---------------
 
-e-radionica started in 2012, offering customised lighting solutions via LEDs. 
+Soldered started in 2012, offering customised lighting solutions via LEDs. 
 As time went on, we realized that we weren't the only ones who wanted to create customized and interesting things with electronics - so we created our first microcontroller board which we named CROduino Basic.
 The board itself is Arduino compatible, fully open-source (hardware & software) and manufactured in Croatia. Since the reactions to the board were very positive, over time we created new boards Croduino Pico, Damba, Net and Basic 2.
 

@@ -29,6 +29,77 @@ Inkplate object initialization
     In here given examples, Inkplate object will always be named display, if not said otherwise.
     After calling this below your "#include" lines, you have access to all Inkplate functionality as display object methods.
 
+setPanelState() method
+##############
+    | Sets panel state (on/off)
+
+    .. code-block:: c
+
+        setPanelState(bool _state);
+
+* **Arguments and return value**:
+    | uint8_t _state - panel state ON or OFF (1 or 0)
+
+    | No return
+
+* **Description**:
+
+    setPanelState sets panel state (on/off)
+
+getPanelState() method
+##############
+    | Gets panel state (ON/OFF)
+
+    .. code-block:: c
+
+        getPanelState();
+
+* **Arguments and return value**:
+    | No arguments
+
+    | Returns panel state
+
+* **Description**:
+
+    getPanelState gets panel state (ON/OFF)
+
+setPanelDeepSleep() method
+##############
+    | Puts color epaper in deep sleep, or starts epaper, depending on given arguments.
+        HIGH or LOW (1 or 0) 1 will start panel, 0 will put it into deep
+
+    .. code-block:: c
+
+        setPanelDeepSleep(bool _state);
+
+* **Arguments and return value**:
+    | uint8_t _state - panel state ON or OFF (1 or 0)
+
+    | Returns nothing
+
+* **Description**:
+
+    setPanelDeepSleep puts color epaper in deep sleep, or starts epaper, depending on given arguments.
+
+
+getPanelDeepSleepState() method
+##############
+    | Puts color epaper in deep sleep, or starts epaper, depending on given arguments.
+        HIGH or LOW (1 or 0) 1 will start panel, 0 will put it into deep
+
+    .. code-block:: c
+
+        getPanelDeepSleepState();
+
+* **Arguments and return value**:
+    | uint8_t _state - panel state ON or OFF (1 or 0)
+
+    | Returns nothing
+
+* **Description**:
+
+    setPanelDeepSleep puts color epaper in deep sleep, or starts epaper, depending on given arguments.
+
 begin() method
 ##############
     | Before calling any display method you **must** call .begin() like this: 

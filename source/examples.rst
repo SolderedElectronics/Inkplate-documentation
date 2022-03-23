@@ -22,6 +22,14 @@ Inkplate_Basic_Partial_Update
     .. image:: images/example1.jpg
         :width: 500
 
+Inkplate_Full_Screen_Colors
+###################
+    Simple Inkplate example showing all colors of the Inkplate..
+
+Inkplate_6Color_Basic
+###################
+    Simple Inkplate example showing drawing functionalities of the Inkplate 6COLOR library.
+
 Advanced Inkplate Features
 --------------------------
 
@@ -167,6 +175,16 @@ Inkplate_VariPass_Graphs
     
     .. image:: images/example13.jpg
         :width: 500
+
+Mapbox_Api
+########################
+    This example will show you how you can use Inkplate 6COLOR to display map data.
+    This example gets html data from crowdsource campaing and displays them on Inkplate screen.
+
+
+Gallery
+########################
+     This example will show you how you can use Inkplate 6COLOR to random images in the root sdcard folder.
 
 Projects
 --------

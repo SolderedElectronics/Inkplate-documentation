@@ -47,30 +47,34 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">3.2. Inkplate Arduino</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#system-functions">3.2.1. System Functions</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#inkplate-object-initialization">3.2.1.1. Inkplate object initialization</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#begin-method">3.2.1.2. begin() method</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-sdcardinit">3.2.1.3. Inkplate::sdCardInit();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-getsdfat">3.2.1.4. Inkplate::getSdFat();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-getspi">3.2.1.5. Inkplate::getSPI();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-setpanelstate">3.2.1.6. Inkplate::setPanelState();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-getpanelstate">3.2.1.7. Inkplate::getPanelState();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-readtouchpad">3.2.1.8. Inkplate::readTouchpad();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-readtemperature">3.2.1.9. Inkplate::readTemperature();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-readbattery">3.2.1.10. Inkplate::readBattery();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-einkoff">3.2.1.11. Inkplate::einkOff();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-einkon">3.2.1.12. Inkplate::einkOn();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-readpowergood">3.2.1.13. Inkplate::readPowerGood();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-vscan-start">3.2.1.14. Inkplate::vscan_start();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-hscan-start">3.2.1.15. Inkplate::hscan_start();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-vscan-end">3.2.1.16. Inkplate::vscan_end();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-pinszstate">3.2.1.17. Inkplate::pinsZstate();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-pinsasoutputs">3.2.1.18. Inkplate::pinsAsOutputs();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-setfrontlight">3.2.1.19. Inkplate::setFrontlight();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-resetpanel">3.2.1.20. Inkplate::resetPanel();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-sendcommand">3.2.1.21. Inkplate::sendCommand();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-senddata">3.2.1.22. Inkplate::sendData();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-setpaneldeepsleep">3.2.1.23. Inkplate::setPanelDeepSleep();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-getpaneldeepsleepstate">3.2.1.24. Inkplate::getPanelDeepSleepState();</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inkplate-setmcpforlowpower">3.2.1.25. Inkplate::setMCPForLowPower;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setpanelstate-method">3.2.1.2. setPanelState() method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getpanelstate-method">3.2.1.3. getPanelState() method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setpaneldeepsleep-method">3.2.1.4. setPanelDeepSleep() method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getpaneldeepsleepstate-method">3.2.1.5. getPanelDeepSleepState() method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#begin-method">3.2.1.6. begin() method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-sdcardinit">3.2.1.7. Inkplate::sdCardInit();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-getsdfat">3.2.1.8. Inkplate::getSdFat();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-getspi">3.2.1.9. Inkplate::getSPI();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-setpanelstate">3.2.1.10. Inkplate::setPanelState();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-getpanelstate">3.2.1.11. Inkplate::getPanelState();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-readtouchpad">3.2.1.12. Inkplate::readTouchpad();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-readtemperature">3.2.1.13. Inkplate::readTemperature();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-readbattery">3.2.1.14. Inkplate::readBattery();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-einkoff">3.2.1.15. Inkplate::einkOff();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-einkon">3.2.1.16. Inkplate::einkOn();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-readpowergood">3.2.1.17. Inkplate::readPowerGood();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-vscan-start">3.2.1.18. Inkplate::vscan_start();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-hscan-start">3.2.1.19. Inkplate::hscan_start();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-vscan-end">3.2.1.20. Inkplate::vscan_end();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-pinszstate">3.2.1.21. Inkplate::pinsZstate();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-pinsasoutputs">3.2.1.22. Inkplate::pinsAsOutputs();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-setfrontlight">3.2.1.23. Inkplate::setFrontlight();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-resetpanel">3.2.1.24. Inkplate::resetPanel();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-sendcommand">3.2.1.25. Inkplate::sendCommand();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-senddata">3.2.1.26. Inkplate::sendData();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-setpaneldeepsleep">3.2.1.27. Inkplate::setPanelDeepSleep();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-getpaneldeepsleepstate">3.2.1.28. Inkplate::getPanelDeepSleepState();</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inkplate-setmcpforlowpower">3.2.1.29. Inkplate::setMCPForLowPower;</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#drawing-functions">3.2.2. Drawing Functions</a><ul>
@@ -228,7 +232,7 @@
 <li class="toctree-l1"><a class="reference internal" href="gui-designer.html">6. Inkplate GUI designer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="resources.html">7. Inkplate Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="open-source.html">8. Inkplate is Open Source</a></li>
-<li class="toctree-l1"><a class="reference internal" href="about.html">9. About e-radionica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">9. About Soldered</a></li>
 </ul>
 
         </div>
@@ -283,8 +287,122 @@ After you’ve done that you can create a new instance of the Inkplate object, l
 After calling this below your “#include” lines, you have access to all Inkplate functionality as display object methods.</p>
 </div></blockquote>
 </section>
+<section id="setpanelstate-method">
+<h3><span class="section-number">3.2.1.2. </span>setPanelState() method<a class="headerlink" href="#setpanelstate-method" title="Permalink to this headline"></a></h3>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Sets panel state (on/off)</div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">setPanelState</span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="n">_state</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">uint8_t _state - panel state ON or OFF (1 or 0)</div>
+</div>
+<div class="line-block">
+<div class="line">No return</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><p><strong>Description</strong>:</p>
+<blockquote>
+<div><p>setPanelState sets panel state (on/off)</p>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="getpanelstate-method">
+<h3><span class="section-number">3.2.1.3. </span>getPanelState() method<a class="headerlink" href="#getpanelstate-method" title="Permalink to this headline"></a></h3>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Gets panel state (ON/OFF)</div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">getPanelState</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">No arguments</div>
+</div>
+<div class="line-block">
+<div class="line">Returns panel state</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><p><strong>Description</strong>:</p>
+<blockquote>
+<div><p>getPanelState gets panel state (ON/OFF)</p>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="setpaneldeepsleep-method">
+<h3><span class="section-number">3.2.1.4. </span>setPanelDeepSleep() method<a class="headerlink" href="#setpaneldeepsleep-method" title="Permalink to this headline"></a></h3>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Puts color epaper in deep sleep, or starts epaper, depending on given arguments.
+HIGH or LOW (1 or 0) 1 will start panel, 0 will put it into deep</div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">setPanelDeepSleep</span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="n">_state</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">uint8_t _state - panel state ON or OFF (1 or 0)</div>
+</div>
+<div class="line-block">
+<div class="line">Returns nothing</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><p><strong>Description</strong>:</p>
+<blockquote>
+<div><p>setPanelDeepSleep puts color epaper in deep sleep, or starts epaper, depending on given arguments.</p>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="getpaneldeepsleepstate-method">
+<h3><span class="section-number">3.2.1.5. </span>getPanelDeepSleepState() method<a class="headerlink" href="#getpaneldeepsleepstate-method" title="Permalink to this headline"></a></h3>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Puts color epaper in deep sleep, or starts epaper, depending on given arguments.
+HIGH or LOW (1 or 0) 1 will start panel, 0 will put it into deep</div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">getPanelDeepSleepState</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul>
+<li><dl>
+<dt><strong>Arguments and return value</strong>:</dt><dd><div class="line-block">
+<div class="line">uint8_t _state - panel state ON or OFF (1 or 0)</div>
+</div>
+<div class="line-block">
+<div class="line">Returns nothing</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><p><strong>Description</strong>:</p>
+<blockquote>
+<div><p>setPanelDeepSleep puts color epaper in deep sleep, or starts epaper, depending on given arguments.</p>
+</div></blockquote>
+</li>
+</ul>
+</section>
 <section id="begin-method">
-<h3><span class="section-number">3.2.1.2. </span>begin() method<a class="headerlink" href="#begin-method" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">3.2.1.6. </span>begin() method<a class="headerlink" href="#begin-method" title="Permalink to this headline"></a></h3>
 <blockquote>
 <div><div class="line-block">
 <div class="line">Before calling any display method you <strong>must</strong> call .begin() like this:</div>
@@ -316,7 +434,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </section>
 <section id="inkplate-sdcardinit">
-<h3><span class="section-number">3.2.1.3. </span>Inkplate::sdCardInit();<a class="headerlink" href="#inkplate-sdcardinit" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">3.2.1.7. </span>Inkplate::sdCardInit();<a class="headerlink" href="#inkplate-sdcardinit" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in System.h)</strong>:</p></li>
 </ul>
@@ -343,7 +461,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </section>
 <section id="inkplate-getsdfat">
-<h3><span class="section-number">3.2.1.4. </span>Inkplate::getSdFat();<a class="headerlink" href="#inkplate-getsdfat" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">3.2.1.8. </span>Inkplate::getSdFat();<a class="headerlink" href="#inkplate-getsdfat" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in System.h)</strong>:</p></li>
 </ul>
@@ -369,7 +487,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </section>
 <section id="inkplate-getspi">
-<h3><span class="section-number">3.2.1.5. </span>Inkplate::getSPI();<a class="headerlink" href="#inkplate-getspi" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">3.2.1.9. </span>Inkplate::getSPI();<a class="headerlink" href="#inkplate-getspi" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in System.h)</strong>:</p></li>
 </ul>
@@ -388,7 +506,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </section>
 <section id="inkplate-setpanelstate">
-<h3><span class="section-number">3.2.1.6. </span>Inkplate::setPanelState();<a class="headerlink" href="#inkplate-setpanelstate" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">3.2.1.10. </span>Inkplate::setPanelState();<a class="headerlink" href="#inkplate-setpanelstate" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in System.h)</strong>:</p></li>
 </ul>
@@ -421,7 +539,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </section>
 <section id="inkplate-getpanelstate">
-<h3><span class="section-number">3.2.1.7. </span>Inkplate::getPanelState();<a class="headerlink" href="#inkplate-getpanelstate" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">3.2.1.11. </span>Inkplate::getPanelState();<a class="headerlink" href="#inkplate-getpanelstate" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in System.h)</strong>:</p></li>
 </ul>
@@ -454,7 +572,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </section>
 <section id="inkplate-readtouchpad">
-<h3><span class="section-number">3.2.1.8. </span>Inkplate::readTouchpad();<a class="headerlink" href="#inkplate-readtouchpad" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">3.2.1.12. </span>Inkplate::readTouchpad();<a class="headerlink" href="#inkplate-readtouchpad" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in System.h)</strong>:</p></li>
 </ul>
@@ -490,7 +608,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </section>
 <section id="inkplate-readtemperature">
-<h3><span class="section-number">3.2.1.9. </span>Inkplate::readTemperature();<a class="headerlink" href="#inkplate-readtemperature" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">3.2.1.13. </span>Inkplate::readTemperature();<a class="headerlink" href="#inkplate-readtemperature" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in System.h)</strong>:</p></li>
 </ul>
@@ -524,7 +642,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </section>
 <section id="inkplate-readbattery">
-<h3><span class="section-number">3.2.1.10. </span>Inkplate::readBattery();<a class="headerlink" href="#inkplate-readbattery" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">3.2.1.14. </span>Inkplate::readBattery();<a class="headerlink" href="#inkplate-readbattery" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in System.h)</strong>:</p></li>
 </ul>
@@ -558,7 +676,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </section>
 <section id="inkplate-einkoff">
-<h3><span class="section-number">3.2.1.11. </span>Inkplate::einkOff();<a class="headerlink" href="#inkplate-einkoff" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">3.2.1.15. </span>Inkplate::einkOff();<a class="headerlink" href="#inkplate-einkoff" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -591,7 +709,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </section>
 <section id="inkplate-einkon">
-<h3><span class="section-number">3.2.1.12. </span>Inkplate::einkOn();<a class="headerlink" href="#inkplate-einkon" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">3.2.1.16. </span>Inkplate::einkOn();<a class="headerlink" href="#inkplate-einkon" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -624,7 +742,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </section>
 <section id="inkplate-readpowergood">
-<h3><span class="section-number">3.2.1.13. </span>Inkplate::readPowerGood();<a class="headerlink" href="#inkplate-readpowergood" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">3.2.1.17. </span>Inkplate::readPowerGood();<a class="headerlink" href="#inkplate-readpowergood" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -657,7 +775,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </section>
 <section id="inkplate-vscan-start">
-<h3><span class="section-number">3.2.1.14. </span>Inkplate::vscan_start();<a class="headerlink" href="#inkplate-vscan-start" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">3.2.1.18. </span>Inkplate::vscan_start();<a class="headerlink" href="#inkplate-vscan-start" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -683,7 +801,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </section>
 <section id="inkplate-hscan-start">
-<h3><span class="section-number">3.2.1.15. </span>Inkplate::hscan_start();<a class="headerlink" href="#inkplate-hscan-start" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">3.2.1.19. </span>Inkplate::hscan_start();<a class="headerlink" href="#inkplate-hscan-start" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -707,7 +825,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </section>
 <section id="inkplate-vscan-end">
-<h3><span class="section-number">3.2.1.16. </span>Inkplate::vscan_end();<a class="headerlink" href="#inkplate-vscan-end" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">3.2.1.20. </span>Inkplate::vscan_end();<a class="headerlink" href="#inkplate-vscan-end" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -733,7 +851,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </section>
 <section id="inkplate-pinszstate">
-<h3><span class="section-number">3.2.1.17. </span>Inkplate::pinsZstate();<a class="headerlink" href="#inkplate-pinszstate" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">3.2.1.21. </span>Inkplate::pinsZstate();<a class="headerlink" href="#inkplate-pinszstate" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -759,7 +877,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </section>
 <section id="inkplate-pinsasoutputs">
-<h3><span class="section-number">3.2.1.18. </span>Inkplate::pinsAsOutputs();<a class="headerlink" href="#inkplate-pinsasoutputs" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">3.2.1.22. </span>Inkplate::pinsAsOutputs();<a class="headerlink" href="#inkplate-pinsasoutputs" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -785,7 +903,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </section>
 <section id="inkplate-setfrontlight">
-<h3><span class="section-number">3.2.1.19. </span>Inkplate::setFrontlight();<a class="headerlink" href="#inkplate-setfrontlight" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">3.2.1.23. </span>Inkplate::setFrontlight();<a class="headerlink" href="#inkplate-setfrontlight" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -813,7 +931,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </section>
 <section id="inkplate-resetpanel">
-<h3><span class="section-number">3.2.1.20. </span>Inkplate::resetPanel();<a class="headerlink" href="#inkplate-resetpanel" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">3.2.1.24. </span>Inkplate::resetPanel();<a class="headerlink" href="#inkplate-resetpanel" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -839,7 +957,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </section>
 <section id="inkplate-sendcommand">
-<h3><span class="section-number">3.2.1.21. </span>Inkplate::sendCommand();<a class="headerlink" href="#inkplate-sendcommand" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">3.2.1.25. </span>Inkplate::sendCommand();<a class="headerlink" href="#inkplate-sendcommand" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -865,7 +983,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </section>
 <section id="inkplate-senddata">
-<h3><span class="section-number">3.2.1.22. </span>Inkplate::sendData();<a class="headerlink" href="#inkplate-senddata" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">3.2.1.26. </span>Inkplate::sendData();<a class="headerlink" href="#inkplate-senddata" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -896,7 +1014,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </section>
 <section id="inkplate-setpaneldeepsleep">
-<h3><span class="section-number">3.2.1.23. </span>Inkplate::setPanelDeepSleep();<a class="headerlink" href="#inkplate-setpaneldeepsleep" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">3.2.1.27. </span>Inkplate::setPanelDeepSleep();<a class="headerlink" href="#inkplate-setpaneldeepsleep" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -922,7 +1040,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </section>
 <section id="inkplate-getpaneldeepsleepstate">
-<h3><span class="section-number">3.2.1.24. </span>Inkplate::getPanelDeepSleepState();<a class="headerlink" href="#inkplate-getpaneldeepsleepstate" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">3.2.1.28. </span>Inkplate::getPanelDeepSleepState();<a class="headerlink" href="#inkplate-getpaneldeepsleepstate" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
@@ -948,7 +1066,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </ul>
 </section>
 <section id="inkplate-setmcpforlowpower">
-<h3><span class="section-number">3.2.1.25. </span>Inkplate::setMCPForLowPower;<a class="headerlink" href="#inkplate-setmcpforlowpower" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">3.2.1.29. </span>Inkplate::setMCPForLowPower;<a class="headerlink" href="#inkplate-setmcpforlowpower" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p><strong>Method prototype (as seen in Inkplate.h)</strong>:</p></li>
 </ul>
