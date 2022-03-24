@@ -2175,7 +2175,7 @@ Inkplate::print();
 
 * **Example**:
     .. code-block:: c
-
+	display.setTextColor(BLACK, WHITE);
         display.print("Some text");
 
 * **Result**:
@@ -2207,7 +2207,7 @@ Inkplate::println();
 
 * **Example**:
     .. code-block:: c
-    
+    	display.setTextColor(BLACK, WHITE);
         display.println("Some text");
 
 
