@@ -239,6 +239,7 @@ drawBitmap: #H(XXX,YYY,"PATH")*
     #H(0)* - Image load failed
     #H(-1)* - SD Card Init Error
 
+    |Note: This will not work on Inkplate 2, because it has no SD card slot
 setDisplayMode: #I(D)*
 ----------------------
     | D - Display Mode (D = 3 -> 3 bit mode, D = 1 -> 1 bit mode)
@@ -248,6 +249,7 @@ setDisplayMode: #I(D)*
 
     #I(3)* or #I(1)*
 
+    |Note: This will not work on Inkplate 2, because it doesnt't support grayscale
 getDisplayMode: #J(?)*
 ----------------------
     | Response:
@@ -276,6 +278,7 @@ partialUpdate: #M(YY1, XX2, YY2)*
     
         #M(005,400,040)*
 
+    |Note: This will not work on Inkplate 2, because it has no partialUpdate support
 readTemperature: #N(?)*
 -----------------------
     | Response:
@@ -284,6 +287,7 @@ readTemperature: #N(?)*
     
     #N(23)* - 23 Celsius degrees
 
+    |Note: Not supported on Inkplate 2
 readTouchpad: #O(P)*
 --------------------
     | P - Name of pad that needs to be read (1, 2 or 3)
@@ -295,6 +299,7 @@ readTouchpad: #O(P)*
     or 
     #O(0)* for low state of pad
 
+    |Note: Not supported on Inkplate 2
 readBattery: #P(?)*
 -------------------
     | Response:
@@ -303,10 +308,12 @@ readBattery: #P(?)*
     
     #P(3.65)* - Measured voltage on battery is 3.65VDC
 
+    |Note: Not supported on Inkplate 2
 panelSupply(einkOff/on):#Q(S)*
 ------------------------------
     | S - State of panel power supply (S = 1 -> panel has power supply, S = 0 -> panel power supply has benn turned off)
 
+    |Note: Not supported on Inkplate 2
 getPanelState: #R(?)*
 ---------------------
     | Response:
@@ -315,6 +322,7 @@ getPanelState: #R(?)*
     
     #R(1)* - panel has power supply or #R(0)* - panel supply has been turned off
 
+    |Note: Not supported on Inkplate 2
 drawImage: #S(XXX,YYY,"PATH")*
 ------------------------------
     | XXX - X position of bitmap on display
@@ -328,6 +336,7 @@ drawImage: #S(XXX,YYY,"PATH")*
 
     | Response:
 
+    |Note: This will not work on Inkplate 2, hence it has no SD card slot
 drawThickLine: #T(XXX,YYY,III,JJJ,TT,CC)*
 -----------------------------------------
     | XXX - Start x coordinate (with leading zeros)
