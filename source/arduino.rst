@@ -402,7 +402,7 @@ Inkplate::vscan_start();
 * **Description**:
     | Starts writing new frame and skips first two lines that are invisible on screen
 
-
+  | **Note**: not supported on Inkplate 6COLOR and Inkplate 2
 
 Inkplate::hscan_start();
 ########################
@@ -421,7 +421,7 @@ Inkplate::hscan_start();
 * **Description**:
     | Starts writing data into current row
 
-
+  | **Note**: not supported on Inkplate 6COLOR and Inkplate 2
 
 Inkplate::vscan_end();
 ######################
@@ -440,7 +440,7 @@ Inkplate::vscan_end();
 * **Description**:
     | Ends current row and prints data to screen
 
-
+  | **Note**: not supported on Inkplate 6COLOR and Inkplate 2
 
 Inkplate::pinsZstate();
 #######################
@@ -459,7 +459,7 @@ Inkplate::pinsZstate();
 * **Description**:
     | Sets all tps pins at high z state, is used only when turning off epaper
 
-
+  | **Note**: not supported on Inkplate 6COLOR and Inkplate 2
 
 Inkplate::pinsAsOutputs();
 ##########################
@@ -477,7 +477,8 @@ Inkplate::pinsAsOutputs();
 
 * **Description**:
     | Sets all tps pins as outputs
-    
+
+  | **Note**: not supported on Inkplate 6COLOR and Inkplate 2    
 
 Inkplate::setFrontlight();
 ##########################
@@ -653,7 +654,7 @@ Inkplate::display1b();
     void display1b(bool leaveOn);
 
 * **Arguments and return value**:
-    | bool **leaveOn** - If 1, keeps e-Ink power supply on for faster refresh time.
+    | bool **leaveOn** - if set to 1, it will disable turning supply for eink after display update in order to save some time needed for power supply to save some time at next display update or increase refreshing speed.
 
     | Returns nothing.
 
@@ -681,7 +682,7 @@ Inkplate::display3b();
     void display3b(bool leaveOn);
 
 * **Arguments and return value**:
-    | bool **leaveOn** - If 1, keeps e-Ink power supply on for faster refresh time.
+    | bool **leaveOn** - if set to 1, it will disable turning supply for eink after display update in order to save some time needed for power supply to save some time at next display update or increase refreshing speed.
 
     | Returns nothing.
 

@@ -40,7 +40,7 @@ Inkplate MicroPython
     | **font** - An optional input to augment the default text method with a new font.
                   The input shoudl be a properly formatted dict.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     Method used to initialize display.
@@ -62,7 +62,7 @@ Inkplate MicroPython
     | ***args** - Additional arguments.
     | ****kwargs** - Keywords.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
 
@@ -87,7 +87,7 @@ Inkplate MicroPython
     | ***args** - Additional arguments.
     | ****kwargs** - Keywords.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
 
@@ -114,7 +114,7 @@ Inkplate MicroPython
     | ***args** - Additional arguments.
     | ****kwargs** - Keywords.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
 
@@ -143,7 +143,7 @@ Inkplate MicroPython
     | ***args** - Additional arguments.
     | ****kwargs** - Keywords.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
 
@@ -171,7 +171,7 @@ Inkplate MicroPython
     | ***args** - Additional arguments.
     | ****kwargs** - Keywords.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
 
@@ -199,7 +199,7 @@ Inkplate MicroPython
     | ***args** - Additional arguments.
     | ****kwargs** - Keywords.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
 
@@ -226,7 +226,7 @@ Inkplate MicroPython
     | ***args** - Additional arguments.
     | ****kwargs** - Keywords.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
 
@@ -252,7 +252,7 @@ Inkplate MicroPython
     | ***args** - Additional arguments.
     | ****kwargs** - Keywords.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
 
@@ -280,7 +280,7 @@ Inkplate MicroPython
     | ***args** - Additional arguments.
     | ****kwargs** - Keywords.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
 
@@ -309,7 +309,7 @@ Inkplate MicroPython
     | ***args** - Additional arguments.
     | ****kwargs** - Keywords.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
 
@@ -337,7 +337,7 @@ Inkplate MicroPython
     | ***args** - Additional arguments.
     | ****kwargs** - Keywords.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
 
@@ -365,7 +365,7 @@ Inkplate MicroPython
     | ***args** - Additional arguments.
     | ****kwargs** - Keywords.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
 
@@ -391,7 +391,7 @@ Inkplate MicroPython
     | ***args** - Additional arguments.
     | ****kwargs** - Keywords.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
 
@@ -401,10 +401,13 @@ Inkplate MicroPython
         {'character_here' : bytearray(b',WIDTH,HEIGHT,right-most-data, more-bytes-here,left-most-data') ,}
         (replace the "," with backslashes!!)
         each byte:
-                        | lower most bit(lowest on display)
-                        V
-                 x0110100
-                  ^c
+
+    | lower most bit(lowest on display)
+                        
+                | x0110100
+
+                   | ^c
+
                   | top most bit (highest on display)
 
 
@@ -423,7 +426,7 @@ Inkplate MicroPython
     | ***args** - Additional arguments.
     | ****kwargs** - Keywords.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
 
@@ -458,7 +461,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | No arguments.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     |   Method to initialize all perihperals.
@@ -481,7 +484,7 @@ Inkplate MicroPython
     | **y0** - y coordinate of pixel, [0, 599] in rotations 2, 4 and [0, 799] in 1, 3 
     | **color** - pixel color, in 3 bit mode in range [0, 7]
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Most basic drawing command in the library is .drawPixel()
@@ -515,7 +518,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | No Arguments
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Clears all data in buffer.
@@ -538,7 +541,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | No Arguments
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Displays all data in frame buffer to screen.
@@ -564,7 +567,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | No Arguments
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Updates only the changed parts of the screen.
@@ -581,7 +584,6 @@ Inkplate MicroPython
         display.drawPixel(100, 100, display.BLACK)
 
 
-
 .read_battery()
 ################
 
@@ -594,7 +596,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | **cls** - Instance
 
-    |Returns battery voltage.
+    | Returns battery voltage.
 
 * **Description**:
     | Read the battery voltage. Note that the
@@ -614,7 +616,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | **self** - Instance
 
-    |Returns battery voltage.
+    | Returns battery voltage.
 
 * **Description**:
     | Read the battery voltage. Note that the
@@ -634,7 +636,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | **cls** - Instance
 
-    |Returns panel temperature.
+    | Returns panel temperature.
 
 * **Description**:
     | Read panel temperature. It varies +- 2 degree
@@ -653,7 +655,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | **self** - Instance
 
-    |Returns panel temperature.
+    | Returns panel temperature.
 
 * **Description**:
     | Read panel temperature. It varies +- 2 degree
@@ -671,7 +673,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | **cls** - Instance
 
-    |Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | power_on turns the voltage regulator on and wakes up the display (GMODE and OE)
@@ -690,7 +692,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | **cls** - Instance
 
-    |Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     |  power_off puts the display to sleep and cuts the power
@@ -709,10 +711,10 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | **cls** - Instance
 
-    |Returns nothing.
+    | Returns nothing.
 
 * **Description**:
-    |  vscan_start begins a vertical scan by toggling CKV and SPV
+    | vscan_start begins a vertical scan by toggling CKV and SPV
     | sleep_us calls are commented out 'cause MP is slow enough...
 
 
@@ -729,7 +731,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | No arguments.
 
-    |Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     |  vscan_write latches the row into the display pixels and moves to the next row
@@ -748,7 +750,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | **cls** - Instance
 
-    |Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     |  gen_byte2gpio converts a byte of data for the screen to 32 bits of gpio0..31
@@ -767,7 +769,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | **data** - Value to write to display
 
-    |Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     |  fill_screen writes the same value to all bytes of the screen, it is used for cleaning
@@ -786,12 +788,12 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | **cls** - Instance
 
-    |Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     |  gen_luts generates the look-up tables to convert a nibble (4 bits) of pixels to the
     | 32-bits that need to be pushed into the gpio port.
-    | The LUTs used here were copied from the e-Radionica Inkplate-6-Arduino-library.
+    | The LUTs used here were copied from the Soldered Inkplate-6-Arduino-library.
 
 
 
@@ -809,7 +811,7 @@ Inkplate MicroPython
     | **framebuf** - Buffer
     | **row** - Row number
 
-    |Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | _send_row writes a row of data to the display
@@ -831,7 +833,7 @@ Inkplate MicroPython
     | **new_framebuf** - New content of display
     | **row** - Row number
 
-    |Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | _send_row writes a row of data to the display
@@ -850,13 +852,13 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | **cls** - Instance
 
-    |Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | _gen_wave generates the waveform table. The table consists of N phases or steps during
     | each of which the entire display gets written. The array in each phase gets indexed with
     | a nibble of data and contains the 32-bits that need to be pushed into the gpio port.
-    | The waveform used here was adapted from the e-Radionica Inkplate-6-Arduino-library
+    | The waveform used here was adapted from the Soldered Inkplate-6-Arduino-library
     | by taking colors 0 (black), 3, 5, and 7 (white) from "waveform3Bit[8][7]".
 
 
@@ -873,7 +875,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | **self** - Instance
 
-    |Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | start makes a reference copy of the current framebuffer
@@ -892,7 +894,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | **cls** - Instance
 
-    |Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     |  gen_lut_mono generates a look-up tables to change the display from a nibble of old
@@ -913,7 +915,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | **rows** - Number of rows to skip
 
-    |Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     |  _skip_rows skips N rows
@@ -932,7 +934,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | **self** - Instance
 
-    |Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     |  einkOn turns on epapers supply on and enables IO pins
@@ -952,7 +954,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | **self** - Instance
 
-    |Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     |  einkOff turns off epapers supply on and puts  IO pins in Z state
@@ -972,7 +974,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | **r** - screen rotation.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Rotates the screen to be used in different orientations.
@@ -1010,7 +1012,7 @@ Inkplate MicroPython
     | **x** - x coordinate to rotate.
     | **y** - y coordinate to rotate.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Rotates one pixel for new orientation.
@@ -1031,7 +1033,7 @@ Inkplate MicroPython
     | **y** - y coordinate to rotate.
     | **c** - color (3 bit mode).
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Writes one pixel to display.
@@ -1055,7 +1057,7 @@ Inkplate MicroPython
     | **h** - height.
     | **c** - color (3 bit mode).
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Writes rectangle to display.
@@ -1079,7 +1081,7 @@ Inkplate MicroPython
     | **h** - length of line.
     | **c** - color (3 bit mode).
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Method to fast write vertical line on display.
@@ -1103,7 +1105,7 @@ Inkplate MicroPython
     | **w** - length of line.
     | **c** - color (3 bit mode).
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Method to fast write horizontal line on display.
@@ -1127,7 +1129,7 @@ Inkplate MicroPython
     | **y1** - y coordinate of end.
     | **c** - color (3 bit mode).
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Method to write line on display.
@@ -1150,7 +1152,7 @@ Inkplate MicroPython
     | **y1** - y coordinate of end.
     | **c** - color (3 bit mode).
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Method to write line on display.
@@ -1170,7 +1172,7 @@ Inkplate MicroPython
     | **self** - Instance
     | **mode** - New display mode, display.Inkplate.INKPLATE_1BIT or display.Inkplate.INKPLATE_2BIT.
 
-    Returns nothing.
+    | Returns nothing.
 
 
 
@@ -1186,7 +1188,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | **_mode** - New display mode, display.Inkplate.INKPLATE_1BIT or display.Inkplate.INKPLATE_2BIT.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Changes the screen mode to from monochrome to 3 bit grayscale or vice versa.
@@ -1209,7 +1211,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | No arguments.
 
-    Returns currently set display mode.
+    | Returns currently set display mode.
 
 * **Description**:
     | Used to determine which display mode is currently used.
@@ -1225,7 +1227,7 @@ Inkplate MicroPython
 .clean()
 ########
 
-* **Method prototype:
+* **Method prototype**:
 
 .. code-block:: python
 
@@ -1235,7 +1237,7 @@ Inkplate MicroPython
     | uint8_t **c** - one of four posible pixel states (0 will light screen, 1 will darken screen, 2 will discharge screen and 3 will skip).
     | uint8_t **rep** - number of repetitions.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Cleans the actual screen of any possible burn in.
@@ -1262,7 +1264,7 @@ Inkplate MicroPython
     | **h** - line height
     | **color** - line color
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Draw a perfectly vertical line.
@@ -1296,7 +1298,7 @@ Inkplate MicroPython
     | **w** - line width
     | **color** - line color
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Draw a perfectly horizontal line.
@@ -1331,7 +1333,7 @@ Inkplate MicroPython
     | **h** - rectangle height
     | **color** - rectanle color, in range [0, 6]
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Draws a filled rectangle on the screen.
@@ -1362,7 +1364,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | **color** - color of the screen after filling.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Fills the whole screen to a solid color.
@@ -1396,7 +1398,7 @@ Inkplate MicroPython
     | **y1** - End point y coordinate.
     | **color** - Line color.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | General purpose line drawing function.
@@ -1432,7 +1434,7 @@ Inkplate MicroPython
     | **h** - Rectangle height.
     | **color** - Rectangle color (edges only, see fillRect for fully filled one).
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Draws and empty (not filled) rectangle.
@@ -1463,7 +1465,7 @@ Inkplate MicroPython
     | **r** - Circle radius.
     | **color** - Circle color (just the edge, see fillCircle for fully filled).
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Draws an empty(not filled) circle.
@@ -1496,7 +1498,7 @@ Inkplate MicroPython
     | **color** - Circle color (fully filled).
 
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Draws a filled circle to screen in a supplied color.
@@ -1533,7 +1535,7 @@ Inkplate MicroPython
     | **y2** - Third point y coordinate.
     | **color** - Triangle edge color(see fillTriangle for a fully filled one).
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Draw an empty rectangle to screen.
@@ -1569,7 +1571,7 @@ Inkplate MicroPython
     | **y2** - Third point y coordinate.
     | **color** - Triangle fill color.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Draw a rectangle filled with a certain color.
@@ -1604,7 +1606,7 @@ Inkplate MicroPython
     | **radius** - Curvature radius of the edges.
     | **color** - Rectangle edges color (for a fully filled one see fillRoundRect).
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Draws an empty (not filled) rectangle with round edges to screen.
@@ -1640,7 +1642,7 @@ Inkplate MicroPython
     | **radius** - Curvature radius of the edges.
     | **color** - Rectangle fill color.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Draws a fully filled rectangle with rounded corners to screen.
@@ -1673,7 +1675,7 @@ Inkplate MicroPython
     | **w** - Bitmap width.
     | **h** - Bitmap height.
   
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Draws a monochrome bitmap to screen. 
@@ -1709,7 +1711,7 @@ Inkplate MicroPython
     | **h** - Bitmap height.
     | **invert** - Inverts color.
   
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Draws a bitmap file to screen. 
@@ -1740,7 +1742,7 @@ Inkplate MicroPython
     | **self** - Instance
     | **s** - font scale
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Scales the font to some value.
@@ -1763,7 +1765,7 @@ Inkplate MicroPython
     | **self** - font dictionary
     | **f** - font dictionary
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Used to change the text font.
@@ -1798,7 +1800,7 @@ Inkplate MicroPython
     | **y** - y coordinate to write text
     | **s** - String to be printed.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Puts the text on screen. 
@@ -1826,7 +1828,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | No arguments.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Returns screen width.
@@ -1849,7 +1851,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | No arguments.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Returns screen height.
@@ -1872,7 +1874,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | No arguments.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Returns screen rotation, in range [0,3], 2 is default.
@@ -1901,7 +1903,7 @@ Inkplate MicroPython
     | **r** - radius
     | **color** - color in 3 bit mode
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Single pixel circle
@@ -1925,7 +1927,7 @@ Inkplate MicroPython
     | **r** - radius
     | **color** - color in 3 bit mode
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Draw filled circle
@@ -1951,11 +1953,11 @@ Inkplate MicroPython
     | **y2** - y coordinate of third point
     | **color** - color in 3bit mode
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
     | Triangle drawing function.  Will draw a single pixel wide triangle
-        around the points (x0, y0), (x1, y1), and (x2, y2).
+    |    around the points (x0, y0), (x1, y1), and (x2, y2).
 
 
 .round_rect() method
@@ -1976,14 +1978,13 @@ Inkplate MicroPython
     | **radius** - radius of rounded corners.
     | **color** - color in 3 bit mode.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
 
-   |Rectangle with rounded corners drawing function.
-    |    This works like a regular rect though! if radius = 0
-     |   Will draw the outline of a rextabgle with rounded corners with (x0,y0) at the top left
-
+   |  Rectangle with rounded corners drawing function.
+   |  This works like a regular rect though! if radius = 0
+   |  Will draw the outline of a rextabgle with rounded corners with (x0,y0) at the top left
 
 
 .fill_round_rect() method
@@ -2004,14 +2005,13 @@ Inkplate MicroPython
     | **radius** - radius of rounded corners.
     | **color** - color in 3 bit mode.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
 
-   |Filled rectangle with rounded corners drawing function.
-    |    This works like a regular rect though! if radius = 0
-     |   Will draw the outline of a rextabgle with rounded corners with (x0,y0) at the top left    
-
+    | Filled rectangle with rounded corners drawing function.
+    | This works like a regular rect though! if radius = 0
+    | Will draw the outline of a rextabgle with rounded corners with (x0,y0) at the top left    
 
 
 .init_spi() method
@@ -2027,7 +2027,7 @@ Inkplate MicroPython
     | **self** - This object
     | **baudrate** - Communication speed
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
 
@@ -2047,7 +2047,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | **self** - This object
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
 
@@ -2067,7 +2067,7 @@ Inkplate MicroPython
     | **cls** - This object.
     | **value** - frontlight intensity.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
 
@@ -2092,7 +2092,7 @@ Inkplate MicroPython
     | **width** - width of rectangle.
     | **height** - height of rectangle.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
 
@@ -2113,7 +2113,7 @@ Inkplate MicroPython
     | **cls** - This object.
     | **pwrState** - x coordinate of start of rectangle.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
 
@@ -2132,7 +2132,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | **cls** - This object.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
 
@@ -2152,7 +2152,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | **cls** - This object.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
 
@@ -2171,7 +2171,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | **cls** - This object.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
 
@@ -2191,7 +2191,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | **cls** - This object.
 
-    Returns data from touchscreen registers.
+    | Returns data from touchscreen registers.
 
 * **Description**:
 
@@ -2213,7 +2213,7 @@ Inkplate MicroPython
     | **data** - Data array to convert.
     | **i** - Index of data.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
 
@@ -2233,7 +2233,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | **cls** - This object.
 
-    Returns how many fingers are touching touchscreen.
+    | Returns how many fingers are touching touchscreen.
 
 * **Description**:
 
@@ -2253,7 +2253,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | **cls** - This object.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
 
@@ -2274,7 +2274,7 @@ Inkplate MicroPython
     | **cls** - This object.
     | **state** - State to set to touchscreen.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
 
@@ -2294,7 +2294,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | **cls** - This object.
 
-    Returns touchscreen power state.
+    | Returns touchscreen power state.
 
 * **Description**:
 
@@ -2314,7 +2314,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | **cls** - This object.
 
-    Returns 1 if touchscreen is initialized and operating.
+    | Returns 1 if touchscreen is initialized and operating.
 
 * **Description**:
 
@@ -2350,7 +2350,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | **self** - This object.
 
-    Returns True if panel is in deepsleep mode
+    | Returns True if panel is in deepsleep mode
 
 * **Description**:
 
@@ -2371,7 +2371,7 @@ Inkplate MicroPython
     | **self** - This object.
     | **state** - What to set deep sleep.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
 
@@ -2389,7 +2389,7 @@ Inkplate MicroPython
 * **Arguments and return value**:
     | **self** - This object.
 
-    Returns nothing.
+    | Returns nothing.
 
 * **Description**:
 

@@ -23,11 +23,11 @@ Inkplate_Basic_Partial_Update
         :width: 500
 
 Inkplate_Full_Screen_Colors
-###################
+###########################
     Simple Inkplate example showing all colors of the Inkplate..
 
 Inkplate_6Color_Basic
-###################
+#####################
     Simple Inkplate example showing drawing functionalities of the Inkplate 6COLOR library.
 
 Advanced Inkplate Features

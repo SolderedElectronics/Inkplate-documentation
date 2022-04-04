@@ -1,6 +1,6 @@
 Inkplate Peripheral Mode
 ========================
-    Peripheral mode for Inkplate by e-radionica.com
+    Peripheral mode for Inkplate by Soldered
     Peripheral mode is uploaded to each Inkplate. It enables you to use the board
     without reprogramming. You just need to send commands via UART and it will
     show contents on its screen. 
@@ -291,6 +291,7 @@ readTemperature: #N(?)*
     #N(23)* - 23 Celsius degrees
 
 | Note: Not supported on Inkplate 2
+
 readTouchpad: #O(P)*
 --------------------
     | P - Name of pad that needs to be read (1, 2 or 3)
@@ -303,6 +304,7 @@ readTouchpad: #O(P)*
     #O(0)* for low state of pad
 
 | Note: Not supported on Inkplate 2
+
 readBattery: #P(?)*
 -------------------
     | Response:
@@ -312,11 +314,13 @@ readBattery: #P(?)*
     #P(3.65)* - Measured voltage on battery is 3.65VDC
 
 | Note: Not supported on Inkplate 2
+
 panelSupply(einkOff/on):#Q(S)*
 ------------------------------
     | S - State of panel power supply (S = 1 -> panel has power supply, S = 0 -> panel power supply has benn turned off)
 
-    |Note: Not supported on Inkplate 2
+    | Note: Not supported on Inkplate 2
+
 getPanelState: #R(?)*
 ---------------------
     | Response:
@@ -326,6 +330,7 @@ getPanelState: #R(?)*
     #R(1)* - panel has power supply or #R(0)* - panel supply has been turned off
 
 | Note: Not supported on Inkplate 2
+
 drawImage: #S(XXX,YYY,"PATH")*
 ------------------------------
     | XXX - X position of bitmap on display
@@ -339,7 +344,8 @@ drawImage: #S(XXX,YYY,"PATH")*
 
     | Response:
 
-| Note: This will not work on Inkplate 2, hence it has no SD card slot
+| Note: This will not work on Inkplate 2, it has no SD card slot
+
 drawThickLine: #T(XXX,YYY,III,JJJ,TT,CC)*
 -----------------------------------------
     | XXX - Start x coordinate (with leading zeros)

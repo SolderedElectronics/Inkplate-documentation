@@ -20,8 +20,8 @@
 # -- Project information -----------------------------------------------------
 
 project = u"Inkplate docs"
-copyright = u"2020, e-radionica.com"
-author = u"e-radionica.com"
+copyright = u"2020, soldered.com"
+author = u"soldered.com"
 
 # The short X.Y version
 version = u""
@@ -131,7 +131,7 @@ latex_documents = [
         master_doc,
         "Inkplate6.tex",
         u"Inkplate Documentation",
-        u"e-radionica.com",
+        u"Soldered.com",
         "manual",
     ),
 ]
