@@ -5,6 +5,24 @@ To get started with Inkplate in Arduino IDE first select `right board <get-start
     .. code-block:: c
 
         #include "Inkplate.h"
+
+
+The variable "color" or somewhere only "c" represents a color of the pixels in different way with different display technologies.
+If your Inkplate supports only black and white colors, the variable color represents color in grayscale of black mode. 0 represents
+black, 7 represents white and numbers in between represents shades; 1 is lightest grey, 6 represents darkest grey.
+But if your Inkplate supports more colors, the next table shows values that represents colors.
+
+=============== ================== ========== 
+Color            Macro definition   Value
+--------------- ------------------ ----------
+Black            INKPLATE_BLACK      0
+White            INKPLATE_WHITE      1
+Green            INKPLATE_GREEN      2
+Blue             INKPLATE_BLUE        3  
+Red              INKPLATE_RED        4
+Yellow           INKPLATE_YELLOW     5
+Orange           INKPLATE_ORANGE     6
+=============== ================== ========== 
         
 System Functions
 ----------------
@@ -29,25 +47,9 @@ Inkplate object initialization
     In here given examples, Inkplate object will always be named display, if not said otherwise.
     After calling this below your "#include" lines, you have access to all Inkplate functionality as display object methods.
 
-setPanelState() method
-##############
-    | Sets panel state (on/off)
 
-    .. code-block:: c
-
-        setPanelState(bool _state);
-
-* **Arguments and return value**:
-    | uint8_t _state - panel state ON or OFF (1 or 0)
-
-    | No return
-
-* **Description**:
-
-    setPanelState sets panel state (on/off)
-
-getPanelState() method
-##############
+Inkplate::getPanelState()
+#########################
     | Gets panel state (ON/OFF)
 
     .. code-block:: c
@@ -63,9 +65,11 @@ getPanelState() method
 
     getPanelState gets panel state (ON/OFF)
 
-setPanelDeepSleep() method
-##############
-    | Puts color epaper in deep sleep, or starts epaper, depending on given arguments.
+  | **Note**: not supported on Inkplate 6COLOR and Inkplate 2
+
+Inkplate::setPanelDeepSleep()
+#############################
+    | Puts epaper in deep sleep, or starts epaper, depending on given arguments.
         HIGH or LOW (1 or 0) 1 will start panel, 0 will put it into deep
 
     .. code-block:: c
@@ -79,12 +83,13 @@ setPanelDeepSleep() method
 
 * **Description**:
 
-    setPanelDeepSleep puts color epaper in deep sleep, or starts epaper, depending on given arguments.
+    setPanelDeepSleep puts epaper in deep sleep, or starts epaper, depending on given arguments.
 
+  | **Note**: works only with Inkplate 6COLOR and Inkplate 2
 
-getPanelDeepSleepState() method
-##############
-    | Puts color epaper in deep sleep, or starts epaper, depending on given arguments.
+Inkplate::getPanelDeepSleepState()
+##################################
+    | Puts epaper in deep sleep, or starts epaper, depending on given arguments.
         HIGH or LOW (1 or 0) 1 will start panel, 0 will put it into deep
 
     .. code-block:: c
@@ -98,10 +103,12 @@ getPanelDeepSleepState() method
 
 * **Description**:
 
-    setPanelDeepSleep puts color epaper in deep sleep, or starts epaper, depending on given arguments.
+    setPanelDeepSleep puts epaper in deep sleep, or starts epaper, depending on given arguments.
 
-begin() method
-##############
+  | **Note**: works only with Inkplate 6COLOR and Inkplate 2
+
+Inkplate::begin()
+#################
     | Before calling any display method you **must** call .begin() like this: 
 
     .. code-block:: c
@@ -127,8 +134,8 @@ begin() method
 
 
 
-Inkplate::sdCardInit();
-#######################
+Inkplate::sdCardInit()
+######################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -145,7 +152,7 @@ Inkplate::sdCardInit();
     | Used to initialize SD card interface.
     | Must be called before using SD card functionality like SdFile::read();
 
-
+  | **Note**: not supported on Inkplate 2
 
 Inkplate::getSdFat();
 #####################
@@ -164,6 +171,7 @@ Inkplate::getSdFat();
 * **Description**:
     | See SdFat library documentation for use examples.
 
+  | **Note**: not supported on Inkplate 2
 
 Inkplate::getSPI();
 ###################
@@ -202,7 +210,7 @@ Inkplate::setPanelState();
 
         display.setPanelState(0);
 
-
+  | **Note**: not supported on Inkplate 6COLOR and Inkplate 2
 
 Inkplate::getPanelState();
 ##########################
@@ -226,6 +234,7 @@ Inkplate::getPanelState();
 
         Serial.print(display.getPanelState(), DEC);
 
+  | **Note**: not supported on Inkplate 6COLOR and Inkplate 2
 
 Inkplate::readTouchpad();
 #########################
@@ -252,7 +261,7 @@ Inkplate::readTouchpad();
             //Do something
         }
 
-
+  | **Note**: not supported on Inkplate 6PLUS and Inkplate 2
 
 Inkplate::readTemperature();
 ############################
@@ -277,10 +286,10 @@ Inkplate::readTemperature();
 
         Serial.print(display.readTemperature(), DEC);
 
-
+  | **Note**: not supported on Inkplate 2
 
 Inkplate::readBattery();
-#########################
+########################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -302,7 +311,7 @@ Inkplate::readBattery();
 
         double voltage = display.readBattery();
 
-
+  | **Note**: not supported on Inkplate Inkplate 2
 
 Inkplate::einkOff();
 ####################
@@ -326,7 +335,7 @@ Inkplate::einkOff();
 
         display.einkOff();
 
-
+  | **Note**: not supported on Inkplate 6COLOR and Inkplate 2
 
 Inkplate::einkOn();
 ####################
@@ -350,10 +359,10 @@ Inkplate::einkOn();
 
         display.einkOn();
 
-
+  | **Note**: not supported on Inkplate 6COLOR and Inkplate 2
 
 Inkplate::readPowerGood();
-####################
+##########################
 
 * **Method prototype (as seen in Inkplate.h)**:
 
@@ -374,10 +383,10 @@ Inkplate::readPowerGood();
 
         int power = readPowerGood();
 
-
+  | **Note**: not supported on Inkplate 6COLOR and Inkplate 2
 
 Inkplate::vscan_start();
-####################
+########################
 
 * **Method prototype (as seen in Inkplate.h)**:
 
@@ -396,7 +405,7 @@ Inkplate::vscan_start();
 
 
 Inkplate::hscan_start();
-####################
+########################
 
 * **Method prototype (as seen in Inkplate.h)**:
 
@@ -405,7 +414,7 @@ Inkplate::hscan_start();
     void hscan_start();
 
 * **Arguments and return value**:
-    |uint32_t **_d** - Data to be written into current row.
+    | uint32_t **_d** - Data to be written into current row.
 
     No return.
 
@@ -415,7 +424,7 @@ Inkplate::hscan_start();
 
 
 Inkplate::vscan_end();
-####################
+######################
 
 * **Method prototype (as seen in Inkplate.h)**:
 
@@ -434,7 +443,7 @@ Inkplate::vscan_end();
 
 
 Inkplate::pinsZstate();
-####################
+#######################
 
 * **Method prototype (as seen in Inkplate.h)**:
 
@@ -453,7 +462,7 @@ Inkplate::pinsZstate();
 
 
 Inkplate::pinsAsOutputs();
-####################
+##########################
 
 * **Method prototype (as seen in Inkplate.h)**:
 
@@ -471,7 +480,7 @@ Inkplate::pinsAsOutputs();
     
 
 Inkplate::setFrontlight();
-####################
+##########################
 
 * **Method prototype (as seen in Inkplate.h)**:
 
@@ -487,11 +496,10 @@ Inkplate::setFrontlight();
 * **Description**:
     | setFrontlight function sets frontlight intensity for inkplate, only for inkplate 6 plus
 
-
-
+  | **Note**: Only supported on Inkplate 6PLUS
 
 Inkplate::resetPanel();
-####################
+#######################
 
 * **Method prototype (as seen in Inkplate.h)**:
 
@@ -500,8 +508,9 @@ Inkplate::resetPanel();
     void resetPanel();
 
 * **Arguments and return value**:
-    | No arguments
-    Returns nothing.
+    | No arguments.
+
+    | Returns nothing.
 
 * **Description**:
     | resetPanel resets inkplate color.
@@ -509,7 +518,7 @@ Inkplate::resetPanel();
 
 
 Inkplate::sendCommand();
-####################
+########################
 
 * **Method prototype (as seen in Inkplate.h)**:
 
@@ -525,10 +534,8 @@ Inkplate::sendCommand();
     | sendCommand sends SPI command to inkplate color.
 
 
-
-
 Inkplate::sendData();
-####################
+#####################
 
 * **Method prototype (as seen in Inkplate.h)**:
 
@@ -550,46 +557,8 @@ Inkplate::sendData();
     | sendData sends SPI data to inkplate color.
 
 
-
-Inkplate::setPanelDeepSleep();
-####################
-
-* **Method prototype (as seen in Inkplate.h)**:
-
-.. code-block:: c
-
-    void setPanelDeepSleep(bool _state);
-
-* **Arguments and return value**:
-    | bool **_state** - HIGH or LOW (1 or 0) 1 will start panel, 0 will put it into deep
-    | Returns nothing.
-
-* **Description**:
-    | setPanelDeepSleep puts color epaper in deep sleep, or starts epaper, depending on given arguments.
-
-
-
-Inkplate::getPanelDeepSleepState();
-####################
-
-* **Method prototype (as seen in Inkplate.h)**:
-
-.. code-block:: c
-
-    bool getPanelDeepSleepState();
-
-* **Arguments and return value**:
-    | No arguments.
-    | Returns state of panel.
-
-* **Description**:
-    | getPanelDeepSleepState returns current state of the panel
-
-
-
-
 Inkplate::setMCPForLowPower;
-####################
+############################
 
 * **Method prototype (as seen in Inkplate.h)**:
 
@@ -605,39 +574,11 @@ Inkplate::setMCPForLowPower;
     | setMCPAForLowPower initiates MCP pins for low power, and puts
     | them in OUTPUT LOW because they are using least amount of current in deep
     | sleep that way
-    
 
 
 
 Drawing Functions
 -----------------
-
-
-Inkplate::writePixel();
-######################
-
-* **Method prototype (as seen in Graphics.h)**:
-
-.. code-block:: c
-
-    void writePixel(int16_t x0, int16_t y0, uint16_t _color);
-
-* **Arguments and return value**:
-    | int16_t **x0** - default position for x, will be changed depending on rotation
-    | int16_t **y0** - default position for y, will be changed depending on rotation
-    | uint16_t **color** - pixel color, in 3 bit mode in range [0, 7]
-
-    Returns nothing.
-
-* **Description**:
-    | writePixel funtion sets pixel data for (x, y) pixel position
-
-* **Example**:
-    .. code-block:: c
-
-        display.writePixel(100, 50, BLACK);
-
-
 
 
 Inkplate::drawPixel();
@@ -685,7 +626,7 @@ Inkplate::display();
     void display(bool leaveOn);
 
 * **Arguments and return value**:
-    | bool **leaveOn** - if set to 1, it will disable turning supply for eink after display update in order to save some time needed for power supply to save some time at next display update or increase refreshing speed
+    | bool **leaveOn** - if set to 1, it will disable turning supply for eink after display update in order to save some time needed for power supply to save some time at next display update or increase refreshing speed.
 
     Returns nothing.
 
@@ -703,7 +644,7 @@ Inkplate::display();
 
 
 Inkplate::display1b();
-####################
+######################
 
 * **Method prototype (as seen in Inkplate.h)**:
 
@@ -712,8 +653,9 @@ Inkplate::display1b();
     void display1b(bool leaveOn);
 
 * **Arguments and return value**:
-    | bool **_forced** - For advanced use with deep sleep. Can force partial update in deep sleep
-    Returns nothing.
+    | bool **leaveOn** - If 1, keeps e-Ink power supply on for faster refresh time.
+
+    | Returns nothing.
 
 * **Description**:
     | display1b function writes black and white data to display
@@ -730,7 +672,7 @@ Inkplate::display1b();
 
 
 Inkplate::display3b();
-####################
+######################
 
 * **Method prototype (as seen in Inkplate.h)**:
 
@@ -739,8 +681,9 @@ Inkplate::display3b();
     void display3b(bool leaveOn);
 
 * **Arguments and return value**:
-    | bool **_forced** - For advanced use with deep sleep. Can force partial update in deep sleep
-    Returns nothing.
+    | bool **leaveOn** - If 1, keeps e-Ink power supply on for faster refresh time.
+
+    | Returns nothing.
 
 * **Description**:
     | display3b function writes grayscale data to display
@@ -756,7 +699,7 @@ Inkplate::display3b();
 
 
 Inkplate::preloadScreen();
-####################
+##########################
 
 * **Method prototype (as seen in Inkplate.h)**:
 
@@ -772,7 +715,7 @@ Inkplate::preloadScreen();
 * **Description**:
     | Copies data from partial to data buffer.
 
-
+  | **Note**: not supported on Inkplate 6COLOR and Inkplate 2
 
 Inkplate::clearDisplay();
 #########################
@@ -815,11 +758,13 @@ or
     void partialUpdate(bool _forced, bool leaveOn);
 
 * **Arguments and return value**:
-    | bool **_forced** - For advanced use with deep sleep. Can force partial update in deep sleep
+    | bool **_forced** - For advanced use with deep sleep. Can force partial update in deep sleep.
+
     | bool **leaveOn** - if set to 1, it will disable turning supply for eink after
     | display update in order to save some time needed for power supply
-    | to save some time at next display update or increase refreshing speed
-    Returns nothing.
+    | to save some time at next display update or increase refreshing speed.
+
+    | Returns nothing.
 
 * **Description**:
     | Updates only the changed parts of the screen. (monochrome/INKPLATE_1BIT mode only!)
@@ -835,7 +780,7 @@ or
 
         display.drawPixel(100, 100, BLACK);
 
-
+  | **Note**: not supported on Inkplate 6COLOR and Inkplate 2
 
 Inkplate::setRotation();
 ########################
@@ -895,10 +840,10 @@ Inkplate::selectDisplayMode();
 
         display.selectDisplayMode(INKPLATE_3BIT);
 
-
+  | **Note**: not supported on Inkplate 2
 
 Inkplate::setDisplayMode();
-##############################
+###########################
 
 * **Method prototype (as seen in Graphics.h)**:
 
@@ -912,7 +857,7 @@ Inkplate::setDisplayMode();
     Returns nothing.
 
 * **Description**:
-    | Sets display mode, can't be used with color displays
+    | Sets display mode, can't be used with color Inkplate6Color and Inkplate2
 
 
 
@@ -940,9 +885,10 @@ Inkplate::getDisplayMode();
         if(display.getDisplayMode() == INKPLATE_3BIT)
             Serial.println("I'm in grayscale mode!");
 
+  | **Note**: not supported on Inkplate 6COLOR and Inkplate 2
 
 Inkplate::drawImage();
-#############################
+######################
 
 * **Method prototype (as seen in Image.h)**:
 
@@ -1007,6 +953,8 @@ Inkplate::drawImage();
     | Can draw from web if path starts with http:// or https:// or if not from SD.
     | Draws bmp, png and jpeg images.
     | Automatically adjusts for current display mode.
+    | On Inkplate 6COLOR, dither will use all of the 7 colors to reproduce wanted color.
+    | There online Image converter for the Inkplate which have a presets for easier converting images for different Inkplates.
 
 
 Inkplate::drawBitmapFromSD();
@@ -1061,6 +1009,7 @@ Inkplate::drawBitmapFromSD();
     .. image:: images/IMG_4348.jpg
         :width: 600
 
+  | **Note**: not supported on Inkplate 2
 
 Inkplate::drawBitmapFromWeb();
 ##############################
@@ -1091,6 +1040,7 @@ Inkplate::drawBitmapFromWeb();
 
 * **Description**:
     | Draws an image from the web.
+    | On Inkplate 6COLOR, dither will use all of the 7 colors to reproduce wanted color.
     | Make sure WiFi is setup beforehand as in examples (10-Inkplate_download_and_show).
 
 * **Example**:
@@ -1166,6 +1116,7 @@ Inkplate::drawGradientLine();
 * **Description**:
     | For drawing color gradient lines.
     | color1 should always be less than color2.
+    | If Inkplate 6Color is used, it will draw line in colors, so it is not recommended to use this function with Inkplate 6COLOR.
 
 * **Example**:
     .. code-block:: c
@@ -1184,7 +1135,7 @@ Inkplate::drawGradientLine();
 
 
 Inkplate::clean();
-#########################
+##################
 
 * **Method prototype (as seen in Inkplate.h)**:
 
@@ -1207,110 +1158,7 @@ Inkplate::clean();
 
         display.clean();
 
-
-
-
-Inkplate::writeFastVLine();
-##########################
-
-* **Method prototype (as seen in Graphics.h)**:
-
-.. code-block:: c
-
-    void writeFastVLine(int16_t x, int16_t y, int16_t h, uint16_t color);
-
-* **Arguments and return value**:
-    | int16_t **x** - x coordinate of the line start point
-    | int16_t **y** - y coordinate of the line start point
-    | int16_t **h** - line height
-    | uint16_t **color** - line color
-
-    Returns nothing.
-
-* **Description**:
-    | Draw a perfectly vertical line.
-    | Garantees to be faster than regular line draw.
-
-* **Example**:
-    .. code-block:: c
-
-        display.writeFastVLine(100, 100, 400, 0);
-
-* **Result**:
-    | Here is what the code above produces:
-
-    .. image:: images/IMG_4354.jpg
-        :width: 600
-
-
-
-Inkplate::writeFastHLine();
-##########################
-
-* **Method prototype (as seen in Graphics.h)**:
-
-.. code-block:: c
-
-    void writeFastHLine(int16_t x, int16_t y, int16_t w, uint16_t color);
-
-* **Arguments and return value**:
-    | int16_t **x** - x coordinate of the line start point
-    | int16_t **y** - y coordinate of the line start point
-    | int16_t **w** - line width
-    | uint16_t **color** - line color
-
-    Returns nothing.
-
-* **Description**:
-    | Draw a perfectly horizontal line.
-    | Garantees to be faster than regular line draw.
-
-* **Example**:
-    .. code-block:: c
-
-        display.writeFastHLine(100, 100, 600, 0);
-
-* **Result**:
-    | Here is what the code above produces:
-
-    .. image:: images/IMG_4355.jpg
-        :width: 600
-
-
-
-Inkplate::writeFillRect();
-#####################
-
-* **Method prototype (as seen in Graphics.h)**:
-
-.. code-block:: c
-
-    void writeFillRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t color);
-
-* **Arguments and return value**:
-    | int16_t **x** - x coordinate of the rectangle
-    | int16_t **y** - y coordinate of the rectangle
-    | int16_t **w** - rectangle width
-    | int16_t **h** - rectangle height
-    | uint16_t **color** - rectanle color, in range [0, 6]
-
-    Returns nothing.
-
-* **Description**:
-    | Draws a filled rectangle on the screen.
-
-* **Example**:
-    .. code-block:: c
-
-        display.writeFillRect(random(0, 799), random(0, 599), 30, 30, random(0, 7));
-
-* **Result**:
-    | Here is what the code above produces:
-
-    .. image:: images/IMG_4356.jpg
-        :width: 600
-
-
+  | Note: Inkplate 2 and Inkplate 6COLOR does not support this function
 
 
 Inkplate::fillScreen();
@@ -1340,45 +1188,6 @@ Inkplate::fillScreen();
 
     .. image:: images/IMG_4357.jpg
         :width: 600
-
-
-
-Inkplate::writeLine();
-#####################
-
-* **Method prototype (as seen in Adafruit_GFX.h)**:
-
-.. code-block:: c
-
-    void writeLine(int16_t x0, int16_t y0, int16_t x1, int16_t y1, uint16_t color);
-
-* **Arguments and return value**:
-    | int16_t **x0** - Start point x coordinate.
-    | int16_t **y0** - Start point y coordinate.
-    | int16_t **x1** - End point x coordinate.
-    | int16_t **y1** - End point y coordinate.
-    | uint16_t **color** - Line color.
-
-    Returns nothing.
-
-* **Description**:
-    | General purpose line drawing function.
-    | If the line is vertical or horizontal it is recommended to use writeFastHLine or writeFastVLine,
-    | although writeLine automatically checks and uses faster drawing function if needed.
-
-* **Example**:
-    .. code-block:: c
-
-        //Diagonal lines
-        display.writeLine(0, 0, 799, 599, 0);
-        display.writeLine(799, 0, 0, 599, 0);
-
-* **Result**:
-    | Here is what the code above produces:
-
-    .. image:: images/IMG_4358.jpg
-        :width: 600
-
 
 
 Inkplate::drawRect();
@@ -1520,7 +1329,7 @@ Inkplate::fillPolygon();
 
 
 Inkplate::initedgeTable();
-########################
+##########################
 
 * **Method prototype (as seen in ShapesPolygon.h)**:
 
@@ -1538,7 +1347,7 @@ Inkplate::initedgeTable();
 
 
 Inkplate::insertionSort();
-########################
+##########################
 
 * **Method prototype (as seen in ShapesPolygon.h)**:
 
@@ -1547,7 +1356,7 @@ Inkplate::insertionSort();
     void insertionSort(edgeTableTuple *ett);
 
 * **Arguments and return value**:
-    | edgeTableTuple *ett - pointer to edgeTableTuple to be sorted.
+    | edgeTableTuple \*ett - pointer to edgeTableTuple to be sorted.
     | Returns nothing
 
 * **Description**:
@@ -1556,7 +1365,7 @@ Inkplate::insertionSort();
 
 
 Inkplate::storeEdgeInTuple();
-########################
+#############################
 
 * **Method prototype (as seen in ShapesPolygon.h)**:
 
@@ -1565,7 +1374,7 @@ Inkplate::storeEdgeInTuple();
     void storeEdgeInTuple(edgeTableTuple *receiver, int ym, int xm, float slopInv);
 
 * **Arguments and return value**:
-    | edgeTableTuple *receiver - pointer to edgeTableTuple structure.
+    | edgeTableTuple \*receiver - pointer to edgeTableTuple structure.
     | int ym - edgeTableTuple->ymax value.
     | int xm - edgeTableTuple->xofymin value.
     | float slopInv - edgeTableTuple->slopeInverse value.
@@ -1577,7 +1386,7 @@ Inkplate::storeEdgeInTuple();
 
 
 Inkplate::storeEdgeInTable();
-########################
+#############################
 
 * **Method prototype (as seen in ShapesPolygon.h)**:
 
@@ -1598,7 +1407,7 @@ Inkplate::storeEdgeInTable();
 
 
 Inkplate::removeEdgeByYmax();
-########################
+#############################
 
 * **Method prototype (as seen in ShapesPolygon.h)**:
 
@@ -1607,7 +1416,7 @@ Inkplate::removeEdgeByYmax();
     void removeEdgeByYmax(edgeTableTuple *tup, int yy);
 
 * **Arguments and return value**:
-    | edgeTableTuple *tup - pointer to edgeTableTuple to work on.
+    | edgeTableTuple \*tup - pointer to edgeTableTuple to work on.
     | int yy - value to remove from edgeTableTuple.
     | Returns nothing
 
@@ -1617,7 +1426,7 @@ Inkplate::removeEdgeByYmax();
 
 
 Inkplate::updatexbyslopeinv();
-########################
+##############################
 
 * **Method prototype (as seen in ShapesPolygon.h)**:
 
@@ -1626,7 +1435,7 @@ Inkplate::updatexbyslopeinv();
     void updatexbyslopeinv(edgeTableTuple *tup);
 
 * **Arguments and return value**:
-    | edgeTableTuple *tup - pointer to edgeTableTuple to work on.
+    | edgeTableTuple \*tup - pointer to edgeTableTuple to work on.
     | Returns nothing
 
 * **Description**:
@@ -1635,7 +1444,7 @@ Inkplate::updatexbyslopeinv();
 
 
 Inkplate::scanlineFill();
-########################
+#########################
 
 * **Method prototype (as seen in ShapesPolygon.h)**:
 
@@ -1954,6 +1763,7 @@ Inkplate::drawBitmap3Bit();
 * **Description**:
     | Draws a bitmap image to screen.
     | Image data can be created using online tools or supplied Python script in some examples.
+    | If Inkplate 6COLOR is used, this function will draw image in 7-color mode, otherwise it will draw image in grayscale mode.
 
 * **Example**:
     .. code-block:: c
@@ -2154,7 +1964,7 @@ Inkplate::setCursor();
 
 
 Inkplate::print();
-######################
+##################
 
 * **Method prototype**:
 
@@ -2186,7 +1996,7 @@ Inkplate::print();
 
 
 Inkplate::println();
-######################
+####################
 
 * **Method prototype**:
 
@@ -2370,6 +2180,8 @@ MCP Functions
 
 | MCP is started inside Inkplate.begin() function so you need only to call that and everything is set for MCP.
 
+| Inkplate 6COLOR and Inkplate 2 have only one MCP used as external IO expander.
+
 .. code-block:: c 
 
     Inkplate display(INKPLATE_1BIT);//or INKPLATE_3BIT
@@ -2377,7 +2189,7 @@ MCP Functions
 
 
 Inkplate::mcpBegin();
-#######################
+#####################
 
 * **Method prototype (as seen in Mcp.h)**:
 
@@ -2387,7 +2199,7 @@ Inkplate::mcpBegin();
 
 * **Arguments and return value**:
     | uint8_t _pin - mcp i2c address.
-    | uint8_t *_mode - pointer to array to be writen in registers.
+    | uint8_t \*_mode - pointer to array to be writen in registers.
     | Returns true if successful, false otherwise.
 
 * **Description**:
@@ -2418,9 +2230,8 @@ Inkplate::pinModeMCP();
         display.pinModeMCP(LED_PIN, OUTPUT);
 
 
-
 Inkplate::pinModeInternal();
-#######################
+############################
 
 * **Method prototype (as seen in Mcp.h)**:
 
@@ -2430,7 +2241,7 @@ Inkplate::pinModeInternal();
 
 * **Arguments and return value**:
     | uint8_t _addr - mcp i2c address.
-    | uint8_t *_r - pointer to array that holds mcp registers.
+    | uint8_t \*_r - pointer to array that holds mcp registers.
     | uint8_t _pin - pin to set mode.
     | uint8_t _mode - mode for pi to be set (INPUT=0x01, OUTPUT=0x02, INPUT_PULLUP=0x05).
     | Returns nothing.
@@ -2441,7 +2252,7 @@ Inkplate::pinModeInternal();
 
 
 Inkplate::digitalWriteInternal();
-#######################
+#################################
 
 * **Method prototype (as seen in Mcp.h)**:
 
@@ -2451,7 +2262,7 @@ Inkplate::digitalWriteInternal();
 
 * **Arguments and return value**:
     | uint8_t _addr - mcp i2c address.
-    | uint8_t *_r - pointer to array that holds mcp registers.
+    | uint8_t \*_r - pointer to array that holds mcp registers.
     | uint8_t _pin - pin to set mode.
     | uint8_t _state -  output pin state (0 or 1).
     | Returns nothing.
@@ -2487,7 +2298,7 @@ Inkplate::digitalWriteMCP();
 
 
 Inkplate::digitalReadInternal();
-#######################
+################################
 
 * **Method prototype (as seen in Mcp.h)**:
 
@@ -2497,7 +2308,7 @@ Inkplate::digitalReadInternal();
 
 * **Arguments and return value**:
     | uint8_t _addr - mcp i2c address.
-    | uint8_t *_r - pointer to array that holds mcp registers.
+    | uint8_t \*_r - pointer to array that holds mcp registers.
     | uint8_t _pin - pin to set mode.
     | Returns nothing.
 
@@ -2508,7 +2319,7 @@ Inkplate::digitalReadInternal();
 
 
 Inkplate::readMCPRegisters();
-############################
+#############################
 
 * **Method prototype (as seen in Mcp.h)**:
 
@@ -2524,7 +2335,7 @@ or
 
 * **Arguments and return value**:
     | uint8_t _addr - mcp i2c address.
-    | uint8_t *_k - pointer to array to be writen in registers.
+    | uint8_t \*_k - pointer to array to be writen in registers.
     | uint8_t _regName - name of register where read will start.
     | uint8_t _n - name of register where read will start.
     | Returns nothing.
@@ -2600,7 +2411,7 @@ or
     | uint8_t _addr - mcp i2c address.
     | uint8_t _regName - name of register where update will start.
     | uint8_t _d - data to be uploaded.
-    | uint8_t *k - pointer to array that holds new data.
+    | uint8_t \*k - pointer to array that holds new data.
     | uint8_t n - number of bites/registers to write to.
     | Returns nothing.
 
@@ -2610,7 +2421,7 @@ or
 
 
 Inkplate::updateAllRegister();
-###########################
+##############################
 
 * **Method prototype (as seen in Mcp.h)**:
 
@@ -2620,7 +2431,7 @@ Inkplate::updateAllRegister();
 
 * **Arguments and return value**:
     | uint8_t _addr - mcp i2c address.
-    | uint8_t *k - pointer to array that holds new data.
+    | uint8_t \*k - pointer to array that holds new data.
     | Returns nothing.
 
 * **Description**:
@@ -2630,7 +2441,7 @@ Inkplate::updateAllRegister();
 
 
 Inkplate::setIntOutput();
-##########################
+#########################
 
 * **Method prototype (as seen in Mcp.h)**:
 
@@ -2656,7 +2467,7 @@ Inkplate::setIntOutput();
 
 
 Inkplate::setIntOutputInternal();
-##########################
+#################################
 
 * **Method prototype (as seen in Mcp.h)**:
 
@@ -2666,7 +2477,7 @@ Inkplate::setIntOutputInternal();
 
 * **Arguments and return value**:
     | uint8_t _addr - mcp i2c address.
-    | uint8_t *_r - pointer to array that holds mcp registers.
+    | uint8_t \*_r - pointer to array that holds mcp registers.
     | uint8_t intPort - portA or portB.
     | uint8_t mirroring - set 1 to make ports mirror each other so that any interrupt will.
     | uint8_t openDrain - set 1 to set interupt port as open drain, this will override.
@@ -2679,7 +2490,7 @@ Inkplate::setIntOutputInternal();
 
 
 Inkplate::setIntPin();
-#######################
+######################
 
 * **Method prototype (as seen in Mcp.h)**:
 
@@ -2703,7 +2514,7 @@ Inkplate::setIntPin();
 
 
 Inkplate::setIntPinInternal();
-#######################
+##############################
 
 * **Method prototype (as seen in Mcp.h)**:
 
@@ -2715,7 +2526,7 @@ Inkplate::setIntPinInternal();
     | uint8_t _pin - pin number.
     | uint8_t mode - interurpt mode (CHANGE, FALLING, RISING)
     | uint8_t _addr - mcp i2c address
-    | uint8_t *_r - pointer to array that holds mcp registers
+    | uint8_t \*_r - pointer to array that holds mcp registers
     | Returns nothing.
 
 * **Description**:
@@ -2723,7 +2534,7 @@ Inkplate::setIntPinInternal();
 
 
 Inkplate::removeIntPin();
-##########################
+#########################
 
 * **Method prototype (as seen in Mcp.h)**:
 
@@ -2746,7 +2557,7 @@ Inkplate::removeIntPin();
 
 
 Inkplate::removeIntPinInternal();
-##########################
+#################################
 
 * **Method prototype (as seen in Mcp.h)**:
 
@@ -2756,7 +2567,7 @@ Inkplate::removeIntPinInternal();
 
 * **Arguments and return value**:
     | uint8_t _addr - mcp i2c address.
-    | uint8_t *_r - pointer to array that holds mcp registers.
+    | uint8_t \*_r - pointer to array that holds mcp registers.
     | uint8_t _pin - pin number.
     | Returns nothing.
 
@@ -2766,7 +2577,7 @@ Inkplate::removeIntPinInternal();
 
 
 Inkplate::getINT();
-#######################
+###################
 
 * **Method prototype (as seen in Mcp.h)**:
 
@@ -2789,7 +2600,7 @@ Inkplate::getINT();
 
 
 Inkplate::getINTstate();
-#########################
+########################
 
 * **Method prototype (as seen in Mcp.h)**:
 
@@ -2814,7 +2625,7 @@ Inkplate::getINTstate();
 
 
 Inkplate::getINTstateInternal();
-#########################
+################################
 
 * **Method prototype (as seen in Mcp.h)**:
 
@@ -2824,7 +2635,7 @@ Inkplate::getINTstateInternal();
 
 * **Arguments and return value**:
     | uint8_t _addr - mcp i2c address.
-    | uint8_t *_r - pointer to array that holds mcp registers.
+    | uint8_t \*_r - pointer to array that holds mcp registers.
     | Returns interupt registers state at the time interrupt occured.
 
 * **Description**:
@@ -2835,7 +2646,7 @@ Inkplate::getINTstateInternal();
 
 
 Inkplate::setPorts();
-#######################
+#####################
 
 * **Method prototype (as seen in Mcp.h)**:
 
@@ -2860,7 +2671,7 @@ Inkplate::setPorts();
 
 
 Inkplate::setPortsInternal();
-#######################
+#############################
 
 * **Method prototype (as seen in Mcp.h)**:
 
@@ -2870,7 +2681,7 @@ Inkplate::setPortsInternal();
 
 * **Arguments and return value**:
     | uint8_t _addr - mcp i2c address.
-    | uint8_t *_r - pointer to array that holds mcp registers.
+    | uint8_t \*_r - pointer to array that holds mcp registers.
     | uint16_t _d - value to be writen to port A and port B registers.
     | Returns nothing.
 
@@ -2879,7 +2690,7 @@ Inkplate::setPortsInternal();
 
 
 Inkplate::getPorts();
-#######################
+#####################
 
 * **Method prototype (as seen in Mcp.h)**:
 
@@ -2947,7 +2758,7 @@ WiFi connectivity
         }
 
 Inkplate::joinAP();
-#######################
+###################
 
 * **Method prototype (as seen in NetworkClient.h)**:
 
@@ -3045,10 +2856,12 @@ Inkplate::downloadFile();
 
 
 Real-Time clock Functions
-------------------------
+-------------------------
+
+  | **Note**: not supported on Inkplate 2, it has no built in RTC
 
 Inkplate::rtcSetTime();
-#########################
+#######################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3068,7 +2881,7 @@ Inkplate::rtcSetTime();
 
 
 Inkplate::rtcSetDate();
-#########################
+#######################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3089,7 +2902,7 @@ Inkplate::rtcSetDate();
 
 
 Inkplate::rtcSetEpoch();
-#########################
+########################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3107,7 +2920,7 @@ Inkplate::rtcSetEpoch();
 
 
 Inkplate::rtcGetEpoch();
-#########################
+########################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3125,7 +2938,7 @@ Inkplate::rtcGetEpoch();
 
 
 Inkplate::rtcGetRtcData();
-#########################
+##########################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3178,7 +2991,7 @@ Inkplate::rtcGetMinute();
 
 
 Inkplate::rtcGetHour();
-#########################
+#######################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3196,7 +3009,7 @@ Inkplate::rtcGetHour();
 
 
 Inkplate::rtcGetDay();
-#########################
+######################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3214,7 +3027,7 @@ Inkplate::rtcGetDay();
 
 
 Inkplate::rtcGetWeekday();
-#########################
+##########################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3233,7 +3046,7 @@ Inkplate::rtcGetWeekday();
 
 
 Inkplate::rtcGetMonth();
-#########################
+########################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3252,7 +3065,7 @@ Inkplate::rtcGetMonth();
 
 
 Inkplate::rtcGetYear();
-#########################
+#######################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3270,7 +3083,7 @@ Inkplate::rtcGetYear();
 
 
 Inkplate::rtcEnableAlarm();
-#########################
+###########################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3288,7 +3101,7 @@ Inkplate::rtcEnableAlarm();
 
 
 Inkplate::rtcSetAlarm();
-#########################
+########################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3310,7 +3123,7 @@ Inkplate::rtcSetAlarm();
 
 
 Inkplate::rtcSetAlarmEpoch();
-#########################
+#############################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3348,7 +3161,7 @@ Inkplate::rtcReadAlarm();
 
 
 Inkplate::rtcGetAlarmSecond();
-#########################
+##############################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3366,7 +3179,7 @@ Inkplate::rtcGetAlarmSecond();
 
 
 Inkplate::rtcGetAlarmMinute();
-#########################
+##############################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3383,7 +3196,7 @@ Inkplate::rtcGetAlarmMinute();
 
 
 Inkplate::rtcGetAlarmHour();
-#########################
+############################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3401,7 +3214,7 @@ Inkplate::rtcGetAlarmHour();
 
 
 Inkplate::rtcGetAlarmDay();
-#########################
+###########################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3420,7 +3233,7 @@ Inkplate::rtcGetAlarmDay();
 
 
 Inkplate::rtcGetAlarmWeekday();
-#########################
+###############################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3439,14 +3252,13 @@ Inkplate::rtcGetAlarmWeekday();
 
 
 Inkplate::rtcTimerSet();
-#########################
+########################
 
 * **Method prototype (as seen in System.h)**:
 
 .. code-block:: c 
 
-    void rtcTimerSet(rtcCountdownSrcClock source_clock, uint8_t value, bool int_enable, bool int_pulse)
-;
+    void rtcTimerSet(rtcCountdownSrcClock source_clock, uint8_t value, bool int_enable, bool int_pulse);
 
 * **Arguments and return value**:
     | rtcCountdownSrcClock **source_clock** - timer clock frequency
@@ -3460,7 +3272,7 @@ Inkplate::rtcTimerSet();
 
 
 Inkplate::rtcCheckTimerFlag();
-#########################
+##############################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3479,7 +3291,7 @@ Inkplate::rtcCheckTimerFlag();
 
 
 Inkplate::rtcCheckAlarmFlag();
-#########################
+##############################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3498,7 +3310,7 @@ Inkplate::rtcCheckAlarmFlag();
 
 
 Inkplate::rtcClearAlarmFlag();
-#########################
+##############################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3516,7 +3328,7 @@ Inkplate::rtcClearAlarmFlag();
 
 
 Inkplate::rtcClearTimerFlag();
-#########################
+##############################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3534,7 +3346,7 @@ Inkplate::rtcClearTimerFlag();
 
 
 Inkplate::rtcDisableTimer();
-#########################
+############################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3552,7 +3364,7 @@ Inkplate::rtcDisableTimer();
 
 
 Inkplate::rtcIsSet();
-#########################
+#####################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3571,7 +3383,7 @@ Inkplate::rtcIsSet();
 
 
 Inkplate::rtcReset();
-#########################
+#####################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3589,7 +3401,7 @@ Inkplate::rtcReset();
 
 
 Inkplate::rtcDecToBcd();
-#########################
+########################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3607,7 +3419,7 @@ Inkplate::rtcDecToBcd();
 
 
 Inkplate::rtcBcdToDec();
-#########################
+########################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3625,12 +3437,12 @@ Inkplate::rtcBcdToDec();
 
 
 
-Touchscreen (Inkplate 6 plus) Functions
-------------------------
+Touchscreen (only on Inkplate 6 plus) Functions
+-----------------------------------------------
 
 
 Inkplate::touchInArea();
-#########################
+########################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3651,7 +3463,7 @@ Inkplate::touchInArea();
 
 
 Inkplate::tsWriteRegs();
-#########################
+########################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3671,7 +3483,7 @@ Inkplate::tsWriteRegs();
 
 
 Inkplate::tsReadRegs();
-#########################
+#######################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3691,7 +3503,7 @@ Inkplate::tsReadRegs();
 
 
 Inkplate::tsHardwareReset();
-#########################
+############################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3710,7 +3522,7 @@ Inkplate::tsHardwareReset();
 
 
 Inkplate::tsSoftwareReset();
-#########################
+############################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3728,7 +3540,7 @@ Inkplate::tsSoftwareReset();
 
 
 Inkplate::tsInit();
-#########################
+###################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3747,7 +3559,7 @@ Inkplate::tsInit();
 
 
 Inkplate::tsShutdown();
-#########################
+#######################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3783,7 +3595,7 @@ Inkplate::tsGetRawData();
 
 
 Inkplate::tsGetXY();
-#########################
+####################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3803,7 +3615,7 @@ Inkplate::tsGetXY();
 
 
 Inkplate::tsGetData();
-#########################
+######################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3822,7 +3634,7 @@ Inkplate::tsGetData();
 
 
 Inkplate::tsGetResolution();
-#########################
+############################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3841,7 +3653,7 @@ Inkplate::tsGetResolution();
 
 
 Inkplate::tsSetPowerState();
-#########################
+############################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3859,7 +3671,7 @@ Inkplate::tsSetPowerState();
 
 
 Inkplate::tsGetPowerState();
-#########################
+############################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3878,7 +3690,7 @@ Inkplate::tsGetPowerState();
 
 
 Inkplate::tsAvailable();
-#########################
+########################
 
 * **Method prototype (as seen in System.h)**:
 
@@ -3892,5 +3704,3 @@ Inkplate::tsAvailable();
 
 * **Description**:
     | tsAvailable checks for touch screen functionality.
-
-

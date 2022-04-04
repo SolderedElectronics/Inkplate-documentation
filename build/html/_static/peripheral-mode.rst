@@ -240,6 +240,7 @@ drawBitmap: #H(XXX,YYY,"PATH")*
     #H(-1)* - SD Card Init Error
 
 | Note: This will not work on Inkplate 2, because it has no SD card slot
+
 setDisplayMode: #I(D)*
 ----------------------
     | D - Display Mode (D = 3 -> 3 bit mode, D = 1 -> 1 bit mode)
@@ -250,6 +251,7 @@ setDisplayMode: #I(D)*
     #I(3)* or #I(1)*
 
 | Note: This will not work on Inkplate 2, because it doesnt't support grayscale
+
 getDisplayMode: #J(?)*
 ----------------------
     | Response:
@@ -279,6 +281,7 @@ partialUpdate: #M(YY1, XX2, YY2)*
         #M(005,400,040)*
 
 | Note: This will not work on Inkplate 2, because it has no partialUpdate support
+
 readTemperature: #N(?)*
 -----------------------
     | Response:
