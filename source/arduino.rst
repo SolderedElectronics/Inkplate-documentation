@@ -955,8 +955,8 @@ Inkplate::drawImage();
     | Draws bmp, png and jpeg images.
     | Automatically adjusts for current display mode.
     | On Inkplate 6COLOR, dither will use all of the 7 colors to reproduce wanted color.
-    | There online Image converter for the Inkplate which have a presets for easier converting images for different Inkplates.
-
+    | There is online Image converter for the Inkplate which have a presets for easier converting images for different Inkplates
+    | here: https://inkplate.io/home/image-converter/
 
 Inkplate::drawBitmapFromSD();
 #############################
