@@ -122,4 +122,4 @@ Other Technical Specifications
     | **Wired Connectivity**: USB, I²C, and SPI.
     | **USB to UART converter**: CH340C.
     | **Storage**: MicroSD card reader.
-    | **Power Management**: onboard SPD1656 Chip on Glass for power supply, MCP73831 lithium battery charger with a standard JST connector.
+    | **Power Management**: onboard SPD1656 Chip on Glass (also used as Active Matrix EPD Display Driver) for power supply, MCP73831 lithium battery charger with a standard JST connector.

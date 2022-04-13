@@ -18,7 +18,7 @@ Color            Macro definition   Value
 Black            INKPLATE_BLACK      0
 White            INKPLATE_WHITE      1
 Green            INKPLATE_GREEN      2
-Blue             INKPLATE_BLUE        3  
+Blue             INKPLATE_BLUE       3  
 Red              INKPLATE_RED        4
 Yellow           INKPLATE_YELLOW     5
 Orange           INKPLATE_ORANGE     6
@@ -286,7 +286,7 @@ Inkplate::readTemperature();
 
         Serial.print(display.readTemperature(), DEC);
 
-  | **Note**: not supported on Inkplate 2
+  | **Note**: not supported on Inkplate 2 or Inkplate 6COLOR
 
 Inkplate::readBattery();
 ########################
@@ -555,7 +555,7 @@ Inkplate::sendData();
     | Returns nothing.
 
 * **Description**:
-    | sendData sends SPI data to inkplate color.
+    | sendData sends SPI data to Inkplate 6COLOR or Inkplate 2.
 
 
 Inkplate::setMCPForLowPower;
@@ -670,7 +670,7 @@ Inkplate::display1b();
         display.display1b(1);
 
 
-
+  | **Note**: not supported on Inkplate 6COLOR and Inkplate 2
 
 Inkplate::display3b();
 ######################
@@ -697,7 +697,7 @@ Inkplate::display3b();
 
         display.display3b(1);
 
-
+  | **Note**: not supported on Inkplate 6COLOR and Inkplate 2
 
 Inkplate::preloadScreen();
 ##########################
@@ -841,7 +841,7 @@ Inkplate::selectDisplayMode();
 
         display.selectDisplayMode(INKPLATE_3BIT);
 
-  | **Note**: not supported on Inkplate 2
+  | **Note**: not supported on Inkplate 6COLOR and Inkplate 2
 
 Inkplate::setDisplayMode();
 ###########################
@@ -2181,7 +2181,9 @@ MCP Functions
 
 | MCP is started inside Inkplate.begin() function so you need only to call that and everything is set for MCP.
 
-| Inkplate 6COLOR and Inkplate 2 have only one MCP used as external IO expander.
+| Inkplate 6COLOR has only one MCP used as external IO expander.
+
+| Inkplate 2 has none MCPs
 
 .. code-block:: c 
 
