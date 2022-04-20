@@ -556,7 +556,7 @@ Inkplate::resetPanel();
     | Returns nothing.
 
 * **Description**:
-    | resetPanel resets inkplate color.
+    | resetPanel resets Inkplate 2 or 6COLOR.
 
 
 
@@ -574,7 +574,7 @@ Inkplate::sendCommand();
     | Returns nothing.
 
 * **Description**:
-    | sendCommand sends SPI command to inkplate color.
+    | sendCommand sends SPI command to Inkplate 2 or 6COLOR.
 
 
 Inkplate::sendData();
