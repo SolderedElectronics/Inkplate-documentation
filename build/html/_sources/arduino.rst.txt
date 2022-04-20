@@ -10,7 +10,7 @@ To get started with Inkplate in Arduino IDE first select `right board <get-start
 The variable "color" or somewhere only "c" represents a color of the pixels in different way with different display technologies.
 If your Inkplate supports only black and white colors, the variable color represents color in grayscale of black mode. 0 represents
 black, 7 represents white and numbers in between represents shades; 1 is lightest grey, 6 represents darkest grey.
-But if your Inkplate supports more colors, the next table shows values that represents colors.
+If your Inkplate is 6COLOR, the next table shows values that represents colors.
 
 =============== ================== ========== 
 Color            Macro definition   Value
@@ -18,11 +18,21 @@ Color            Macro definition   Value
 Black            INKPLATE_BLACK      0
 White            INKPLATE_WHITE      1
 Green            INKPLATE_GREEN      2
-Blue             INKPLATE_BLUE        3  
+Blue             INKPLATE_BLUE       3  
 Red              INKPLATE_RED        4
 Yellow           INKPLATE_YELLOW     5
 Orange           INKPLATE_ORANGE     6
 =============== ================== ========== 
+
+But if your Inkplate is Inkplate 2, then next table shows values that represents colors.
+
+========= ================ =====
+Color     Macro Definition Value
+--------- ---------------- -----
+White      WHITE             0
+Black      BLACK             1
+Red        RED               2
+========= ================ =====
         
 System Functions
 ----------------
@@ -42,7 +52,13 @@ Inkplate object initialization
 
         Inkplate display(INKPLATE_3BIT);
 
-    depending on what you need, monochrome (INKPLATE_1BIT) of grayscale (INKPLATE_3BIT) functionality.
+    or
+
+    .. code-block:: c
+
+        Inkplate display;
+
+    depending on what you need, monochrome (INKPLATE_1BIT), grayscale (INKPLATE_3BIT) functionality or Inkplate 2 and 6COLOR (no argument).
 
     In here given examples, Inkplate object will always be named display, if not said otherwise.
     After calling this below your "#include" lines, you have access to all Inkplate functionality as display object methods.
@@ -188,6 +204,32 @@ Inkplate::getSPI();
     Returns SPIClass object.
 
 
+Inkplate::waitForEpd();
+##########################
+
+* **Method prototype (as seen in System.h)**:
+
+.. code-block:: c
+
+    bool waitForEpd(timeout);
+
+* **Arguments and return value**:
+    | uint16_t **timeout** - Timeout for waiting
+
+    | Returns 1 if panel is busy and 0 if panel is ready
+
+* **Description**:
+    | Reads state of busy pin.
+
+* **Example**:
+    .. code-block:: c
+
+        display.setPanelState(0);
+
+  | **Note**: supported only on Inkplate 2
+
+
+
 Inkplate::setPanelState();
 ##########################
 
@@ -286,7 +328,7 @@ Inkplate::readTemperature();
 
         Serial.print(display.readTemperature(), DEC);
 
-  | **Note**: not supported on Inkplate 2
+  | **Note**: not supported on Inkplate 2 or Inkplate 6COLOR
 
 Inkplate::readBattery();
 ########################
@@ -555,7 +597,7 @@ Inkplate::sendData();
     | Returns nothing.
 
 * **Description**:
-    | sendData sends SPI data to inkplate color.
+    | sendData sends SPI data to Inkplate 6COLOR or Inkplate 2.
 
 
 Inkplate::setMCPForLowPower;
@@ -603,6 +645,9 @@ Inkplate::drawPixel();
     | Draws one pixel at x0, y0 in desired color.
     | Requires Inkplate::display() to be called afterwards to update the screen,
     | See below.
+    | On Inkplate 2 if same pixel is set to red and black color, Red will always
+    | be shown. There are two buffers containing pictures ,one for black and one for red,
+    | and red is drawn after black.
 
 * **Example**:
     .. code-block:: c
@@ -670,7 +715,7 @@ Inkplate::display1b();
         display.display1b(1);
 
 
-
+  | **Note**: not supported on Inkplate 6COLOR and Inkplate 2
 
 Inkplate::display3b();
 ######################
@@ -697,7 +742,7 @@ Inkplate::display3b();
 
         display.display3b(1);
 
-
+  | **Note**: not supported on Inkplate 6COLOR and Inkplate 2
 
 Inkplate::preloadScreen();
 ##########################
@@ -742,7 +787,6 @@ Inkplate::clearDisplay();
         display.display();
 
 
-
 Inkplate::partialUpdate();
 ##########################
 
@@ -783,6 +827,7 @@ or
 
   | **Note**: not supported on Inkplate 6COLOR and Inkplate 2
 
+
 Inkplate::setRotation();
 ########################
 
@@ -818,7 +863,6 @@ Inkplate::setRotation();
         :width: 600
 
 
-
 Inkplate::selectDisplayMode();
 ##############################
 
@@ -841,7 +885,7 @@ Inkplate::selectDisplayMode();
 
         display.selectDisplayMode(INKPLATE_3BIT);
 
-  | **Note**: not supported on Inkplate 2
+  | **Note**: not supported on Inkplate 6COLOR and Inkplate 2
 
 Inkplate::setDisplayMode();
 ###########################
@@ -858,9 +902,9 @@ Inkplate::setDisplayMode();
     Returns nothing.
 
 * **Description**:
-    | Sets display mode, can't be used with color Inkplate6Color and Inkplate2
+    | Sets display mode
 
-
+  | **Note**: not supported on Inkplate 6COLOR and Inkplate 2
 
 Inkplate::getDisplayMode();
 ###########################
@@ -957,6 +1001,8 @@ Inkplate::drawImage();
     | On Inkplate 6COLOR, dither will use all of the 7 colors to reproduce wanted color.
     | There is online Image converter for the Inkplate which have a presets for easier converting images for different Inkplates
     | here: https://inkplate.io/home/image-converter/
+    | On Inkplate 2 if you use online image converter, include picture in header file and it will draw it in tri-color mode.
+
 
 Inkplate::drawBitmapFromSD();
 #############################
@@ -1011,6 +1057,7 @@ Inkplate::drawBitmapFromSD();
         :width: 600
 
   | **Note**: not supported on Inkplate 2
+
 
 Inkplate::drawBitmapFromWeb();
 ##############################
@@ -2021,6 +2068,36 @@ Inkplate::println();
     
         display.println("Some text");
 
+Inkplate::drawTextWithShadow();
+###############################
+
+* **Method prototype**:
+
+.. code-block:: c
+
+    void drawTextWithShadow(int x, int y, const char *_c, uint8_t _color1, uint8_t color2);
+
+* **Arguments and return value**:
+    | int x - x coordinate. 
+    |
+    | int y - y coordinate.
+    |
+    | const char \*_c - pointer to array of chars to be printed.
+    |
+    | uint8_t _color1 - Color of text.
+    |
+    | uint8_t color2 - Color of shadow.
+
+    Returns nothing.
+
+* **Description**:
+    | Prints text with shadow on specific location.
+
+* **Example**:
+    .. code-block:: c
+    
+        display.drawTextWithShadow(20,40, "Text", RED, BLACK);
+
 
 Inkplate::setTextWrap();
 ########################
@@ -2181,7 +2258,9 @@ MCP Functions
 
 | MCP is started inside Inkplate.begin() function so you need only to call that and everything is set for MCP.
 
-| Inkplate 6COLOR and Inkplate 2 have only one MCP used as external IO expander.
+| Inkplate 6COLOR has only one MCP used as external IO expander.
+
+| Inkplate 2 has none MCPs so all this functions will not work on Inkplate 2
 
 .. code-block:: c 
 
@@ -3438,9 +3517,10 @@ Inkplate::rtcBcdToDec();
 
 
 
-Touchscreen (only on Inkplate 6 plus) Functions
------------------------------------------------
+Touchscreen
+-----------
 
+    | **Note**: Only Inkplate 6PLUS has built-in touchscreen
 
 Inkplate::touchInArea();
 ########################

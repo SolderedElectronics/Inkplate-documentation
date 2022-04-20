@@ -67,6 +67,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#id9">2.5.3. Other Technical Specifications</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#inkplate-2">2.6. Inkplate 2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id10">2.6.1. Front-Mounted Components:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">2.6.2. Rear-Mounted Components:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">2.6.3. Other Technical Specifications</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api-reference.html">3. Inkplate API Reference</a></li>
@@ -108,11 +114,12 @@
 <h2><span class="section-number">2.1. </span>Inkplate Comparison<a class="headerlink" href="#inkplate-comparison" title="Permalink to this headline"></a></h2>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 23%" />
+<col style="width: 19%" />
+<col style="width: 14%" />
+<col style="width: 13%" />
+<col style="width: 18%" />
+<col style="width: 19%" />
 <col style="width: 17%" />
-<col style="width: 15%" />
-<col style="width: 22%" />
-<col style="width: 23%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>feature</p></td>
@@ -120,26 +127,31 @@
 <td><p>Inkplate 6</p></td>
 <td><p>Inkplate 6PLUS</p></td>
 <td><p>Inkplate 6COLOR</p></td>
+<td><p>Inkplate 2</p></td>
 </tr>
 <tr class="row-even"><td><p>Screen size</p></td>
 <td><p>9.7”</p></td>
 <td><p>6”</p></td>
 <td><p>6”</p></td>
 <td><p>5.8”</p></td>
+<td><p>2.13”</p></td>
 </tr>
 <tr class="row-odd"><td><p>Resolution</p></td>
 <td><p>1200x825</p></td>
 <td><p>800x600</p></td>
 <td><p>758x1024</p></td>
 <td><p>600x448</p></td>
+<td><p>202x104</p></td>
 </tr>
 <tr class="row-even"><td><p>Pixels</p></td>
 <td><p>990,000</p></td>
 <td><p>480,000</p></td>
 <td><p>776,192</p></td>
 <td><p>268,800</p></td>
+<td><p>21,008</p></td>
 </tr>
 <tr class="row-odd"><td><p>All-in-one</p></td>
+<td><p>Yes</p></td>
 <td><p>Yes</p></td>
 <td><p>Yes</p></td>
 <td><p>Yes</p></td>
@@ -150,8 +162,10 @@
 <td><p>Yes</p></td>
 <td><p>Yes</p></td>
 <td><p>Yes</p></td>
+<td><p>Yes</p></td>
 </tr>
 <tr class="row-odd"><td><p>Wi-Fi</p></td>
+<td><p>Yes</p></td>
 <td><p>Yes</p></td>
 <td><p>Yes</p></td>
 <td><p>Yes</p></td>
@@ -162,11 +176,13 @@
 <td><p>Yes</p></td>
 <td><p>No</p></td>
 <td><p>Yes</p></td>
+<td><p>No</p></td>
 </tr>
 <tr class="row-odd"><td><p>Touchscreen</p></td>
 <td><p>No</p></td>
 <td><p>No</p></td>
 <td><p>Yes</p></td>
+<td><p>No</p></td>
 <td><p>No</p></td>
 </tr>
 <tr class="row-even"><td><p>MicroSD</p></td>
@@ -174,11 +190,13 @@
 <td><p>Yes</p></td>
 <td><p>Yes</p></td>
 <td><p>Yes</p></td>
+<td><p>No</p></td>
 </tr>
 <tr class="row-odd"><td><p>Grayscale</p></td>
 <td><p>Yes</p></td>
 <td><p>Yes</p></td>
 <td><p>Yes</p></td>
+<td><p>No</p></td>
 <td><p>No</p></td>
 </tr>
 <tr class="row-even"><td><p>Partial update</p></td>
@@ -186,18 +204,21 @@
 <td><p>Yes</p></td>
 <td><p>Yes</p></td>
 <td><p>No</p></td>
+<td><p>No</p></td>
 </tr>
 <tr class="row-odd"><td><p>Refresh time</p></td>
 <td><p>1.61s</p></td>
 <td><p>1.26s</p></td>
 <td><p>1.27s</p></td>
 <td><p>12s</p></td>
+<td><p>21.8s</p></td>
 </tr>
 <tr class="row-even"><td><p>Refresh per px</p></td>
 <td><p>1.62μs</p></td>
 <td><p>2.63μs</p></td>
 <td><p>1.63μs</p></td>
 <td><p>45μs</p></td>
+<td><p>1ms</p></td>
 </tr>
 </tbody>
 </table>
@@ -296,7 +317,31 @@
 <div class="line"><strong>Wired Connectivity</strong>: USB, I²C, and SPI.</div>
 <div class="line"><strong>USB to UART converter</strong>: CH340C.</div>
 <div class="line"><strong>Storage</strong>: MicroSD card reader.</div>
-<div class="line"><strong>Power Management</strong>: onboard SPD1656 Chip on Glass for power supply, MCP73831 lithium battery charger with a standard JST connector.</div>
+<div class="line"><strong>Power Management</strong>: onboard SPD1656 Chip on Glass (also used as Active Matrix EPD Display Driver) for power supply, MCP73831 lithium battery charger with a standard JST connector.</div>
+</div>
+</div></blockquote>
+</section>
+</section>
+<section id="inkplate-2">
+<h2><span class="section-number">2.6. </span>Inkplate 2<a class="headerlink" href="#inkplate-2" title="Permalink to this headline"></a></h2>
+<section id="id10">
+<h3><span class="section-number">2.6.1. </span>Front-Mounted Components:<a class="headerlink" href="#id10" title="Permalink to this headline"></a></h3>
+<a class="reference internal image-reference" href="images/inkplate2_front.jpg"><img alt="images/inkplate2_front.jpg" src="images/inkplate2_front.jpg" style="width: 500px;" /></a>
+</section>
+<section id="id11">
+<h3><span class="section-number">2.6.2. </span>Rear-Mounted Components:<a class="headerlink" href="#id11" title="Permalink to this headline"></a></h3>
+<a class="reference internal image-reference" href="images/inkplate2_back.jpg"><img alt="images/inkplate2_back.jpg" src="images/inkplate2_back.jpg" style="width: 500px;" /></a>
+</section>
+<section id="id12">
+<h3><span class="section-number">2.6.3. </span>Other Technical Specifications<a class="headerlink" href="#id12" title="Permalink to this headline"></a></h3>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Physical Interface</strong>:GPIO pins, reset button and form factor that is optimized for custom enclosures.</div>
+<div class="line"><strong>Connectors</strong>: USB type C, easyC, GPIO and battery.</div>
+<div class="line"><strong>Wired Connectivity</strong>: USB, I²C, and SPI.</div>
+<div class="line"><strong>USB to UART converter</strong>: CH340C.</div>
+<div class="line"><strong>Storage</strong>: 4MB internal flash memory for user data.</div>
+<div class="line"><strong>Power Management</strong>: onboard Chip on Glass (also used as Active Matrix EPD Display Driver) for power supply, MCP73831 lithium battery charger with a standard JST connector.</div>
 </div>
 </div></blockquote>
 </section>

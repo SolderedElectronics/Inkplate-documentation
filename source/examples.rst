@@ -30,8 +30,21 @@ Inkplate_6Color_Basic
 #####################
     Simple Inkplate example showing drawing functionalities of the Inkplate 6COLOR library.
 
+Inkplate_Basic_BWR
+##################
+    This example shows basic Inkplate functionalities in red, black and white mode (writing text, drawing shapes and images) on Inkplate 2.
+
+Inkplate_Basic_Text_With_Shadow
+###############################
+    This example shows drawing text with shadow, you can change text color and shadow color.
+
 Advanced Inkplate Features
 --------------------------
+
+Inkplate_Bluetooth_Peripheral_Mode_Example
+##########################################
+    This example shows how to use Inkplate as a peripheral device over Bluetooth.
+    Note: for this to work you need to use ESP32 Wroover Board definition, as ours currently has a bug :(
 
 Inkplate_Battery_Voltage_Temperature
 ####################################
@@ -104,8 +117,8 @@ Inkplate_Wake_Up_On_Touchpads
     .. image:: images/example6.jpg
         :width: 500
 
-Web_BMP_Pictures
-################
+Web_Pictures
+############
     For this example you will need a micro USB cable, Inkplate, and an available WiFi connection.
     This example will show you how you can download a .bmp file (picture) from the web and
     display that image on e-paper display.
@@ -122,8 +135,8 @@ Inkplate_Web_Server
     .. image:: images/example8.jpg
         :width: 500
 
-Inkplate_WiFi_HTTP
-##################
+Inkplate_WiFi_HTTP_Request
+##########################
     For this example you will need USB cable, Inkplate and stable WiFi Internet connection.
     This example will show you how to connect to WiFi network, get data from Internet and display that data on epaper.
     This example is NOT on to how to parse HTML data from Internet - it will just print HTML on the screen.
@@ -143,6 +156,11 @@ Game_Of_Life_By_Claud9999
 
 Others
 ------
+
+Inkplate_Clean
+##############
+    This example will try to remove heavy burn-in visible on the panel.
+    Set number of refresh / clear cycles and upload the program.
 
 Inkplate_Factory_Programming_VCOM
 #################################
@@ -177,13 +195,13 @@ Inkplate_VariPass_Graphs
         :width: 500
 
 Mapbox_Api
-########################
+##########
     This example will show you how you can use Inkplate 6COLOR to display map data.
     This example gets html data from crowdsource campaing and displays them on Inkplate screen.
 
 
 Gallery
-########################
+#######
      This example will show you how you can use Inkplate 6COLOR to random images in the root sdcard folder.
 
 Projects
@@ -196,6 +214,13 @@ Campaing_Tracker
 
     .. image:: images/example14.jpg
         :width: 500
+
+Clock_Example
+#############
+    This example contains three types of clocks. First type is digital clock
+    with 4 digits which displays hours and minutes. Second type is binary clock,
+    which also have digits but displayed in binary numbers. Third type is analog 
+    clock with hands.    
 
 Cryptocurrency_Tracker
 ######################
@@ -236,3 +261,28 @@ Open_weather_station
 
     .. image:: images/example20.jpg
         :width: 500
+
+Quotables_Example
+#################
+    This example shows you how to use simple API call without API key. Response
+    from server is in JSON format, so that will be shown too how it is used. What happens
+    here is basically ESP32 sends API call and server returns HTML document containing one
+    random quote and some information about it, then using library ArduinoJSON we extract only quote
+    from JSON data and show it only on Inkplate 2. 
+
+World_Clock_Example
+###################
+    This example uses API call to get tim for wanted city and it's timezone.
+    Fetched data is in JSON format, and library is used to extract data. To choose
+    city just type any part of city's name and it will be automatically found, but if you type
+    to few letters, any city containig that letters will be found. Only for Inkplate 2.
+
+Youtube_Subscriber_Count_Example
+################################
+    This example show how to use Google API to show info about some youtube chhannel. 
+    You need to register on https://developers.google.com/ and get API key of any kind so you,
+    can use yxour API key in API call. That key you should copy in variable api_key.
+    Second thing you need to get ID of any youtube channel and copy it in channel_id variable.
+    You can get ID by going on any youtube channel profile and copy part of URL link after
+    https://www.youtube.com/channel/ (so just some random text after last backslash). 
+    Only for Inkplate 2.
