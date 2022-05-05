@@ -14,14 +14,17 @@ Short overview
 ----------------
 
 The schematics speak for themselves, but here is the short introduction to Inkplate hardware. Most boards share the same basic components:
-    | ESP32 - microcontroller as the brains of the whole board. WiFi with PCB antenna, BLE, 4MB Flash, 8MB PSRAM, 160MHz. Driving the e-paper parallel lines directly.
-    | MCP23017 - I2C IO expander. Driving the misc (slower) e-paper lines and providing some extra GPIO pins. 
+    | ESP32 - microcontroller as the brains of the whole board. WiFi with PCB antenna, BLE, 4MB Flash, 8MB PSRAM, 240MHz. Driving the e-paper parallel lines directly.
+    | \*MCP23017 - I2C IO expander. Driving the misc (slower) e-paper lines and providing some extra GPIO pins.
     | e-paper panel - depending on the specific Inkplate, the contents are shown on EPD. There's a special connector for each of them. Some have a backlight and touchscreen and thus the additional circuitry for those. 
     | CH340C - USB-UART adapter, paired with USB-C for programming and power. 
-    | microSD card slot.
-    | TPS65186 - special EPD power management IC, providing specific voltages needed to drive EPD properly. 
+    | \*microSD card slot.
+    | \*\*TPS65186 - special EPD power management IC, providing specific voltages needed to drive EPD properly. 
     | MCP73831 - lithium-ion battery charger. Linear and not so efficient one, but simple to use. Auto-select voltage source is on board as well.
     | 22uA low-power thanks to low Iq voltage regulator from TI TPS7A2633.
-    | 3 pieces touch pads based on TTP223. 
-    | Reset supervisor TPS3840PL27D takes care of proper reset at upload and manual reset. 
-    | Pushbutton style power button thanks to MC14093BD logic gate and a single MOSFET. 
+    | \*3 pieces touch pads based on TTP223. 
+    | \*Reset supervisor TPS3840PL27D takes care of proper reset at upload and manual reset. 
+    | \*Pushbutton style power button thanks to MC14093BD logic gate and a single MOSFET.
+
+        | *Note* \* *- Not available on every Inkplate, check Features page.*
+        | *Note* \*\* *- Colored screens (Inkplate 2 and 6COLOR) have integrated EPD power management.*

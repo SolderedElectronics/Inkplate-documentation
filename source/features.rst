@@ -148,4 +148,4 @@ Other Technical Specifications
     | **Wired Connectivity**: USB, I²C, and SPI.
     | **USB to UART converter**: CH340C.
     | **Storage**: 4MB internal flash memory for user data.
-    | **Power Management**: onboard Chip on Glass (also used as Active Matrix EPD Display Driver) for power supply, MCP73831 lithium battery charger with a standard JST connector.
+    | **Power Management**: onboard Chip on Glass (also used as Active Matrix EPD Display Driver) for power supply, MCP73831 lithium battery charger and pads on board to solder battery.

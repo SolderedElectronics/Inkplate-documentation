@@ -97,18 +97,24 @@
 <h2><span class="section-number">5.1. </span>Short overview<a class="headerlink" href="#short-overview" title="Permalink to this headline"></a></h2>
 <dl>
 <dt>The schematics speak for themselves, but here is the short introduction to Inkplate hardware. Most boards share the same basic components:</dt><dd><div class="line-block">
-<div class="line">ESP32 - microcontroller as the brains of the whole board. WiFi with PCB antenna, BLE, 4MB Flash, 8MB PSRAM, 160MHz. Driving the e-paper parallel lines directly.</div>
-<div class="line">MCP23017 - I2C IO expander. Driving the misc (slower) e-paper lines and providing some extra GPIO pins.</div>
+<div class="line">ESP32 - microcontroller as the brains of the whole board. WiFi with PCB antenna, BLE, 4MB Flash, 8MB PSRAM, 240MHz. Driving the e-paper parallel lines directly.</div>
+<div class="line">*MCP23017 - I2C IO expander. Driving the misc (slower) e-paper lines and providing some extra GPIO pins.</div>
 <div class="line">e-paper panel - depending on the specific Inkplate, the contents are shown on EPD. There’s a special connector for each of them. Some have a backlight and touchscreen and thus the additional circuitry for those.</div>
 <div class="line">CH340C - USB-UART adapter, paired with USB-C for programming and power.</div>
-<div class="line">microSD card slot.</div>
-<div class="line">TPS65186 - special EPD power management IC, providing specific voltages needed to drive EPD properly.</div>
+<div class="line">*microSD card slot.</div>
+<div class="line">**TPS65186 - special EPD power management IC, providing specific voltages needed to drive EPD properly.</div>
 <div class="line">MCP73831 - lithium-ion battery charger. Linear and not so efficient one, but simple to use. Auto-select voltage source is on board as well.</div>
 <div class="line">22uA low-power thanks to low Iq voltage regulator from TI TPS7A2633.</div>
-<div class="line">3 pieces touch pads based on TTP223.</div>
-<div class="line">Reset supervisor TPS3840PL27D takes care of proper reset at upload and manual reset.</div>
-<div class="line">Pushbutton style power button thanks to MC14093BD logic gate and a single MOSFET.</div>
+<div class="line">*3 pieces touch pads based on TTP223.</div>
+<div class="line">*Reset supervisor TPS3840PL27D takes care of proper reset at upload and manual reset.</div>
+<div class="line">*Pushbutton style power button thanks to MC14093BD logic gate and a single MOSFET.</div>
 </div>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><em>Note</em> * <em>- Not available on every Inkplate, check Features page.</em></div>
+<div class="line"><em>Note</em> ** <em>- Colored screens (Inkplate 2 and 6COLOR) have integrated EPD power management.</em></div>
+</div>
+</div></blockquote>
 </dd>
 </dl>
 </section>

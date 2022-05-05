@@ -310,9 +310,9 @@ If your Inkplate is 6COLOR, the next table shows values that represents colors.<
 <p>But if your Inkplate is Inkplate 2, then next table shows values that represents colors.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 30%" />
-<col style="width: 53%" />
-<col style="width: 17%" />
+<col style="width: 29%" />
+<col style="width: 55%" />
+<col style="width: 16%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>Color</p></td>
@@ -320,15 +320,15 @@ If your Inkplate is 6COLOR, the next table shows values that represents colors.<
 <td><p>Value</p></td>
 </tr>
 <tr class="row-even"><td><p>White</p></td>
-<td><p>WHITE</p></td>
+<td><p>INKPLATE2_WHITE</p></td>
 <td><p>0</p></td>
 </tr>
 <tr class="row-odd"><td><p>Black</p></td>
-<td><p>BLACK</p></td>
+<td><p>INKPLATE2_BLACK</p></td>
 <td><p>1</p></td>
 </tr>
 <tr class="row-even"><td><p>Red</p></td>
-<td><p>RED</p></td>
+<td><p>INKPLATE2_RED</p></td>
 <td><p>2</p></td>
 </tr>
 </tbody>
@@ -998,7 +998,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </li>
 <li><dl>
 <dt><strong>Description</strong>:</dt><dd><div class="line-block">
-<div class="line">Sets all tps pins at high z state, is used only when turning off epaper</div>
+<div class="line">Sets pins connected to e-paper to High-Z state(or inputs).</div>
 </div>
 </dd>
 </dl>
@@ -1027,7 +1027,7 @@ After you’ve done this you can proceed calling all other methods described bel
 </li>
 <li><dl>
 <dt><strong>Description</strong>:</dt><dd><div class="line-block">
-<div class="line">Sets all tps pins as outputs</div>
+<div class="line">Sets pins connected to e-paper to output state.</div>
 </div>
 </dd>
 </dl>
@@ -4298,7 +4298,8 @@ After you’ve done this you can proceed calling all other methods described bel
 <h2><span class="section-number">3.2.5. </span>Real-Time clock Functions<a class="headerlink" href="#real-time-clock-functions" title="Permalink to this headline"></a></h2>
 <blockquote>
 <div><div class="line-block">
-<div class="line"><strong>Note</strong>: not supported on Inkplate 2, it has no built in RTC</div>
+<div class="line"><strong>Note</strong>: not supported on Inkplate 2, it has no built in RTC, but integrated RTC in ESP32 can be used which isn’t as precise as</div>
+<div class="line">external RTC but can serve it’s purpose.</div>
 </div>
 </div></blockquote>
 <section id="inkplate-rtcsettime">

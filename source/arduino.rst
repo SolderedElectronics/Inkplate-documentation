@@ -26,13 +26,13 @@ Orange           INKPLATE_ORANGE     6
 
 But if your Inkplate is Inkplate 2, then next table shows values that represents colors.
 
-========= ================ =====
-Color     Macro Definition Value
---------- ---------------- -----
-White      WHITE             0
-Black      BLACK             1
-Red        RED               2
-========= ================ =====
+========= ================= =====
+Color     Macro Definition  Value
+--------- ----------------- -----
+White      INKPLATE2_WHITE    0
+Black      INKPLATE2_BLACK    1
+Red        INKPLATE2_RED      2
+========= ================= =====
         
 System Functions
 ----------------
@@ -499,7 +499,7 @@ Inkplate::pinsZstate();
     No return.
 
 * **Description**:
-    | Sets all tps pins at high z state, is used only when turning off epaper
+    | Sets pins connected to e-paper to High-Z state(or inputs).
 
   | **Note**: not supported on Inkplate 6COLOR and Inkplate 2
 
@@ -518,7 +518,7 @@ Inkplate::pinsAsOutputs();
     No return.
 
 * **Description**:
-    | Sets all tps pins as outputs
+    | Sets pins connected to e-paper to output state.
 
   | **Note**: not supported on Inkplate 6COLOR and Inkplate 2    
 
@@ -2938,7 +2938,8 @@ Inkplate::downloadFile();
 Real-Time clock Functions
 -------------------------
 
-  | **Note**: not supported on Inkplate 2, it has no built in RTC
+  | **Note**: not supported on Inkplate 2, it has no built in RTC, but integrated RTC in ESP32 can be used which isn't as precise as
+  | external RTC but can serve it's purpose.
 
 Inkplate::rtcSetTime();
 #######################
@@ -3582,7 +3583,6 @@ Inkplate::tsReadRegs();
     | tsReadRegs returns touchscreen registers content
 
 
-
 Inkplate::tsHardwareReset();
 ############################
 
@@ -3598,7 +3598,6 @@ Inkplate::tsHardwareReset();
 
 * **Description**:
     | tsHardwareReset resets ts hardware
-
 
 
 
