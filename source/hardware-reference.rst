@@ -23,7 +23,7 @@ The schematics speak for themselves, but here is the short introduction to Inkpl
     | MCP73831 - lithium-ion battery charger. Linear and not so efficient one, but simple to use. Auto-select voltage source is on board as well.
     | 22uA low-power thanks to low Iq voltage regulator from TI TPS7A2633.
     | \*3 pieces touch pads based on TTP223. 
-    | \*Reset supervisor TPS3840PL27D takes care of proper reset at upload and manual reset. 
+    | Reset supervisor TPS3840PL27D takes care of proper reset at upload and manual reset. 
     | \*Pushbutton style power button thanks to MC14093BD logic gate and a single MOSFET.
 
         | *Note* \* *- Not available on every Inkplate, check Features page.*

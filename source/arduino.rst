@@ -2938,8 +2938,7 @@ Inkplate::downloadFile();
 Real-Time clock Functions
 -------------------------
 
-  | **Note**: not supported on Inkplate 2, it has no built in RTC, but integrated RTC in ESP32 can be used which isn't as precise as
-  | external RTC but can serve it's purpose.
+  | **Note**: Inkplate 2 doesn't have dedicated RTC IC, but it has RTC built-in inside ESP32 that is not as precise as dedicated RTC IC, but it can be used for timekeeping, just time needs to be refreshed (updated) at least once a day using WiFi and NTP. Also, can't keep time, when there is no power (doesn't have RTC backup battery).
 
 Inkplate::rtcSetTime();
 #######################

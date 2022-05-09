@@ -4298,8 +4298,7 @@ After you’ve done this you can proceed calling all other methods described bel
 <h2><span class="section-number">3.2.5. </span>Real-Time clock Functions<a class="headerlink" href="#real-time-clock-functions" title="Permalink to this headline"></a></h2>
 <blockquote>
 <div><div class="line-block">
-<div class="line"><strong>Note</strong>: not supported on Inkplate 2, it has no built in RTC, but integrated RTC in ESP32 can be used which isn’t as precise as</div>
-<div class="line">external RTC but can serve it’s purpose.</div>
+<div class="line"><strong>Note</strong>: Inkplate 2 doesn’t have dedicated RTC IC, but it has RTC built-in inside ESP32 that is not as precise as dedicated RTC IC, but it can be used for timekeeping, just time needs to be refreshed (updated) at least once a day using WiFi and NTP. Also, can’t keep time, when there is no power (doesn’t have RTC backup battery).</div>
 </div>
 </div></blockquote>
 <section id="inkplate-rtcsettime">
