@@ -83,6 +83,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#inkplate-varipass-graphs">4.4.6. Inkplate_VariPass_Graphs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#mapbox-api">4.4.7. Mapbox_Api</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gallery">4.4.8. Gallery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#waveform-eeprom-programming">4.4.9. Waveform EEPROM Programming</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#projects">4.5. Projects</a><ul>
@@ -360,6 +361,25 @@ This example gets html data from crowdsource campaing and displays them on Inkpl
 <h3><span class="section-number">4.4.8. </span>Gallery<a class="headerlink" href="#gallery" title="Permalink to this headline"></a></h3>
 <blockquote>
 <div><p>This example will show you how you can use Inkplate 6COLOR to random images in the root sdcard folder.</p>
+</div></blockquote>
+</section>
+<section id="waveform-eeprom-programming">
+<h3><span class="section-number">4.4.9. </span>Waveform EEPROM Programming<a class="headerlink" href="#waveform-eeprom-programming" title="Permalink to this headline"></a></h3>
+<blockquote>
+<div><p>NOTE: This example is only available on Inkplate 10 board.</p>
+<p>In order for the image to display correctly on Inkplate, Inkplate needs to have a proper waveform saved in the EEPROM memory.
+If there is no waveform data available, the message “Waveform load failed! Upload new waveform in EEPROM. Using default waveform.” on the Serial monitor will be displayed (if the Serial.begin() is called before display.begin()).
+If something like this happens, or you’re not satisfied with the grayscale, you can run this example and choose one of three available waveforms.</p>
+<p>Waveforms are responsible for the grayscale image on the e-paper display. It’s just a series of frames that darken or whiten pixels in each frame in order to get desired pixel color.
+They depend on many parameters like temperature, previous pixel color, next pixel color, and even the type (batch) of the e-paper panel.</p>
+<p>Upload this example code on your Inkplate 10. After upload, with touchpad 1 and touchpad 3 choose one of the available waveforms. In the next images, you can see what the correct waveform will look like on the Inkplate.
+After you find the waveform that best suits for your panel, press touchpad 2 to store it in the EEPROM memory of the ESP32.
+Calling display.begin() function, the waveform will be copied from EEPROM memory into the library. There is no need for waveform selection before every usage of the Inkplate.
+One waveform on one Inkplate may not be compatible with another Inkplate (as you can also see in the pictures, there are two different panels, each with its own waveform).</p>
+<a class="reference internal image-reference" href="_images/example22a.jpg"><img alt="_images/example22a.jpg" src="_images/example22a.jpg" style="width: 500px;" /></a>
+<p>After successfully saving waveform data to EEPROM, it shows the next image.</p>
+<a class="reference internal image-reference" href="_images/example22b.jpg"><img alt="_images/example22b.jpg" src="_images/example22b.jpg" style="width: 500px;" /></a>
+<p>Waveforms on the Inkplate are reverse engineered and made to best fit a large number of e-paper panels, but they are not perfect.</p>
 </div></blockquote>
 </section>
 </section>

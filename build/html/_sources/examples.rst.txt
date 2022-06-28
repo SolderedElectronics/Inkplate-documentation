@@ -202,7 +202,33 @@ Mapbox_Api
 
 Gallery
 #######
-     This example will show you how you can use Inkplate 6COLOR to random images in the root sdcard folder.
+    This example will show you how you can use Inkplate 6COLOR to random images in the root sdcard folder.
+
+Waveform EEPROM Programming
+###########################
+    NOTE: This example is only available on Inkplate 10 board.
+
+    In order for the image to display correctly on Inkplate, Inkplate needs to have a proper waveform saved in the EEPROM memory.
+    If there is no waveform data available, the message "Waveform load failed! Upload new waveform in EEPROM. Using default waveform." on the Serial monitor will be displayed (if the Serial.begin() is called before display.begin()).
+    If something like this happens, or you're not satisfied with the grayscale, you can run this example and choose one of three available waveforms.
+
+    Waveforms are responsible for the grayscale image on the e-paper display. It's just a series of frames that darken or whiten pixels in each frame in order to get desired pixel color.
+    They depend on many parameters like temperature, previous pixel color, next pixel color, and even the type (batch) of the e-paper panel.
+
+    Upload this example code on your Inkplate 10. After upload, with touchpad 1 and touchpad 3 choose one of the available waveforms. In the next images, you can see what the correct waveform will look like on the Inkplate.
+    After you find the waveform that best suits for your panel, press touchpad 2 to store it in the EEPROM memory of the ESP32.
+    Calling display.begin() function, the waveform will be copied from EEPROM memory into the library. There is no need for waveform selection before every usage of the Inkplate.
+    One waveform on one Inkplate may not be compatible with another Inkplate (as you can also see in the pictures, there are two different panels, each with its own waveform).
+
+    .. image:: images/example22a.jpg
+        :width: 500
+
+    After successfully saving waveform data to EEPROM, it shows the next image.
+
+    .. image:: images/example22b.jpg
+        :width: 500
+
+    Waveforms on the Inkplate are reverse engineered and made to best fit a large number of e-paper panels, but they are not perfect.
 
 Projects
 --------
