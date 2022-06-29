@@ -204,8 +204,8 @@ Gallery
 #######
     This example will show you how you can use Inkplate 6COLOR to random images in the root sdcard folder.
 
-Waveform EEPROM Programming
-###########################
+Inkplate_Waveform_EEPROM_Programming
+####################################
     NOTE: This example is only available on Inkplate 10 board.
 
     In order for the image to display correctly on Inkplate, Inkplate needs to have a proper waveform saved in the EEPROM memory.
@@ -223,10 +223,12 @@ Waveform EEPROM Programming
     .. image:: images/example22a.jpg
         :width: 500
 
+
     After successfully saving waveform data to EEPROM, it shows the next image.
 
     .. image:: images/example22b.jpg
         :width: 500
+
 
     Waveforms on the Inkplate are reverse engineered and made to best fit a large number of e-paper panels, but they are not perfect.
 
