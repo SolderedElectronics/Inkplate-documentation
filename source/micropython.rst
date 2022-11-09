@@ -1700,15 +1700,13 @@ Inkplate MicroPython
 
 .. code-block:: python
 
-    drawBitmap(x, y, path, invert=False)
+    drawImageFile(x, y, path, invert=False)
 
 * **Arguments and return value**:
     | **self** - font dictionary
     | **x** - Bitmap x coordinate.
     | **y** - Bitmap y coordinate.
     | **path** - File path e.g. "sd/file.bmp"
-    | **w** - Bitmap width.
-    | **h** - Bitmap height.
     | **invert** - Inverts color.
   
     | Returns nothing.
@@ -1719,7 +1717,7 @@ Inkplate MicroPython
 * **Example**:
     .. code-block:: python
 
-        display.drawBitmap(100, 250, "sd/file.bmp", 576, 100)
+        display.drawImageFile(100, 250, "sd/file.bmp")
 
 * **Result**:
     | Here is what the code above produces:
