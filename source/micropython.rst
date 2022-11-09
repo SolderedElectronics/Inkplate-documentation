@@ -1668,7 +1668,7 @@ Inkplate MicroPython
     drawBitmap(x, y, b, w, h)
 
 * **Arguments and return value**:
-    | **self** - font dictionary
+    | **self** - Instance
     | **x** - Bitmap x coordinate.
     | **y** - Bitmap y coordinate.
     | **b** - Bytearray to draw from.
@@ -1703,7 +1703,7 @@ Inkplate MicroPython
     drawImageFile(x, y, path, invert=False)
 
 * **Arguments and return value**:
-    | **self** - font dictionary
+    | **self** - Instance
     | **x** - Bitmap x coordinate.
     | **y** - Bitmap y coordinate.
     | **path** - File path e.g. "sd/file.bmp"
