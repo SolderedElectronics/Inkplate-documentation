@@ -6,6 +6,9 @@ Inkplate is Open Source
 .. image:: images/OSHWA_logo.png
     :width: 500
 
+
+All other Inkplates are open source as well. 
+
 What is Open Source?
 --------------------
 

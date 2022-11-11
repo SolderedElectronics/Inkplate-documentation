@@ -1,17 +1,4 @@
-About Soldered
+About Soldered Electronics
 =================
 
-How we started?
----------------
-
-Soldered started in 2012, offering customised lighting solutions via LEDs. 
-As time went on, we realized that we weren't the only ones who wanted to create customized and interesting things with electronics - so we created our first microcontroller board which we named CROduino Basic.
-The board itself is Arduino compatible, fully open-source (hardware & software) and manufactured in Croatia. Since the reactions to the board were very positive, over time we created new boards Croduino Pico, Damba, Net and Basic 2.
-
-What are we today?
-------------------
-
-Today, in addition to boards, we also offer a multitude of sensors and actuators for boards. 
-In addition to the products offered, we also have a lot of tutorials, instructions and details about projects and how to use our products - each of them with pictures, code examples, some even with videos. 
-We also offer customer and technical support for all our products, whether you buy them from us or from our distributors. 
-We enjoy seeing people successfully using our products in their projects!
+Soldered is designing and manufacturing electronic products for makers. Our electronic boards, sensors, and actuators are used by hobbyists, educators and professionals in microelectronics, mechatronics, robotics, programming, and IoT. All our products are in-house designed and produced based on open-source hardware and software platforms. We are building and certifying all our products in the European Union. Our offer includes more than 170 electronic products together with more than 200 free tutorials and manuals for them with product descriptions, schemes, programming codes, and project examples. We provide 24/7 customer and technical support for all our products without distinguishing sales channels.
