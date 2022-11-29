@@ -45,7 +45,7 @@ Other Technical Specifications
     | **Wired Connectivity**: USB, I²C, and SPI
     | **USB to UART converter**: CH340C
     | **Storage**: MicroSD card reader
-    | **Power Management**: based on Texas Instruments (TI) TPS65186, MCP73831 lithium battery charger with a standard JST connector
+    | **Power Management**: based on Texas Instruments (TI) TPS65186, MCP73831 lithium battery charger with a standard JST-PH 2-Pin right angle connector.
     | **Temperature Sensor**: Internal TPS65186
 
 
@@ -71,7 +71,7 @@ Other Technical Specifications
     | **Wired Connectivity**: USB, I²C, and SPI.
     | **USB to UART converter**: CH340C.
     | **Storage**: MicroSD card reader.
-    | **Power Management**: based on Texas Instruments (TI) TPS65186, MCP73831 lithium battery charger with a standard JST connector.
+    | **Power Management**: based on Texas Instruments (TI) TPS65186, MCP73831 lithium battery charger with a standard JST-PH 2-Pin right angle connector.
     | **Temperature Sensor**: Internal TPS65186.
 
 
@@ -97,7 +97,7 @@ Other Technical Specifications
     | Integrated Wi-Fi and Bluetooth 4.0 (BLE) support thanks to the on-board ESP32 module.
     | **USB to UART converter**: CH340C
     | **Storage**: MicroSD card reader
-    | **Power Management**: based on Texas Instruments (TI) TPS65186, MCP73831 lithium battery charger with a standard JST connector
+    | **Power Management**: based on Texas Instruments (TI) TPS65186, MCP73831 lithium battery charger with a standard JST-PH 2-Pin right angle connector.
     | **Temperature Sensor**: Internal TPS65186
 
 
@@ -123,7 +123,7 @@ Other Technical Specifications
     | **Wired Connectivity**: USB, I²C, and SPI.
     | **USB to UART converter**: CH340C.
     | **Storage**: MicroSD card reader.
-    | **Power Management**: onboard SPD1656 Chip on Glass (also used as Active Matrix EPD Display Driver) for power supply, MCP73831 lithium battery charger with a standard JST connector.
+    | **Power Management**: onboard SPD1656 Chip on Glass (also used as Active Matrix EPD Display Driver) for power supply, MCP73831 lithium battery charger with a standard JST-PH 2-Pin right angle connector.
 
 
 Inkplate 2
