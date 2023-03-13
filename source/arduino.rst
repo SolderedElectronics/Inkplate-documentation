@@ -600,21 +600,21 @@ Inkplate::sendData();
     | sendData sends SPI data to Inkplate 6COLOR or Inkplate 2.
 
 
-Inkplate::setMCPForLowPower;
+Inkplate::setIOExpanderForLowPower;
 ############################
 
 * **Method prototype (as seen in Inkplate.h)**:
 
 .. code-block:: c
 
-    void setMCPForLowPower;
+    void setIOExpanderForLowPower;
 
 * **Arguments and return value**:
     | No arguments.
     | No return.
 
 * **Description**:
-    | setMCPAForLowPower initiates MCP pins for low power, and puts
+    | setIOExpanderForLowPower initiates IO expander pins for low power, and puts
     | them in OUTPUT LOW because they are using least amount of current in deep
     | sleep that way
 
@@ -2257,11 +2257,11 @@ IO Expander Functions
 | GPB1 is used for enabling battery reading (if Batt solder bridge is bridged between second and third pad)
 | GPB2, GPB3 and GPB4 are used for reading touchpad (if Touchpad solder bridges are bridged between second pad and third pad). 
 
-| MCP is started inside Inkplate.begin() function so you need only to call that and everything is set for MCP.
+| IO Expander is started inside Inkplate.begin() function so you need only to call that and everything is set for IO Expander.
 
-| Inkplate 6COLOR has only one MCP used as external IO expander.
+| Inkplate 6COLOR has only one IO Expander used as external IO expander.
 
-| Inkplate 2 has none MCPs so all this functions will not work on Inkplate 2
+| Inkplate 2 has none IO Expanders so all this functions will not work on Inkplate 2
 
 
 .. code-block:: c 
@@ -2573,7 +2573,7 @@ Inkplate::getPortsInternal();
     uint16_t getPortsInternal(uint8_t _addr, uint8_t *_r);
 
 * **Arguments and return value**:
-    | uint8_t _addr - mcp i2c address.
+    | uint8_t _addr - io expander i2c address.
     | uint8_t \*_r pointer to array that holds io exapnder registers
     | Returns register states of PORTA and PORTB.
 
@@ -2625,14 +2625,14 @@ or
     void readMCPRegisters(uint8_t _addr, uint8_t _regName, uint8_t *k, uint8_t _n);
 
 * **Arguments and return value**:
-    | uint8_t _addr - mcp i2c address.
+    | uint8_t _addr - io expander i2c address.
     | uint8_t \*_k - pointer to array to be writen in registers.
     | uint8_t _regName - name of register where read will start.
     | uint8_t _n - number of bites/registers to read.
     | Returns nothing.
 
 * **Description**:
-    | readMCPRegisters function uses i2c to read all mcp registers.
+    | readMCPRegisters function uses i2c to read all io expander registers.
 
 
 
@@ -2652,7 +2652,7 @@ or
     void updateRegister(uint8_t _addr, uint8_t _regName, uint8_t *k, uint8_t _n);
 
 * **Arguments and return value**:
-    | uint8_t _addr - mcp i2c address.
+    | uint8_t _addr - io expander i2c address.
     | uint8_t _regName - name of register where update will start.
     | uint8_t _d - data to be uploaded.
     | uint8_t \*k - pointer to array that holds new data.
@@ -2660,7 +2660,7 @@ or
     | Returns nothing.
 
 * **Description**:
-    | updateRegister function uses i2c to update selected mcp register.
+    | updateRegister function uses i2c to update selected io expander register.
 
 
 
@@ -2674,12 +2674,12 @@ Inkplate::updateAllRegister();
     void updateAllRegister(uint8_t _addr, uint8_t *k);
 
 * **Arguments and return value**:
-    | uint8_t _addr - mcp i2c address.
+    | uint8_t _addr - io expander i2c address.
     | uint8_t \*k - pointer to array that holds new data.
     | Returns nothing.
 
 * **Description**:
-    | updateAllRegisters function uses i2c to updates all mcp registers.
+    | updateAllRegisters function uses i2c to updates all io expander registers.
 
 
 
@@ -2719,8 +2719,8 @@ Inkplate::setIntOutputInternal();
     void setIntOutputInternal(uint8_t _addr, uint8_t *_r, uint8_t intPort, uint8_t mirroring, uint8_t openDrain, uint8_t polarity);
 
 * **Arguments and return value**:
-    | uint8_t _addr - mcp i2c address.
-    | uint8_t \*_r - pointer to array that holds mcp registers.
+    | uint8_t _addr - io expander i2c address.
+    | uint8_t \*_r - pointer to array that holds io expander registers.
     | uint8_t intPort - portA or portB.
     | uint8_t mirroring - set 1 to make ports mirror each other so that any interrupt will.
     | uint8_t openDrain - set 1 to set interupt port as open drain, this will override.
@@ -2728,7 +2728,7 @@ Inkplate::setIntOutputInternal();
     | Returns nothing.
 
 * **Description**:
-    | setIntOutputInternal sets mcp interrupt port state.
+    | setIntOutputInternal sets io expander interrupt port state.
 
 
 
@@ -2766,14 +2766,14 @@ Inkplate::setIntPinInternal();
     void setIntPinInternal(uint8_t _addr, uint8_t *_r, uint8_t _pin, uint8_t _mode);
 
 * **Arguments and return value**:
-    | uint8_t _addr - mcp i2c address.
-    | uint8_t \*_r - pointer to array that holds mcp registers.
+    | uint8_t _addr - io expander i2c address.
+    | uint8_t \*_r - pointer to array that holds io expander registers.
     | uint8_t _pin - pin to set interrupt mode to.
     | uint8_t mode - interurpt mode (CHANGE, FALLING, RISING).
     | Returns nothing.
 
 * **Description**:
-    | setIntPinInternal function sets mcp interupt internal mode.
+    | setIntPinInternal function sets io expander interupt internal mode.
 
 
 
@@ -2812,8 +2812,8 @@ Inkplate::getINTstateInternal();
     uint16_t getINTstateInternal(uint8_t _addr, uint8_t *_r);
 
 * **Arguments and return value**:
-    | uint8_t _addr - mcp i2c address.
-    | uint8_t \*_r - pointer to array that holds mcp registers.
+    | uint8_t _addr - io expander i2c address.
+    | uint8_t \*_r - pointer to array that holds io expander registers.
     | Returns interupt registers state at the time interrupt occured.
 
 * **Description**:
@@ -2832,7 +2832,7 @@ Inkplate::readMCPRegister();
     void readMCPRegister(uint8_t _addr, uint8_t _regName, uint8_t *k);
 
 * **Arguments and return value**:
-    | uint8_t _addr - mcp i2c address.
+    | uint8_t _addr - io expander i2c address.
     | uint8_t _regName - name of register where read will start.
     | uint8_t \*_k - pointer to array where io exapnder registers will be stored.
     | Returns nothing.
