@@ -2245,8 +2245,9 @@ Inkplate::getCursorY();
             Serial.println("Were in the bottom half of the screen!");
 
 
-MCP Functions
+IO Expander Functions
 ----------------
+
 | MCP23017 Expander PORTB pins from GPB1-GPB7 can be used.
 | DO NOT USE GPA0-GPA7 and GPB0. In code those are pins from 0-8.
 | Using those, you might permanently damage the screen.
@@ -2268,33 +2269,33 @@ MCP Functions
     display.begin();
 
 
-Inkplate::mcpBegin();
+Inkplate::ioBegin();
 #####################
 
-* **Method prototype (as seen in Mcp.h)**:
+* **Method prototype (as seen in Mcp.h and Pcal.h)**:
 
 .. code-block:: c 
 
-    bool mcpBegin(uint8_t _addr, uint8_t *_r);
+    bool ioBegin(uint8_t _addr, uint8_t *_r);
 
 * **Arguments and return value**:
-    | uint8_t _pin - mcp i2c address.
-    | uint8_t \*_mode - pointer to array to be writen in registers.
+    | uint8_t _addr - IO Exapnder I2C address.
+    | uint8_t \*_r - pointer to array to be writen in registers.
     | Returns true if successful, false otherwise.
 
 * **Description**:
-    | mcpBegin function starts mcp expander and sets registers values.
+    | ioBegin function starts io expander and sets registers values.
 
 
 
-Inkplate::pinModeMCP();
+Inkplate::pinModeIO();
 #######################
 
-* **Method prototype (as seen in Mcp.h)**:
+* **Method prototype (as seen in Mcp.h and Pcal.h)**:
 
 .. code-block:: c 
 
-    void pinModeMCP(uint8_t _pin, uint8_t _mode);
+    void pinModeIO(uint8_t _pin, uint8_t _mode);
 
 * **Arguments and return value**:
     | uint8_t _pin - pin number.
@@ -2307,60 +2308,60 @@ Inkplate::pinModeMCP();
 * **Example**:
     .. code-block:: c
 
-        display.pinModeMCP(LED_PIN, OUTPUT);
+        display.pinModeIO(LED_PIN, OUTPUT);
 
 
 Inkplate::pinModeInternal();
 ############################
 
-* **Method prototype (as seen in Mcp.h)**:
+* **Method prototype (as seen in Mcp.h and Pcal.h)**:
 
 .. code-block:: c 
 
     void pinModeInternal(uint8_t _addr, uint8_t *_r, uint8_t _pin, uint8_t _mode);
 
 * **Arguments and return value**:
-    | uint8_t _addr - mcp i2c address.
-    | uint8_t \*_r - pointer to array that holds mcp registers.
+    | uint8_t _addr - IO Exapnder I2C address.
+    | uint8_t \*_r - pointer to array that holds io expander registers.
     | uint8_t _pin - pin to set mode.
     | uint8_t _mode - mode for pi to be set (INPUT=0x01, OUTPUT=0x02, INPUT_PULLUP=0x05).
     | Returns nothing.
 
 * **Description**:
-    | pinModeInternal sets mcp internal pin mode
+    | pinModeInternal sets io expanders internal pin mode.
 
 
 
 Inkplate::digitalWriteInternal();
 #################################
 
-* **Method prototype (as seen in Mcp.h)**:
+* **Method prototype (as seen in Mcp.h and Pcal.h)**:
 
 .. code-block:: c 
 
     void digitalWriteInternal(uint8_t _addr, uint8_t *_r, uint8_t _pin, uint8_t _state);
 
 * **Arguments and return value**:
-    | uint8_t _addr - mcp i2c address.
-    | uint8_t \*_r - pointer to array that holds mcp registers.
+    | uint8_t _addr - IO Exapnder I2C address.
+    | uint8_t \*_r - pointer to array that holds io expander registers.
     | uint8_t _pin - pin to set mode.
     | uint8_t _state -  output pin state (0 or 1).
     | Returns nothing.
 
 * **Description**:
-    | digitalWriteInternal sets internal output pin state (1 or 0)
+    | digitalWriteInternal sets internal output pin state (1 or 0).
 
 
 
 
-Inkplate::digitalWriteMCP();
+Inkplate::digitalWriteIO();
 ############################
 
-* **Method prototype (as seen in Mcp.h)**:
+* **Method prototype (as seen in Mcp.h and Pcal.h)**:
 
 .. code-block:: c 
 
-    void digitalWriteMCP(uint8_t _pin, uint8_t _state);
+    void digitalWriteIO(uint8_t _pin, uint8_t _state);
 
 * **Arguments and return value**:
     | uint8_t _pin - pin number.
@@ -2373,27 +2374,27 @@ Inkplate::digitalWriteMCP();
 * **Example**:
     .. code-block:: c
 
-        display.digitalWriteMCP(LED_PIN, HIGH);
+        display.digitalWriteIO(LED_PIN, HIGH);
 
 
 
 Inkplate::digitalReadInternal();
 ################################
 
-* **Method prototype (as seen in Mcp.h)**:
+* **Method prototype (as seen in Mcp.h and Pcal.h)**:
 
 .. code-block:: c 
 
     void digitalReadInternal(uint8_t _addr, uint8_t *_r, uint8_t _pin);
 
 * **Arguments and return value**:
-    | uint8_t _addr - mcp i2c address.
-    | uint8_t \*_r - pointer to array that holds mcp registers.
+    | uint8_t _addr - io expander i2c address.
+    | uint8_t \*_r - pointer to array that holds io expander registers.
     | uint8_t _pin - pin to set mode.
     | Returns nothing.
 
 * **Description**:
-    | digitalReadInternal reads mcp internal pin state
+    | digitalReadInternal reads io expander internal pin state.
 
 
 
@@ -2417,7 +2418,7 @@ or
     | uint8_t _addr - mcp i2c address.
     | uint8_t \*_k - pointer to array to be writen in registers.
     | uint8_t _regName - name of register where read will start.
-    | uint8_t _n - name of register where read will start.
+    | uint8_t _n - number of bites/registers to read.
     | Returns nothing.
 
 * **Description**:
@@ -2427,48 +2428,27 @@ or
 
 
 
-Inkplate::digitalReadMCP();
+Inkplate::digitalReadIO();
 ###########################
 
-* **Method prototype (as seen in Mcp.h)**:
+* **Method prototype (as seen in Mcp.h and Pcal.h)**:
 
 .. code-block:: c 
 
-    uint8_t digitalReadMCP(uint8_t _pin);
+    uint8_t digitalReadIO(uint8_t _pin);
 
 * **Arguments and return value**:
     | uint8_t _pin - pin number.
     | Returns HIGH or LOW value (1 or 0).
 
 * **Description**:
-    | readMCPRegisters function uses i2c to read all mcp registers.
+    | digitalReadIO reads io exapnder internal pin state.
 
 * **Example**:
     .. code-block:: c
 
-        display.digitalReadMCP(LED_PIN);
+        display.digitalReadIO(LED_PIN);
 
-
-Inkplate::digitalReadMCP();
-###########################
-
-* **Method prototype (as seen in Mcp.h)**:
-
-.. code-block:: c 
-
-    uint8_t digitalReadMCP(uint8_t _pin);
-
-* **Arguments and return value**:
-    | uint8_t _pin - pin number.
-    | Returns HIGH or LOW value (1 or 0).
-
-* **Description**:
-    | readMCPRegisters function uses i2c to read all mcp registers.
-
-* **Example**:
-    .. code-block:: c
-
-        display.digitalReadMCP(LED_PIN);
 
 
 
@@ -2492,7 +2472,7 @@ or
     | uint8_t _regName - name of register where update will start.
     | uint8_t _d - data to be uploaded.
     | uint8_t \*k - pointer to array that holds new data.
-    | uint8_t n - number of bites/registers to write to.
+    | uint8_t _n - number of bites/registers to write to.
     | Returns nothing.
 
 * **Description**:
@@ -2515,7 +2495,7 @@ Inkplate::updateAllRegister();
     | Returns nothing.
 
 * **Description**:
-    | updateRegister function uses i2c to update selected mcp register.
+    | updateAllRegisters function uses i2c to updates all mcp registers.
 
 
 
@@ -2530,19 +2510,19 @@ Inkplate::setIntOutput();
     void setIntOutput(uint8_t intPort, uint8_t mirroring, uint8_t openDrain, uint8_t polarity);
 
 * **Arguments and return value**:
-    | uint8_t intPort - intPort portA or portB.
-    | uint8_t mirroring - mirroring set 1 to make ports mirror each other so that any interrupt will cause both to go HIGH.
-    | uint8_t openDrain - openDrain set 1 to set interupt port as open drain, this will override port polarity.
+    | uint8_t intPort - portA or portB.
+    | uint8_t mirroring - set 1 to make ports mirror each other so that any interrupt will cause both to go HIGH.
+    | uint8_t openDrain - set 1 to set interupt port as open drain, this will override port polarity.
     | uint8_t polarity - sets port interrupt polarity, 1 active high, 0 active low.
     | Returns nothing.
 
 * **Description**:
-    | Sets port interrupt state
+    | setIntOutput sets io exapnder interrupt port state.
 
 * **Example**:
     .. code-block:: c
 
-        display.setIntOutput(1, false, false, HIGH);// 1 means portB, 0 portA
+        display.setIntOutput(1, false, false, HIGH); // 1 means portB, 0 portA
 
 
 
@@ -2565,7 +2545,7 @@ Inkplate::setIntOutputInternal();
     | Returns nothing.
 
 * **Description**:
-    | setIntOutputInternal sets mcp interrupt port state
+    | setIntOutputInternal sets mcp interrupt port state.
 
 
 
@@ -2580,11 +2560,11 @@ Inkplate::setIntPin();
 
 * **Arguments and return value**:
     | uint8_t _pin - pin number.
-    | uint8_t mode - interurpt mode (CHANGE, FALLING, RISING)
+    | uint8_t _mode - interurpt mode (CHANGE, FALLING, RISING).
     | Returns nothing.
 
 * **Description**:
-    | Sets pin interrupt state
+    | setIntPin function sets io exapnder interupt mode.
 
 * **Example**:
     .. code-block:: c
@@ -2603,20 +2583,20 @@ Inkplate::setIntPinInternal();
     void setIntPinInternal(uint8_t _addr, uint8_t *_r, uint8_t _pin, uint8_t _mode);
 
 * **Arguments and return value**:
-    | uint8_t _pin - pin number.
-    | uint8_t mode - interurpt mode (CHANGE, FALLING, RISING)
-    | uint8_t _addr - mcp i2c address
-    | uint8_t \*_r - pointer to array that holds mcp registers
+    | uint8_t _addr - mcp i2c address.
+    | uint8_t \*_r - pointer to array that holds mcp registers.
+    | uint8_t _pin - pin to set interrupt mode to.
+    | uint8_t mode - interurpt mode (CHANGE, FALLING, RISING).
     | Returns nothing.
 
 * **Description**:
-    | setIntPinInternal function sets mcp interupt internal mode
+    | setIntPinInternal function sets mcp interupt internal mode.
 
 
 Inkplate::removeIntPin();
 #########################
 
-* **Method prototype (as seen in Mcp.h)**:
+* **Method prototype (as seen in Mcp.h and Pcal.h)**:
 
 .. code-block:: c 
 
@@ -2627,7 +2607,7 @@ Inkplate::removeIntPin();
     | Returns nothing.
 
 * **Description**:
-    | Removes interrupt from pin
+    | Removes interrupt from pin.
 
 * **Example**:
     .. code-block:: c
@@ -2639,27 +2619,27 @@ Inkplate::removeIntPin();
 Inkplate::removeIntPinInternal();
 #################################
 
-* **Method prototype (as seen in Mcp.h)**:
+* **Method prototype (as seen in Mcp.h and Pcal.h)**:
 
 .. code-block:: c 
 
     void removeIntPinInternal(uint8_t _addr, uint8_t *_r, uint8_t _pin);
 
 * **Arguments and return value**:
-    | uint8_t _addr - mcp i2c address.
-    | uint8_t \*_r - pointer to array that holds mcp registers.
+    | uint8_t _addr - io expander i2c address.
+    | uint8_t \*_r - pointer to array that holds io expander registers.
     | uint8_t _pin - pin number.
     | Returns nothing.
 
 * **Description**:
-    | Removes interrupt from pin
+    | Removes interrupt from pin.
 
 
 
 Inkplate::getINT();
 ###################
 
-* **Method prototype (as seen in Mcp.h)**:
+* **Method prototype (as seen in Mcp.h and Pcal.h)**:
 
 .. code-block:: c 
 
@@ -2728,7 +2708,7 @@ Inkplate::getINTstateInternal();
 Inkplate::setPorts();
 #####################
 
-* **Method prototype (as seen in Mcp.h)**:
+* **Method prototype (as seen in Mcp.h and Pcal.h)**:
 
 .. code-block:: c 
 
@@ -2739,13 +2719,13 @@ Inkplate::setPorts();
     | Returns nothing.
 
 * **Description**:
-    | sets internal state of PORTA and PORTB registers.
-    | MSB byte is for PORTB, LSB byte for PORTA
+    | Sets internal state of PORTA and PORTB registers.
+    | MSB byte is for PORTB, LSB byte for PORTA.
 
 * **Example**:
     .. code-block:: c
 
-        uint16_t data = 0xFFFF;//to make all bits ones
+        uint16_t data = 0xFFFF; // To make all bits ones
         display.setPorts(data);
 
 
@@ -2753,26 +2733,26 @@ Inkplate::setPorts();
 Inkplate::setPortsInternal();
 #############################
 
-* **Method prototype (as seen in Mcp.h)**:
+* **Method prototype (as seen in Mcp.h and Pcal.h)**:
 
 .. code-block:: c 
 
     void setPorts(uint8_t _addr, uint8_t *_r, uint16_t _d);
 
 * **Arguments and return value**:
-    | uint8_t _addr - mcp i2c address.
-    | uint8_t \*_r - pointer to array that holds mcp registers.
+    | uint8_t _addr - io expander i2c address.
+    | uint8_t \*_r - pointer to array that holds io expander registers.
     | uint16_t _d - value to be writen to port A and port B registers.
     | Returns nothing.
 
 * **Description**:
-    | setPortsInternal sets internal state of PORTAB registers
+    | setPortsInternal sets internal state of PORTAB registers.
 
 
 Inkplate::getPorts();
 #####################
 
-* **Method prototype (as seen in Mcp.h)**:
+* **Method prototype (as seen in Mcp.h and Pcal.h)**:
 
 .. code-block:: c 
 
@@ -2780,16 +2760,79 @@ Inkplate::getPorts();
 
 * **Arguments and return value**:
     | No arguments.
-    | Returns register state of PORTA and PORTB.
+    | Returns register states of PORTA and PORTB.
 
 * **Description**:
-    | returns internal state of PORTA and PORTB registers.
+    | Returns states of PORTA and PORTB registers.
     | MSB byte is for PORTB, LSB is for PORTA.
 
 * **Example**:
     .. code-block:: c
 
         display.getPorts();
+
+
+
+Inkplate::getPortsInternal();
+#############################
+
+* **Method prototype (as seen in Mcp.h and Pcal.h)**:
+
+.. code-block:: c 
+
+    uint16_t getPortsInternal(uint8_t _addr, uint8_t *_r);
+
+* **Arguments and return value**:
+    | uint8_t _addr - mcp i2c address.
+    | uint8_t \*_r pointer to array that holds io exapnder registers
+    | Returns register states of PORTA and PORTB.
+
+* **Description**:
+    | Returns internal states of PORTA and PORTB registers.
+    | MSB byte is for PORTB, LSB is for PORTA.
+
+
+
+
+Inkplate::readMCPRegister();
+############################
+
+* **Method prototype (as seen in Mcp.h)**:
+
+.. code-block:: c 
+
+    void readMCPRegister(uint8_t _addr, uint8_t _regName, uint8_t *k);
+
+* **Arguments and return value**:
+    | uint8_t _addr - mcp i2c address.
+    | uint8_t _regName - name of register where read will start.
+    | uint8_t \*_k - pointer to array where io exapnder registers will be stored.
+    | Returns nothing.
+
+* **Description**:
+    | readMCPRegisters function uses i2c to read one selected io exapnder register.
+
+
+
+
+Inkplate::getINTInternal();
+###########################
+
+* **Method prototype (as seen in Mcp.h and Pcal.h)**:
+
+.. code-block:: c 
+
+    uint16_t getINTInternal(uint8_t _addr, uint8_t *_r);
+
+* **Arguments and return value**:
+    | uint8_t _addr - io expander i2c address.
+    | uint8_t \*_r - pointer to array that holds io exapnder registers.
+    | Returns interrupt state of both ports (INTF).
+
+* **Description**:
+    | getINTInternal function reads Interrupt pin state for all pins and return interrupt state of both ports.
+    | Every bit represents interrupt pin, MSB is PORTB PIN7, LSB is PORTA PIN1, bit can be set only if interrupt is enabled.
+
 
 
 NetworkClient Functions
