@@ -2846,6 +2846,183 @@ Inkplate::readMCPRegister();
 PCAL Functions
 ##############
 
+Inkplate::setIntPin();
+**********************
+
+* **Method prototype (as seen in Pcal.h)**:
+
+.. code-block:: c 
+
+    void setIntPin(uint8_t _pin, uint8_t _ioID = IO_EXT_ADDR);
+
+* **Arguments and return value**:
+    | uint8_t _pin - pin to set interrupt mode to.
+    | uint8_t _ioID - internal or external IO Exapnder.
+    | Returns nothing.
+
+* **Description**:
+    | setIntPin function enables interrupt on change on IO Expander pin.
+
+
+
+
+Inkplate::setIntPinInternal();
+******************************
+
+* **Method prototype (as seen in Pcal.h)**:
+
+.. code-block:: c 
+
+    void setIntPinInternal(uint8_t _addr, uint8_t *_r, uint8_t _pin);
+
+* **Arguments and return value**:
+    | uint8_t _addr - IO Exapnder I2C address.
+    | uint8_t \*_r - pointer to array that holds IO Exapnder registers.
+    | uint8_t \*_pin - selected pin.
+    | Returns nothing.
+
+* **Description**:
+    | setIntPinInternal function sets Interrupt on selected pin.
+
+
+
+
+Inkplate::getPortsInternal();
+******************************
+
+* **Method prototype (as seen in Pcal.h)**:
+
+.. code-block:: c 
+
+    uint16_t getPortsInternal(uint8_t _addr, uint8_t *_r);
+
+* **Arguments and return value**:
+    | uint8_t _addr - IO Exapnder I2C address.
+    | uint8_t \*_r - pointer to array that holds IO Exapnder registers.
+    | Returns register states of PORTSAB.
+
+* **Description**:
+    | getPortsInternal gets register state of PORTSAB.
+
+
+
+
+Inkplate::getInternalRegisterArray();
+*************************************
+
+* **Method prototype (as seen in Pcal.h)**:
+
+.. code-block:: c 
+
+    uint8_t *getInternalRegisterArray(uint8_t _addr);
+
+* **Arguments and return value**:
+    | uint8_t _addr - IO Exapnder I2C address.
+    | Pointer to the PCAL6416 register array.
+
+* **Description**:
+    | Function returns the pointer to the array of PCAL6416 copy of internal registers that depends on the I2C address of the IO Expander.
+
+
+
+
+Inkplate::readPCALRegisters();
+******************************
+
+* **Method prototype (as seen in Pcal.h)**:
+
+.. code-block:: c 
+
+    void readPCALRegisters(uint8_t _addr, uint8_t *k);
+
+or
+
+.. code-block:: c 
+
+    void readPCALRegisters(uint8_t _addr, uint8_t _regIndex, uint8_t *k, uint8_t _n);
+
+
+* **Arguments and return value**:
+    | uint8_t _addr - IO Exapnder I2C address.
+    | uint8_t \*_k - pointer to array where pcal registers will be stored.
+    | uint8_t _regIndex - Start index of the PCAL6416 registers.
+    | uint8_t _n - number of bites/registers to read.
+    | Returns nothing.
+
+* **Description**:
+    | readPCALRegisters function uses I2C to read selected pcal registers.
+
+
+
+
+Inkplate::readPCALRegister();
+*****************************
+
+* **Method prototype (as seen in Pcal.h)**:
+
+.. code-block:: c 
+
+    void readPCALRegister(uint8_t _addr, uint8_t _regIndex, uint8_t *_k);
+
+* **Arguments and return value**:
+    | uint8_t _addr - IO Exapnder I2C address.
+    | uint8_t _regIndex - Start index of the PCAL6416 registers.
+    | uint8_t \*_k pointer to array where pcal registers will be stored.
+    | Returns nothing.
+
+* **Description**:
+    | readPCALRegister function uses I2C to read one selected pcal register.
+
+
+
+
+Inkplate::updatePCALAllRegisters();
+***********************************
+
+* **Method prototype (as seen in Pcal.h)**:
+
+.. code-block:: c 
+
+    void updatePCALAllRegisters(uint8_t _addr, uint8_t *_k);
+
+* **Arguments and return value**:
+    | uint8_t _addr - IO Exapnder I2C address.
+    | uint8_t \*_k - pointer to array where data to be uploaded is stored.
+    | Returns nothing.
+
+* **Description**:
+    | updatePCALAllRegisters function uses I2C to updates all pcal registers.
+
+
+
+
+Inkplate::updatePCALRegister();
+*******************************
+
+* **Method prototype (as seen in Pcal.h)**:
+
+.. code-block:: c 
+
+    void updatePCALRegister(uint8_t _addr, uint8_t _regIndex, uint8_t _d);
+
+or
+
+.. code-block:: c 
+
+    void updatePCALRegister(uint8_t _addr, uint8_t _regIndex, uint8_t *_k, uint8_t _n);
+
+* **Arguments and return value**:
+    | uint8_t _addr - IO Exapnder I2C address.
+    | uint8_t _regIndex - Start index of the PCAL6416 registers.
+    | uint8_t _d - data to be uploaded.
+    | uint8_t \*_k pointer to array that holds new data.
+    | uint8_t _n - number of bites/registers to write to.
+    | Returns nothing.
+
+* **Description**:
+    | updatePCALRegister function uses I2C to update some selected pcal registers.
+
+
 
 
 NetworkClient Functions
