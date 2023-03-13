@@ -2263,36 +2263,21 @@ IO Expander Functions
 
 | Inkplate 2 has none MCPs so all this functions will not work on Inkplate 2
 
-| Ispod je test da se vidi kak radi poglavlja
 
 
-
-AAAAAAAAAAAAAAAA
-~~~~~~~~~~~~~~~~
-
-BBBBBBBBBBBBBBBB
-================
-
-CCCCCCCCCCCCCCCC
-----------------
-
-DDDDDDDDDDDDDDDD
-^^^^^^^^^^^^^^^^
-
-EEEEEEEEEEEEEEEE
-""""""""""""""""
-
+Common Functions
+################
 
 
 .. code-block:: c 
 
-    Inkplate display(INKPLATE_1BIT);//or INKPLATE_3BIT
+    Inkplate display(INKPLATE_1BIT); // Or INKPLATE_3BIT
     display.begin();
 
 
 
 Inkplate::ioBegin();
-#####################
+********************
 
 * **Method prototype (as seen in Mcp.h and Pcal.h)**:
 
