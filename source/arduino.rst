@@ -2733,7 +2733,7 @@ Inkplate::setIntOutputInternal();
 
 
 Inkplate::setIntPin();
-######################
+**********************
 
 * **Method prototype (as seen in Mcp.h)**:
 
@@ -2757,7 +2757,7 @@ Inkplate::setIntPin();
 
 
 Inkplate::setIntPinInternal();
-##############################
+******************************
 
 * **Method prototype (as seen in Mcp.h)**:
 
