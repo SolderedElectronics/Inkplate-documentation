@@ -2268,7 +2268,7 @@ IO Expander Functions
 
 
 AAAAAAAAAAAAAAAA
-****************
+~~~~~~~~~~~~~~~~
 
 BBBBBBBBBBBBBBBB
 ================
