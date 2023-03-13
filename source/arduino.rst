@@ -2269,8 +2269,11 @@ IO Expander Functions
     display.begin();
 
 
-Common functions - only test
+
+
+Common functions
 ****************
+
 
 
 Inkplate::ioBegin();
