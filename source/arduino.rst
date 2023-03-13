@@ -2264,17 +2264,15 @@ IO Expander Functions
 | Inkplate 2 has none MCPs so all this functions will not work on Inkplate 2
 
 
-
-Common Functions
-################
-
-
 .. code-block:: c 
 
     Inkplate display(INKPLATE_1BIT); // Or INKPLATE_3BIT
     display.begin();
 
 
+
+Common Functions
+################
 
 Inkplate::ioBegin();
 ********************
@@ -2296,7 +2294,7 @@ Inkplate::ioBegin();
 
 
 Inkplate::pinModeIO();
-#######################
+**********************
 
 * **Method prototype (as seen in Mcp.h and Pcal.h)**:
 
@@ -2319,7 +2317,7 @@ Inkplate::pinModeIO();
 
 
 Inkplate::pinModeInternal();
-############################
+****************************
 
 * **Method prototype (as seen in Mcp.h and Pcal.h)**:
 
@@ -2340,7 +2338,7 @@ Inkplate::pinModeInternal();
 
 
 Inkplate::digitalWriteInternal();
-#################################
+*********************************
 
 * **Method prototype (as seen in Mcp.h and Pcal.h)**:
 
@@ -2362,7 +2360,7 @@ Inkplate::digitalWriteInternal();
 
 
 Inkplate::digitalWriteIO();
-############################
+***************************
 
 * **Method prototype (as seen in Mcp.h and Pcal.h)**:
 
@@ -2386,7 +2384,7 @@ Inkplate::digitalWriteIO();
 
 
 Inkplate::digitalReadInternal();
-################################
+********************************
 
 * **Method prototype (as seen in Mcp.h and Pcal.h)**:
 
@@ -2406,8 +2404,213 @@ Inkplate::digitalReadInternal();
 
 
 
+Inkplate::digitalReadIO();
+**************************
+
+* **Method prototype (as seen in Mcp.h and Pcal.h)**:
+
+.. code-block:: c 
+
+    uint8_t digitalReadIO(uint8_t _pin);
+
+* **Arguments and return value**:
+    | uint8_t _pin - pin number.
+    | Returns HIGH or LOW value (1 or 0).
+
+* **Description**:
+    | digitalReadIO reads io exapnder internal pin state.
+
+* **Example**:
+    .. code-block:: c
+
+        display.digitalReadIO(LED_PIN);
+
+
+
+Inkplate::removeIntPin();
+*************************
+
+* **Method prototype (as seen in Mcp.h and Pcal.h)**:
+
+.. code-block:: c 
+
+    void removeIntPin(uint8_t _pin);
+
+* **Arguments and return value**:
+    | uint8_t _pin - pin number.
+    | Returns nothing.
+
+* **Description**:
+    | Removes interrupt from pin.
+
+* **Example**:
+    .. code-block:: c
+
+        display.removeIntPin(touchPadPin);
+
+
+
+Inkplate::removeIntPinInternal();
+*********************************
+
+* **Method prototype (as seen in Mcp.h and Pcal.h)**:
+
+.. code-block:: c 
+
+    void removeIntPinInternal(uint8_t _addr, uint8_t *_r, uint8_t _pin);
+
+* **Arguments and return value**:
+    | uint8_t _addr - io expander i2c address.
+    | uint8_t \*_r - pointer to array that holds io expander registers.
+    | uint8_t _pin - pin number.
+    | Returns nothing.
+
+* **Description**:
+    | Removes interrupt from pin.
+
+
+
+
+Inkplate::getINT();
+*******************
+
+* **Method prototype (as seen in Mcp.h and Pcal.h)**:
+
+.. code-block:: c 
+
+    uint16_t getINT();
+
+* **Arguments and return value**:
+    | No argument.
+    | Returns interupt registers state.
+
+* **Description**:
+    | Returns interrupt registers state for portA and portB. 
+    | Every bit represents interrupt pin, MSB is  PORTB PIN7, LSB is PORTA PIN1.
+
+* **Example**:
+    .. code-block:: c
+
+        display.getINT();
+
+
+
+Inkplate::setPorts();
+*********************
+
+* **Method prototype (as seen in Mcp.h and Pcal.h)**:
+
+.. code-block:: c 
+
+    void setPorts(uint16_t _d);
+
+* **Arguments and return value**:
+    | uint16_t _d - value to be writen to port A and port B registers.
+    | Returns nothing.
+
+* **Description**:
+    | Sets internal state of PORTA and PORTB registers.
+    | MSB byte is for PORTB, LSB byte for PORTA.
+
+* **Example**:
+    .. code-block:: c
+
+        uint16_t data = 0xFFFF; // To make all bits ones
+        display.setPorts(data);
+
+
+
+Inkplate::setPortsInternal();
+*****************************
+
+* **Method prototype (as seen in Mcp.h and Pcal.h)**:
+
+.. code-block:: c 
+
+    void setPorts(uint8_t _addr, uint8_t *_r, uint16_t _d);
+
+* **Arguments and return value**:
+    | uint8_t _addr - io expander i2c address.
+    | uint8_t \*_r - pointer to array that holds io expander registers.
+    | uint16_t _d - value to be writen to port A and port B registers.
+    | Returns nothing.
+
+* **Description**:
+    | setPortsInternal sets internal state of PORTAB registers.
+
+
+Inkplate::getPorts();
+*********************
+
+* **Method prototype (as seen in Mcp.h and Pcal.h)**:
+
+.. code-block:: c 
+
+    uint16_t getPorts();
+
+* **Arguments and return value**:
+    | No arguments.
+    | Returns register states of PORTA and PORTB.
+
+* **Description**:
+    | Returns states of PORTA and PORTB registers.
+    | MSB byte is for PORTB, LSB is for PORTA.
+
+* **Example**:
+    .. code-block:: c
+
+        display.getPorts();
+
+
+
+Inkplate::getPortsInternal();
+*****************************
+
+* **Method prototype (as seen in Mcp.h and Pcal.h)**:
+
+.. code-block:: c 
+
+    uint16_t getPortsInternal(uint8_t _addr, uint8_t *_r);
+
+* **Arguments and return value**:
+    | uint8_t _addr - mcp i2c address.
+    | uint8_t \*_r pointer to array that holds io exapnder registers
+    | Returns register states of PORTA and PORTB.
+
+* **Description**:
+    | Returns internal states of PORTA and PORTB registers.
+    | MSB byte is for PORTB, LSB is for PORTA.
+
+
+
+
+Inkplate::getINTInternal();
+***************************
+
+* **Method prototype (as seen in Mcp.h and Pcal.h)**:
+
+.. code-block:: c 
+
+    uint16_t getINTInternal(uint8_t _addr, uint8_t *_r);
+
+* **Arguments and return value**:
+    | uint8_t _addr - io expander i2c address.
+    | uint8_t \*_r - pointer to array that holds io exapnder registers.
+    | Returns interrupt state of both ports (INTF).
+
+* **Description**:
+    | getINTInternal function reads Interrupt pin state for all pins and return interrupt state of both ports.
+    | Every bit represents interrupt pin, MSB is PORTB PIN7, LSB is PORTA PIN1, bit can be set only if interrupt is enabled.
+
+
+
+
+MCP Functions
+#############
+
+
 Inkplate::readMCPRegisters();
-#############################
+*****************************
 
 * **Method prototype (as seen in Mcp.h)**:
 
@@ -2433,34 +2636,8 @@ or
 
 
 
-
-
-Inkplate::digitalReadIO();
-###########################
-
-* **Method prototype (as seen in Mcp.h and Pcal.h)**:
-
-.. code-block:: c 
-
-    uint8_t digitalReadIO(uint8_t _pin);
-
-* **Arguments and return value**:
-    | uint8_t _pin - pin number.
-    | Returns HIGH or LOW value (1 or 0).
-
-* **Description**:
-    | digitalReadIO reads io exapnder internal pin state.
-
-* **Example**:
-    .. code-block:: c
-
-        display.digitalReadIO(LED_PIN);
-
-
-
-
 Inkplate::updateRegister();
-###########################
+***************************
 
 * **Method prototype (as seen in Mcp.h)**:
 
@@ -2488,7 +2665,7 @@ or
 
 
 Inkplate::updateAllRegister();
-##############################
+******************************
 
 * **Method prototype (as seen in Mcp.h)**:
 
@@ -2506,9 +2683,8 @@ Inkplate::updateAllRegister();
 
 
 
-
 Inkplate::setIntOutput();
-#########################
+*************************
 
 * **Method prototype (as seen in Mcp.h)**:
 
@@ -2534,7 +2710,7 @@ Inkplate::setIntOutput();
 
 
 Inkplate::setIntOutputInternal();
-#################################
+*********************************
 
 * **Method prototype (as seen in Mcp.h)**:
 
@@ -2600,74 +2776,9 @@ Inkplate::setIntPinInternal();
     | setIntPinInternal function sets mcp interupt internal mode.
 
 
-Inkplate::removeIntPin();
-#########################
-
-* **Method prototype (as seen in Mcp.h and Pcal.h)**:
-
-.. code-block:: c 
-
-    void removeIntPin(uint8_t _pin);
-
-* **Arguments and return value**:
-    | uint8_t _pin - pin number.
-    | Returns nothing.
-
-* **Description**:
-    | Removes interrupt from pin.
-
-* **Example**:
-    .. code-block:: c
-
-        display.removeIntPin(touchPadPin);
-
-
-
-Inkplate::removeIntPinInternal();
-#################################
-
-* **Method prototype (as seen in Mcp.h and Pcal.h)**:
-
-.. code-block:: c 
-
-    void removeIntPinInternal(uint8_t _addr, uint8_t *_r, uint8_t _pin);
-
-* **Arguments and return value**:
-    | uint8_t _addr - io expander i2c address.
-    | uint8_t \*_r - pointer to array that holds io expander registers.
-    | uint8_t _pin - pin number.
-    | Returns nothing.
-
-* **Description**:
-    | Removes interrupt from pin.
-
-
-
-Inkplate::getINT();
-###################
-
-* **Method prototype (as seen in Mcp.h and Pcal.h)**:
-
-.. code-block:: c 
-
-    uint16_t getINT();
-
-* **Arguments and return value**:
-    | No argument.
-    | Returns interupt registers state.
-
-* **Description**:
-    | Returns interrupt registers state for portA and portB. 
-    | Every bit represents interrupt pin, MSB is  PORTB PIN7, LSB is PORTA PIN1.
-
-* **Example**:
-    .. code-block:: c
-
-        display.getINT();
-
 
 Inkplate::getINTstate();
-########################
+************************
 
 * **Method prototype (as seen in Mcp.h)**:
 
@@ -2692,7 +2803,7 @@ Inkplate::getINTstate();
 
 
 Inkplate::getINTstateInternal();
-################################
+********************************
 
 * **Method prototype (as seen in Mcp.h)**:
 
@@ -2711,98 +2822,8 @@ Inkplate::getINTstateInternal();
 
 
 
-
-Inkplate::setPorts();
-#####################
-
-* **Method prototype (as seen in Mcp.h and Pcal.h)**:
-
-.. code-block:: c 
-
-    void setPorts(uint16_t _d);
-
-* **Arguments and return value**:
-    | uint16_t _d - value to be writen to port A and port B registers.
-    | Returns nothing.
-
-* **Description**:
-    | Sets internal state of PORTA and PORTB registers.
-    | MSB byte is for PORTB, LSB byte for PORTA.
-
-* **Example**:
-    .. code-block:: c
-
-        uint16_t data = 0xFFFF; // To make all bits ones
-        display.setPorts(data);
-
-
-
-Inkplate::setPortsInternal();
-#############################
-
-* **Method prototype (as seen in Mcp.h and Pcal.h)**:
-
-.. code-block:: c 
-
-    void setPorts(uint8_t _addr, uint8_t *_r, uint16_t _d);
-
-* **Arguments and return value**:
-    | uint8_t _addr - io expander i2c address.
-    | uint8_t \*_r - pointer to array that holds io expander registers.
-    | uint16_t _d - value to be writen to port A and port B registers.
-    | Returns nothing.
-
-* **Description**:
-    | setPortsInternal sets internal state of PORTAB registers.
-
-
-Inkplate::getPorts();
-#####################
-
-* **Method prototype (as seen in Mcp.h and Pcal.h)**:
-
-.. code-block:: c 
-
-    uint16_t getPorts();
-
-* **Arguments and return value**:
-    | No arguments.
-    | Returns register states of PORTA and PORTB.
-
-* **Description**:
-    | Returns states of PORTA and PORTB registers.
-    | MSB byte is for PORTB, LSB is for PORTA.
-
-* **Example**:
-    .. code-block:: c
-
-        display.getPorts();
-
-
-
-Inkplate::getPortsInternal();
-#############################
-
-* **Method prototype (as seen in Mcp.h and Pcal.h)**:
-
-.. code-block:: c 
-
-    uint16_t getPortsInternal(uint8_t _addr, uint8_t *_r);
-
-* **Arguments and return value**:
-    | uint8_t _addr - mcp i2c address.
-    | uint8_t \*_r pointer to array that holds io exapnder registers
-    | Returns register states of PORTA and PORTB.
-
-* **Description**:
-    | Returns internal states of PORTA and PORTB registers.
-    | MSB byte is for PORTB, LSB is for PORTA.
-
-
-
-
 Inkplate::readMCPRegister();
-############################
+****************************
 
 * **Method prototype (as seen in Mcp.h)**:
 
@@ -2822,23 +2843,8 @@ Inkplate::readMCPRegister();
 
 
 
-Inkplate::getINTInternal();
-###########################
-
-* **Method prototype (as seen in Mcp.h and Pcal.h)**:
-
-.. code-block:: c 
-
-    uint16_t getINTInternal(uint8_t _addr, uint8_t *_r);
-
-* **Arguments and return value**:
-    | uint8_t _addr - io expander i2c address.
-    | uint8_t \*_r - pointer to array that holds io exapnder registers.
-    | Returns interrupt state of both ports (INTF).
-
-* **Description**:
-    | getINTInternal function reads Interrupt pin state for all pins and return interrupt state of both ports.
-    | Every bit represents interrupt pin, MSB is PORTB PIN7, LSB is PORTA PIN1, bit can be set only if interrupt is enabled.
+PCAL Functions
+##############
 
 
 
