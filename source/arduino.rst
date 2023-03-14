@@ -2259,12 +2259,12 @@ IO Expander Functions
 .. image:: images/PCALvsMCP.jpg
     :width: 500
 
-| If your Inkplate has a PCAL expander, you must use the "Soldered Inkplate ..." board definition, otherwise
-| choose the "e-radionica Inkplate ..." board in Arduino IDE.
+| If your Inkplate has a PCAL expander, you must use the "Soldered Inkplate ..." board definition, 
+| otherwise choose the "e-radionica Inkplate ..." board in Arduino IDE.
 
-| There are 2 GPIO Expanders on the Inkplate board (except for some Inkplates which have 1 because of a shortage ICs in that period), 
-| we call them internal and external. The internal one is needed for the e-paper to work, and the second is just for more GPIO pins 
-| if users want to use them.
+| There are 2 GPIO Expanders on the Inkplate board (except for some Inkplates which have 1 because 
+| of a shortage ICs in that period), we call them internal and external. The internal one is needed
+| for the e-paper to work, and the second is just for more GPIO pins if users want to use them.
 
 | For internal IO Expander, PORTB pins from P1-1 to P1-7 (or GPB1 - GPB7 on older Inkplates) can be used.
 | DO NOT USE P0-0 - P0-7 and P1-0. In code those are pins from 0-8.
