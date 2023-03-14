@@ -2259,19 +2259,23 @@ IO Expander Functions
 .. image:: images/PCALvsMCP.jpg
     :width: 500
 
-| If your Inkplate has a PCAL expander, you must use the "Soldered Inkplate ..." board definition, 
-| otherwise choose the "e-radionica Inkplate ..." board in Arduino IDE.
+| If your Inkplate has a PCAL expander, you must use the "Soldered Inkplate ..." 
+| board definition, otherwise choose the "e-radionica Inkplate ..." board in Arduino IDE.
 
-| There are 2 GPIO Expanders on the Inkplate board (except for some Inkplates which have 1 because 
-| of a shortage ICs in that period), we call them internal and external. The internal one is needed
-| for the e-paper to work, and the second is just for more GPIO pins if users want to use them.
+| There are 2 GPIO Expanders on the Inkplate board (except for some Inkplates 
+| which have 1 because of a shortage ICs in that period), we call them internal 
+| and external. The internal one is needed for the e-paper to work, and the 
+| second is just for more GPIO pins if users want to use them.
 
-| For internal IO Expander, PORTB pins from P1-1 to P1-7 (or GPB1 - GPB7 on older Inkplates) can be used.
-| DO NOT USE P0-0 - P0-7 and P1-0. In code those are pins from 0-8.
-| Using those, you might permanently damage the screen. Usage is limited by the library, but just in case don't use them!
-| Port A of internal expander is used for epaper panel and TPS65186 PMIC. P1-0 is used for ESP32 GPIO0 so you can't use it either.
-| P1-1 is used for enabling battery reading (if Batt solder bridge is bridged between second and third pad)
-| P1-2, P1-3 and P1-4 are used for reading touchpad (if Touchpad solder bridges are bridged between second pad and third pad). 
+| For internal IO Expander, PORTB pins from P1-1 to P1-7 (or GPB1 - GPB7 on older Inkplates) 
+| can be used. **DO NOT USE** P0-0 - P0-7 and P1-0. In code those are pins from 0-8. 
+| Using those, you might **permanently damage the screen**. Usage is limited by the library, 
+| but just in case don't use them!
+
+| Port A of internal expander is used for epaper panel and TPS65186 PMIC. P1-0 is used for 
+| ESP32 GPIO0 so you can't use it either. P1-1 is used for enabling battery reading (if Batt 
+| solder bridge is bridged between second and third pad). P1-2, P1-3 and P1-4 are used for 
+| reading touchpad (if Touchpad solder bridges are bridged between second pad and third pad). 
 | You should only use pins from 9 to 15 of the internal io expander. 
 | If you need more GPIOs, you can use another GPIO expander (external) without any restrictions.
 
