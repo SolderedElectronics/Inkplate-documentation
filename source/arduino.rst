@@ -2263,7 +2263,7 @@ IO Expander Functions
 | board definition, otherwise choose the "e-radionica Inkplate ..." board in Arduino IDE.
 
 | There are 2 GPIO Expanders on the Inkplate board (except for some Inkplates 
-| which have 1 because of a shortage ICs in that period), we call them internal 
+| which have 1 because of a shortage of ICs in that period), we call them internal 
 | and external. The internal one is needed for the e-paper to work, and the 
 | second is just for more GPIO pins if users want to use them.
 
