@@ -2249,12 +2249,43 @@ Inkplate::getCursorY();
 IO Expander Functions
 ----------------
 
-| There are 2 types of GPIO expanders on the Inkplate boards: MCP23017 and PCAL6416A. 
-| It both has the same purpose, but the difference is in their dimensions.
+| Depending on which Inkplate you have, there are 2, 1, or no GPIO expanders.
+| There are 2 types of GPIO expanders on the Inkplate boards: MCP23017 and PCAL6416A.
+| The table below shows which GPIO expanders can be found on which Inkplate.
+| We call them internal and external. The internal one is needed for the e-paper and PMIC
+| to work (on certain Inkplates), and the second is just for more GPIO pins if 
+| users want to use them. 
+
+.. list-table:: GPIO Expander pins on each inkplates
+   :header-rows: 1
+
+    * - 
+      - Inkplate 2
+      - Inkplate 6COLOR
+      - Inkplate 6PLUS
+      - Inkplate 6
+      - Inkplate 10
+    * - GPIO expander 
+    * - Available internal pins
+    * - Available external pins
+
+
+======================= ========== =============== ============== ========== =========== 
+                        Inkplate 2 Inkplate 6COLOR Inkplate 6PLUS Inkplate 6 Inkplate 10
+----------------------- ---------- --------------- -------------- ---------- -----------
+GPIO expander                X     
+Available internal pins 
+Available external pins
+
+| **DO NOT USE** pins that are not available! 
+| Using those, you might **permanently damage the screen**. Usage is limited by the library, 
+| but just in case don't use them! For the specific pin purpose, see the /hardware-reference.
 
 | If you look at the back of the Inkplate and follow the lines from the GPIO expander pins, 
-| you will see the IO expander IC. If your Inkplate has a smaller one, this is PCAL. 
-| If there is a bigger IC, this is the MCP expander.
+| you will see the IO expander IC. If your Inkplate has a smaller one (QFN-24 package), it is PCAL. 
+| If there is a bigger IC (28-pin SSOP package), it is the MCP expander.
+
+| The picture below shows the difference in their dimensions so you can easily recognize what expander your Inkplate has.
 
 .. image:: images/PCALvsMCP.jpg
     :width: 500
@@ -2262,24 +2293,9 @@ IO Expander Functions
 | If your Inkplate has a PCAL expander, you must use the "Soldered Inkplate ..." 
 | board definition, otherwise choose the "e-radionica Inkplate ..." board in Arduino IDE.
 
-| There are 2 GPIO Expanders on the Inkplate board (except for some Inkplates 
-| which have 1 because of a shortage of ICs in that period), we call them internal 
-| and external. The internal one is needed for the e-paper to work, and the 
-| second is just for more GPIO pins if users want to use them.
-
-| For internal IO Expander, PORTB pins from P1-1 to P1-7 (or GPB1 - GPB7 on older Inkplates) 
-| can be used. **DO NOT USE** P0-0 - P0-7 and P1-0. In code those are pins from 0-8. 
-| Using those, you might **permanently damage the screen**. Usage is limited by the library, 
-| but just in case don't use them!
-
-| Port A of internal expander is used for epaper panel and TPS65186 PMIC. P1-0 is used for 
-| ESP32 GPIO0 so you can't use it either. P1-1 is used for enabling battery reading (if Batt 
-| solder bridge is bridged between second and third pad). P1-2, P1-3 and P1-4 are used for 
-| reading touchpad (if Touchpad solder bridges are bridged between second pad and third pad). 
-| You should only use pins from 9 to 15 of the internal io expander. 
-| If you need more GPIOs, you can use another GPIO expander (external) without any restrictions.
-
-| IO Expander is started inside Inkplate.begin() function so you need only to call that and everything is set for IO Expander.
+| IO Expander is started inside Inkplate.begin() function so you need only to call
+| that and everything is set for IO Expander. All user pins on the expander are set 
+| to pin mode OUTPUT and LOW state because of saving energy.
 
 .. code-block:: c 
 
@@ -2323,15 +2339,16 @@ Inkplate::pinModeIO();
 
 .. code-block:: c 
 
-    void pinModeIO(uint8_t _pin, uint8_t _mode);
+    void pinModeIO(uint8_t _pin, uint8_t _mode, uint8_t _io_id = IO_EXT_ADDR);
 
 * **Arguments and return value**:
     | uint8_t _pin - pin number.
     | uint8_t _mode - mode to be set (INPUT, OUTPUT or INPUT_PULLUP).
+    | uint8_t _io_id - internal or external io exapnder.
     | Returns nothing.
 
 * **Description**:
-    | Sets internal pin mode.
+    | Sets io expander pin mode.
 
 * **Example**:
     .. code-block:: c
@@ -2389,15 +2406,16 @@ Inkplate::digitalWriteIO();
 
 .. code-block:: c 
 
-    void digitalWriteIO(uint8_t _pin, uint8_t _state);
+    void digitalWriteIO(uint8_t _pin, uint8_t _state, uint8_t _io_id = IO_EXT_ADDR);
 
 * **Arguments and return value**:
     | uint8_t _pin - pin number.
     | uint8_t _state - pin state (HIGH or LOW).
+    | uint8_t _io_id - internal or external io exapnder.
     | Returns nothing.
 
 * **Description**:
-    | Sets internal output pin state.
+    | Sets io exapnder output pin state.
 
 * **Example**:
     .. code-block:: c
@@ -2434,10 +2452,11 @@ Inkplate::digitalReadIO();
 
 .. code-block:: c 
 
-    uint8_t digitalReadIO(uint8_t _pin);
+    uint8_t digitalReadIO(uint8_t _pin, uint8_t _io_id = IO_EXT_ADDR);
 
 * **Arguments and return value**:
     | uint8_t _pin - pin number.
+    | uint8_t _io_id - internal or external io exapnder.
     | Returns HIGH or LOW value (1 or 0).
 
 * **Description**:
@@ -2457,10 +2476,11 @@ Inkplate::removeIntPin();
 
 .. code-block:: c 
 
-    void removeIntPin(uint8_t _pin);
+    void removeIntPin(uint8_t _pin, uint8_t _io_id = IO_EXT_ADDR);
 
 * **Arguments and return value**:
     | uint8_t _pin - pin number.
+    | uint8_t _io_id - internal or external io exapnder.
     | Returns nothing.
 
 * **Description**:
@@ -2501,10 +2521,10 @@ Inkplate::getINT();
 
 .. code-block:: c 
 
-    uint16_t getINT();
+    uint16_t getINT(uint8_t _io_id = IO_EXT_ADDR);
 
 * **Arguments and return value**:
-    | No argument.
+    | uint8_t _io_id - internal or external io exapnder.
     | Returns interupt registers state.
 
 * **Description**:
@@ -2525,10 +2545,11 @@ Inkplate::setPorts();
 
 .. code-block:: c 
 
-    void setPorts(uint16_t _d);
+    void setPorts(uint16_t _d, uint8_t _io_id = IO_EXT_ADDR);
 
 * **Arguments and return value**:
     | uint16_t _d - value to be writen to port A and port B registers.
+    | uint8_t _io_id - internal or external io exapnder.
     | Returns nothing.
 
 * **Description**:
@@ -2569,10 +2590,10 @@ Inkplate::getPorts();
 
 .. code-block:: c 
 
-    uint16_t getPorts();
+    uint16_t getPorts(uint8_t _io_id = IO_EXT_ADDR);
 
 * **Arguments and return value**:
-    | No arguments.
+    | uint8_t _io_id - internal or external io exapnder.
     | Returns register states of PORTA and PORTB.
 
 * **Description**:
