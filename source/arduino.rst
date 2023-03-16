@@ -2257,7 +2257,6 @@ IO Expander Functions
 | users want to use them. 
 
 .. list-table:: GPIO Expander pins on each inkplates
-   :header-rows: 1
 
     * - 
       - Inkplate 2
@@ -2269,13 +2268,6 @@ IO Expander Functions
     * - Available internal pins
     * - Available external pins
 
-
-======================= ========== =============== ============== ========== =========== 
-                        Inkplate 2 Inkplate 6COLOR Inkplate 6PLUS Inkplate 6 Inkplate 10
------------------------ ---------- --------------- -------------- ---------- -----------
-GPIO expander                X     
-Available internal pins 
-Available external pins
 
 | **DO NOT USE** pins that are not available! 
 | Using those, you might **permanently damage the screen**. Usage is limited by the library, 
