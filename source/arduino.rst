@@ -2258,7 +2258,7 @@ IO Expander Functions
 
 | **DO NOT USE** pins that are not available! 
 | Using those, you might **permanently damage the screen**. Usage is limited by the library, 
-| but just in case don't use them! For the specific pin purpose, see the /hardware-reference.
+| but just in case don't use them! For the specific pin purpose, see the hardware-reference.
 
 | If you look at the back of the Inkplate and follow the lines from the GPIO expander pins, 
 | you will see the IO expander IC. If your Inkplate has a smaller one (QFN-24 package), it is PCAL. 
