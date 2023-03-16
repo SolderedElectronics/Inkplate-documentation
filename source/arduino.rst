@@ -2256,19 +2256,6 @@ IO Expander Functions
 | to work (on certain Inkplates), and the second is just for more GPIO pins if 
 | users want to use them. 
 
-.. list-table:: GPIO Expander pins on each inkplates
-
-    * - 
-      - Inkplate 2
-      - Inkplate 6COLOR
-      - Inkplate 6PLUS
-      - Inkplate 6
-      - Inkplate 10
-    * - GPIO expander 
-    * - Available internal pins
-    * - Available external pins
-
-
 | **DO NOT USE** pins that are not available! 
 | Using those, you might **permanently damage the screen**. Usage is limited by the library, 
 | but just in case don't use them! For the specific pin purpose, see the /hardware-reference.
