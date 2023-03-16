@@ -16,6 +16,7 @@ Short overview
 The schematics speak for themselves, but here is the short introduction to Inkplate hardware. Most boards share the same basic components:
     | ESP32 - microcontroller as the brains of the whole board. WiFi with PCB antenna, BLE, 4MB Flash, 8MB PSRAM, 240MHz. Driving the e-paper parallel lines directly.
     | \*MCP23017 - I2C IO expander. Driving the misc (slower) e-paper lines and providing some extra GPIO pins.
+    | PCAL6416A - I2C IO expander. Replacement for MCP in newer Inkplates in time of chip shortage.
     | e-paper panel - depending on the specific Inkplate, the contents are shown on EPD. There's a special connector for each of them. Some have a backlight and touchscreen and thus the additional circuitry for those. 
     | CH340C - USB-UART adapter, paired with USB-C for programming and power. 
     | \*microSD card slot.
