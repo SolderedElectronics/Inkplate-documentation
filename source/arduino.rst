@@ -2284,6 +2284,8 @@ IO Expander Functions
 .. image:: images/PCALvsMCP.jpg
     :width: 500
 
+| If you have a blue PCB, don't worry. It is just old color before rebranding to Soldered. We also maintain it. It comes only with MCP expanders.
+
 | If your Inkplate has a PCAL expander, you must use the "Soldered Inkplate ..." 
 | board definition, otherwise choose the "e-radionica Inkplate ..." board in Arduino IDE.
 
