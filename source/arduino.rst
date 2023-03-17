@@ -2256,7 +2256,17 @@ IO Expander Functions
 | to work (on certain Inkplates), and the second is just for more GPIO pins if 
 | users want to use them. 
 
-| Tabelica ide tu
++-------------------+------------+---------------+---------------+----------------+---------------+----------------+---------------+----------------+---------------+
+|                   | Inkplate 2 |        Inkplate 6 COLOR       |         Inkplate 6 PLUS        |             Inkplate 6         |       Inkplate 10              |
++===================+============+===============+===============+================+===============+================+===============+================+===============+
+| GPIO expander     | Not exsist |              PCAL             |       MCP      |      PCAL     |       MCP      |      PCAL     |       MCP      |      PCAL     |
++-------------------+------------+---------------+---------------+----------------+---------------+----------------+---------------+----------------+---------------+
+| Available pins on |     X      |               X               | GPB1*,         | P1-1*, P1-5*, | GPB1* - GPB4*, | P1-1*, P1-2*, | GPB1* - GPB4*, | P1-1*, P1-2*, | 
+| internal expander |            |                               | GPB5 - GPB7    | P1-6, P1-7    | GPB5 - GPB7    | P1-3 - P1-7   | GPB5 - GPB7    | P1-3 - P1-7   |
++-------------------+------------+---------------+---------------+----------------+---------------+----------------+---------------+----------------+---------------+
+| Available pins on |     X      | P1-1*, P1-2*, all other pins  |      All**     |      All      |      All**     |      All      |      All**     |      All      |
+| external expander |            |                               |                |               |                |               |                |               |
++-------------------+------------+---------------+---------------+----------------+---------------+----------------+---------------+----------------+---------------+
 
 | \* You can use this pin as GPIO, but you have to cut the certain jumper and connect it to the other side because it originally has another functionality. This functionality is not necessarily needed for e-paper to work, but can be useful so we set it as the default.
 | \*\* Some Inkplates have 1 MCP expander because of chip shortage so you can't use any on the external IO expander
