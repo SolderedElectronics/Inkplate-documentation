@@ -132,7 +132,10 @@ Inkplate_Wake_Up_Button
 Inkplate_Wake_Up_On_Touchpads 
 ******************************
     Here is shown how to use I/O Expander and ESP interrupts to wake up the MCU from deepsleep when the touchpad is pressed. 
-    **Note**: Only available on Inkplates that have touchpads.
+    | **Note**: Only available on Inkplates that have touchpads.
+
+    .. image:: images/example6.jpg
+        :width: 500
 
 
 IO
@@ -141,17 +144,17 @@ IO
 Inkplate_External_IO_Expander
 *****************************
     This example will show you how you can manipulate with I/Os of external IO Expander.
-    **Note**: Only available on Inkplates that have external IO expander.
+    | **Note**: Only available on Inkplates that have external IO expander.
 
 Inkplate_Internal_IO_Expander 
 *****************************
     This example will show you how you can manipulate with I/Os of internal IO Expander.
-    **Note**: Only available on Inkplates that have internal IO expander.
+    | **Note**: Only available on Inkplates that have internal IO expander.
 
 Inkplate_Read_Touchpads 
 ***********************
     This example will show you how you can use built-in touchpads (on PCB marked with numbers 1, 2 and 3).
-    **Note**: Only available on Inkplates that have touchpads.
+    | **Note**: Only available on Inkplates that have touchpads.
 
 
 Other
@@ -173,154 +176,237 @@ Inkplate_Faster_Display_Refreshes
 Inkplate_Read_Battery_Voltage 
 *****************************
     This example will show you how to read voltage of the battery.
-    **Note**: Not available on Inkplate2
+    | **Note**: Not available on Inkplate2
 
 Inkplate_Read_Temperature 
 *************************
     This example will show you how to read temperature from on-board
     temperature sensor which is part of TPS65186 e-paper PMIC.
-    **Note**: Only available for Inkplates that have TPS (5, 6, 6PLUS, 10).
+    | **Note**: Only available for Inkplates that have TPS (5, 6, 6PLUS, 10).
 
 
+RTC
+###
+
+Inkplate_RTC_Alarm 
+*******************
+    In this example we will show how to use basic alarm and clock functions of PCF85063 RTC on Inkplate board.
+    This example will show how to set time and date, how to set alarm, how to read time and how to print time on Inkplate.
+
+Inkplate_RTC_Interrupt_Alarm 
+*****************************
+    In this example we will show how to use PCF85063A RTC Alarm functionality with interrupt.
+    This example will show how to set time and date, how to set up a alarm, how to read time, how to print time on Inkplate.
+
+Inkplate_RTC_Simple 
+*******************
+    Example shows how to use basic clock functions of PCF85063A RTC on Inkplate board.
+    This example will show how to set time and date, how to read time and how to print time on Inkplate.
+
+Inkplate_RTC_Timer 
+******************
+    In this example we will show how to use PCF85063A RTC Timer functionality.
+    This example will show how to set time and date, how to set up a timer, how to read time and how to print time on Inkplate.
 
 
-Inkplate_Battery_Voltage_Temperature
-####################################
-    For this example you will need a Lithium battery (3.6V) with two pin JST connector. This example will show you how to read voltage of the battery and read temperature from on-board
-    temperature sensor which is part of TPS65186 e-paper PMIC.
-    NOTE: In order to read temperature, e-paper has to be refreshed at least one time
-    
-    .. image:: images/example2.jpg
-        :width: 500
-
-
-Inkplate_MCP23017_Expander
-##########################
-    For this example you will need only a micro USB cable, Inkplate, 330 Ohm resistor and LED diode.
-    This example will show you how you can manipulate with I/Os of MCP23017 Expander.
-    You can only manipulate with Port B of MCP23017 (GPB1-GPB7). Port A is used for epaper panel and TPS65186 PMIC.
-    GPB0 is used for ESP32 GPIO0 so you can't use it either.
-    
-    .. image:: images/example19.jpg
-        :width: 500
-
-
+SD
+##
 
 Inkplate_SD_Pictures
-####################
-    For this example you will need a micro USB cable, Inkplate and a SD card loaded with image1.bmp and image2.bmp file that can be found inside folder of this example.
+********************
     This example will show you how you can read .bmp and .jpeg files (pictures) from SD card and
     display that image on e-paper display.
 
-Inkplate_SD_TXT_File
-####################
-    For this example you will need only a micro USB cable, Inkplate and a SD card loaded with text.txt file that can be found inside folder of this example.
+Inkplate_SD_TXT_Read
+********************
     This example will show you how to open .txt files and display the content of that file on Inkplate epaper display.
 
-Inkplate_Touchpads
-##################
-    For this example you will need only a micro USB cable and Inkplate.
-    This example will show you how you can use built-in touchpads (on PCB marked with numbers 1, 2 and 3).
-    They are basically touch sensitive switches.
-    
-    .. image:: images/example5.jpg
+Inkplate_SD_TXT_Write 
+*********************
+    This example will show you how to write in .txt file.
+
+
+
+WEB_WiFi
+########
+
+Inkplate_HTTPS_POST_Request
+***************************
+    This example will show you how to connect to a WiFi network and send a POST request via HTTPS.
+
+Inkplate_HTTP_POST_Request 
+**************************
+    This example will show you how to connect to a WiFi network and send a POST request via HTTP.
+
+Inkplate_HTTP_Request 
+*********************
+    This example will show you how to connect to WiFi network, get data from Internet and display that data on epaper.
+    This example is NOT on to how to parse HTML data from Internet - it will just print HTML on the screen.
+
+    .. image:: images/example9.jpg
         :width: 500
 
-Inkplate_Wake_Up_On_Touchpads
-#############################
-    This example will shown how to use MCP and ESP interrupts to wake up the MCU from deepsleep when touchpad is pressed.
+Inkplate_HTTP_Web_Server 
+************************
+    This example will show you how you can use Inkplate as a small and simple standlone Web Server.
+    You need to connect to Inkplate with WiFi and open IP address shown on Inkplate display.
+    After opening IP address, you will se text box where you can type some text and after that you press "Send to
+    display". Text will apper on Inkplate display! This is just simple example what you can do with it and of course, you
+    can create much more complex stuff.
 
-    .. image:: images/example6.jpg
+    .. image:: images/example8.jpg
         :width: 500
 
-Web_Pictures
-############
-    For this example you will need a micro USB cable, Inkplate, and an available WiFi connection.
+Inkplate_Show_Pictures_From_Web 
+*******************************
     This example will show you how you can download a .bmp file (picture) from the web and
     display that image on e-paper display.
 
     .. image:: images/example7.jpg
         :width: 500
 
-Inkplate_Web_Server
-###################
-    For this example you will need a micro USB cable, Inkplate and a device with WiFi and Internet brower (PC, Laptop, Smartphone etc).
-    This example will show you how you can use Inkplate as a small and simple standlone Web Server.
-    You need to connect to Inkplate with WiFi and open IP address shown on Inkplate display.
 
-    .. image:: images/example8.jpg
-        :width: 500
 
-Inkplate_WiFi_HTTP_Request
-##########################
-    For this example you will need USB cable, Inkplate and stable WiFi Internet connection.
-    This example will show you how to connect to WiFi network, get data from Internet and display that data on epaper.
-    This example is NOT on to how to parse HTML data from Internet - it will just print HTML on the screen.
-    
-    .. image:: images/example9.jpg
-        :width: 500
+Diagnostics
+-----------
 
-Community contributions
------------------------
+Inkplate_Burn_In_Clean 
+######################
+    This example will try to remove heavy burn-in visible on the panel.
 
-Game_Of_Life_By_Claud9999
+Inkplate_Factory_Programming_VCOM
+#################################
+    This example should not be used if you dont know what VCOM is and what exactly you are doing as it can damage panel.
+    Some Inkplates does not support auto VCOM, it has to be set manually.
+    The user will be prompted to enter VCOM via serial (baud 115200).
+    VCOM ranges from 0.0 to -5.0.
+
+    !WARNING! VCOM can only be set 100 times, so keep usage to a minimum.
+    !WARNING! Use at your own risk.
+
+Inkplate_Peripheral_Mode
+########################
+    Using this sketch, you don't have to program and control e-paper using Arduino code.
+    Instead, you can send UART command (explained in documentation that can be found inside folder of this sketch).
+    This give you flexibility that you can use this Inkplate 6 on any platform!
+    Because it uses UART, it's little bit slower and it's not recommended to send bunch of
+    drawPixel command to draw some image. Instead, load bitmaps and pictures on SD card and load image from SD.
+    If we missed some function, you can modify this and make yor own.
+    Also, every Inkplate comes with this peripheral mode right from the factory.
+
+Inkplate6COLOR_Gallery
+######################
+    This example will show you how you can use Inkplate 6COLOR to random images in the root sdcard folder.
+
+Inkplate6COLOR_Mapbox_API 
 #########################
+    This example will show you how you can use Inkplate 6COLOR to display map data.
+    This example gets html data from crowdsource campaing and displays them on Inkplate screen.
+
+
+Projects
+--------
+
+Inkplate_Crowdsupply_Campaing_Tracker
+#####################################
+    This example will show you how you can use Inkplate to display html data.
+    This example gets html data from crowdsource campaing and displays them on Inkplate screen.
+
+    .. image:: images/example14.jpg
+        :width: 500
+
+Inkplate_Crypto_Currency_Tracker
+################################
+    This example will show you how you can use Inkplate to display API data.
+    Here we use Coingecko API to get last 90 days prices and display
+    them on the Inkplate screen.
+
+    .. image:: images/example15.jpg
+        :width: 500
+
+Inkplate_Daily_Weather_Station
+##############################
+    This example will show you how you can use Inkplate to display API data,
+    e.g. Openweather public weather API.
+
+    .. image:: images/example16.jpg
+        :width: 500
+
+Inkplate_Game_Of_Life
+#####################
+    Our first community created example, made by: https://github.com/claud9999
     To run it, jut upload the code and watch Conways game of life animation!
 
     .. image:: images/example10.jpg
         :width: 500
 
-Others
-------
+Inkplate_Google_Calendar
+########################
+    This project shows you how Inkplate can be used to display
+    events in your Google Calendar using their provided API.
 
-Inkplate_Clean
-##############
-    This example will try to remove heavy burn-in visible on the panel.
-    Set number of refresh / clear cycles and upload the program.
+    .. image:: images/example17.jpg
+        :width: 500
 
-Inkplate_Factory_Programming_VCOM
-#################################
-    This example should not be used if you dont know what VCOM is and what exactly you are doing as it can damage panel.
+
+Inkplate_Hourly_Weather_Station
+###############################
+    This example will show you how you can use Inkplate to display API data.
+
+    .. image:: images/example21.jpg
+        :width: 500
+
+
+
+Inkplate_Image_Frame_From_SD
+############################
+    This example will show you how you can make slideshow images from an SD card. Put your images on
+    the SD card in a file and specify the file path in the sketch.
+
+Inkplate_Image_Frame_From_Web
+#############################
+    This example shows how you can set inkplate to show random pictures from web.
 
 Inkplate_Mandelbrot_Set
 #######################
-    This example renders the mandelbrot set to coordiantes to Inkplate. Due to the nature of Mandelbrot set, it is quite slow on low powered MCUs, so please be patient.
+    This example renders the mandelbrot set to coordiantes to Inkplate.
+    Due to the nature of Mandelbrot set, it is quite slow on low powered MCUs, so please be patient :)
 
     .. image:: images/example11.jpg
         :width: 500
 
 Inkplate_Maze_Generator
 #######################
-    This example renders a random maze every time.
-    You can write on it with a whiteboard marker or a graphite pen to solve it, just be sure not to use pernament markers.
+    This example renders a random maze every time!
+    You can write on it with a whiteboard marker or a graphite pen to solve it.
+    Just be sure not to use pernament markers!
 
     .. image:: images/example12.jpg
         :width: 500
 
-Inkplate_Peripheral_Mode
-########################
-    Using this sketch, you don't have to program and control e-paper using Arduino code. 
-    Instead, you can send UART command. This give you flexibility that you can use this Inkplate on any platform.
+Inkplate_News_API
+#################
+    This example will show you how you can use Inkplate to display API data.
+    Here we use News API to get headline news and short description and display
+    them on the Inkplate screen.
 
-Inkplate_VariPass_Graphs
-########################
-    This example will show you how you can use the API on the VariPass website to download and display
-    a sensor graph on the e-paper display.
-    
-    .. image:: images/example13.jpg
+Inkplate_OpenWeather_Station
+############################
+    This example will show you how you can use Inkplate to display API data.
+
+    .. image:: images/example20.jpg
         :width: 500
 
-Mapbox_Api
-##########
-    This example will show you how you can use Inkplate 6COLOR to display map data.
-    This example gets html data from crowdsource campaing and displays them on Inkplate screen.
+Inkplate_Quotables
+##################
+    This example shows you how to use simple API call without API key. Response
+    from server is in JSON format, so that will be shown too how it is used. What happens
+    here is basically ESP32 connects to WiFi and sends API call and server returns HTML
+    document containing one quote and some information about it, then using library ArduinoJSON
+    we extract only quote from JSON data and show it on Inkplate 6. After displaying quote
+    ESP32 goes to sleep and wakes up every 300 seconds to show new quote(you can change time interval).
 
-
-Gallery
-#######
-    This example will show you how you can use Inkplate 6COLOR to random images in the root sdcard folder.
-
-Inkplate_Waveform_EEPROM_Programming
+Inkplate10_Waveform_EEPROM_Programming
 ####################################
     NOTE: This example is only available on Inkplate 10 board.
 
@@ -348,85 +434,29 @@ Inkplate_Waveform_EEPROM_Programming
 
     Waveforms on the Inkplate are reverse engineered and made to best fit a large number of e-paper panels, but they are not perfect.
 
-Projects
---------
-
-Campaing_Tracker
-################
-    This example will show you how you can use Inkplate to display html data. 
-    It gets html data from crowdsource campaing and displays them on Inkplate screen.
-
-    .. image:: images/example14.jpg
-        :width: 500
-
-Clock_Example
-#############
+Inkplate2_Clock
+###############
     This example contains three types of clocks. First type is digital clock
     with 4 digits which displays hours and minutes. Second type is binary clock,
-    which also have digits but displayed in binary numbers. Third type is analog 
-    clock with hands.    
+    which also have digits but displayed in binary numbers. Third type is analog
+    clock with hands.
 
-Cryptocurrency_Tracker
-######################
-    This example will show you how you can use Inkplate to display API data.
-    Here we use Coingecko API to get last 90 days prices and display them on the Inkplate screen.
-
-    .. image:: images/example15.jpg
+    .. image:: images/inkplate2clockExample.jpg
         :width: 500
 
-Daily_Weather_Station
+Inkplate2_Kickstarter_Campaign_Tracker
+######################################
+    This example will show you how you can use Inkplate 2 to track a campaign on Kickstarter.
+    We find this API for our Kickstarter campaign using Google Chrome and inspecting network data.
+    The page periodically receives stats.json?v=1 file and inside are the data we display.
+
+Inkplate2_World_Clock
 #####################
-    This example will show you how you can use Inkplate to display API data, e.g. Metaweather public weather API.
-
-    .. image:: images/example16.jpg
-        :width: 500
-
-Google_Calendar
-###############
-    This project shows you how Inkplate can be used to display events in your Google Calendar using their provided API.   
-
-    .. image:: images/example17.jpg
-        :width: 500
-
-Hourly_Weather_Station
-######################
-    This example will show you how you can use Inkplate to display API data, e.g. Metaweather public weather API, and weatherstack for real time data.
-
-    .. image:: images/example21.jpg
-        :width: 500
-        
-Image_Frame
-###########
-    This example shows how you can set inkplate to show random pictures from web.
-
-Open_weather_station
-####################
-    This example will show you how you can use Inkplate to display API data, e.g. Metaweather public weather API.
-
-    .. image:: images/example20.jpg
-        :width: 500
-
-Quotables_Example
-#################
-    This example shows you how to use simple API call without API key. Response
-    from server is in JSON format, so that will be shown too how it is used. What happens
-    here is basically ESP32 sends API call and server returns HTML document containing one
-    random quote and some information about it, then using library ArduinoJSON we extract only quote
-    from JSON data and show it only on Inkplate 2. 
-
-World_Clock_Example
-###################
-    This example uses API call to get tim for wanted city and it's timezone.
+    This example uses API call to get time for wanted city and it's timezone.
     Fetched data is in JSON format, and library is used to extract data. To choose
-    city just type any part of city's name and it will be automatically found, but if you type
-    to few letters, any city containig that letters will be found. Only for Inkplate 2.
+    the cities just type a part of city's name and it will be automatically found.
+    The more letters you type, the more accurate it is.
 
-Youtube_Subscriber_Count_Example
-################################
-    This example show how to use Google API to show info about some youtube chhannel. 
-    You need to register on https://developers.google.com/ and get API key of any kind so you,
-    can use yxour API key in API call. That key you should copy in variable api_key.
-    Second thing you need to get ID of any youtube channel and copy it in channel_id variable.
-    You can get ID by going on any youtube channel profile and copy part of URL link after
-    https://www.youtube.com/channel/ (so just some random text after last backslash). 
-    Only for Inkplate 2.
+Inkplate2_Youtube_Subscriber_Counter
+####################################
+    This example show how to use Google API to show info about some youtube chhannel.
