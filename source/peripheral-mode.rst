@@ -7,7 +7,7 @@ Inkplate Peripheral Mode
     You can send commands via USB port or by directly connecting to ESP32 TX and RX pins.
     
     Don't forget you need to send #L(1)* after each command to show it on the display (equal to display.display()). 
-    Peripheral mode Arduino code for all inkplates can be found under examples/other if needed to be installed again.
+    Peripheral mode Arduino code for all inkplates can be found under examples/Diagnostics if needed to be installed again.
      
     Settings are:
     115200 baud, standard parity, ending with \\n\\r
@@ -386,3 +386,237 @@ fillElipse: #V(XXX,YYY,RRX,RRY,CC)*
 .. code-block:: c
 
     #V(050,100,040,070,01)*
+
+
+rtcSetTime: #W(H,M,S)*
+----------------------
+    | H - Hours
+    | M - Minutes
+    | S - Seconds
+
+.. code-block:: c
+
+    #W(15,22,30)*
+
+
+rtcSetDate: #X(WD,D,M,Y)*
+-------------------------
+    | WD - weekday
+    | D - day
+    | M - month
+    | Y - year
+
+.. code-block:: c
+
+        #X(4,23,3,2023)*
+
+
+rtcSetEpoch: #Y(E)*
+-------------------
+    | E - Time in epoch
+
+  .. code-block:: c
+
+        #Y(1679581587)*  
+
+
+rtcGetRtcData: #a(D)*
+---------------------
+    | D - What data want to get? [0, 6]
+    | 0 - rtcGetSecond();
+    | 1 - rtcGetMinute();
+    | 2 - rtcGetHour();
+    | 3 - rtcGetDay();
+    | 4 - rtcGetWeekday();
+    | 5 - rtcGetMonth();
+    | 6 - rtcGetYear();
+
+  .. code-block:: c
+
+     #a(2)*  
+
+
+rtcSetAlarm: #b(AS,AM,AH,AD,AW)*
+--------------------------------
+    | AS - Alarm seconds
+    | AM - Alarm minutes
+    | AH - Alarm hours
+    | AD - Alarm day
+    | AW - Alarm weekday
+
+  .. code-block:: c
+
+        #b(0,30,15,23,4)*  
+
+
+rtcSetAlarmEpoch: #c(AE,AMC)*
+-----------------------------
+    | AE - Alarm epoch
+    | AMC - Alarm matching (see System.h)
+
+  .. code-block:: c
+
+        #c(1679581587, 2)*
+
+
+rtcCheckAlarmFlag: #d(?)*
+-------------------------
+    | Response:
+
+    .. code-block:: c
+
+        #d(1)* // or
+        #d(0)* 
+
+
+rtcClearAlarmFlag: #e(1)*
+-------------------------
+
+  .. code-block:: c
+
+        #e(1)* 
+
+
+rtcGetAlarm: #f(D)*
+-------------------
+    | D - Which component of the alarm want to get [0, 4]
+    | 0 - rtcGetAlarmSecond();
+    | 1 - rtcGetAlarmMinute();
+    | 2 - rtcGetAlarmHour();
+    | 3 - rtcGetAlarmDay();
+    | 4 - rtcGetAlarmWeekday();
+
+  .. code-block:: c
+
+        #f(3)* 
+
+
+rtcTimerSet: #g(SC,V,IE,IP)*
+----------------------------
+    | SC - rtcCountdownSrcClock -> [0,3], see System.h
+    | V - Coundowntime in seconds
+    | IE -> 1 = enable interrupt; 0 = disable interrupt
+    | IP -> 1 = interrupt generate a pulse; 0 = interrupt follows timer flag
+
+  .. code-block:: c
+
+        #g(2,10,0,0)* 
+
+
+rtcCheckTimerFlag: #h(?)*
+-------------------------
+    | Response:
+
+  .. code-block:: c
+
+        #h(1)* // or
+        #h(0)* 
+
+rtcClearTimerFlag: #i(1)*
+-------------------------
+
+  .. code-block:: c
+
+        #i(1)* 
+
+
+rtcDisableTimer: #j(1)*
+-----------------------
+
+  .. code-block:: c
+
+        #j(1)* 
+
+
+rtcIsSet: #k(?)*
+----------------
+
+    | Response: 
+
+  .. code-block:: c
+
+        #k(0)* // or
+        #k(1)* 
+
+
+rtcReset: #l(1)*
+----------------
+
+  .. code-block:: c
+
+        #l(1)* 
+
+
+**Note**: Next functions are only for Inkplate 6PLUS
+
+
+frontlight: #m(F)*
+------------------
+    | F -> 1 to turn on; 0 to turn off the frontlight
+
+    .. code-block:: c
+
+        #m(1)* 
+
+
+setFrontlight: #n(BR)*
+----------------------
+    | BR - brightness [0, 63]
+
+    .. code-block:: c
+
+        #n(50)* 
+
+
+tsInit: #o(PWRS)*
+-----------------
+    | PWRS -> 1 for display.tsInit(1); 0 for display.tsInit(0);
+
+    .. code-block:: c
+
+        #o(1)* 
+
+
+tsShutdown: #p(1)*
+------------------
+
+    .. code-block:: c
+
+        #p(1)* 
+
+
+tsAvailable: #r(?)*
+-------------------
+    | Response:
+
+  .. code-block:: c
+
+        #r(0)* // or
+        #r(1)* 
+
+tsGetData: #s(?)*
+-----------------
+    | Response: 
+
+  .. code-block:: c
+
+        #s(x, y)* 
+        
+
+tsGetRawData: #t(?)*
+--------------------
+    | Response: raw data from the touchscreen in binary format
+
+
+touchInArea: #u(XXX,YYY,TW,TH)*
+-------------------------------
+| touchInArea checks if touch occured in given rectangle area.
+
+    | XXX - rectangle top left corner x plane
+    | YYY - rectangle top left corner y plane
+    | TW - rectangle width
+    | TH - rectangle height
+
+    .. code-block:: c
+
+        #u(0,0,200,300)* 

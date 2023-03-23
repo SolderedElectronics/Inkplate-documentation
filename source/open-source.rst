@@ -2,6 +2,7 @@ Inkplate is Open Source
 =========================
 
 | `Inkplate 6 open source certificate <https://certification.oshwa.org/hr000003.html>`_
+| `Inkplate 10 open source certificate <https://certification.oshwa.org/hr000006.html>`_
 
 .. image:: images/OSHWA_logo.png
     :width: 500
