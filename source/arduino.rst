@@ -64,9 +64,32 @@ Inkplate object initialization
     After calling this below your "#include" lines, you have access to all Inkplate functionality as display object methods.
 
 
+Inkplate::setPanelState()
+#########################
+
+* **Method prototype (as seen in Inkplate.h)**:
+
+    .. code-block:: c
+
+        setPanelState(uint8_t s);
+
+* **Arguments and return value**:
+    | uint8_t s - panel state ON or OFF (1 or 0)
+
+    | Returns nothing
+
+* **Description**:
+
+    setPanelState sets panel state (on/off)
+
+  | **Note**: Only supported on Inkplate 6COLOR and Inkplate 2
+
+
+
 Inkplate::getPanelState()
 #########################
-    | Gets panel state (ON/OFF)
+
+* **Method prototype (as seen in Inkplate.h)**:
 
     .. code-block:: c
 
@@ -81,32 +104,35 @@ Inkplate::getPanelState()
 
     getPanelState gets panel state (ON/OFF)
 
-  | **Note**: not supported on Inkplate 6COLOR and Inkplate 2
+  | **Note**: Only supported on Inkplate 6COLOR and Inkplate 2
+
+
 
 Inkplate::setPanelDeepSleep()
 #############################
-    | Puts epaper in deep sleep, or starts epaper, depending on given arguments.
-        HIGH or LOW (1 or 0) 1 will start panel, 0 will put it into deep
+
+* **Method prototype (as seen in Inkplate.h)**:
 
     .. code-block:: c
 
         setPanelDeepSleep(bool _state);
 
 * **Arguments and return value**:
-    | uint8_t _state - panel state ON or OFF (1 or 0)
+    | uint8_t _state - HIGH or LOW (1 or 0) 1 will start panel, 0 will put it into deep
 
     | Returns nothing
 
 * **Description**:
 
-    setPanelDeepSleep puts epaper in deep sleep, or starts epaper, depending on given arguments.
+    setPanelDeepSleep puts epaper in deep sleep, or starts epaper, depending on given arguments. HIGH or LOW (1 or 0) 1 will start panel, 0 will put it into deep
 
-  | **Note**: works only with Inkplate 6COLOR and Inkplate 2
+  | **Note**: Works only with Inkplate 6COLOR and Inkplate 2
 
 
 Inkplate::getPanelDeepSleepState()
 ##################################
-    | Returns current state of the panel.
+
+* **Method prototype (as seen in Inkplate.h)**:
 
     .. code-block:: c
 
@@ -115,13 +141,13 @@ Inkplate::getPanelDeepSleepState()
 * **Arguments and return value**:
     | No Arguments
 
-    | Returns nothing
+    | Returns current state of the panel
 
 * **Description**:
 
     getPanelDeepSleepState returns current state of the panel.
 
-  | **Note**: works only with Inkplate 6COLOR and Inkplate 2
+  | **Note**: Works only with Inkplate 6COLOR and Inkplate 2
 
 
 Inkplate::begin()
@@ -169,7 +195,7 @@ Inkplate::sdCardInit()
     | Used to initialize SD card interface.
     | Must be called before using SD card functionality like SdFile::read();
 
-  | **Note**: not supported on Inkplate 2
+  | **Note**: Not supported on Inkplate 2
 
 Inkplate::getSdFat();
 #####################
@@ -188,7 +214,8 @@ Inkplate::getSdFat();
 * **Description**:
     | See SdFat library documentation for use examples.
 
-  | **Note**: not supported on Inkplate 2
+  | **Note**: Not supported on Inkplate 2
+
 
 Inkplate::getSPI();
 ###################
@@ -220,14 +247,14 @@ Inkplate::waitForEpd();
     | Returns 1 if panel is busy and 0 if panel is ready
 
 * **Description**:
-    | Reads state of busy pin.
+    | Waits for panel to be ready for data.
 
 * **Example**:
     .. code-block:: c
 
         display.setPanelState(0);
 
-  | **Note**: supported only on Inkplate 2
+  | **Note**: Supported only on Inkplate 2
 
 
 
@@ -289,12 +316,12 @@ Inkplate::readTouchpad();
     uint8_t readTouchpad(uint8_t);
 
 * **Arguments and return value**:
-    | uint8_t **_pad** - pass in PAD1, PAD2 or PAD3
+    | uint8_t **_pad** - touchpad pin to check, pass in PAD1, PAD2 or PAD3
 
     Returns state of the desired pad.
 
 * **Description**:
-    | Reads the state of each of three pads.
+    | readTouchpad reads touchpad pin to check if triggered
 
 * **Example**:
     .. code-block:: c
@@ -304,7 +331,7 @@ Inkplate::readTouchpad();
             //Do something
         }
 
-  | **Note**: not supported on Inkplate 6PLUS and Inkplate 2
+  | **Note**: Not supported on Inkplate 6PLUS, Inkplate 2 and all newer Inkplates.
 
 Inkplate::readTemperature();
 ############################
@@ -318,18 +345,17 @@ Inkplate::readTemperature();
 * **Arguments and return value**:
     | No arguments.
 
-    Returns panel temperature at the last refresh.
+    Returns temperature in range from -10 to 85 degree C with accuracy of +-1 in range from 0 to 50.
 
 * **Description**:
     | Can be used to determine temperature roughly.
-    | Keep in mind that the returned value was measured at the time of the last screen refresh.
 
 * **Example**:
     .. code-block:: c
 
         Serial.print(display.readTemperature(), DEC);
 
-  | **Note**: not supported on Inkplate 2 or Inkplate 6COLOR
+  | **Note**: Not supported on Inkplate 2 or Inkplate 6COLOR
 
 Inkplate::readBattery();
 ########################
@@ -354,7 +380,7 @@ Inkplate::readBattery();
 
         double voltage = display.readBattery();
 
-  | **Note**: not supported on Inkplate Inkplate 2
+  | **Note**: Not supported on Inkplate Inkplate 2
 
 Inkplate::einkOff();
 ####################
@@ -378,7 +404,7 @@ Inkplate::einkOff();
 
         display.einkOff();
 
-  | **Note**: not supported on Inkplate 6COLOR and Inkplate 2
+  | **Note**: Not supported on Inkplate 6COLOR and Inkplate 2
 
 Inkplate::einkOn();
 ####################
@@ -402,7 +428,7 @@ Inkplate::einkOn();
 
         display.einkOn();
 
-  | **Note**: not supported on Inkplate 6COLOR and Inkplate 2
+  | **Note**: Not supported on Inkplate 6COLOR and Inkplate 2
 
 Inkplate::readPowerGood();
 ##########################
@@ -426,7 +452,7 @@ Inkplate::readPowerGood();
 
         int power = readPowerGood();
 
-  | **Note**: not supported on Inkplate 6COLOR and Inkplate 2
+  | **Note**: Not supported on Inkplate 6COLOR and Inkplate 2
 
 Inkplate::vscan_start();
 ########################
@@ -445,7 +471,7 @@ Inkplate::vscan_start();
 * **Description**:
     | Starts writing new frame and skips first two lines that are invisible on screen
 
-  | **Note**: not supported on Inkplate 6COLOR and Inkplate 2
+  | **Note**: Not supported on Inkplate 6COLOR and Inkplate 2
 
 Inkplate::hscan_start();
 ########################
@@ -464,7 +490,7 @@ Inkplate::hscan_start();
 * **Description**:
     | Starts writing data into current row
 
-  | **Note**: not supported on Inkplate 6COLOR and Inkplate 2
+  | **Note**: Not supported on Inkplate 6COLOR and Inkplate 2
 
 Inkplate::vscan_end();
 ######################
@@ -483,7 +509,7 @@ Inkplate::vscan_end();
 * **Description**:
     | Ends current row and prints data to screen
 
-  | **Note**: not supported on Inkplate 6COLOR and Inkplate 2
+  | **Note**: Not supported on Inkplate 6COLOR and Inkplate 2
 
 Inkplate::pinsZstate();
 #######################
@@ -502,7 +528,7 @@ Inkplate::pinsZstate();
 * **Description**:
     | Sets pins connected to e-paper to High-Z state(or inputs).
 
-  | **Note**: not supported on Inkplate 6COLOR and Inkplate 2
+  | **Note**: Not supported on Inkplate 6COLOR and Inkplate 2
 
 Inkplate::pinsAsOutputs();
 ##########################
@@ -670,7 +696,7 @@ Inkplate::display();
 
 .. code-block:: c
 
-    void display(bool leaveOn);
+    void display(bool leaveOn = false);
 
 * **Arguments and return value**:
     | bool **leaveOn** - if set to 1, it will disable turning supply for eink after display update in order to save some time needed for power supply to save some time at next display update or increase refreshing speed.
@@ -697,7 +723,7 @@ Inkplate::display1b();
 
 .. code-block:: c
 
-    void display1b(bool leaveOn);
+    void display1b(bool leaveOn = false);
 
 * **Arguments and return value**:
     | bool **leaveOn** - if set to 1, it will disable turning supply for eink after display update in order to save some time needed for power supply to save some time at next display update or increase refreshing speed.
@@ -716,7 +742,7 @@ Inkplate::display1b();
         display.display1b(1);
 
 
-  | **Note**: not supported on Inkplate 6COLOR and Inkplate 2
+  | **Note**: Not supported on Inkplate 6COLOR and Inkplate 2
 
 Inkplate::display3b();
 ######################
@@ -725,7 +751,7 @@ Inkplate::display3b();
 
 .. code-block:: c
 
-    void display3b(bool leaveOn);
+    void display3b(bool leaveOn = false);
 
 * **Arguments and return value**:
     | bool **leaveOn** - if set to 1, it will disable turning supply for eink after display update in order to save some time needed for power supply to save some time at next display update or increase refreshing speed.
@@ -801,7 +827,7 @@ or
 
 .. code-block:: c
 
-    void partialUpdate(bool _forced, bool leaveOn);
+    void partialUpdate(bool _forced = false, bool leaveOn = false);
 
 * **Arguments and return value**:
     | bool **_forced** - For advanced use with deep sleep. Can force partial update in deep sleep.
@@ -826,7 +852,7 @@ or
 
         display.drawPixel(100, 100, BLACK);
 
-  | **Note**: not supported on Inkplate 6COLOR and Inkplate 2
+  | **Note**: Not supported on Inkplate 6COLOR and Inkplate 2
 
 
 Inkplate::setRotation();
@@ -886,7 +912,7 @@ Inkplate::selectDisplayMode();
 
         display.selectDisplayMode(INKPLATE_3BIT);
 
-  | **Note**: not supported on Inkplate 6COLOR and Inkplate 2
+  | **Note**: Not supported on Inkplate 6COLOR and Inkplate 2
 
 Inkplate::setDisplayMode();
 ###########################
@@ -931,7 +957,7 @@ Inkplate::getDisplayMode();
         if(display.getDisplayMode() == INKPLATE_3BIT)
             Serial.println("I'm in grayscale mode!");
 
-  | **Note**: not supported on Inkplate 6COLOR and Inkplate 2
+  | **Note**: Not supported on Inkplate 6COLOR and Inkplate 2
 
 Inkplate::drawImage();
 ######################
@@ -1192,6 +1218,12 @@ Inkplate::clean();
 
     void clean(c, rep);
 
+| or (Inkplate 6PLUS)
+
+.. code-block:: c
+
+    void clean();
+
 * **Arguments and return value**:
     | uint8_t **c** - one of four posible pixel states (0 will light screen, 1 will darken screen, 2 will discharge screen and 3 will skip).
     | uint8_t **rep** - number of repetitions.
@@ -1207,7 +1239,7 @@ Inkplate::clean();
 
         display.clean();
 
-  | Note: Inkplate 2 and Inkplate 6COLOR does not support this function
+  | Note: Inkplate 2 does not support this function
 
 
 Inkplate::fillScreen();
@@ -3084,13 +3116,13 @@ WiFi connectivity
 
         ...
 
-        //In setup
+        // In setup
         while(!display.joinAP(ssid, pass))
         {
             Serial.println("Connecting to wifi");
         }
 
-        //after you can check if connection active
+        // After you can check if connection active
         if((display.isConnected)) 
         {
             HTTPClient http;
