@@ -73,10 +73,116 @@ Advanced
 Communications
 ###############
 
-Inkplate_Bluetooth_Peripheral_Mode_Example
-******************************************
+Inkplate_Bluetooth_Peripheral_Mode
+**********************************
     This example shows how to use Inkplate as a peripheral device over Bluetooth.
     Note: for this to work you need to use ESP32 Wroover Board definition, as ours currently has a bug :(
+
+Inkplate6_Bluetooth_Serial 
+**************************
+    This example shows how to use Bluetooth on Inkplate devices.
+    Upload this example to the Inkplate and connect your phone to it via Bluetooth.
+    On the screen (or Serial monitor on Inkplates with slow refresh rate), you will see what the phone sends while in the app you will see what the Inkplate
+    sends over the Serial Monitor.
+
+Inkplate_EasyC
+**************
+    For this example you will need a micro USB cable, Inkplate, BME680 sensor with easyC connector on it. 
+    This example will show you how you can read temperature, humidity, and air pressure data from BME680.
+
+    .. image:: images/example18.jpg
+        :width: 500
+
+Inkplate6_Second_SPI
+********************
+    This example will show you how you can read a tag ID and print it on the Inkplate screen.
+
+
+DeepSleep
+#########
+
+Inkplate_Partial_Update_With_Deep_Sleep
+***************************************
+    In this example we will show how to use partial update of epaper screen with deep sleep functionality of ESP32. 
+    **Note**: Inkplate 2 and Inkplate 6COLOR don't support partial updates.
+
+    .. image:: images/example4.jpg
+        :width: 500
+
+Inkplate_RTC_Alarm_With_Deep_Sleep 
+***********************************
+    This example will show you how to use RTC alarm interrupt with deep sleep.
+    All Inkplates except Inkplate2 features an RTC chip with an interrupt for alarm connected to GPIO39.
+
+Inkplate_Simple_Deep_Sleep.ino
+******************************
+    For this example you will need a USB-C cable and Inkplate.
+    This example will show you how you can use low power functionality of Inkplate boards.
+    In deep sleep, whole board will consume about 25uA from battery.
+    Inkplate will wake every 20 seconds change content on screen.
+    
+    .. image:: images/example3.jpg
+        :width: 500
+
+Inkplate_Wake_Up_Button 
+************************
+    Here is shown how to use ESP interrupts to wake up the MCU from deepsleep when wake up button
+    is pressed. Also, wake up on timer after 30 seconds of deep sleep if the button is not pressed.
+
+Inkplate_Wake_Up_On_Touchpads 
+******************************
+    Here is shown how to use I/O Expander and ESP interrupts to wake up the MCU from deepsleep when the touchpad is pressed. 
+    **Note**: Only available on Inkplates that have touchpads.
+
+
+IO
+##
+
+Inkplate_External_IO_Expander
+*****************************
+    This example will show you how you can manipulate with I/Os of external IO Expander.
+    **Note**: Only available on Inkplates that have external IO expander.
+
+Inkplate_Internal_IO_Expander 
+*****************************
+    This example will show you how you can manipulate with I/Os of internal IO Expander.
+    **Note**: Only available on Inkplates that have internal IO expander.
+
+Inkplate_Read_Touchpads 
+***********************
+    This example will show you how you can use built-in touchpads (on PCB marked with numbers 1, 2 and 3).
+    **Note**: Only available on Inkplates that have touchpads.
+
+
+Other
+#####
+
+
+Inkplate_EEPROM_Usage
+*********************
+    This example will show you how to use EEPROM with Inkplate board.
+    EEPROM is a permanent memory that holds data even if the power supply is disconnected.
+    You can use EEPROM to store any data you don't want to lose during restarting or powering down the device.
+    It shows how to use basic operations with EEPROM like clearing, writing, and reading.
+
+Inkplate_Faster_Display_Refreshes
+*********************************
+    We can display and partial update our screens faster by leaving the panel power on.
+    Just be sure to turn it off when going to deep sleep to save power.
+
+Inkplate_Read_Battery_Voltage 
+*****************************
+    This example will show you how to read voltage of the battery.
+    **Note**: Not available on Inkplate2
+
+Inkplate_Read_Temperature 
+*************************
+    This example will show you how to read temperature from on-board
+    temperature sensor which is part of TPS65186 e-paper PMIC.
+    **Note**: Only available for Inkplates that have TPS (5, 6, 6PLUS, 10).
+
+
+
 
 Inkplate_Battery_Voltage_Temperature
 ####################################
@@ -87,23 +193,6 @@ Inkplate_Battery_Voltage_Temperature
     .. image:: images/example2.jpg
         :width: 500
 
-Inkplate_EasyC
-##############
-    For this example you will need a micro USB cable, Inkplate, BME680 sensor with easyC connector on it. 
-    This example will show you how you can read temperature, humidity, air pressure and gas data from BME680.
-
-    .. image:: images/example18.jpg
-        :width: 500
-
-Inkplate_Low_Power
-##################
-    For this example you will need USB cable and Inkplate.
-    This example will show you how you can use low power functionality of Inkplate board.
-    In deep sleep, whole board will consume about 25uA from battery.
-    Inkplate will wake every 20 seconds change content on screen.
-    
-    .. image:: images/example3.jpg
-        :width: 500
 
 Inkplate_MCP23017_Expander
 ##########################
@@ -115,12 +204,7 @@ Inkplate_MCP23017_Expander
     .. image:: images/example19.jpg
         :width: 500
 
-Inkplate_Partial_Update_With_Deep_Sleep
-#######################################
-    In this example we will show how to use partial update of epaper screen with deep sleep functionality of ESP32.
 
-    .. image:: images/example4.jpg
-        :width: 500
 
 Inkplate_SD_Pictures
 ####################
