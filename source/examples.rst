@@ -450,6 +450,9 @@ Inkplate2_Kickstarter_Campaign_Tracker
     We find this API for our Kickstarter campaign using Google Chrome and inspecting network data.
     The page periodically receives stats.json?v=1 file and inside are the data we display.
 
+    .. image:: images/inkplate2kickstarterExample.jpg
+        :width: 500
+
 Inkplate2_World_Clock
 #####################
     This example uses API call to get time for wanted city and it's timezone.
