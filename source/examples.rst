@@ -3,46 +3,78 @@ Examples
 
 All examples included in our library can be found here: `Examples for Inkplate <https://github.com/e-radionicacom/Inkplate-Arduino-library/tree/master/examples>`_
 After you download inkplate Arduino library you will have all examples inside Arduino IDE. There are comments in all examples that describe how it works and what hardware you need.
+**Note**: There is not every example for every Inkplate, but most of them exist on each Inkplate board. For example, for Inkplate2 there are no examples that use an SD card because Inkplate 2 does not have an SD card slot. 
+Examples that are for specific Inkplate boards, in the text below it contain a version of Inkplate for which is intended. Examples that don't have versions of Inkplate in the name are examples for each Inkplate board.
 
-Basic Inkplate Functionality
+
+Basic
 ----------------------------
 
-Inkplate_Basic_BW
-#################
-    This example shows basic Inkplate functionalities in black and white mode (writing text, drawing shapes and images).
+Inkplate2_Black_White_Red
+#########################
+    This example shows basic Inkplate functionalities in black, white, and red colors (writing text, drawing shapes and images, ...).
 
-Inkplate_Basic_Gray
+Inkplate2_Text_With_Shadow
+##########################
+    This example will show you how you can draw some simple graphics using
+    Adafruit GFX functions. It will draw red text with black shadow.
+
+Inkplate_Black_And_White
+#################
+    This example shows basic Inkplate functionalities in black and white mode (writing text, drawing shapes and images, ...).
+
+Inkplate_Grayscale
 ###################
     This example shows basic Inkplate functionalities in gray mode (writing text, drawing shapes and images).
 
-Inkplate_Basic_Partial_Update
+Inkplate_Partial_Update
 #############################
     This example shows how to properly use partial update on Inkplate.
     
     .. image:: images/example1.jpg
         :width: 500
 
-Inkplate_Full_Screen_Colors
-###########################
-    Simple Inkplate example showing all colors of the Inkplate..
+Inkplate6PLUS_Simple_Frontlight
+###############################
+    This example will show you how to use Inkplate 6Plus frontlight.
 
-Inkplate_6Color_Basic
+Inkplate6PLUS_Touch_In_Area
+###########################
+    This example shows you how to use Inkplate 6Plus touchscreen.
+    Once the code is uploaded, try to touch the rectangle on the screen :)
+
+Inkplate6PLUS_Touch_Registers
+#############################
+    This example shows you how to use Inkplate 6Plus touchscreen.
+    Once the code is uploaded, open the serial monitor in Arduino IDE and you'll see touchscreen events there.
+
+Inkplate6PLUS_Touchscreen_Draw
+##############################
+    This example shows you how to use Inkplate 6PLUS touchscreen.
+    Once the code is uploaded, try drawing on the screen :)
+
+Inkplate6PLUS_Touchscreen_Serial 
+################################
+    This example shows you how to use Inkplate 6Plus touchscreen.
+    Once the code is uploaded, open the serial monitor in Arduino IDE and you'll see touchscreen events there.
+
+Inkplate6COLOR_Full_Screen_Colors 
+###########################
+    Simple Inkplate 6COLOR example showing all colors of the Inkplate.
+
+Inkplate6COLOR_Simple 
 #####################
     Simple Inkplate example showing drawing functionalities of the Inkplate 6COLOR library.
 
-Inkplate_Basic_BWR
-##################
-    This example shows basic Inkplate functionalities in red, black and white mode (writing text, drawing shapes and images) on Inkplate 2.
 
-Inkplate_Basic_Text_With_Shadow
-###############################
-    This example shows drawing text with shadow, you can change text color and shadow color.
+Advanced
+--------
 
-Advanced Inkplate Features
---------------------------
+Communications
+###############
 
 Inkplate_Bluetooth_Peripheral_Mode_Example
-##########################################
+******************************************
     This example shows how to use Inkplate as a peripheral device over Bluetooth.
     Note: for this to work you need to use ESP32 Wroover Board definition, as ours currently has a bug :(
 
