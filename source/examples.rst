@@ -8,16 +8,22 @@ Examples that are for specific Inkplate boards, in the text below it contain a v
 
 
 Basic
-----------------------------
+-----
 
 Inkplate2_Black_White_Red
 #########################
     This example shows basic Inkplate functionalities in black, white, and red colors (writing text, drawing shapes and images, ...).
 
+    .. image:: images/inkplate2bwrExample.jpg
+        :width: 500
+
 Inkplate2_Text_With_Shadow
 ##########################
     This example will show you how you can draw some simple graphics using
     Adafruit GFX functions. It will draw red text with black shadow.
+
+    .. image:: images/inkplate2textWithShadowExample.jpg
+        :width: 500
 
 Inkplate_Black_And_White
 #################
@@ -78,7 +84,7 @@ Inkplate_Bluetooth_Peripheral_Mode
     This example shows how to use Inkplate as a peripheral device over Bluetooth.
     Note: for this to work you need to use ESP32 Wroover Board definition, as ours currently has a bug :(
 
-Inkplate6_Bluetooth_Serial 
+Inkplate_Bluetooth_Serial 
 **************************
     This example shows how to use Bluetooth on Inkplate devices.
     Upload this example to the Inkplate and connect your phone to it via Bluetooth.
@@ -93,7 +99,7 @@ Inkplate_EasyC
     .. image:: images/example18.jpg
         :width: 500
 
-Inkplate6_Second_SPI
+Inkplate_Second_SPI
 ********************
     This example will show you how you can read a tag ID and print it on the Inkplate screen.
 
@@ -407,7 +413,7 @@ Inkplate_Quotables
     ESP32 goes to sleep and wakes up every 300 seconds to show new quote(you can change time interval).
 
 Inkplate10_Waveform_EEPROM_Programming
-####################################
+######################################
     NOTE: This example is only available on Inkplate 10 board.
 
     In order for the image to display correctly on Inkplate, Inkplate needs to have a proper waveform saved in the EEPROM memory.
@@ -444,6 +450,12 @@ Inkplate2_Clock
     .. image:: images/inkplate2clockExample.jpg
         :width: 500
 
+    .. image:: images/inkplate2clock1.jpg
+        :width: 500
+
+    .. image:: images/inkplate2clock2.jpg
+        :width: 500
+
 Inkplate2_Kickstarter_Campaign_Tracker
 ######################################
     This example will show you how you can use Inkplate 2 to track a campaign on Kickstarter.
@@ -460,6 +472,12 @@ Inkplate2_World_Clock
     the cities just type a part of city's name and it will be automatically found.
     The more letters you type, the more accurate it is.
 
+    .. image:: images/inkplate2worldClockExample.jpg
+        :width: 500
+
 Inkplate2_Youtube_Subscriber_Counter
 ####################################
     This example show how to use Google API to show info about some youtube chhannel.
+
+    .. image:: images/inkplate2ytSubTrackerExample.jpg
+        :width: 500
