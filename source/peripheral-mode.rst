@@ -394,6 +394,7 @@ rtcSetTime: #W(H,M,S)*
     | M - Minutes
     | S - Seconds
 
+    | example:
 .. code-block:: c
 
     #W(15,22,30)*
@@ -406,6 +407,7 @@ rtcSetDate: #X(WD,D,M,Y)*
     | M - month
     | Y - year
 
+    | example:
 .. code-block:: c
 
         #X(4,23,3,2023)*
@@ -415,6 +417,7 @@ rtcSetEpoch: #Y(E)*
 -------------------
     | E - Time in epoch
 
+    | example:
   .. code-block:: c
 
         #Y(1679581587)*  
@@ -431,9 +434,10 @@ rtcGetRtcData: #a(D)*
     | 5 - rtcGetMonth();
     | 6 - rtcGetYear();
 
+    | example:
   .. code-block:: c
 
-     #a(2)*  
+     #a(2)*  or #a(5)*
 
 
 rtcSetAlarm: #b(AS,AM,AH,AD,AW)*
@@ -444,6 +448,7 @@ rtcSetAlarm: #b(AS,AM,AH,AD,AW)*
     | AD - Alarm day
     | AW - Alarm weekday
 
+    | example:
   .. code-block:: c
 
         #b(0,30,15,23,4)*  
@@ -454,6 +459,7 @@ rtcSetAlarmEpoch: #c(AE,AMC)*
     | AE - Alarm epoch
     | AMC - Alarm matching (see System.h)
 
+    | example:
   .. code-block:: c
 
         #c(1679581587, 2)*
@@ -465,16 +471,13 @@ rtcCheckAlarmFlag: #d(?)*
 
     .. code-block:: c
 
-        #d(1)* // or
-        #d(0)* 
+        #d(1)* - if the alarm flag is 1
+        #d(0)* - if the alarm flag is 0
 
 
 rtcClearAlarmFlag: #e(1)*
 -------------------------
-
-  .. code-block:: c
-
-        #e(1)* 
+    | Clears alarm flag.
 
 
 rtcGetAlarm: #f(D)*
@@ -486,9 +489,10 @@ rtcGetAlarm: #f(D)*
     | 3 - rtcGetAlarmDay();
     | 4 - rtcGetAlarmWeekday();
 
+    | example:
   .. code-block:: c
 
-        #f(3)* 
+        #f(3)* or #f(1)*
 
 
 rtcTimerSet: #g(SC,V,IE,IP)*
@@ -498,6 +502,7 @@ rtcTimerSet: #g(SC,V,IE,IP)*
     | IE -> 1 = enable interrupt; 0 = disable interrupt
     | IP -> 1 = interrupt generate a pulse; 0 = interrupt follows timer flag
 
+    | example:
   .. code-block:: c
 
         #g(2,10,0,0)* 
@@ -509,23 +514,19 @@ rtcCheckTimerFlag: #h(?)*
 
   .. code-block:: c
 
-        #h(1)* // or
-        #h(0)* 
+        #h(1)* - if the flag is 1
+        #h(0)* - if the flag is 0
 
 rtcClearTimerFlag: #i(1)*
 -------------------------
+    | Clears timer flag.
 
-  .. code-block:: c
-
-        #i(1)* 
 
 
 rtcDisableTimer: #j(1)*
 -----------------------
+    | Disables the timer.
 
-  .. code-block:: c
-
-        #j(1)* 
 
 
 rtcIsSet: #k(?)*
@@ -535,16 +536,14 @@ rtcIsSet: #k(?)*
 
   .. code-block:: c
 
-        #k(0)* // or
-        #k(1)* 
+        #k(0)* - if RTC is not set
+        #k(1)* - if RTC is set
 
 
 rtcReset: #l(1)*
 ----------------
+    | Resets RTC
 
-  .. code-block:: c
-
-        #l(1)* 
 
 
 **Note**: Next functions are only for Inkplate 6PLUS
@@ -554,15 +553,17 @@ frontlight: #m(F)*
 ------------------
     | F -> 1 to turn on; 0 to turn off the frontlight
 
+    | example:
     .. code-block:: c
 
-        #m(1)* 
+        #m(1)* or #m(0)*
 
 
 setFrontlight: #n(BR)*
 ----------------------
     | BR - brightness [0, 63]
 
+    | example:
     .. code-block:: c
 
         #n(50)* 
@@ -572,17 +573,16 @@ tsInit: #o(PWRS)*
 -----------------
     | PWRS -> 1 for display.tsInit(1); 0 for display.tsInit(0);
 
+    | example:
     .. code-block:: c
 
-        #o(1)* 
+        #o(1)* or #o(0)*
 
 
 tsShutdown: #p(1)*
 ------------------
+    | Turns off touchscreen power.
 
-    .. code-block:: c
-
-        #p(1)* 
 
 
 tsAvailable: #r(?)*
@@ -591,8 +591,8 @@ tsAvailable: #r(?)*
 
   .. code-block:: c
 
-        #r(0)* // or
-        #r(1)* 
+        #r(0)* - if not available or
+        #r(1)* - if available
 
 tsGetData: #s(?)*
 -----------------
@@ -617,6 +617,7 @@ touchInArea: #u(XXX,YYY,TW,TH)*
     | TW - rectangle width
     | TH - rectangle height
 
+    | example:
     .. code-block:: c
 
         #u(0,0,200,300)* 
