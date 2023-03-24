@@ -3,6 +3,7 @@ Examples
 
 All examples included in our library can be found here: `Examples for Inkplate <https://github.com/e-radionicacom/Inkplate-Arduino-library/tree/master/examples>`_
 After you download inkplate Arduino library you will have all examples inside Arduino IDE. There are comments in all examples that describe how it works and what hardware you need.
+
 **Note**: There is not every example for every Inkplate, but most of them exist on each Inkplate board. For example, for Inkplate2 there are no examples that use an SD card because Inkplate 2 does not have an SD card slot. 
 Examples that are for specific Inkplate boards, in the text below it contain a version of Inkplate for which is intended. Examples that don't have versions of Inkplate in the name are examples for each Inkplate board.
 
@@ -26,7 +27,7 @@ Inkplate2_Text_With_Shadow
         :width: 500
 
 Inkplate_Black_And_White
-#################
+########################
     This example shows basic Inkplate functionalities in black and white mode (writing text, drawing shapes and images, ...).
 
 Inkplate_Grayscale
@@ -34,7 +35,7 @@ Inkplate_Grayscale
     This example shows basic Inkplate functionalities in gray mode (writing text, drawing shapes and images).
 
 Inkplate_Partial_Update
-#############################
+#######################
     This example shows how to properly use partial update on Inkplate.
     
     .. image:: images/example1.jpg
@@ -65,7 +66,7 @@ Inkplate6PLUS_Touchscreen_Serial
     Once the code is uploaded, open the serial monitor in Arduino IDE and you'll see touchscreen events there.
 
 Inkplate6COLOR_Full_Screen_Colors 
-###########################
+#################################
     Simple Inkplate 6COLOR example showing all colors of the Inkplate.
 
 Inkplate6COLOR_Simple 
@@ -81,8 +82,8 @@ Communications
 
 Inkplate_Bluetooth_Peripheral_Mode
 **********************************
-    This example shows how to use Inkplate as a peripheral device over Bluetooth.
-    Note: for this to work you need to use ESP32 Wroover Board definition, as ours currently has a bug :(
+    | This example shows how to use Inkplate as a peripheral device over Bluetooth.
+    | Note: for this to work you need to use ESP32 Wroover Board definition, as ours currently has a bug :(
 
 Inkplate_Bluetooth_Serial 
 **************************
@@ -109,8 +110,8 @@ DeepSleep
 
 Inkplate_Partial_Update_With_Deep_Sleep
 ***************************************
-    In this example we will show how to use partial update of epaper screen with deep sleep functionality of ESP32. 
-    **Note**: Inkplate 2 and Inkplate 6COLOR don't support partial updates.
+    | In this example we will show how to use partial update of epaper screen with deep sleep functionality of ESP32. 
+    | **Note**: Inkplate 2 and Inkplate 6COLOR don't support partial updates.
 
     .. image:: images/example4.jpg
         :width: 500
@@ -137,7 +138,7 @@ Inkplate_Wake_Up_Button
 
 Inkplate_Wake_Up_On_Touchpads 
 ******************************
-    Here is shown how to use I/O Expander and ESP interrupts to wake up the MCU from deepsleep when the touchpad is pressed. 
+    | Here is shown how to use I/O Expander and ESP interrupts to wake up the MCU from deepsleep when the touchpad is pressed. 
     | **Note**: Only available on Inkplates that have touchpads.
 
     .. image:: images/example6.jpg
@@ -149,17 +150,17 @@ IO
 
 Inkplate_External_IO_Expander
 *****************************
-    This example will show you how you can manipulate with I/Os of external IO Expander.
+    | This example will show you how you can manipulate with I/Os of external IO Expander.
     | **Note**: Only available on Inkplates that have external IO expander.
 
 Inkplate_Internal_IO_Expander 
 *****************************
-    This example will show you how you can manipulate with I/Os of internal IO Expander.
+    | This example will show you how you can manipulate with I/Os of internal IO Expander.
     | **Note**: Only available on Inkplates that have internal IO expander.
 
 Inkplate_Read_Touchpads 
 ***********************
-    This example will show you how you can use built-in touchpads (on PCB marked with numbers 1, 2 and 3).
+    | This example will show you how you can use built-in touchpads (on PCB marked with numbers 1, 2 and 3).
     | **Note**: Only available on Inkplates that have touchpads.
 
 
@@ -181,13 +182,12 @@ Inkplate_Faster_Display_Refreshes
 
 Inkplate_Read_Battery_Voltage 
 *****************************
-    This example will show you how to read voltage of the battery.
+    | This example will show you how to read voltage of the battery.
     | **Note**: Not available on Inkplate2
 
 Inkplate_Read_Temperature 
 *************************
-    This example will show you how to read temperature from on-board
-    temperature sensor which is part of TPS65186 e-paper PMIC.
+    | This example will show you how to read temperature from on-board temperature sensor which is part of TPS65186 e-paper PMIC.
     | **Note**: Only available for Inkplates that have TPS (5, 6, 6PLUS, 10).
 
 
@@ -282,19 +282,19 @@ Inkplate_Burn_In_Clean
 
 Inkplate_Factory_Programming_VCOM
 #################################
-    This example should not be used if you dont know what VCOM is and what exactly you are doing as it can damage panel.
-    Some Inkplates does not support auto VCOM, it has to be set manually.
-    The user will be prompted to enter VCOM via serial (baud 115200).
-    VCOM ranges from 0.0 to -5.0.
+    | This example should not be used if you dont know what VCOM is and what exactly you are doing as it can damage panel.
+      Some Inkplates does not support auto VCOM, it has to be set manually.
+      The user will be prompted to enter VCOM via serial (baud 115200).
+      VCOM ranges from 0.0 to -5.0.
 
-    !WARNING! VCOM can only be set 100 times, so keep usage to a minimum.
-    !WARNING! Use at your own risk.
+    | !WARNING! VCOM can only be set 100 times, so keep usage to a minimum.
+    | !WARNING! Use at your own risk.
 
 Inkplate_Peripheral_Mode
 ########################
     Using this sketch, you don't have to program and control e-paper using Arduino code.
     Instead, you can send UART command (explained in documentation that can be found inside folder of this sketch).
-    This give you flexibility that you can use this Inkplate 6 on any platform!
+    This give you flexibility that you can use Inkplate on any platform!
     Because it uses UART, it's little bit slower and it's not recommended to send bunch of
     drawPixel command to draw some image. Instead, load bitmaps and pictures on SD card and load image from SD.
     If we missed some function, you can modify this and make yor own.
@@ -308,6 +308,34 @@ Inkplate6COLOR_Mapbox_API
 #########################
     This example will show you how you can use Inkplate 6COLOR to display map data.
     This example gets html data from crowdsource campaing and displays them on Inkplate screen.
+
+Inkplate10_Waveform_EEPROM_Programming
+######################################
+    **NOTE**: This example is only available on Inkplate 10 board.
+
+    In order for the image to display correctly on Inkplate, Inkplate needs to have a proper waveform saved in the EEPROM memory.
+    If there is no waveform data available, the message "Waveform load failed! Upload new waveform in EEPROM. Using default waveform." on the Serial monitor will be displayed (if the Serial.begin() is called before display.begin()).
+    If something like this happens, or you're not satisfied with the grayscale, you can run this example and choose one of three available waveforms.
+
+    Waveforms are responsible for the grayscale image on the e-paper display. It's just a series of frames that darken or whiten pixels in each frame in order to get desired pixel color.
+    They depend on many parameters like temperature, previous pixel color, next pixel color, and even the type (batch) of the e-paper panel.
+
+    Upload this example code on your Inkplate 10. After upload, with touchpad 1 and touchpad 3 choose one of the available waveforms. In the next images, you can see what the correct waveform will look like on the Inkplate.
+    After you find the waveform that best suits for your panel, press touchpad 2 to store it in the EEPROM memory of the ESP32.
+    Calling display.begin() function, the waveform will be copied from EEPROM memory into the library. There is no need for waveform selection before every usage of the Inkplate.
+    One waveform on one Inkplate may not be compatible with another Inkplate (as you can also see in the pictures, there are two different panels, each with its own waveform).
+
+    .. image:: images/example22a.jpg
+        :width: 500
+
+
+    After successfully saving waveform data to EEPROM, it shows the next image.
+
+    .. image:: images/example22b.jpg
+        :width: 500
+
+
+    Waveforms on the Inkplate are reverse engineered and made to best fit a large number of e-paper panels, but they are not perfect.
 
 
 Projects
@@ -409,36 +437,9 @@ Inkplate_Quotables
     from server is in JSON format, so that will be shown too how it is used. What happens
     here is basically ESP32 connects to WiFi and sends API call and server returns HTML
     document containing one quote and some information about it, then using library ArduinoJSON
-    we extract only quote from JSON data and show it on Inkplate 6. After displaying quote
+    we extract only quote from JSON data and show it on Inkplate. After displaying quote
     ESP32 goes to sleep and wakes up every 300 seconds to show new quote(you can change time interval).
 
-Inkplate10_Waveform_EEPROM_Programming
-######################################
-    NOTE: This example is only available on Inkplate 10 board.
-
-    In order for the image to display correctly on Inkplate, Inkplate needs to have a proper waveform saved in the EEPROM memory.
-    If there is no waveform data available, the message "Waveform load failed! Upload new waveform in EEPROM. Using default waveform." on the Serial monitor will be displayed (if the Serial.begin() is called before display.begin()).
-    If something like this happens, or you're not satisfied with the grayscale, you can run this example and choose one of three available waveforms.
-
-    Waveforms are responsible for the grayscale image on the e-paper display. It's just a series of frames that darken or whiten pixels in each frame in order to get desired pixel color.
-    They depend on many parameters like temperature, previous pixel color, next pixel color, and even the type (batch) of the e-paper panel.
-
-    Upload this example code on your Inkplate 10. After upload, with touchpad 1 and touchpad 3 choose one of the available waveforms. In the next images, you can see what the correct waveform will look like on the Inkplate.
-    After you find the waveform that best suits for your panel, press touchpad 2 to store it in the EEPROM memory of the ESP32.
-    Calling display.begin() function, the waveform will be copied from EEPROM memory into the library. There is no need for waveform selection before every usage of the Inkplate.
-    One waveform on one Inkplate may not be compatible with another Inkplate (as you can also see in the pictures, there are two different panels, each with its own waveform).
-
-    .. image:: images/example22a.jpg
-        :width: 500
-
-
-    After successfully saving waveform data to EEPROM, it shows the next image.
-
-    .. image:: images/example22b.jpg
-        :width: 500
-
-
-    Waveforms on the Inkplate are reverse engineered and made to best fit a large number of e-paper panels, but they are not perfect.
 
 Inkplate2_Clock
 ###############
