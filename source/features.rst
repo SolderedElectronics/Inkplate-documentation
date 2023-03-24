@@ -132,7 +132,7 @@ Inkplate 2
 Front-Mounted Components:
 #########################
 
-.. image:: images/inkplate2_front.jpg
+.. image:: images/inkplate2bwrExample.jpg
     :width: 500
 
 Rear-Mounted Components:

@@ -482,3 +482,6 @@ Inkplate2_Youtube_Subscriber_Counter
 
     .. image:: images/inkplate2ytSubTrackerExample.jpg
         :width: 500
+
+    .. image:: images/inkplate2ytSubTrackExample1.jpg
+        :width: 500
