@@ -118,15 +118,16 @@ Inkplate::setPanelDeepSleep()
         setPanelDeepSleep(bool _state);
 
 * **Arguments and return value**:
-    | uint8_t _state - HIGH or LOW (1 or 0) 1 will start panel, 0 will put it into deep
+    | uint8_t _state - True or False (true or false) True will put panel to sleep, False will wake the panel
 
     | Returns nothing
 
 * **Description**:
 
-    setPanelDeepSleep puts epaper in deep sleep, or starts epaper, depending on given arguments. HIGH or LOW (1 or 0) 1 will start panel, 0 will put it into deep
+    setPanelDeepSleep puts epaper in deep sleep. This is usually called if the ePaper isn't being sent data to to save power.
+    It's reccomended to call this before putting the microcontroller to sleep. 
 
-  | **Note**: Works only with Inkplate 6COLOR and Inkplate 2
+  | **Note**: Implemented and required only with Inkplate 6COLOR, Inkplate 2, 4 and 7.
 
 
 Inkplate::getPanelDeepSleepState()
@@ -147,7 +148,7 @@ Inkplate::getPanelDeepSleepState()
 
     getPanelDeepSleepState returns current state of the panel.
 
-  | **Note**: Works only with Inkplate 6COLOR and Inkplate 2
+  | **Note**: Implemented and required only with Inkplate 6COLOR, Inkplate 2, 4 and 7.
 
 
 Inkplate::begin()
