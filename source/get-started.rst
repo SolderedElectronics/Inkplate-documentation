@@ -23,7 +23,7 @@ MicroPython
 In order to get started with Inkplate using MicroPython, follow the steps below:
 
 #. Clone our repo for `micropython <https://github.com/e-radionicacom/Inkplate-6-micropython>`_ and get your terminal inside the repo folder.
-#. Flash MicroPython firmware supplied, or from `official page <http://micropython.org/download/esp32/>`_
+#. Flash MicroPython firmware supplied, or from the `official page <https://micropython.org/download/esp32/>`_
     To do so, run
 
     .. code-block:: python
