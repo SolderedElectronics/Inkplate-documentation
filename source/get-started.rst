@@ -7,7 +7,7 @@ Arduino
 In order to get started with Inkplate using Arduino IDE, follow the steps below:
 
 #. Install the `Inkplate board definition <https://github.com/SolderedElectronics/Dasduino-Board-Definitions-for-Arduino-IDE>`_ to add Inkplate as a board in Arduino IDE
-#. Install the `CH340 drivers <https://soldered.com/learn/ch340-driver-installation-croduino-basic3-nova2/>`_ (if you don't have them already)
+#. Install the `CH340 drivers <https://soldered.com/learn/ch340-driver-installation-croduino-basic3-nova2/>`_ (if you don't have them already). **NOTE:** If you have Mac OSX 10.14 and greater, **do not install** this driver! Installing it on newer Mac OSX the Inkplate board won't be detected!
 #. Install the `Inkplate Arduino library <https://github.com/SolderedElectronics/Inkplate-Arduino-library>`_ from our GitHub repository (if you're not sure how, take a look at our `tutorial <https://e-radionica.com/en/blog/arduino-library/#Kako%20instaliraty%20library?>`_)
 #. Your Inkplate is now ready to go! Just select Tools -> Board -> Inkplate x, choose the correct COM port, and upload your code! To tweak your upload speed, you can set Upload speed to 921600. 
 
