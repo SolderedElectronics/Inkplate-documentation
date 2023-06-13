@@ -2205,7 +2205,7 @@ IO Expander Functions
 +-------------------+------------+---------------+---------------+----------------+---------------+----------------+---------------+----------------+---------------+
 |                   | Inkplate 2 |        Inkplate 6 COLOR       |         Inkplate 6 PLUS        |             Inkplate 6         |       Inkplate 10              |
 +===================+============+===============+===============+================+===============+================+===============+================+===============+
-| GPIO expander     | Not exsist |              PCAL             |       MCP      |      PCAL     |       MCP      |      PCAL     |       MCP      |      PCAL     |
+| GPIO expander     | Doesn't exist |              PCAL             |       MCP      |      PCAL     |       MCP      |      PCAL     |       MCP      |      PCAL     |
 +-------------------+------------+---------------+---------------+----------------+---------------+----------------+---------------+----------------+---------------+
 | Available pins on |     X      |               X               | GPB1*,         | P1-1*, P1-5*, | GPB1* - GPB4*, | P1-1*, P1-2*, | GPB1* - GPB4*, | P1-1*, P1-2*, | 
 | internal expander |            |                               | GPB5 - GPB7    | P1-6, P1-7    | GPB5 - GPB7    | P1-3 - P1-7   | GPB5 - GPB7    | P1-3 - P1-7   |
@@ -2245,9 +2245,9 @@ IO Expander Functions
     display.begin();
 
 
-| Inkplate 6COLOR has only one IO Expander used as external IO expander.
+| Inkplate 6COLOR has only one IO Expander used as an external IO expander.
 
-| Inkplate 2 has none IO Expanders so all this functions will not work on Inkplate 2!
+| Inkplate 2 has no IO Expanders so all these functions will not work on Inkplate 2!
 
 
 
