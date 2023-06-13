@@ -425,7 +425,7 @@ rtcSetEpoch: #Y(E)*
 
 rtcGetRtcData: #a(D)*
 ---------------------
-    | D - What data want to get? [0, 6]
+    | D - What data do you want to return? [0, 6]
     | 0 - rtcGetSecond();
     | 1 - rtcGetMinute();
     | 2 - rtcGetHour();
