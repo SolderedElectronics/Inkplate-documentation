@@ -24,7 +24,7 @@ Yellow           INKPLATE_YELLOW     5
 Orange           INKPLATE_ORANGE     6
 =============== ================== ========== 
 
-But if your Inkplate is Inkplate 2, then next table shows values that represents colors.
+But, if your Inkplate is Inkplate 2, then see the following table for values that represents colors:
 
 ========= ================= =====
 Color     Macro Definition  Value
@@ -58,7 +58,7 @@ Inkplate object initialization
 
         Inkplate display;
 
-    depending on what you need, monochrome (INKPLATE_1BIT), grayscale (INKPLATE_3BIT) functionality or Inkplate 2 and 6COLOR (no argument).
+    depending on what you need, monochrome (INKPLATE_1BIT), grayscale (INKPLATE_3BIT) functionality or Inkplate 2 and 6COLOR (no arguments passed).
 
     In here given examples, Inkplate object will always be named display, if not said otherwise.
     After calling this below your "#include" lines, you have access to all Inkplate functionality as display object methods.

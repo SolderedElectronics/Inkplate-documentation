@@ -5,6 +5,7 @@ Inkplate family of e-paper displays is fully open-source and its full hardware d
     | `Inkplate 6 hardware <https://github.com/e-radionicacom/Inkplate-6-hardware>`_
     | `Inkplate 10 hardware <https://github.com/e-radionicacom/Inkplate-10-hardware>`_
     | `Inkplate 6PLUS hardware <https://github.com/e-radionicacom/Inkplate-6PLUS-Hardware>`_
+    | `Inkplate 2 hardware <https://github.com/SolderedElectronics/Soldered-Inkplate-2-hardware-design>`_
 
 Additionally, all active Inkplate boards are OSHWA certified:
     | `Inkplate 6 OSHWA <https://certification.oshwa.org/hr000003.html>`_
