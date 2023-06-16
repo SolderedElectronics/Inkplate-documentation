@@ -15,6 +15,7 @@ Low-power            Yes       Yes          Yes             Yes          Yes
 Wi-Fi                Yes       Yes          Yes             Yes          Yes
 Touchpads            Yes       Yes          No              Yes          No
 Touchscreen          No        No           Yes             No           No
+Backlight            No        No           Yes             No           No
 MicroSD              Yes       Yes          Yes             Yes          No
 Grayscale            Yes       Yes          Yes             No           No
 Partial update       Yes       Yes          Yes             No           No
