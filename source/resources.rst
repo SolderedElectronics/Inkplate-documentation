@@ -12,6 +12,5 @@ Inkplate Resources
     | `Crowdsupply campaign Inkplate 6PLUS <https://www.crowdsupply.com/soldered/inkplate-6plus>`_
     | `Crowdsupply campaign Inkplate 6COLOR <https://www.crowdsupply.com/soldered/inkplate-6color>`_
     | `Crowdsupply campaign Inkplate 10 <https://www.crowdsupply.com/e-radionica/inkplate-10>`_
-    | `GUI editor <https://inkplate.io/home/gui-editor/>`_
-    | `Image converter <https://inkplate.io/home/image-converter/>`_
+    | `Image converter <https://solderedelectronics.github.io/Inkplate-image-converter/`>_
     | `Support Forum <https://forum.soldered.com/>`_
