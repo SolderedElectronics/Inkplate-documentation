@@ -6,6 +6,7 @@ Inkplate family of e-paper displays is fully open-source and its full hardware d
     | `Inkplate 10 hardware <https://github.com/e-radionicacom/Inkplate-10-hardware>`_
     | `Inkplate 6PLUS hardware <https://github.com/e-radionicacom/Inkplate-6PLUS-Hardware>`_
     | `Inkplate 2 hardware <https://github.com/SolderedElectronics/Soldered-Inkplate-2-hardware-design>`_
+    | Inkplate 5 hardware repository is coming soon
 
 Additionally, all active Inkplate boards are OSHWA certified:
     | `Inkplate 6 OSHWA <https://certification.oshwa.org/hr000003.html>`_
@@ -29,4 +30,4 @@ The schematics speak for themselves, but here is the short introduction to Inkpl
     | \*Pushbutton style power button thanks to MC14093BD logic gate and a single MOSFET.
 
         | *Note* \* *- Not available on every Inkplate, check Features page.*
-        | *Note* \*\* *- Colored screens (Inkplate 2 and 6COLOR) have integrated EPD power management.*
+        | *Note* \*\* *- Colored screens (Inkplate 2 and 6COLOR) have integrated EPD power management. The panels are completely off if they're not refreshing.*
