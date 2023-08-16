@@ -21,7 +21,7 @@ Grayscale            Yes       Yes          Yes             No              Yes 
 Partial update       Yes       Yes          Yes             No              Yes          No
 Refresh time       1.61s     1.26s          1.27s           12s            1.02s         21.8s
 Refresh per px     1.62μs    2.63μs         1.63μs         45μs            0.36μs        1ms
-Partial Refresh time     0.62s    0.26s         0.64s         -            0.12s        -
+Partial ref.       0.62s      0.26s         0.64s            -             0.12s         -
 =============== =========== ========== ============== =============== =============== =============
 
 
