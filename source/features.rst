@@ -4,25 +4,25 @@ Inkplate Features
 Inkplate Comparison
 -------------------
 
-====================== =========== ========== ============== =============== =============== =============
-feature                Inkplate 10 Inkplate 6 Inkplate 6PLUS Inkplate 6COLOR    Inkplate 5    Inkplate 2
----------------------- ----------- ---------- -------------- --------------- --------------- -------------
-Screen size                9.7"        6"            6"              5.8"            5.2"          2.13" 
-Resolution               1200x825   800x600       758x1024         600x448         960x540        202x104
-Pixels                    990,000   480,000        776,192         268,800         518,400        21,008
-All-in-one                  Yes       Yes            Yes             Yes             Yes          Yes
-Low-power                   Yes       Yes            Yes             Yes             Yes          Yes
-Wi-Fi                       Yes       Yes            Yes             Yes             Yes          Yes
-Touchpads                   Yes       Yes            No              Yes             No           No
-Touchscreen                 No        No             Yes             No              No           No
-Backlight                   No        No             Yes             No              No           No
-MicroSD                     Yes       Yes            Yes             Yes             Yes          No
-Grayscale                   Yes       Yes            Yes             No              Yes          No
-Full Refresh time           1.61s     1.26s          1.27s           12s            1.02s         21.8s
-Full Refresh per px         1.62μs    2.63μs         1.63μs         45μs            0.36μs        1ms
-Partial update              Yes       Yes            Yes             No              Yes          No
-Partial Refresh time        0.62s     0.26s          0.64s          -               0.12s         -
-======================== =========== ========== ============== =============== =============== =============
+=============== =========== ========== ============== =============== =============== =============
+feature         Inkplate 10 Inkplate 6 Inkplate 6PLUS Inkplate 6COLOR    Inkplate 5    Inkplate 2
+--------------- ----------- ---------- -------------- --------------- --------------- -------------
+Screen size         9.7"        6"          6"              5.8"            5.2"          2.13" 
+Resolution        1200x825   800x600     758x1024         600x448         960x540        202x104
+Pixels             990,000   480,000      776,192         268,800         518,400        21,008
+All-in-one           Yes       Yes          Yes             Yes             Yes          Yes
+Low-power            Yes       Yes          Yes             Yes             Yes          Yes
+Wi-Fi                Yes       Yes          Yes             Yes             Yes          Yes
+Touchpads            Yes       Yes          No              Yes             No           No
+Touchscreen          No        No           Yes             No              No           No
+Backlight            No        No           Yes             No              No           No
+MicroSD              Yes       Yes          Yes             Yes             Yes          No
+Grayscale            Yes       Yes          Yes             No              Yes          No
+Partial update       Yes       Yes          Yes             No              Yes          No
+Refresh time       1.61s     1.26s          1.27s           12s            1.02s         21.8s
+Refresh per px     1.62μs    2.63μs         1.63μs         45μs            0.36μs        1ms
+Partial Refresh time     0.62s    0.26s         0.64s         -            0.12s        -
+=============== =========== ========== ============== =============== =============== =============
 
 
 Inkplate 6
