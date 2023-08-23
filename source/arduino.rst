@@ -943,17 +943,17 @@ Inkplate::drawImage();
     | On Inkplate 6COLOR, dither will use all of the 7 colors.
     | The default color values are:
     |
-============ =============
-  Color hex      Color
-============ =============
-  0x000000      Black
-  0xFFFFFF      White
-  0x00FF00      Green
-  0x0000FF      Blue
-  0xFF0000      Red
-  0xFFFF00      Yellow
-  0xFF8000      Orange
-============ =============
+=========== ==========
+ Color hex   Color
+=========== ==========
+ 0x000000    Black
+ 0xFFFFFF    White
+ 0x00FF00    Green
+ 0x0000FF    Blue
+ 0xFF0000    Red
+ 0xFFFF00    Yellow
+ 0xFF8000    Orange
+=========== ==========
     |
     | If you want to change the color palette in which the image is dithered, check the file ``/src/include/ImageDitherColor.cpp`` in your library. It has a ``palette[]`` array where you can modify the color values in hex for a different look to the dithered image.
     | The order of the colors is: [Black, White, Green, Blue, Red, Yellow, Orange]ˇ
@@ -1051,17 +1051,17 @@ Inkplate::drawBitmapFromWeb();
     | On Inkplate 6COLOR, dither will use all of the 7 colors.
     | The default color values are:
     |
-============ =============
-  Color hex      Color
-============ =============
-  0x000000      Black
-  0xFFFFFF      White
-  0x00FF00      Green
-  0x0000FF      Blue
-  0xFF0000      Red
-  0xFFFF00      Yellow
-  0xFF8000      Orange
-============ =============
+=========== ==========
+ Color hex   Color
+=========== ==========
+ 0x000000    Black
+ 0xFFFFFF    White
+ 0x00FF00    Green
+ 0x0000FF    Blue
+ 0xFF0000    Red
+ 0xFFFF00    Yellow
+ 0xFF8000    Orange
+=========== ==========
     |
     | If you want to change the color palette in which the image is dithered, check the file ``/src/include/ImageDitherColor.cpp`` in your library. It has a ``palette[]`` array where you can modify the color values in hex for a different look to the dithered image.
     | The order of the colors is: [Black, White, Green, Blue, Red, Yellow, Orange]
