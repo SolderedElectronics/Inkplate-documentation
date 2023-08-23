@@ -514,6 +514,7 @@ Inkplate::drawImage();
     | Can draw from web if path starts with http:// or https:// or if not from SD.
     | Draws bmp, png and jpeg images.
     | Automatically adjusts for current display mode.
+    | **For Inkplate6COLOR**: If you want to change the colors palette in which the image is dithered, check the file /src/include/ImageDitherColor.cpp in your library. It has a palette[] array where you can modify the color values in hex for a different look to the dithered image.
 
 
 Shapes Functions
