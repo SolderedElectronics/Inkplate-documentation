@@ -943,23 +943,23 @@ Inkplate::drawImage();
     | On Inkplate 6COLOR, dither will use all of the 7 colors.
     | The default color values are:
     |
-    | +-------+--------+
-    | | Color | Value  |
-    | +=======+========+
-    | | Black | 0x000000 |
-    | +-------+--------+
-    | | White | 0xFFFFFF |
-    | +-------+--------+
-    | | Green | 0x00FF00 |
-    | +-------+--------+
-    | | Blue  | 0x0000FF |
-    | +-------+--------+
-    | | Red   | 0xFF0000 |
-    | +-------+--------+
-    | | Yellow| 0xFFFF00 |
-    | +-------+--------+
-    | | Orange| 0xFF8000 |
-    | +-------+--------+
++--------+----------+
+| Color  | Value    |
++========+==========+
+| Black  | 0x000000 |
++--------+----------+
+| White  | 0xFFFFFF |
++--------+----------+
+| Green  | 0x00FF00 |
++--------+----------+
+| Blue   | 0x0000FF |
++--------+----------+
+| Red    | 0xFF0000 |
++--------+----------+
+| Yellow | 0xFFFF00 |
++--------+----------+
+| Orange | 0xFF8000 |
++--------+----------+
     |
     | If you want to change the color palette in which the image is dithered, check the file ``/src/include/ImageDitherColor.cpp`` in your library. It has a ``palette[]`` array where you can modify the color values in hex for a different look to the dithered image.
     | The order of the colors is: [Black, White, Green, Blue, Red, Yellow, Orange]ˇ
@@ -1057,23 +1057,23 @@ Inkplate::drawBitmapFromWeb();
     | On Inkplate 6COLOR, dither will use all of the 7 colors.
     | The default color values are:
     |
-    | +-------+--------+
-    | | Color | Value  |
-    | +=======+========+
-    | | Black | 0x000000 |
-    | +-------+--------+
-    | | White | 0xFFFFFF |
-    | +-------+--------+
-    | | Green | 0x00FF00 |
-    | +-------+--------+
-    | | Blue  | 0x0000FF |
-    | +-------+--------+
-    | | Red   | 0xFF0000 |
-    | +-------+--------+
-    | | Yellow| 0xFFFF00 |
-    | +-------+--------+
-    | | Orange| 0xFF8000 |
-    | +-------+--------+
++--------+----------+
+| Color  | Value    |
++========+==========+
+| Black  | 0x000000 |
++--------+----------+
+| White  | 0xFFFFFF |
++--------+----------+
+| Green  | 0x00FF00 |
++--------+----------+
+| Blue   | 0x0000FF |
++--------+----------+
+| Red    | 0xFF0000 |
++--------+----------+
+| Yellow | 0xFFFF00 |
++--------+----------+
+| Orange | 0xFF8000 |
++--------+----------+
     |
     | If you want to change the color palette in which the image is dithered, check the file ``/src/include/ImageDitherColor.cpp`` in your library. It has a ``palette[]`` array where you can modify the color values in hex for a different look to the dithered image.
     | The order of the colors is: [Black, White, Green, Blue, Red, Yellow, Orange]
