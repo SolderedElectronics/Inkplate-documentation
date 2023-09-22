@@ -5,7 +5,10 @@ Inkplate Peripheral Mode
     without reprogramming. You just need to send commands via UART and it will
     show contents on its screen. 
     You can send commands via USB port or by directly connecting to ESP32 TX and RX pins.
-    
+
+    Here is an `example <https://github.com/SolderedElectronics/Inkplate-Peripheral-Mode-Raspberry-Pi-Example>`_ on how to use peripheral mode to drive Inkplate with a Raspberry Pi.
+    And `here <https://github.com/SolderedElectronics/Inkplate-Peripheral-Mode-STM32-Example>`_ is one for driving Inkplate with STM32.
+
     Don't forget you need to send #L(1)* after each command to show it on the display (equal to display.display()). 
     Peripheral mode Arduino code for all inkplates can be found under examples/Diagnostics if needed to be installed again.
      
