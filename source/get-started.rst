@@ -13,8 +13,8 @@ In order to get started with Inkplate using Arduino IDE, follow the steps below:
 
 **NOTE: Make sure you select the correct board definition!** Using the wrong board definition will not work, the display won't update. Your Inkplate is either a "Soldered" Inkplate or an "e-Radionica" Inkplate (if it's an older model). The difference in board definition functionality is due to use of different GPIO expanders: PCAL6416A and MCP23017. Please refer to `this <https://inkplate.readthedocs.io/en/latest/arduino.html?highlight=pcal#io-expander-functions>`_ page for more info.
 
-.. image:: images/BoardSelection.jpg
-    :width: 500
+.. image:: images/BoardDefSelection.jpg
+    :width: 660
 
 Take a look at our `examples <examples.html>`_ in the library and the `API reference <api-reference.html>`_ to see what you can code.
 To use `Peripheral Mode <peripheral-mode.html>`_, connect your Inkplate to the "Controller" board or computer with a USB cable or via the ESP32 RX and TX pins. For detailed reference see `Peripheral Mode <peripheral-mode.html>`_ docs.
