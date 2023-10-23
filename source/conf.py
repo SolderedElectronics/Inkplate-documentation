@@ -20,7 +20,7 @@
 # -- Project information -----------------------------------------------------
 
 project = u"Inkplate docs"
-copyright = u"2020, soldered.com"
+copyright = u"2023, soldered.com"
 author = u"soldered.com"
 
 # The short X.Y version
