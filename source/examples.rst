@@ -387,7 +387,7 @@ Inkplate_Hourly_Weather_Station
 ###############################
     This example will show you how you can use Inkplate to display API data.
 
-    .. image:: images/example21.jpg
+    .. image:: images/example20.jpg
         :width: 500
 
 
@@ -428,7 +428,7 @@ Inkplate_OpenWeather_Station
 ############################
     This example will show you how you can use Inkplate to display API data.
 
-    .. image:: images/example20.jpg
+    .. image:: images/example21.jpg
         :width: 500
 
 Inkplate_Quotables
