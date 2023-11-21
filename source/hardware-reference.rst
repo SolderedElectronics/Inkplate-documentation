@@ -31,3 +31,9 @@ The schematics speak for themselves, but here is the short introduction to Inkpl
 
         | *Note* \* *- Not available on every Inkplate, check Features page.*
         | *Note* \*\* *- Colored screens (Inkplate 2 and 6COLOR) have integrated EPD power management. The panels are completely off if they're not refreshing.*
+
+Connect a battery to Inkplate
+----------------
+
+Inkplate boards can be powered via a Li-Ion battery. On Inkplate 2 the battery has to be soldered to the board. All other boards have a female JST connector, which makes connecting a battery quick and easy. Inkplate enclosures have a custom-made slot to hold the battery in place. Note that the size of the battery meant to be placed in the enclosure varies and is determined by it's mAh capacity. If you wish to add a battery which will fit your enclosure for sure, please refer to our website for more info regarding which mAh capacity to get, search for 'battery' on the product page of your Inkplate.
+
