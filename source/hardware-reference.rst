@@ -37,3 +37,43 @@ Connect a battery to Inkplate
 
 Inkplate boards can be powered via a Li-Ion battery. On Inkplate 2 the battery has to be soldered to the board. All other boards have a female JST connector, which makes connecting a battery quick and easy. Inkplate enclosures have a custom-made slot to hold the battery in place. Note that the size of the battery meant to be placed in the enclosure varies and is determined by it's mAh capacity. If you wish to add a battery which will fit your enclosure for sure, please refer to our website for more info regarding which mAh capacity to get, search for 'battery' on the product page of your Inkplate.
 
+Here's how to do it, first, prepare your Inkplate and battery:
+
+.. image:: images/battery_tutorial_01.jpg
+    :width: 660
+
+Open up Inkplate's enclosure, there's an easy opening labeled with 'OPEN HERE':
+
+.. image:: images/battery_tutorial_02.jpg
+    :width: 660
+
+Take out Inkplate from the enclosure, it should easily come out:
+
+.. image:: images/battery_tutorial_03.jpg
+    :width: 660
+
+Place the battery in the enclosure in the battery slot:
+
+.. image:: images/battery_tutorial_04.jpg
+    :width: 660
+
+Note the positioning of this cable insert which is used for cable management, insert the battery's cable through it:
+
+.. image:: images/battery_tutorial_05.jpg
+    :width: 660
+
+Now, connect the battery's connector to the board. **IMPORTANT!** Note the location of the + and - sides of the battery, connecting this wrong could damage your Inkplate! It's also clearly marked on the board: 
+
+.. image:: images/battery_tutorial_06.jpg
+    :width: 660
+
+Now, with everything connected, it should look like this:
+
+.. image:: images/battery_tutorial_07.jpg
+    :width: 350
+
+Inkplate should now be powered via battery! Close everything up and try turning it on via the button:
+
+.. image:: images/battery_tutorial_08.jpg
+    :width: 660
+
