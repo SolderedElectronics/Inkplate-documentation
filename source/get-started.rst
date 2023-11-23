@@ -90,3 +90,8 @@ In order to get started with Inkplate using ESP-IDF, follow the steps below:
 #. Connect Inkplate device and follow `instructions <https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/>`_.
 
 #. You can run few examples from examples `folder <https://github.com/turgu1/ESP-IDF-InkPlate/tree/master/examples>`_ in repository.
+
+Other information
+-------
+
+If you want to connect a battery to Inkplate, check the battery's polarity. See the `guide <https://inkplate.readthedocs.io/en/latest/hardware-reference.html#connect-a-battery-to-inkplate>`_ for more info.
