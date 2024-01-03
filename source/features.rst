@@ -71,8 +71,7 @@ Soldered Inkplate Comparison (newer models)
 
 (*) Some older initial models of Inkplate 6COLOR do have touchpads, but more than likely none that are available from distributors
 
-(**) For a detailed list of the sensors please see further on this page (link)
-
+(**) For a detailed list of the sensors please see `further on this page <https://inkplate.readthedocs.io/en/latest/features.html#inkplate-4tempera>`_.
 
 Inkplate 6
 -----------
