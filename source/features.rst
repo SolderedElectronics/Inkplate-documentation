@@ -1,28 +1,77 @@
 Inkplate Features
 =================
 
-Inkplate Comparison
+Important note
+-----------
+
+There are some important differences to note between older and newer models of Inkplate boards. Here is a table for a quick overview:
+
+=================== ======================= ======================= 
+ Feature             Older Inkplate boards   Newer Inkplate boards  
+=================== ======================= ======================= 
+ Board Definition    e-Radionica Inkplate    Soldered Inkplate      
+ Board color         Blue (usually)          Purple                 
+ Has touchpads (*)   Yes                     No                     
+ GPIO Expander (**)  MCP23017                PCAL6416A              
+=================== ======================= ======================= 
+
+(*) Not all boards have this feature, please see the table below for more details
+
+(**) There is no functional difference for the end-user between the two GPIO expanders, please see `this <https://inkplate.readthedocs.io/en/latest/arduino.html#io-expander-functions>`_ page for more details.
+
+If you are purchasing your Inkplate directly from `Soldered.com <http://soldered.com>`_, you will recieve a newer model with all the corresponding features which are listed on that particular Inkplate's product page. If you are purchasing Inkplate from a distributor and want to be sure which version you're getting, please make sure to check with them, as they might have a different version in stock.
+
+**We still fully support all our boards with the latest version of the Inkplate library.**
+
+E-Radionica Inkplate Comparison (older models)
 -------------------
 
-=============== =========== ========== ============== =============== =============== =============
-feature         Inkplate 10 Inkplate 6 Inkplate 6PLUS Inkplate 6COLOR    Inkplate 5    Inkplate 2
---------------- ----------- ---------- -------------- --------------- --------------- -------------
-Screen size         9.7"        6"          6"              5.8"            5.2"          2.13" 
-Resolution        1200x825   800x600     758x1024         600x448         960x540        202x104
-Pixels             990,000   480,000      776,192         268,800         518,400        21,008
-All-in-one           Yes       Yes          Yes             Yes             Yes          Yes
-Low-power            Yes       Yes          Yes             Yes             Yes          Yes
-Wi-Fi                Yes       Yes          Yes             Yes             Yes          Yes
-Touchpads            Yes       Yes          No              Yes             No           No
-Touchscreen          No        No           Yes             No              No           No
-Backlight            No        No           Yes             No              No           No
-MicroSD              Yes       Yes          Yes             Yes             Yes          No
-Grayscale            Yes       Yes          Yes             No              Yes          No
-Partial update       Yes       Yes          Yes             No              Yes          No
-Refresh time       1.61s     1.26s          1.27s           12s            1.02s         21.8s
-Refresh per px     1.62μs    2.63μs         1.63μs         45μs            0.36μs        1ms
-Partial ref.       0.62s      0.26s         0.64s            -             0.12s         -
-=============== =========== ========== ============== =============== =============== =============
+=================== ========================= ======================== ============================ 
+ Feature             E-Radionica Inkplate 10   E-Radionica Inkplate 6   E-Radionica Inkplate 6PLUS  
+=================== ========================= ======================== ============================ 
+ Screen Size         9.7"                      6"                       6"                          
+ Resolution          1200x825                  800x600                  1024x758                    
+ Pixels              990,000                   480,000                  776,192                     
+ Grayscale levels    8                         8                        8                           
+ All-In-One          Yes                       Yes                      Yes                         
+ Low-Power           Yes                       Yes                      Yes                         
+ Wi-Fi               Yes                       Yes                      Yes                         
+ Touchpads           Yes                       Yes                      Yes                         
+ Touchscreen         No                        No                       Yes                         
+ Backlight           No                        No                       Yes                         
+ MicroSD             Yes                       Yes                      Yes                         
+ Full refresh time   1.61s                     1.26s                    1.27s                       
+ Fast refresh time   0.62s                     0.26s                    0.64s                       
+=================== ========================= ======================== ============================ 
+
+
+Soldered Inkplate Comparison (newer models)
+-------------------
+
+
+================================== ====================== ===================== ========================= ========================== ===================== ============================ ===================== 
+ Feature                            Soldered Inkplate 10   Soldered Inkplate 6   Soldered Inkplate 6PLUS   Soldered Inkplate 6COLOR   Soldered Inkplate 5   Soldered Inkplate 4TEMPERA   Soldered Inkplate 2  
+================================== ====================== ===================== ========================= ========================== ===================== ============================ ===================== 
+ Screen Size                        9.7"                   6"                    6"                        5.8"                       5.2"                  3.8"                         2.13"                
+ Resolution                         1200x825               800x600               1024x758                  600x448                    960x540               600x600                      202x104              
+ Pixels                             990,000                480,000               776,192                   268,800                    518,400               360,000                      21,008               
+ Grayscale levels                   8                      8                     8                         .                          8                     8                            .                    
+ Color                              No                     No                    No                        Yes                        No                    No                           Yes                  
+ All-In-One                         Yes                    Yes                   Yes                       Yes                        Yes                   Yes                          Yes                  
+ Low-Power                          Yes                    Yes                   Yes                       Yes                        Yes                   Yes                          Yes                  
+ Wi-Fi                              Yes                    Yes                   Yes                       Yes                        Yes                   Yes                          Yes                  
+ Touchpads                          No                     No                    No                        Some(*)                    No                    No                           No                   
+ Touchscreen                        No                     No                    Yes                       No                         No                    Yes                          No                   
+ Backlight                          No                     No                    Yes                       No                         No                    Yes                          No                   
+ MicroSD                            Yes                    Yes                   Yes                       Yes                        Yes                   Yes                          No                   
+ Additional sensors and actuators   No                     No                    No                        No                         No                    Yes(**)                      No                   
+ Full refresh time                  1.61s                  1.26s                 1.27s                     12s                        1.02s                 0.86s                        21s                  
+ Fast refresh time                  0.62s                  0.26s                 0.64s                     -                          0.12s                 0.18s                        -                    
+================================== ====================== ===================== ========================= ========================== ===================== ============================ ===================== 
+
+(*) Some older initial models of Inkplate 6COLOR do have touchpads, but more than likely none that are available from distributors
+
+(**) For a detailed list of the sensors please see further on this page (link)
 
 
 Inkplate 6
