@@ -226,3 +226,66 @@ Other Technical Specifications
     | **Storage**: MicroSD card reader
     | **Power Management**: based on Texas Instruments (TI) TPS65186, MCP73831 lithium battery charger with a standard JST-PH 2-Pin right angle connector.
     | **Temperature Sensor**: Internal TPS65186
+
+
+Inkplate 4TEMPERA
+----------------
+
+.. image:: images/tempera.jpg
+    :width: 500
+
+Front-Mounted Components:
+#########################
+
+.. image:: images/tempera_front.jpg
+    :width: 500
+
+Rear-Mounted Components:
+########################
+
+.. image:: images/tempera_rear.jpg
+    :width: 500
+
+Screen
+#########################
+    | **Display Type**: 3-bit grayscale; black, white, and six shades of gray. 
+      1-bit black-and-white mode available.
+    | **Resolution**: 600 x 600 pixels.
+    | **Partial-Refresh Time**: 0.18 seconds in 1-bit mode.
+    | **Full-Refresh Time**: 0.86 seconds in both 1-bit and 3-bit modes.
+    | **Touchscreen**: Multi-point touchscreen capability.
+    | **Frontlighting**: Customizable LED, programmable for dimly lit environments.
+    | **Eco-Friendly**: Sourced from recycled e-paper screens.
+
+Key Electronic Components
+#########################
+    | **Microcontroller**: ESP32 with 8MB flash and 4MB RAM.
+    | **USB-UART Converter**: CH340.
+    | **GPIO Expander**: PCAL6416.
+    | **Storage**: Onboard microSD card slot.
+
+Connectivity
+#########################
+    | **Wireless**: Integrated Wi-Fi and Bluetooth LE.
+    | **USB Port**: Type-C for programming and power.
+    | **Peripheral**: easyC (qwiic / STEMMA QT) connectors.
+
+Sensors
+#########################
+    | **Environmental Sensor**: BME688 for temperature, humidity, pressure, and air quality.
+    | **Gesture Sensor**: Side-mounted APDS-9960.
+    | **Motion Sensing**: Built-in LSM6DS3 gyroscope and accelerometer.
+    | **Real-Time Clock**: PCF85063A, backed up by an auxiliary battery.
+
+Power
+#########################
+    | **Consumption**: 18 µA in low-power mode.
+    | **Power Supply**: Special e-paper TPS65186.
+    | **Battery Charger**: Onboard MCP73831.
+    | **Battery Status**: BQ27441DRZR for tracking SoC and more.
+    | **Battery**: 1200-mAh Li-ion, within the enclosure.
+
+Physical
+#########################
+    | **Dimensions**: 3.54 x 3.27 x 0.94 inches (90 x 83 x 24 mm).
+    | **Variants**: Available with or without a glass panel.
