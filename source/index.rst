@@ -6,7 +6,7 @@
 Welcome to Inkplate's documentation!
 ======================================
 
-| Inkplate is a powerful, energy-efficient, Wi-Fi enabled ESP32 series of boards with a recycled e-paper display. It's open hardware supported by an open-source software library, and it's easy to program, regardless of whether you prefer MicroPython or the Arduino IDE. It comes in different versions of screen sizes.
+| Inkplate is a powerful, energy-efficient, Wi-Fi enabled ESP32 series of boards with an e-paper display. It's open hardware supported by an open-source software library, and it's easy to program, regardless of whether you prefer MicroPython or the Arduino IDE. It comes in different versions of screen sizes.
 | 
 | At this page, you'll find full Inkplate documentation. 
 
@@ -14,7 +14,7 @@ Welcome to Inkplate's documentation!
     :width: 500
 
 | Check out our `examples <examples.html>`_ to see what can be done on Inkplate.
-| For these examples to work you first need to include our header file on top of your code (already included in examples), like this:
+| For these examples to work, you first need to include our header file on top of your code (already included in examples), like this:
 
 .. code-block:: c
 
