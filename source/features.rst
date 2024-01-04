@@ -4,7 +4,8 @@ Inkplate Features
 Important note
 -----------
 
-When our rebranding happened from E-Radionica to Soldered, we also changed Inkplate features. There are some important differences to note between older and newer models of Inkplate boards. Here is a table for a quick overview:
+When our rebranding happened from E-Radionica to Soldered, we also changed some Inkplate features. There are some important differences to note between older and newer models of Inkplate boards. 
+Here is a table for a quick overview:
 
 =================== ======================= ======================= 
  Feature             Older Inkplate boards   Newer Inkplate boards  
