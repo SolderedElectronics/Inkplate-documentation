@@ -4058,3 +4058,136 @@ Inkplate::buzzer.init();
 
 * **Description**:
     | Initialize usage of the on-board buzzer.
+
+Inkplate::buzzer.beep();
+########################
+
+* **Method prototype (as seen in Buzzer.h)**:
+
+.. code-block:: c 
+
+    void beep(uint32_t length, int freq);
+
+* **Arguments and return value**:
+    | uint32_t length - how long in ms to sound the buzzer
+    | int freq - the (approximate) frequency of the buzzer (optional)
+
+* **Description**:
+    | A blocking function which beeps the buzzer for a certain amount of time at a certain frequency. Frequencies from 572 to 2933 Hz are supported. Only the length parameter is required.
+
+Inkplate::buzzer.beepOn();
+########################
+
+* **Method prototype (as seen in Buzzer.h)**:
+
+.. code-block:: c 
+
+    void beepOn(int freq);
+
+* **Arguments and return value**:
+    | int freq - the (approximate) frequency of the buzzer (optional)
+
+* **Description**:
+    | A function which starts beeping the buzzer indefinately. It has to be stopped with beepOff(). Frequencies from 572 to 2933 Hz are supported.
+
+Inkplate::buzzer.beepOff();
+########################
+
+* **Method prototype (as seen in Buzzer.h)**:
+
+.. code-block:: c 
+
+    void beepOff();
+
+* **Description**:
+    | Stop the buzzer's beeping, started by beepOn().
+
+Inkplate::bme680.begin();
+########################
+
+* **Method prototype (as seen in BME680-SOLDERED.h)**:
+
+.. code-block:: c 
+
+    bool begin();
+
+* **Arguments and return value**:
+    | bool initOK - the function returns true if the BME680 sensor has initialized OK
+
+* **Description**:
+    | A function which initializes the BME680 sensor, it must be called before using the sensor
+
+Inkplate::bme680.readTemperature();
+########################
+
+* **Method prototype (as seen in BME680-SOLDERED.h)**:
+
+.. code-block:: c 
+
+    float readTemperature();
+
+* **Arguments and return value**:
+    | float temperature - the temperature from the sensor
+
+* **Description**:
+    | Read the temperature as a flaot from the BME680 sensor.
+
+Inkplate::bme680.readPressure();
+########################
+
+* **Method prototype (as seen in BME680-SOLDERED.h)**:
+
+.. code-block:: c 
+
+    float readPressure();
+
+* **Arguments and return value**:
+    | float pressure - the pressure from the sensor
+
+* **Description**:
+    | Read the pressure as a float from the BME680 sensor.
+
+Inkplate::bme680.readHumidity();
+########################
+
+* **Method prototype (as seen in BME680-SOLDERED.h)**:
+
+.. code-block:: c 
+
+    float readHumidity();
+
+* **Arguments and return value**:
+    | float humidity - the humidity from the sensor
+
+* **Description**:
+    | Read the humidity as a float from the BME680 sensor.
+
+Inkplate::bme680.readAltitude();
+########################
+
+* **Method prototype (as seen in BME680-SOLDERED.h)**:
+
+.. code-block:: c 
+
+    float readAltitude();
+
+* **Arguments and return value**:
+    | float altitude - the altitude calculated from sensor readings
+
+* **Description**:
+    | Calculate and read the altitude as a float based on pressure readings from the BME680 sensor.
+
+Inkplate::bme680.readGasResistance();
+########################
+
+* **Method prototype (as seen in BME680-SOLDERED.h)**:
+
+.. code-block:: c 
+
+    float readGasResistance();
+
+* **Arguments and return value**:
+    | float gasResistance - the gas resistance from the sensor
+
+* **Description**:
+    | Read the gas resistance as a float from the BME680 sensor.
