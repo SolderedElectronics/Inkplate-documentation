@@ -4191,3 +4191,218 @@ Inkplate::bme680.readGasResistance();
 
 * **Description**:
     | Read the gas resistance as a float from the BME680 sensor.
+
+Inkplate::bme680.readSensorData();
+########################
+
+* **Method prototype (as seen in BME680-SOLDERED.h)**:
+
+.. code-block:: c 
+
+    void readSensorData(float &temp, float &humidity, float &pressure, float &gas);
+
+* **Arguments and return value**:
+    | float &temp - address where the temperature data from the sensor is saved
+    | float &humidity - address where the humidity data from the sensor is saved
+    | float &pressure - address where the pressure data from the sensor is saved
+    | float &gas - address where the gas resistance data from the sensor is saved
+    | Returns nothing.
+
+* **Description**:
+    | Reads the sensor data for temperature, humidity, pressure, and gas resistance and saves the data to the provided addresses.
+
+Inkplate::lsm6ds3.begin();
+########################
+
+* **Method prototype (as seen in LSM6DS3-SOLDERED.h)**:
+
+.. code-block:: c 
+
+    status_t begin();
+
+* **Arguments and return value**:
+    | returns status_t - a status variable which will indicate if init was sucessful. 0 is IMU_SUCCESS. For details on other possible values of status_t, check SparkFunLSM6DS3.h within the library.
+
+* **Description**:
+    | A function which initializes the LSM6DS3 accelerometer/gyroscope. It must be called before using it.
+
+Inkplate::LSM6DS3.readRawAccelX();
+########################
+
+* **Method prototype (as seen in LSM6DS3.h)**:
+
+.. code-block:: c 
+
+    int16_t readRawAccelX( void );
+
+* **Arguments and return value**:
+    | Returns int16_t - the raw acceleration data in the X-axis
+
+* **Description**:
+    | Read the raw acceleration data in the X-axis from the LSM6DS3 sensor.
+
+Inkplate::LSM6DS3.readRawAccelY();
+########################
+
+* **Method prototype (as seen in LSM6DS3.h)**:
+
+.. code-block:: c 
+
+    int16_t readRawAccelY( void );
+
+* **Arguments and return value**:
+    | Returns int16_t - the raw acceleration data in the Y-axis
+
+* **Description**:
+    | Read the raw acceleration data in the Y-axis from the LSM6DS3 sensor.
+
+Inkplate::LSM6DS3.readRawAccelZ();
+########################
+
+* **Method prototype (as seen in LSM6DS3.h)**:
+
+.. code-block:: c 
+
+    int16_t readRawAccelZ( void );
+
+* **Arguments and return value**:
+    | Returns int16_t - the raw acceleration data in the Z-axis
+
+* **Description**:
+    | Read the raw acceleration data in the Z-axis from the LSM6DS3 sensor.
+
+Inkplate::LSM6DS3.readRawGyroX();
+########################
+
+* **Method prototype (as seen in LSM6DS3.h)**:
+
+.. code-block:: c 
+
+    int16_t readRawGyroX( void );
+
+* **Arguments and return value**:
+    | Returns int16_t - the raw gyroscope data in the X-axis
+
+* **Description**:
+    | Read the raw gyroscope data in the X-axis from the LSM6DS3 sensor.
+
+Inkplate::LSM6DS3.readRawGyroY();
+########################
+
+* **Method prototype (as seen in LSM6DS3.h)**:
+
+.. code-block:: c 
+
+    int16_t readRawGyroY( void );
+
+* **Arguments and return value**:
+    | Returns int16_t - the raw gyroscope data in the Y-axis
+
+* **Description**:
+    | Read the raw gyroscope data in the Y-axis from the LSM6DS3 sensor.
+
+Inkplate::LSM6DS3.readRawGyroZ();
+########################
+
+* **Method prototype (as seen in LSM6DS3.h)**:
+
+.. code-block:: c 
+
+    int16_t readRawGyroZ( void );
+
+* **Arguments and return value**:
+    | Returns int16_t - the raw gyroscope data in the Z-axis
+
+* **Description**:
+    | Read the raw gyroscope data in the Z-axis from the LSM6DS3 sensor.
+
+Inkplate::LSM6DS3.readFloatAccelX();
+########################
+
+* **Method prototype (as seen in LSM6DS3.h)**:
+
+.. code-block:: c 
+
+    float readFloatAccelX( void );
+
+* **Arguments and return value**:
+    | Returns float - the acceleration data in the X-axis converted to g's
+
+* **Description**:
+    | Read and convert the raw acceleration data in the X-axis to g's from the LSM6DS3 sensor.
+
+Inkplate::LSM6DS3.readFloatAccelY();
+########################
+
+* **Method prototype (as seen in LSM6DS3.h)**:
+
+.. code-block:: c 
+
+    float readFloatAccelY( void );
+
+* **Arguments and return value**:
+    | Returns float - the acceleration data in the Y-axis converted to g's
+
+* **Description**:
+    | Read and convert the raw acceleration data in the Y-axis to g's from the LSM6DS3 sensor.
+
+Inkplate::LSM6DS3.readFloatAccelZ();
+########################
+
+* **Method prototype (as seen in LSM6DS3.h)**:
+
+.. code-block:: c 
+
+    float readFloatAccelZ( void );
+
+* **Arguments and return value**:
+    | Returns float - the acceleration data in the Z-axis converted to g's
+
+* **Description**:
+    | Read and convert the raw acceleration data in the Z-axis to g's from the LSM6DS3 sensor.
+
+Inkplate::LSM6DS3.readFloatGyroX();
+########################
+
+* **Method prototype (as seen in LSM6DS3.h)**:
+
+.. code-block:: c 
+
+    float readFloatGyroX( void );
+
+* **Arguments and return value**:
+    | Returns float - the gyroscope data in the X-axis converted to degrees per second
+
+* **Description**:
+    | Read and convert the raw gyroscope data in the X-axis to degrees per second from the LSM6DS3 sensor.
+
+Inkplate::LSM6DS3.readFloatGyroY();
+########################
+
+* **Method prototype (as seen in LSM6DS3.h)**:
+
+.. code-block:: c 
+
+    float readFloatGyroY( void );
+
+* **Arguments and return value**:
+    | Returns float - the gyroscope data in the Y-axis converted to degrees per second
+
+* **Description**:
+    | Read and convert the raw gyroscope data in the Y-axis to degrees per second from the LSM6DS3 sensor.
+
+Inkplate::LSM6DS3.readFloatGyroZ();
+########################
+
+* **Method prototype (as seen in LSM6DS3.h)**:
+
+.. code-block:: c 
+
+    float readFloatGyroZ( void );
+
+* **Arguments and return value**:
+    | Returns float - the gyroscope data in the Z-axis converted to degrees per second
+
+* **Description**:
+    | Read and convert the raw gyroscope data in the Z-axis to degrees per second from the LSM6DS3 sensor.
+
