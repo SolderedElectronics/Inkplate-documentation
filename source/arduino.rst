@@ -4047,9 +4047,6 @@ Inkplate 4TEMPERA
 
 This section is regarding the specific sensors and peripherals related to Inkplate 4TEMPERA.
 
-Buzzer
-----------------
-
 Inkplate::buzzer.init();
 ########################
 
