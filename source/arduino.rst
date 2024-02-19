@@ -4040,3 +4040,24 @@ Inkplate::tsAvailable();
 
 * **Description**:
     | tsAvailable checks for touch screen functionality.
+
+
+Inkplate 4TEMPERA
+----------------
+
+This section is regarding the specific sensors and peripherals related to Inkplate 4TEMPERA.
+
+Buzzer
+----------------
+
+Inkplate::buzzer.init();
+########################
+
+* **Method prototype (as seen in Buzzer.h)**:
+
+.. code-block:: c 
+
+    void begin();
+
+* **Description**:
+    | Initialize usage of the on-board buzzer.
