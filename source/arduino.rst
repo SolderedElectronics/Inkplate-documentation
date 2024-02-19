@@ -4406,3 +4406,142 @@ Inkplate::LSM6DS3.readFloatGyroZ();
 * **Description**:
     | Read and convert the raw gyroscope data in the Z-axis to degrees per second from the LSM6DS3 sensor.
 
+Inkplate::battery.begin();
+########################
+
+* **Method prototype (as seen in SparkFunBQ27441.h)**:
+
+.. code-block:: c 
+
+    void begin();
+
+* **Description**:
+    | Initialize the fuel gauge, the on-board chip which measures the charge state of the battery
+
+Inkplate::battery.setCapacity();
+########################
+
+* **Method prototype (as seen in SparkFunBQ27441.h)**:
+
+.. code-block:: c 
+
+    void setCapacity(uint16_t capacity);
+
+* **Arguments and return value**:
+    | uint16_t capacity - the total capacity of the battery in milliamp-hours (mAh)
+    | Returns nothing.
+
+* **Description**:
+    | Sets the BQ27441 fuel gauge's battery capacity, which is used to calculate the charge percentage. The capacity parameter should reflect the total capacity of the battery being used. Default battery which ships with the device is 1200mAh.
+
+Inkplate::battery.voltage();
+########################
+
+* **Method prototype (as seen in SparkFunBQ27441.h)**:
+
+.. code-block:: c 
+
+    uint16_t voltage(void);
+
+* **Arguments and return value**:
+    | Returns uint16_t - battery voltage in millivolts (mV)
+
+* **Description**:
+    | Reads and returns the battery voltage.
+
+Inkplate::battery.current();
+########################
+
+* **Method prototype (as seen in SparkFunBQ27441.h)**:
+
+.. code-block:: c 
+
+    int16_t current(current_measure type = AVG);
+
+* **Arguments and return value**:
+    | current_measure type - enum specifying the current value to be read (default is AVG)
+    | Returns int16_t - specified current measurement in milliamps (mA). A positive value indicates charging.
+
+* **Description**:
+    | Reads and returns the specified current measurement.
+
+Inkplate::battery.capacity();
+########################
+
+* **Method prototype (as seen in SparkFunBQ27441.h)**:
+
+.. code-block:: c 
+
+    uint16_t capacity(capacity_measure type = REMAIN);
+
+* **Arguments and return value**:
+    | capacity_measure type - enum specifying the capacity value to be read (default is REMAIN)
+    | Returns uint16_t - specified capacity measurement in milliamp-hours (mAh).
+
+* **Description**:
+    | Reads and returns the specified capacity measurement.
+
+Inkplate::battery.power();
+########################
+
+* **Method prototype (as seen in SparkFunBQ27441.h)**:
+
+.. code-block:: c 
+
+    int16_t power(void);
+
+* **Arguments and return value**:
+    | Returns int16_t - measured average power in milliwatts (mW). A positive value indicates charging.
+
+* **Description**:
+    | Reads and returns measured average power.
+
+Inkplate::battery.soc();
+########################
+
+* **Method prototype (as seen in SparkFunBQ27441.h)**:
+
+.. code-block:: c 
+
+    uint16_t soc(soc_measure type = FILTERED);
+
+* **Arguments and return value**:
+    | soc_measure type - enum specifying filtered or unfiltered measurement (default is FILTERED)
+    | Returns uint16_t - specified state of charge measurement in percentage (%).
+
+* **Description**:
+    | Reads and returns specified state of charge measurement.
+
+Inkplate::battery.soh();
+########################
+
+* **Method prototype (as seen in SparkFunBQ27441.h)**:
+
+.. code-block:: c 
+
+    uint8_t soh(soh_measure type = PERCENT);
+
+* **Arguments and return value**:
+    | soh_measure type - enum specifying filtered or unfiltered measurement (default is PERCENT)
+    | Returns uint8_t - specified state of health measurement in percentage (%), or status bits.
+
+* **Description**:
+    | Reads and returns specified state of health measurement.
+
+Inkplate::battery.temperature();
+########################
+
+* **Method prototype (as seen in SparkFunBQ27441.h)**:
+
+.. code-block:: c 
+
+    uint16_t temperature(temp_measure type = BATTERY);
+
+* **Arguments and return value**:
+    | temp_measure type - enum specifying internal or battery measurement (default is BATTERY)
+    | Returns uint16_t - specified temperature measurement in degrees Celsius (°C).
+
+* **Description**:
+    | Reads and returns specified temperature measurement.
+
+
