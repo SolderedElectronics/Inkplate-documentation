@@ -1,6 +1,6 @@
 Inkplate Resources
 ==================
-    | `Inkplate official web <https://inkplate.io/>`_
+    | `Inkplate official web <https://soldered.com/categories/inkplate/>`_
     | `Soldered web shop <https://soldered.com/categories/inkplate/>`_
     | `Inkplate Arduino library Repository <https://github.com/SolderedElectronics/Inkplate-Arduino-library>`_
     | `Inkplate 10 Hardware Repository <https://github.com/e-radionicacom/Inkplate-10-hardware>`_
@@ -16,4 +16,3 @@ Inkplate Resources
     | `Image converter <https://solderedelectronics.github.io/Inkplate-image-converter/>`_
     | `Peripheral mode Raspberry Pi example <https://github.com/SolderedElectronics/Inkplate-Peripheral-Mode-Raspberry-Pi-Example/>`_
     | `Peripheral mode STM32 example <https://github.com/SolderedElectronics/Inkplate-Peripheral-Mode-STM32-Example/>`_
-    | `Support Forum <https://forum.soldered.com/>`_
