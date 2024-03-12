@@ -9,7 +9,7 @@ To get started with Inkplate in Arduino IDE first select `right board <get-start
 
 The variable "color" or somewhere only "c" represents a color of the pixels in different way with different display technologies.
 If your Inkplate supports only black and white colors, the variable color represents color in grayscale of black mode. 0 represents
-black, 7 represents white and numbers in between represents shades; 1 is lightest grey, 6 represents darkest grey.
+black, 7 represents white and numbers in between represents shades; 1 is the darkest gray, 6 represents the lightest gray.
 If your Inkplate is 6COLOR, the next table shows values that represents colors.
 
 =============== ================== ========== 
