@@ -50,25 +50,25 @@ Soldered Inkplate Comparison (newer models)
 -------------------
 
 
-================================== ====================== ===================== ========================= ========================== ===================== ============================ ===================== 
- Feature                            Soldered Inkplate 10   Soldered Inkplate 6   Soldered Inkplate 6PLUS   Soldered Inkplate 6COLOR   Soldered Inkplate 5   Soldered Inkplate 4TEMPERA   Soldered Inkplate 2  
-================================== ====================== ===================== ========================= ========================== ===================== ============================ ===================== 
- Screen Size                        9.7"                   6"                    6"                        5.8"                       5.2"                  3.8"                         2.13"                
- Resolution                         1200x825               800x600               1024x758                  600x448                    960x540               600x600                      202x104              
- Pixels                             990,000                480,000               776,192                   268,800                    518,400               360,000                      21,008               
- Grayscale levels                   8                      8                     8                         .                          8                     8                            .                    
- Color                              No                     No                    No                        Yes                        No                    No                           Yes                  
- All-In-One                         Yes                    Yes                   Yes                       Yes                        Yes                   Yes                          Yes                  
- Low-Power                          Yes                    Yes                   Yes                       Yes                        Yes                   Yes                          Yes                  
- Wi-Fi                              Yes                    Yes                   Yes                       Yes                        Yes                   Yes                          Yes                  
- Touchpads                          No                     No                    No                        Some(*)                    No                    No                           No                   
- Touchscreen                        No                     No                    Yes                       No                         No                    Yes                          No                   
- Backlight                          No                     No                    Yes                       No                         No                    Yes                          No                   
- MicroSD                            Yes                    Yes                   Yes                       Yes                        Yes                   Yes                          No                   
- Additional sensors and actuators   No                     No                    No                        No                         No                    Yes(**)                      No                   
- Full refresh time                  1.61s                  1.26s                 1.27s                     12s                        1.02s                 0.86s                        21s                  
- Fast refresh time                  0.62s                  0.26s                 0.64s                     -                          0.12s                 0.18s                        -                    
-================================== ====================== ===================== ========================= ========================== ===================== ============================ ===================== 
+================================== ====================== ===================== ========================= ========================== ===================== ======================== ============================ ===================== 
+ Feature                            Soldered Inkplate 10   Soldered Inkplate 6   Soldered Inkplate 6PLUS   Soldered Inkplate 6COLOR   Soldered Inkplate 5   Soldered Inkplate 5 V2   Soldered Inkplate 4TEMPERA   Soldered Inkplate 2  
+================================== ====================== ===================== ========================= ========================== ===================== ======================== ============================ ===================== 
+ Screen Size                        9.7"                   6"                    6"                        5.8"                       5.2"                  5.2"                     3.8"                         2.13"                
+ Resolution                         1200x825               800x600               1024x758                  600x448                    960x540               1280x720                 600x600                      202x104              
+ Pixels                             990,000                480,000               776,192                   268,800                    518,400               921,600                  360,000                      21,008               
+ Grayscale levels                   8                      8                     8                         .                          8                     8                        8                            .                    
+ Color                              No                     No                    No                        Yes                        No                    No                       No                           Yes                  
+ All-In-One                         Yes                    Yes                   Yes                       Yes                        Yes                   Yes                      Yes                          Yes                  
+ Low-Power                          Yes                    Yes                   Yes                       Yes                        Yes                   Yes                      Yes                          Yes                  
+ Wi-Fi                              Yes                    Yes                   Yes                       Yes                        Yes                   Yes                      Yes                          Yes                  
+ Touchpads                          No                     No                    No                        Some(*)                    No                    No                       No                           No                   
+ Touchscreen                        No                     No                    Yes                       No                         No                    No                       Yes                          No                   
+ Backlight                          No                     No                    Yes                       No                         No                    No                       Yes                          No                   
+ MicroSD                            Yes                    Yes                   Yes                       Yes                        Yes                   Yes                      Yes                          No                   
+ Additional sensors and actuators   No                     No                    No                        No                         No                    No                       Yes(**)                      No                   
+ Full refresh time                  1.61s                  1.26s                 1.27s                     12s                        1.02s                 1.02s                    0.86s                        21s                  
+ Fast refresh time                  0.62s                  0.26s                 0.64s                     -                          0.12s                 0.12s                    0.18s                        -                    
+================================== ====================== ===================== ========================= ========================== ===================== ======================== ============================ ===================== 
 
 (*) Some older initial models of Inkplate 6COLOR do have touchpads, but more than likely none that are available from distributors
 
@@ -227,6 +227,30 @@ Other Technical Specifications
     | **Power Management**: based on Texas Instruments (TI) TPS65186, MCP73831 lithium battery charger with a standard JST-PH 2-Pin right angle connector.
     | **Temperature Sensor**: Internal TPS65186
 
+Inkplate 5 V2
+----------------
+
+Front-Mounted Components:
+#########################
+
+.. image:: images/Inkplate5_v2_front.png
+    :width: 500
+
+Rear-Mounted Components:
+########################
+
+.. image:: images/Inkplate5_v2_back.png
+    :width: 500
+
+Other Technical Specifications
+##############################
+    | **Physical Interface**: hardware power switch, GPIO pins, reset button and form factor that is optimized for custom enclosures.
+    | **Connectors**: USB type C, easyC, and GPIO
+    | **Wired Connectivity**: USB, I²C, and SPI
+    | **USB to UART converter**: CH340C
+    | **Storage**: MicroSD card reader
+    | **Power Management**: based on Texas Instruments (TI) TPS65186, MCP73831 lithium battery charger with a standard JST-PH 2-Pin right angle connector.
+    | **Temperature Sensor**: Internal TPS65186
 
 Inkplate 4TEMPERA
 ----------------
