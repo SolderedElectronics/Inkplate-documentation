@@ -66,8 +66,8 @@ Soldered Inkplate Comparison (newer models)
  Backlight                          No                     No                    Yes                       No                         No                    No                       Yes                          No                   
  MicroSD                            Yes                    Yes                   Yes                       Yes                        Yes                   Yes                      Yes                          No                   
  Additional sensors and actuators   No                     No                    No                        No                         No                    No                       Yes(**)                      No                   
- Full refresh time                  1.61s                  1.26s                 1.27s                     12s                        1.02s                 1.02s                    0.86s                        21s                  
- Fast refresh time                  0.62s                  0.26s                 0.64s                     -                          0.12s                 0.12s                    0.18s                        -                    
+ Full refresh time                  1.61s                  1.26s                 1.27s                     12s                        1.02s                 1.13s                    0.86s                        21s                  
+ Fast refresh time                  0.62s                  0.26s                 0.64s                     -                          0.12s                 0.26s                    0.18s                        -                    
 ================================== ====================== ===================== ========================= ========================== ===================== ======================== ============================ ===================== 
 
 (*) Some older initial models of Inkplate 6COLOR do have touchpads, but more than likely none that are available from distributors
