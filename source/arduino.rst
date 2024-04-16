@@ -9,7 +9,7 @@ To get started with Inkplate in Arduino IDE first select `right board <get-start
 
 The variable "color" or somewhere only "c" represents a color of the pixels in different way with different display technologies.
 If your Inkplate supports only black and white colors, the variable color represents color in grayscale of black mode. 0 represents
-black, 7 represents white and numbers in between represents shades; 1 is lightest grey, 6 represents darkest grey.
+black, 7 represents white and numbers in between represents shades; 1 is the darkest gray, 6 represents the lightest gray.
 If your Inkplate is 6COLOR, the next table shows values that represents colors.
 
 =============== ================== ========== 
@@ -4040,3 +4040,508 @@ Inkplate::tsAvailable();
 
 * **Description**:
     | tsAvailable checks for touch screen functionality.
+
+
+Inkplate 4TEMPERA
+----------------
+
+This section is regarding the specific sensors and peripherals related to Inkplate 4TEMPERA.
+
+Inkplate::buzzer.init();
+########################
+
+* **Method prototype (as seen in Buzzer.h)**:
+
+.. code-block:: c 
+
+    void begin();
+
+* **Description**:
+    | Initialize usage of the on-board buzzer.
+
+Inkplate::buzzer.beep();
+########################
+
+* **Method prototype (as seen in Buzzer.h)**:
+
+.. code-block:: c 
+
+    void beep(uint32_t length, int freq);
+
+* **Arguments and return value**:
+    | uint32_t length - how long in ms to sound the buzzer
+    | int freq - the (approximate) frequency of the buzzer (optional)
+
+* **Description**:
+    | A blocking function which beeps the buzzer for a certain amount of time at a certain frequency. Frequencies from 572 to 2933 Hz are supported. Only the length parameter is required.
+
+Inkplate::buzzer.beepOn();
+########################
+
+* **Method prototype (as seen in Buzzer.h)**:
+
+.. code-block:: c 
+
+    void beepOn(int freq);
+
+* **Arguments and return value**:
+    | int freq - the (approximate) frequency of the buzzer (optional)
+
+* **Description**:
+    | A function which starts beeping the buzzer indefinately. It has to be stopped with beepOff(). Frequencies from 572 to 2933 Hz are supported.
+
+Inkplate::buzzer.beepOff();
+########################
+
+* **Method prototype (as seen in Buzzer.h)**:
+
+.. code-block:: c 
+
+    void beepOff();
+
+* **Description**:
+    | Stop the buzzer's beeping, started by beepOn().
+
+Inkplate::bme680.begin();
+########################
+
+* **Method prototype (as seen in BME680-SOLDERED.h)**:
+
+.. code-block:: c 
+
+    bool begin();
+
+* **Arguments and return value**:
+    | bool initOK - the function returns true if the BME680 sensor has initialized OK
+
+* **Description**:
+    | A function which initializes the BME680 sensor, it must be called before using the sensor
+
+Inkplate::bme680.readTemperature();
+########################
+
+* **Method prototype (as seen in BME680-SOLDERED.h)**:
+
+.. code-block:: c 
+
+    float readTemperature();
+
+* **Arguments and return value**:
+    | float temperature - the temperature from the sensor
+
+* **Description**:
+    | Read the temperature as a flaot from the BME680 sensor.
+
+Inkplate::bme680.readPressure();
+########################
+
+* **Method prototype (as seen in BME680-SOLDERED.h)**:
+
+.. code-block:: c 
+
+    float readPressure();
+
+* **Arguments and return value**:
+    | float pressure - the pressure from the sensor
+
+* **Description**:
+    | Read the pressure as a float from the BME680 sensor.
+
+Inkplate::bme680.readHumidity();
+########################
+
+* **Method prototype (as seen in BME680-SOLDERED.h)**:
+
+.. code-block:: c 
+
+    float readHumidity();
+
+* **Arguments and return value**:
+    | float humidity - the humidity from the sensor
+
+* **Description**:
+    | Read the humidity as a float from the BME680 sensor.
+
+Inkplate::bme680.readAltitude();
+########################
+
+* **Method prototype (as seen in BME680-SOLDERED.h)**:
+
+.. code-block:: c 
+
+    float readAltitude();
+
+* **Arguments and return value**:
+    | float altitude - the altitude calculated from sensor readings
+
+* **Description**:
+    | Calculate and read the altitude as a float based on pressure readings from the BME680 sensor.
+
+Inkplate::bme680.readGasResistance();
+########################
+
+* **Method prototype (as seen in BME680-SOLDERED.h)**:
+
+.. code-block:: c 
+
+    float readGasResistance();
+
+* **Arguments and return value**:
+    | float gasResistance - the gas resistance from the sensor
+
+* **Description**:
+    | Read the gas resistance as a float from the BME680 sensor.
+
+Inkplate::bme680.readSensorData();
+########################
+
+* **Method prototype (as seen in BME680-SOLDERED.h)**:
+
+.. code-block:: c 
+
+    void readSensorData(float &temp, float &humidity, float &pressure, float &gas);
+
+* **Arguments and return value**:
+    | float &temp - address where the temperature data from the sensor is saved
+    | float &humidity - address where the humidity data from the sensor is saved
+    | float &pressure - address where the pressure data from the sensor is saved
+    | float &gas - address where the gas resistance data from the sensor is saved
+    | Returns nothing.
+
+* **Description**:
+    | Reads the sensor data for temperature, humidity, pressure, and gas resistance and saves the data to the provided addresses.
+
+Inkplate::lsm6ds3.begin();
+########################
+
+* **Method prototype (as seen in LSM6DS3-SOLDERED.h)**:
+
+.. code-block:: c 
+
+    status_t begin();
+
+* **Arguments and return value**:
+    | returns status_t - a status variable which will indicate if init was sucessful. 0 is IMU_SUCCESS. For details on other possible values of status_t, check SparkFunLSM6DS3.h within the library.
+
+* **Description**:
+    | A function which initializes the LSM6DS3 accelerometer/gyroscope. It must be called before using it.
+
+Inkplate::LSM6DS3.readRawAccelX();
+########################
+
+* **Method prototype (as seen in LSM6DS3.h)**:
+
+.. code-block:: c 
+
+    int16_t readRawAccelX( void );
+
+* **Arguments and return value**:
+    | Returns int16_t - the raw acceleration data in the X-axis
+
+* **Description**:
+    | Read the raw acceleration data in the X-axis from the LSM6DS3 sensor.
+
+Inkplate::LSM6DS3.readRawAccelY();
+########################
+
+* **Method prototype (as seen in LSM6DS3.h)**:
+
+.. code-block:: c 
+
+    int16_t readRawAccelY( void );
+
+* **Arguments and return value**:
+    | Returns int16_t - the raw acceleration data in the Y-axis
+
+* **Description**:
+    | Read the raw acceleration data in the Y-axis from the LSM6DS3 sensor.
+
+Inkplate::LSM6DS3.readRawAccelZ();
+########################
+
+* **Method prototype (as seen in LSM6DS3.h)**:
+
+.. code-block:: c 
+
+    int16_t readRawAccelZ( void );
+
+* **Arguments and return value**:
+    | Returns int16_t - the raw acceleration data in the Z-axis
+
+* **Description**:
+    | Read the raw acceleration data in the Z-axis from the LSM6DS3 sensor.
+
+Inkplate::LSM6DS3.readRawGyroX();
+########################
+
+* **Method prototype (as seen in LSM6DS3.h)**:
+
+.. code-block:: c 
+
+    int16_t readRawGyroX( void );
+
+* **Arguments and return value**:
+    | Returns int16_t - the raw gyroscope data in the X-axis
+
+* **Description**:
+    | Read the raw gyroscope data in the X-axis from the LSM6DS3 sensor.
+
+Inkplate::LSM6DS3.readRawGyroY();
+########################
+
+* **Method prototype (as seen in LSM6DS3.h)**:
+
+.. code-block:: c 
+
+    int16_t readRawGyroY( void );
+
+* **Arguments and return value**:
+    | Returns int16_t - the raw gyroscope data in the Y-axis
+
+* **Description**:
+    | Read the raw gyroscope data in the Y-axis from the LSM6DS3 sensor.
+
+Inkplate::LSM6DS3.readRawGyroZ();
+########################
+
+* **Method prototype (as seen in LSM6DS3.h)**:
+
+.. code-block:: c 
+
+    int16_t readRawGyroZ( void );
+
+* **Arguments and return value**:
+    | Returns int16_t - the raw gyroscope data in the Z-axis
+
+* **Description**:
+    | Read the raw gyroscope data in the Z-axis from the LSM6DS3 sensor.
+
+Inkplate::LSM6DS3.readFloatAccelX();
+########################
+
+* **Method prototype (as seen in LSM6DS3.h)**:
+
+.. code-block:: c 
+
+    float readFloatAccelX( void );
+
+* **Arguments and return value**:
+    | Returns float - the acceleration data in the X-axis converted to g's
+
+* **Description**:
+    | Read and convert the raw acceleration data in the X-axis to g's from the LSM6DS3 sensor.
+
+Inkplate::LSM6DS3.readFloatAccelY();
+########################
+
+* **Method prototype (as seen in LSM6DS3.h)**:
+
+.. code-block:: c 
+
+    float readFloatAccelY( void );
+
+* **Arguments and return value**:
+    | Returns float - the acceleration data in the Y-axis converted to g's
+
+* **Description**:
+    | Read and convert the raw acceleration data in the Y-axis to g's from the LSM6DS3 sensor.
+
+Inkplate::LSM6DS3.readFloatAccelZ();
+########################
+
+* **Method prototype (as seen in LSM6DS3.h)**:
+
+.. code-block:: c 
+
+    float readFloatAccelZ( void );
+
+* **Arguments and return value**:
+    | Returns float - the acceleration data in the Z-axis converted to g's
+
+* **Description**:
+    | Read and convert the raw acceleration data in the Z-axis to g's from the LSM6DS3 sensor.
+
+Inkplate::LSM6DS3.readFloatGyroX();
+########################
+
+* **Method prototype (as seen in LSM6DS3.h)**:
+
+.. code-block:: c 
+
+    float readFloatGyroX( void );
+
+* **Arguments and return value**:
+    | Returns float - the gyroscope data in the X-axis converted to degrees per second
+
+* **Description**:
+    | Read and convert the raw gyroscope data in the X-axis to degrees per second from the LSM6DS3 sensor.
+
+Inkplate::LSM6DS3.readFloatGyroY();
+########################
+
+* **Method prototype (as seen in LSM6DS3.h)**:
+
+.. code-block:: c 
+
+    float readFloatGyroY( void );
+
+* **Arguments and return value**:
+    | Returns float - the gyroscope data in the Y-axis converted to degrees per second
+
+* **Description**:
+    | Read and convert the raw gyroscope data in the Y-axis to degrees per second from the LSM6DS3 sensor.
+
+Inkplate::LSM6DS3.readFloatGyroZ();
+########################
+
+* **Method prototype (as seen in LSM6DS3.h)**:
+
+.. code-block:: c 
+
+    float readFloatGyroZ( void );
+
+* **Arguments and return value**:
+    | Returns float - the gyroscope data in the Z-axis converted to degrees per second
+
+* **Description**:
+    | Read and convert the raw gyroscope data in the Z-axis to degrees per second from the LSM6DS3 sensor.
+
+Inkplate::battery.begin();
+########################
+
+* **Method prototype (as seen in SparkFunBQ27441.h)**:
+
+.. code-block:: c 
+
+    void begin();
+
+* **Description**:
+    | Initialize the fuel gauge, the on-board chip which measures the charge state of the battery
+
+Inkplate::battery.setCapacity();
+########################
+
+* **Method prototype (as seen in SparkFunBQ27441.h)**:
+
+.. code-block:: c 
+
+    void setCapacity(uint16_t capacity);
+
+* **Arguments and return value**:
+    | uint16_t capacity - the total capacity of the battery in milliamp-hours (mAh)
+    | Returns nothing.
+
+* **Description**:
+    | Sets the BQ27441 fuel gauge's battery capacity, which is used to calculate the charge percentage. The capacity parameter should reflect the total capacity of the battery being used. Default battery which ships with the device is 1200mAh.
+
+Inkplate::battery.voltage();
+########################
+
+* **Method prototype (as seen in SparkFunBQ27441.h)**:
+
+.. code-block:: c 
+
+    uint16_t voltage(void);
+
+* **Arguments and return value**:
+    | Returns uint16_t - battery voltage in millivolts (mV)
+
+* **Description**:
+    | Reads and returns the battery voltage.
+
+Inkplate::battery.current();
+########################
+
+* **Method prototype (as seen in SparkFunBQ27441.h)**:
+
+.. code-block:: c 
+
+    int16_t current(current_measure type = AVG);
+
+* **Arguments and return value**:
+    | current_measure type - enum specifying the current value to be read (default is AVG)
+    | Returns int16_t - specified current measurement in milliamps (mA). A positive value indicates charging.
+
+* **Description**:
+    | Reads and returns the specified current measurement.
+
+Inkplate::battery.capacity();
+########################
+
+* **Method prototype (as seen in SparkFunBQ27441.h)**:
+
+.. code-block:: c 
+
+    uint16_t capacity(capacity_measure type = REMAIN);
+
+* **Arguments and return value**:
+    | capacity_measure type - enum specifying the capacity value to be read (default is REMAIN)
+    | Returns uint16_t - specified capacity measurement in milliamp-hours (mAh).
+
+* **Description**:
+    | Reads and returns the specified capacity measurement.
+
+Inkplate::battery.power();
+########################
+
+* **Method prototype (as seen in SparkFunBQ27441.h)**:
+
+.. code-block:: c 
+
+    int16_t power(void);
+
+* **Arguments and return value**:
+    | Returns int16_t - measured average power in milliwatts (mW). A positive value indicates charging.
+
+* **Description**:
+    | Reads and returns measured average power.
+
+Inkplate::battery.soc();
+########################
+
+* **Method prototype (as seen in SparkFunBQ27441.h)**:
+
+.. code-block:: c 
+
+    uint16_t soc(soc_measure type = FILTERED);
+
+* **Arguments and return value**:
+    | soc_measure type - enum specifying filtered or unfiltered measurement (default is FILTERED)
+    | Returns uint16_t - specified state of charge measurement in percentage (%).
+
+* **Description**:
+    | Reads and returns specified state of charge measurement.
+
+Inkplate::battery.soh();
+########################
+
+* **Method prototype (as seen in SparkFunBQ27441.h)**:
+
+.. code-block:: c 
+
+    uint8_t soh(soh_measure type = PERCENT);
+
+* **Arguments and return value**:
+    | soh_measure type - enum specifying filtered or unfiltered measurement (default is PERCENT)
+    | Returns uint8_t - specified state of health measurement in percentage (%), or status bits.
+
+* **Description**:
+    | Reads and returns specified state of health measurement.
+
+Inkplate::battery.temperature();
+########################
+
+* **Method prototype (as seen in SparkFunBQ27441.h)**:
+
+.. code-block:: c 
+
+    uint16_t temperature(temp_measure type = BATTERY);
+
+* **Arguments and return value**:
+    | temp_measure type - enum specifying internal or battery measurement (default is BATTERY)
+    | Returns uint16_t - specified temperature measurement in degrees Celsius (°C).
+
+* **Description**:
+    | Reads and returns specified temperature measurement.
+
+
