@@ -1,4 +1,4 @@
 {
   "restructuredtext.confPath": "${workspaceFolder}/build/html/_static",
-  "esbonio.sphinx.confDir": "${workspaceFolder}/build/html/_static"
+  "esbonio.sphinx.confDir": "${workspaceFolder}\\build\\html\\_static"
 }
