@@ -313,3 +313,28 @@ Physical
 #########################
     | **Dimensions**: 3.54 x 3.27 x 0.94 inches (90 x 83 x 24 mm).
     | **Variants**: Available with or without a glass panel.
+
+Inkplate 6FLICK
+----------------
+
+Front-Mounted Components:
+#########################
+
+.. image:: images/Inkplate6flick_front.png
+    :width: 500
+
+Rear-Mounted Components:
+########################
+
+.. image:: images/Inkplate6flick_back.png
+    :width: 500
+
+Other Technical Specifications
+##############################
+    | **Physical Interface**: touchscreen, backlight, hardware power switch, one LED battery indicator and hardware reset button.
+    | **Connectors**: USB-C, easyC, and GPIO.
+    | **Wired Connectivity**: USB, I²C, and SPI.
+    | **USB to UART converter**: CH340C.
+    | **Storage**: MicroSD card reader.
+    | **Power Management**: based on Texas Instruments (TI) TPS65186, MCP73831 lithium battery charger with a standard JST-PH 2-Pin right angle connector.
+    | **Temperature Sensor**: Internal TPS65186.
