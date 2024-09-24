@@ -931,6 +931,8 @@ Inkplate::drawImage();
     | bool **dither** - to dither the image or not 
     | bool **invert** - invert all colors, defaults to false
 
+    If you want to show an image from buffer, you can use the `Soldered Image Converter <https://github.com/SolderedElectronics/Soldered-Image-Converter/releases/>`_ to create the image .h file.
+
     Returns 0 if error occured, else returns 1.
 
 * **Description**:
