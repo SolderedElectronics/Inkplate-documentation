@@ -3,37 +3,15 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+.. raw:: html
+
+    <script>
+        window.location.href = "https://soldered.com/documentation/inkplate";
+    </script>
+    <p>If you are not redirected, <a href="https://soldered.com/documentation/inkplate">click here</a>.</p>
+
 Welcome to Inkplate's documentation!
 ======================================
 
 | Inkplate is a powerful, energy-efficient, Wi-Fi enabled ESP32 series of boards with an e-paper display. It's open hardware supported by an open-source software library, and it's easy to program, regardless of whether you prefer MicroPython or the Arduino IDE. It comes in different versions of screen sizes.
 | 
-| At this page, you'll find full Inkplate documentation. 
-
-.. image:: images/Inkplate.jpg
-    :width: 500
-
-| Check out our `examples <examples.html>`_ to see what can be done on Inkplate.
-| For these examples to work, you first need to include our header file on top of your code (already included in examples), like this:
-
-.. code-block:: c
-
-   #include "Inkplate.h"
-
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-   :numbered:
-
-   /get-started
-   /features
-   /api-reference
-   /examples
-   /hardware-reference
-   /gui-designer
-   /resources
-   /open-source
-   /about
-
-
