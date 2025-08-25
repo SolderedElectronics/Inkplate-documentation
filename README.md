@@ -1,2 +1,3 @@
 # Inkplate-documentation
-readthedocs.org documentation for [Inkplate boards](https://inkplate.readthedocs.io/en/latest/index.html)
+** This is an outdated version of documentation **
+Refer to the latest Inkplate documentation here: [Inkplate Documentation](https://soldered.com/documentation/inkplate)
