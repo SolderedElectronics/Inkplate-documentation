@@ -1,3 +1,3 @@
-# Inkplate-documentation
-** This is an outdated version of documentation **
+# Inkplate-documentation (OUTDATED)
+
 Refer to the latest Inkplate documentation here: [Inkplate Documentation](https://soldered.com/documentation/inkplate)
